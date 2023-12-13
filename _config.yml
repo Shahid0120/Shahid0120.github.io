@@ -11,13 +11,13 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" 
-minimal_mistakes_skin2: "dark"
+minimal_mistakes_skin2   : "dark"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Shahid Hussain's Blog"
+title                    : "Shahid Hussain"
 title_separator          : "-"
 subtitle                 : ""
 name                     : "Shahid Hussain"
@@ -73,6 +73,7 @@ algolia:
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -109,35 +110,36 @@ author:
   avatar           : "/assets/images/IMG_D8180A2D5A0F-1.jpeg"
   bio              : "Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more."
   location         : "Sydney, AUS"
-  email            :
+  email            : shahid.hussain0120@gmail.com
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Shahid.hussain0120@gmail.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/ShahidH2001"
+    #- label: "Email"
+    #  icon: "fas fa-fw fa-envelope-square"
+    #  url: "Shahid.hussain0120@gmail.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/shahid-hussain-005952142/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Shahid0120"
-footer:
-  links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/ShahidH2001"
+footer:
+  links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      #url: "https://www.linkedin.com/in/shahid-hussain-005952142/"
+      url: "https://www.linkedin.com/in/shahid-hussain-005952142/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Shahid0120"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/ShahidH2001"
 
 include:
   - .htaccess
   - _pages
+  - _portfolio
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -204,6 +206,11 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 # Plugins (previously gems:)
 plugins:
@@ -212,6 +219,9 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jemoji
+  - jekyll-seo-tag
+
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -269,6 +279,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
