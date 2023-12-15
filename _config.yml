@@ -23,7 +23,7 @@ subtitle                 : ""
 name                     : "Shahid Hussain"
 description              : "A Data Science and Mathematics blog, focusing on Machine learning algorithms."
 url                      : "https://Shahid0120.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : "Shahid0120.github.io"
 repository               : "Shahid0120/Shahid0120.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -60,11 +60,11 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true
+search_full_content      : true
+search_provider          : lunr
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages    : true
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -277,7 +277,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       read_time: true
       comments: false
       share: true

@@ -4,9 +4,7 @@ title: "My First Post"
 header:
   image: "../assets/images/post-one/header-image.jpeg"
 categories:
-  - blog
-tags:
-  - update
+  - Miscellaneous
 author_profile: false
 ---
 
