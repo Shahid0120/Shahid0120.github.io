@@ -16,4 +16,4 @@ I have a deep interest in Machine Learning, and I love Fitness. My journey in Da
 
 ## Education and Work
 
-I graduating UNSW with a degree in Science and Bussiness major in Mathematics and Marketing. 
+I graduating UNSW with a degree in Science and Bussiness major in Mathematics and Marketing.
