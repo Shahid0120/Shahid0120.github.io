@@ -7,7 +7,7 @@ categories:
   - blog
 tags:
   - update
-author_profile: true
+author_profile: false
 ---
 
 # Welcome to My Blog!
