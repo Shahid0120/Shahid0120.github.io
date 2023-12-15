@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/miscellaneous/first-post/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/miscellaneous/first-post/</loc>
 <lastmod>2023-12-15T00:00:00+11:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/about/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/about/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/categories/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/categories/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/portfolio/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/portfolio/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/posts/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/posts/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags/</loc>
+<loc>https://shahid0120.github.io/Shahid0120.github.io/tags/</loc>
 </url>
 </urlset>
