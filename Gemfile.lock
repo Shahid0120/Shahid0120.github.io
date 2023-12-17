@@ -304,6 +304,7 @@ DEPENDENCIES
   jekyll-watch
   jemoji
   minimal-mistakes-jekyll
+  public_suffix (= 4.0.7)
   webrick (~> 1.8)
 
 BUNDLED WITH

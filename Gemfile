@@ -1,8 +1,9 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages"
 gem "jekyll"
 gem "minimal-mistakes-jekyll"
+gem 'public_suffix', '4.0.7'
 
 
 group :jekyll_plugins do
@@ -16,4 +17,5 @@ group :jekyll_plugins do
     gem 'jekyll-seo-tag'
     gem 'jekyll-watch'
 end
+
 gem "webrick", "~> 1.8"
