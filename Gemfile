@@ -2,8 +2,6 @@ source "https://rubygems.org"
 
 gem "github-pages"
 gem "jekyll"
-gem "minimal-mistakes-jekyll"
-gem 'public_suffix', '4.0.7'
 
 
 group :jekyll_plugins do
