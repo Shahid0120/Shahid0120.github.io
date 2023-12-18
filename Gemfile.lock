@@ -285,9 +285,19 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  activesupport (= 7.1.2)
+  addressable (= 2.8.6)
+  algolia_html_extractor (= 2.6.4)
+  algoliasearch (= 1.27.5)
+  base64 (= 0.2.0)
+  bigdecimal (= 3.1.5)
+  drb (= 2.2.0)
+  faraday (= 2.7.12)
+  filesize (= 0.2.0)
   github-pages
+  httpclient (= 2.8.3)
   jekyll (~> 3.9.0)
-  jekyll-algolia
+  jekyll-algolia (= 1.7.1)
   jekyll-feed
   jekyll-gist
   jekyll-include-cache
@@ -296,7 +306,15 @@ DEPENDENCIES
   jekyll-sitemap
   jekyll-watch
   jemoji
-  webrick (~> 1.8)
+  json (= 2.7.1)
+  mutex_m (= 0.2.0)
+  nokogiri (= 1.15.5)
+  progressbar (= 1.13.0)
+  racc (= 1.7.3)
+  typhoeus (= 1.4.1)
+  unf_ext (= 0.0.9.1)
+  verbal_expressions (= 0.1.5)
+  webrick (~> 1.8.1)
 
 BUNDLED WITH
    2.4.22
