@@ -16,13 +16,10 @@ gem "algolia_html_extractor", "2.6.4"
 gem "httpclient", "2.8.3"
 gem "algoliasearch", "1.27.5"
 gem "unf_ext", "0.0.9.1"
-gem "faraday", "2.7.12"
 gem "filesize", "0.2.0"
 gem "typhoeus", "1.4.1"
 gem "progressbar", "1.13.0"
 gem "verbal_expressions", "0.1.5"
-gem "jekyll-algolia", "1.7.1"
-gem 'faraday', '~> 2.7', '>= 2.7.11'
 
 group :jekyll_plugins do
     gem "jekyll-paginate"
