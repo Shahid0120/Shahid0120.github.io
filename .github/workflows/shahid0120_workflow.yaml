@@ -1,29 +1,35 @@
-name: Build and Deploy
+name: Jekyll Build
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v2
+      with:
+        ruby-version: 2.7
 
     - name: Upgrade Bundler
       run: gem install bundler:2.4.22
 
-    - name: Install Dependencies
+    - name: Install dependencies
       run: bundle install
 
-    - name: Build Jekyll Site
+    - name: Build Jekyll site
       run: bundle exec jekyll build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: _site
+
