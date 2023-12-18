@@ -222,6 +222,7 @@ plugins:
   - jekyll-include-cache
   - jemoji
   - jekyll-seo-tag
+  - gemfile
 
 
 # mimic GitHub Pages with --safe

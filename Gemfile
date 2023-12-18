@@ -22,7 +22,7 @@ gem "typhoeus", "1.4.1"
 gem "progressbar", "1.13.0"
 gem "verbal_expressions", "0.1.5"
 gem "jekyll-algolia", "1.7.1"
-
+gem 'faraday', '~> 2.7', '>= 2.7.11'
 
 group :jekyll_plugins do
     gem "jekyll-paginate"
