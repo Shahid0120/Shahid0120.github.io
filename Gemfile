@@ -20,6 +20,7 @@ gem "filesize", "0.2.0"
 gem "typhoeus", "1.4.1"
 gem "progressbar", "1.13.0"
 gem "verbal_expressions", "0.1.5"
+gem 'faraday-retry'
 
 group :jekyll_plugins do
     gem "jekyll-paginate"

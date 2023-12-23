@@ -73,8 +73,9 @@ search_full_content      : true
 #google:
 #  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
 #  instant_search         : # false (default), true
-
-github_username: shahid0120
+github:
+  token: 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
+  username: Shahid0120
 # SEO Related
 #google_site_verification :
 #bing_site_verification   :
