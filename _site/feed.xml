@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/Shahid0120.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Shahid0120.github.io/" rel="alternate" type="text/html" /><updated>2023-12-23T18:24:09+11:00</updated><id>http://localhost:4000/Shahid0120.github.io/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">My First Post</title><link href="http://localhost:4000/Shahid0120.github.io/miscellaneous/first-post/" rel="alternate" type="text/html" title="My First Post" /><published>2023-12-15T00:00:00+11:00</published><updated>2023-12-15T00:00:00+11:00</updated><id>http://localhost:4000/Shahid0120.github.io/miscellaneous/first-post</id><content type="html" xml:base="http://localhost:4000/Shahid0120.github.io/miscellaneous/first-post/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-01T12:59:00+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">CS229 Review</title><link href="http://localhost:4000/review/CS290-review/" rel="alternate" type="text/html" title="CS229 Review" /><published>2024-01-01T00:00:00+11:00</published><updated>2024-01-01T00:00:00+11:00</updated><id>http://localhost:4000/review/CS290-review</id><content type="html" xml:base="http://localhost:4000/review/CS290-review/">&lt;h1 id=&quot;review-of-standford-cs229-course&quot;&gt;Review of Standford CS229 course&lt;/h1&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Requires at least level 2 university mathematics. This includes an understanding of Multivariate Calculus and a bit of Linear Algebra.&lt;/li&gt;
+  &lt;li&gt;Lectures provide the backbone understanding but don’t delve into the mathematics. In order to maximize the learning process, ensure completing all problem sets.&lt;/li&gt;
+  &lt;li&gt;Standford students, after completing the course, create their own machine learning application. I suggest completing one as well.&lt;/li&gt;
+  &lt;li&gt;Having a strong understanding of Linear Models is beneficial to understanding most concepts due to the fast pace of the course.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;comprehensive-review&quot;&gt;Comprehensive Review&lt;/h2&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;After wanting to learn machine learning, I scoured the internet to find the best resources, knowing there was an unimaginable amount of books, videos, tutorials, and articles, it just left me confused and flustered!&lt;/p&gt;
+
+&lt;p&gt;To narrow my focus, I wanted to learn from the best, so who really is the best academic in the machine learning space? Well, everyone unanimously agrees that Andrew Ng is probably the best ML teacher, and he offers amazing courses such as on Coursera. But after hearing about the world-famous CS229 as the origin of many students’ introduction to ML, I decided to take the 2018 CS229 course by Stanford.&lt;/p&gt;
+
+&lt;h1 id=&quot;who-is-this-course-for&quot;&gt;Who is this course for?&lt;/h1&gt;
+
+&lt;p&gt;Don’t take this course if you don’t have at least a level 2 university-level mathematics course previously. The main value in this course is it takes a dive into the mathematics behind popular machine learning algorithms. Since the focus is on mathematics, I’ve read many comments under the lecture videos stating, “Is it okay if I don’t understand the mathematics?” Well, not really, since I feel there are better resources less focused on the mathematics and provide an intuitive understanding, such as “Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow” and “The Hundred-Page Machine Learning Book by Andriy Burkov,” which just give an overview of the algorithms focusing on implementation over mathematics.&lt;/p&gt;
+
+&lt;h1 id=&quot;is-it-okay-to-watch-the-2018-version-with-andrew-mg-over-the-new-iterations-of-the-course&quot;&gt;Is it okay to watch the 2018 version with Andrew Mg over the new iterations of the course?&lt;/h1&gt;
+
+&lt;p&gt;Many popular machine learning algorithms have been around for decades. Since this course aims to focus on the most popular algorithms in machine learning, these algorithms have been established decades ago. Let me give you an example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Linear Regression: Sir Francis Galton in 1895&lt;/li&gt;
+  &lt;li&gt;Support Vector Machine: AT&amp;amp;T Bell Laboratories by Vladimir Vapnik with colleagues in 1993&lt;/li&gt;
+  &lt;li&gt;Principal Component Analysis: Karl Pearson in 1901&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As you can see these algorithsm have been discovered decades ago. I would recommend doing the 2018 course so you can gain a true understanding of why Andrew Ng is considered one of the best ML teachers.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-acess-the-other-class-material-like-problem-sets-and-lectures-notes&quot;&gt;How to acess the other class material, like problem sets and lectures notes?&lt;/h1&gt;
+
+&lt;p&gt;Supplement with the lectures are problems seta dn lectures notes. I’v found watching #link(statques) as well as #(github)&lt;/p&gt;
+
+&lt;h1 id=&quot;what-to-do-next&quot;&gt;What to do next?&lt;/h1&gt;
+
+&lt;p&gt;After completing the course, you should feel that you have a strong basic understanding of popular machine learning algorithms. It is important that you don’t just watch the lectures but also ensure you understand everything you’ve watched. Ensure you use the Feynman technique to try to explain concepts in your own words and don’t get trapped into the bubble of just watching lectures and thinking you know the concepts because when the interview comes around, how can you explain these concepts to the interviewer?&lt;/p&gt;
+
+&lt;p&gt;Personally, I’ll be now taking the “Machine Learning Specialization” as well as creating my own scikit-learn emulation module to improve my ML and programming skills. I recommend you continue a similar path, now trying to do Kaggle problems or start.&lt;/p&gt;
+
+&lt;h1 id=&quot;concluding&quot;&gt;Concluding&lt;/h1&gt;
+
+&lt;p&gt;Watching CS290 has been a beatiful journey and i really appriate standford making this course acceisble to everyone if you want notes #—(notability)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Review" /><summary type="html">Review of Standford CS229 course</summary></entry><entry><title type="html">My First Post</title><link href="http://localhost:4000/miscellaneous/first-post/" rel="alternate" type="text/html" title="My First Post" /><published>2023-12-15T00:00:00+11:00</published><updated>2023-12-15T00:00:00+11:00</updated><id>http://localhost:4000/miscellaneous/first-post</id><content type="html" xml:base="http://localhost:4000/miscellaneous/first-post/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog!&lt;/h1&gt;
 
 &lt;p&gt;Welcome! This is my very first post on my new blog, and I’m thrilled to share my journey of exploration and information-sharing with fellow students like myself!&lt;/p&gt;
 
