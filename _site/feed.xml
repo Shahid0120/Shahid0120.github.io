@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-01T12:59:00+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">CS229 Review</title><link href="http://localhost:4000/review/CS290-review/" rel="alternate" type="text/html" title="CS229 Review" /><published>2024-01-01T00:00:00+11:00</published><updated>2024-01-01T00:00:00+11:00</updated><id>http://localhost:4000/review/CS290-review</id><content type="html" xml:base="http://localhost:4000/review/CS290-review/">&lt;h1 id=&quot;review-of-standford-cs229-course&quot;&gt;Review of Standford CS229 course&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-11T12:04:13+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
+and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
+
+&lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
+
+&lt;p&gt;Before asessing my weakness, what are my inspiration say is a good pathway? 
+Well after watching Lex Fridman interview with Andrew Ng &lt;a href=&quot;https://www.youtube.com/watch?v=1k37OcjH7BM&amp;amp;t=1381s&quot;&gt;here!&lt;/a&gt; 
+he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
+once you have taken enough courses then work on projects and reading research papers.&lt;/p&gt;
+
+&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer
+(here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
+
+&lt;h2 id=&quot;focus-on-the-weakness&quot;&gt;Focus on the weakness&lt;/h2&gt;
+
+&lt;p&gt;I beleive (currently?) Machine learning ecosystem can be broken down into the follow skills&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mathematics&lt;/li&gt;
+  &lt;li&gt;ML algorithms&lt;/li&gt;
+  &lt;li&gt;MLops&lt;/li&gt;
+  &lt;li&gt;Python skills&lt;/li&gt;
+  &lt;li&gt;Cloud Services&lt;/li&gt;
+  &lt;li&gt;SQL database&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since i have a currenlty pursuing a Mathhematics and Marketing degree, the main focus should be builing later half. Althought i have expericnes with Cloud Services including AWS and 
+SQL database i will significnatly have to improve in this area. Addtionally, my Python skills a desent but thtere is a way to go&lt;/p&gt;
+
+&lt;h1 id=&quot;what-i-have-currently-done&quot;&gt;What i have currently done?&lt;/h1&gt;
+
+&lt;p&gt;Well currently i have completed/doing:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CS29 by Andrew Ng&lt;/li&gt;
+  &lt;li&gt;Hands-On Machine Learning with Scikit-Learn and Tensorflow&lt;/li&gt;
+  &lt;li&gt;The Hundred-page Machine Learning Book by Andriy Burkov&lt;/li&gt;
+  &lt;li&gt;Deep learning Specialisation by Andrew Ng&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-roadmap-with-certifications&quot;&gt;The Roadmap With Certifications&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Programming
+    &lt;ul&gt;
+      &lt;li&gt;“Python 3 Object-Oriented Programming” by Dusty Phillips&lt;/li&gt;
+      &lt;li&gt;“Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
+      &lt;li&gt;“Algorithms” Princeton University&lt;/li&gt;
+      &lt;li&gt;“Coding Interview University” (github)[https://github.com/jwasham/coding-interview-university]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ML algorithms
+    &lt;ul&gt;
+      &lt;li&gt;Deep Learning for Coders with fastai &amp;amp; PyTorch&lt;/li&gt;
+      &lt;li&gt;Introduction to Machine Learning with Python: A Guide for Data Scientists&lt;/li&gt;
+      &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy&lt;/li&gt;
+      &lt;li&gt;Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
+      &lt;li&gt;Papers with Code : Most popular and Recent machine learning papers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;MLops
+    &lt;ul&gt;
+      &lt;li&gt;Desigining Machine Learing Systems by Chip Huyen&lt;/li&gt;
+      &lt;li&gt;Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
+      &lt;li&gt;Coursera’s MLOps Specialization by DeepLearning.AI&lt;/li&gt;
+      &lt;li&gt;Full Stack Deep Learning&lt;/li&gt;
+      &lt;li&gt;fast.ai&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cloud
+    &lt;ul&gt;
+      &lt;li&gt;Microsoft Certified: Azure Fundamentals&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SQL
+    &lt;ul&gt;
+      &lt;li&gt;LeetCode SQL&lt;/li&gt;
+      &lt;li&gt;SQL for Data Analysis Advanced Techniques for Transforming Data into Insights&lt;/li&gt;
+      &lt;li&gt;SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;structure&quot;&gt;Structure&lt;/h1&gt;
+
+&lt;p&gt;Currently since unviersity off i have a little time to concurrently complete 2 courses at the same time, the plan is i want to read for projects i want to have a project in mind work on whilst reading/watching resources. The currentl systtemiatic plan is;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Deep learning Specialisation by Andrew Ng  + Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
+  &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy + Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
+  &lt;li&gt;“Algorithms” Princeton University + “Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
+  &lt;li&gt;Full Stack Deep Learning + fast.ai&lt;/li&gt;
+  &lt;li&gt;Microsoft Certified: Azure Fundamentals + SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry><entry><title type="html">Is it true that Major long term sporting injuries comes from minior Injuries?</title><link href="http://localhost:4000/projects/nba-risk-injury/" rel="alternate" type="text/html" title="Is it true that Major long term sporting injuries comes from minior Injuries?" /><published>2024-01-07T00:00:00+11:00</published><updated>2024-01-07T00:00:00+11:00</updated><id>http://localhost:4000/projects/nba-risk-injury</id><content type="html" xml:base="http://localhost:4000/projects/nba-risk-injury/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;&amp;lt;!–
+After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. 
+Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s”&lt;/p&gt;
+
+&lt;p&gt;https://github.com/JaseZiv/NBA_data&lt;/p&gt;
+
+&lt;h1 id=&quot;staitsically-examing-this&quot;&gt;staitsically examing this&lt;/h1&gt;
+
+&lt;h1 id=&quot;can-we-build-a-model-of-the-likelihood-of-getting-a-major-injury-contactnon-contant-type-of-sport-related-minor-injury&quot;&gt;Can we build a model of the likelihood of getting a major injury contact/non-contant, type of sport related? minor injury?&lt;/h1&gt;
+
+&lt;p&gt;–!&amp;gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html">Introduction &amp;lt;!– After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s”</summary></entry><entry><title type="html">Geoffrey Hinton : The godfather Deep learning?</title><link href="http://localhost:4000/inspiration/Geoffrey-Hinton/" rel="alternate" type="text/html" title="Geoffrey Hinton : The godfather Deep learning?" /><published>2024-01-05T00:00:00+11:00</published><updated>2024-01-05T00:00:00+11:00</updated><id>http://localhost:4000/inspiration/Geoffrey-Hinton</id><content type="html" xml:base="http://localhost:4000/inspiration/Geoffrey-Hinton/">&lt;p&gt;&amp;lt;!—
+Interview&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;High School friedn -&amp;gt; mathematics bettwe then him states -&amp;gt; the brain uses holigram -&amp;gt; Whats a holigram? “Lashes experiement with mice where u chop bits of rats brains and where bits of brains are distrib uted over the whole brain”&lt;/li&gt;
+  &lt;li&gt;university -&amp;gt; physiology + physics -&amp;gt; became a carpenter -&amp;gt; when to cmabridge to study AI -&amp;gt; where his professor just finsihed working with NN&lt;/li&gt;
+  &lt;li&gt;PHD in AI -&amp;gt; couldnt get jobs in britian -&amp;gt; when to America (California)&lt;/li&gt;
+  &lt;li&gt;Ron Williams, between us developed the backprop algorithm, it was mainly David Rumelhart’s idea. Paul Werbos had published it already quite a few years earlier, but nobody paid it much attention. And there were other people who’d developed very similar algorithms, it’s not clear what’s meant by backprop. But using the chain rule to get derivatives was not a novel idea. -&amp;gt; Back propigation&lt;/li&gt;
+  &lt;li&gt;which one is the most exited? So I think the most beautiful one is the work I do with Terry Sejnowski on Boltzmann machines. So we discovered there was this really, really simple learning algorithm that applied to great big density connected nets where you could only see a few of the nodes. So it would learn hidden representations and it was a very simple algorithm. And it looked like the kind of thing you should be able to get in a brain because each synapse only needed to know about the behavior of the two neurons it was directly connected to.&lt;/li&gt;
+  &lt;li&gt;Finish wathcing it
+–!&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Inspiration" /><summary type="html">&amp;lt;!— Interview High School friedn -&amp;gt; mathematics bettwe then him states -&amp;gt; the brain uses holigram -&amp;gt; Whats a holigram? “Lashes experiement with mice where u chop bits of rats brains and where bits of brains are distrib uted over the whole brain” university -&amp;gt; physiology + physics -&amp;gt; became a carpenter -&amp;gt; when to cmabridge to study AI -&amp;gt; where his professor just finsihed working with NN PHD in AI -&amp;gt; couldnt get jobs in britian -&amp;gt; when to America (California) Ron Williams, between us developed the backprop algorithm, it was mainly David Rumelhart’s idea. Paul Werbos had published it already quite a few years earlier, but nobody paid it much attention. And there were other people who’d developed very similar algorithms, it’s not clear what’s meant by backprop. But using the chain rule to get derivatives was not a novel idea. -&amp;gt; Back propigation which one is the most exited? So I think the most beautiful one is the work I do with Terry Sejnowski on Boltzmann machines. So we discovered there was this really, really simple learning algorithm that applied to great big density connected nets where you could only see a few of the nodes. So it would learn hidden representations and it was a very simple algorithm. And it looked like the kind of thing you should be able to get in a brain because each synapse only needed to know about the behavior of the two neurons it was directly connected to. Finish wathcing it –!&amp;gt;</summary></entry><entry><title type="html">CS229 Review</title><link href="http://localhost:4000/review/CS290-review/" rel="alternate" type="text/html" title="CS229 Review" /><published>2024-01-01T00:00:00+11:00</published><updated>2024-01-01T00:00:00+11:00</updated><id>http://localhost:4000/review/CS290-review</id><content type="html" xml:base="http://localhost:4000/review/CS290-review/">&lt;h1 id=&quot;review-of-standford-cs229-course&quot;&gt;Review of Standford CS229 course&lt;/h1&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 &lt;ul&gt;
