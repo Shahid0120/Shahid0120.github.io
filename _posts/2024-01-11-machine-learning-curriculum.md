@@ -18,8 +18,7 @@ Well after watching Lex Fridman interview with Andrew Ng [here!](https://www.you
 he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
 once you have taken enough courses then work on projects and reading research papers. 
 
-Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer
-(here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50's, Hnads-on Machine Learning by Aurelien Geron.
+Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer (here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50's, Hnads-on Machine Learning by Aurelien Geron.
 
 ## Focus on the weakness
 

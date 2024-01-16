@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            Is it true that Major long term sporting injuries comes from minior Injuries? | Shahid Hussain      Blog      </title>
-<meta name="description" content="Introduction &lt;!– After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam.  Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s”">
+<!-- begin _includes/seo.html --><title>            Is it true that long-term injuries comes from prior minior injuries? | Shahid Hussain      Blog      </title>
+<meta name="description" content="A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?">
 
 
   <meta name="author" content="Shahid Hussain">
@@ -16,11 +16,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="Is it true that Major long term sporting injuries comes from minior Injuries?">
+<meta property="og:title" content="Is it true that long-term injuries comes from prior minior injuries?">
 <meta property="og:url" content="http://localhost:4000/projects/nba-risk-injury/">
 
 
-  <meta property="og:description" content="Introduction &lt;!– After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam.  Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s”">
+  <meta property="og:description" content="A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?">
 
 
 
@@ -142,8 +142,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Is it true that Major long term sporting injuries comes from minior Injuries?">
-    <meta itemprop="description" content="Introduction&lt;!–After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s”">
+    <meta itemprop="headline" content="Is it true that long-term injuries comes from prior minior injuries?">
+    <meta itemprop="description" content="A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?">
     <meta itemprop="datePublished" content="2024-01-07T00:00:00+11:00">
     
 
@@ -151,7 +151,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/projects/nba-risk-injury/" class="u-url" itemprop="url">Is it true that Major long term sporting injuries comes from minior Injuries?
+            <a href="http://localhost:4000/projects/nba-risk-injury/" class="u-url" itemprop="url">Is it true that long-term injuries comes from prior minior injuries?
 </a>
           </h1>
           
@@ -162,18 +162,48 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h1 id="introduction">Introduction</h1>
-<p>&lt;!–
-After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. 
-Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s”</p>
+        <h1 id="a-lense-from-a-statistical-point-of-view-can-we-create-a-ml-model-to-predicit-the-outcomes">A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?</h1>
 
-<p>https://github.com/JaseZiv/NBA_data</p>
+<h1 id="introduction">Introduction</h1>
 
-<h1 id="staitsically-examing-this">staitsically examing this</h1>
+<p>After watching sports for many years, I noticed non-contact injuries, especially in the NBA. I went on to examine it. Randomly, I clicked on a video where a popular YouTuber states, ‘Look at KD; he had an ACL injury, and before that, he had a calf strain.’ Is this really true? The YouTube channel mentioned is MPJPerformance, and the video link is <a href="https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s.">here!</a></p>
 
-<h1 id="can-we-build-a-model-of-the-likelihood-of-getting-a-major-injury-contactnon-contant-type-of-sport-related-minor-injury">Can we build a model of the likelihood of getting a major injury contact/non-contant, type of sport related? minor injury?</h1>
+<h1 id="retriving-and-cleaning-the-data">Retriving and Cleaning the data</h1>
 
-<p>–!&gt;</p>
+<h2 id="firstly-getting-the-data">Firstly getting the data</h2>
+
+<p>Luckly for me the raw data is already avaliable, big thanks to JaseZiv for the github repositry <a href="https://github.com/JaseZiv/NBA_data/tree/main">click here!</a></p>
+
+<h2 id="how-is-the-data-currently-structured">How is the data currently structured?</h2>
+
+<p>the file named “nba_injuries” has webcrawled various NBA sources and the origian files follow a JSON schema as follows:</p>
+
+<ul>
+  <li><strong>Date:</strong> 1947-08-05</li>
+  <li><strong>Team:</strong> Bombers (BAA)</li>
+  <li><strong>Acquired:</strong></li>
+  <li><strong>Relinquished:</strong> Jack Underman</li>
+  <li><strong>Notes:</strong> fractured legs (in auto accident) (out indefinitely) (date approximate)</li>
+</ul>
+
+<h2 id="creating-a-database-and-cleaning-up-the-data">Creating a database and cleaning up the data</h2>
+
+<p>Before we can clean the data to remove duplicates and unnessary/missing inputs we first need to create a database scehema appropriate to our queries and data retrival goals.</p>
+
+<ul>
+  <li>Identify all injured playes easily</li>
+  <li>Idenify length of injury easily</li>
+  <li>Identify if this play has prior/future injury</li>
+  <li>Proximity of next injury/prior injury</li>
+</ul>
+
+<p>Based on these retrival goals we can take a view from a statisatical POV if “long term injuries are srouced from short term injuries”. Where we can explore…</p>
+
+<p>As pointed out by Chip Huyen in Chapter two of “Designing Machine Learning Systems” states the importance of Data Models “How you choose to represent data not only affects the way your systems are built, but also the problems your systems can solve”. Using this chapter as a out Chip outlines “NoSQL” to follow a strict schema, therefore for time saving we will use a “Relational Database”.</p>
+
+<h1 id="lets-start-off-by-examing-it-from-a-statistics-point-of-view">Let’s start off by examing it from a statistics point of view?</h1>
+
+<p>building the story</p>
 
         
       </section>

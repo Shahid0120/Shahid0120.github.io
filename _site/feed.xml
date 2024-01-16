@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-11T12:04:13+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-13T15:18:43+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
 and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
 
 &lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
@@ -8,8 +8,7 @@ Well after watching Lex Fridman interview with Andrew Ng &lt;a href=&quot;https:
 he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
 once you have taken enough courses then work on projects and reading research papers.&lt;/p&gt;
 
-&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer
-(here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
+&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer (here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
 
 &lt;h2 id=&quot;focus-on-the-weakness&quot;&gt;Focus on the weakness&lt;/h2&gt;
 
@@ -91,18 +90,48 @@ SQL database i will significnatly have to improve in this area. Addtionally, my 
   &lt;li&gt;“Algorithms” Princeton University + “Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
   &lt;li&gt;Full Stack Deep Learning + fast.ai&lt;/li&gt;
   &lt;li&gt;Microsoft Certified: Azure Fundamentals + SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry><entry><title type="html">Is it true that Major long term sporting injuries comes from minior Injuries?</title><link href="http://localhost:4000/projects/nba-risk-injury/" rel="alternate" type="text/html" title="Is it true that Major long term sporting injuries comes from minior Injuries?" /><published>2024-01-07T00:00:00+11:00</published><updated>2024-01-07T00:00:00+11:00</updated><id>http://localhost:4000/projects/nba-risk-injury</id><content type="html" xml:base="http://localhost:4000/projects/nba-risk-injury/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;&amp;lt;!–
-After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. 
-Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s”&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry><entry><title type="html">Is it true that long-term injuries comes from prior minior injuries?</title><link href="http://localhost:4000/projects/nba-risk-injury/" rel="alternate" type="text/html" title="Is it true that long-term injuries comes from prior minior injuries?" /><published>2024-01-07T00:00:00+11:00</published><updated>2024-01-07T00:00:00+11:00</updated><id>http://localhost:4000/projects/nba-risk-injury</id><content type="html" xml:base="http://localhost:4000/projects/nba-risk-injury/">&lt;h1 id=&quot;a-lense-from-a-statistical-point-of-view-can-we-create-a-ml-model-to-predicit-the-outcomes&quot;&gt;A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?&lt;/h1&gt;
 
-&lt;p&gt;https://github.com/JaseZiv/NBA_data&lt;/p&gt;
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
-&lt;h1 id=&quot;staitsically-examing-this&quot;&gt;staitsically examing this&lt;/h1&gt;
+&lt;p&gt;After watching sports for many years, I noticed non-contact injuries, especially in the NBA. I went on to examine it. Randomly, I clicked on a video where a popular YouTuber states, ‘Look at KD; he had an ACL injury, and before that, he had a calf strain.’ Is this really true? The YouTube channel mentioned is MPJPerformance, and the video link is &lt;a href=&quot;https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s.&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;can-we-build-a-model-of-the-likelihood-of-getting-a-major-injury-contactnon-contant-type-of-sport-related-minor-injury&quot;&gt;Can we build a model of the likelihood of getting a major injury contact/non-contant, type of sport related? minor injury?&lt;/h1&gt;
+&lt;h1 id=&quot;retriving-and-cleaning-the-data&quot;&gt;Retriving and Cleaning the data&lt;/h1&gt;
 
-&lt;p&gt;–!&amp;gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html">Introduction &amp;lt;!– After watching many sporting injuries i and horicked non-contact injsuries es=pecially in the nba i went on the exam. Rnadomly i clicked on the short where a popular youtube states “look at KD he had a ACL injury and before that he had clave strain”? Is this really true? mpjperformance PJFPerforamcne “https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s”</summary></entry><entry><title type="html">Geoffrey Hinton : The godfather Deep learning?</title><link href="http://localhost:4000/inspiration/Geoffrey-Hinton/" rel="alternate" type="text/html" title="Geoffrey Hinton : The godfather Deep learning?" /><published>2024-01-05T00:00:00+11:00</published><updated>2024-01-05T00:00:00+11:00</updated><id>http://localhost:4000/inspiration/Geoffrey-Hinton</id><content type="html" xml:base="http://localhost:4000/inspiration/Geoffrey-Hinton/">&lt;p&gt;&amp;lt;!—
+&lt;h2 id=&quot;firstly-getting-the-data&quot;&gt;Firstly getting the data&lt;/h2&gt;
+
+&lt;p&gt;Luckly for me the raw data is already avaliable, big thanks to JaseZiv for the github repositry &lt;a href=&quot;https://github.com/JaseZiv/NBA_data/tree/main&quot;&gt;click here!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-is-the-data-currently-structured&quot;&gt;How is the data currently structured?&lt;/h2&gt;
+
+&lt;p&gt;the file named “nba_injuries” has webcrawled various NBA sources and the origian files follow a JSON schema as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Date:&lt;/strong&gt; 1947-08-05&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Team:&lt;/strong&gt; Bombers (BAA)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Acquired:&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Relinquished:&lt;/strong&gt; Jack Underman&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Notes:&lt;/strong&gt; fractured legs (in auto accident) (out indefinitely) (date approximate)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;creating-a-database-and-cleaning-up-the-data&quot;&gt;Creating a database and cleaning up the data&lt;/h2&gt;
+
+&lt;p&gt;Before we can clean the data to remove duplicates and unnessary/missing inputs we first need to create a database scehema appropriate to our queries and data retrival goals.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Identify all injured playes easily&lt;/li&gt;
+  &lt;li&gt;Idenify length of injury easily&lt;/li&gt;
+  &lt;li&gt;Identify if this play has prior/future injury&lt;/li&gt;
+  &lt;li&gt;Proximity of next injury/prior injury&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Based on these retrival goals we can take a view from a statisatical POV if “long term injuries are srouced from short term injuries”. Where we can explore…&lt;/p&gt;
+
+&lt;p&gt;As pointed out by Chip Huyen in Chapter two of “Designing Machine Learning Systems” states the importance of Data Models “How you choose to represent data not only affects the way your systems are built, but also the problems your systems can solve”. Using this chapter as a out Chip outlines “NoSQL” to follow a strict schema, therefore for time saving we will use a “Relational Database”.&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-start-off-by-examing-it-from-a-statistics-point-of-view&quot;&gt;Let’s start off by examing it from a statistics point of view?&lt;/h1&gt;
+
+&lt;p&gt;building the story&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html">A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?</summary></entry><entry><title type="html">Geoffrey Hinton : The godfather Deep learning?</title><link href="http://localhost:4000/inspiration/Geoffrey-Hinton/" rel="alternate" type="text/html" title="Geoffrey Hinton : The godfather Deep learning?" /><published>2024-01-05T00:00:00+11:00</published><updated>2024-01-05T00:00:00+11:00</updated><id>http://localhost:4000/inspiration/Geoffrey-Hinton</id><content type="html" xml:base="http://localhost:4000/inspiration/Geoffrey-Hinton/">&lt;p&gt;&amp;lt;!—
 Interview&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;High School friedn -&amp;gt; mathematics bettwe then him states -&amp;gt; the brain uses holigram -&amp;gt; Whats a holigram? “Lashes experiement with mice where u chop bits of rats brains and where bits of brains are distrib uted over the whole brain”&lt;/li&gt;
