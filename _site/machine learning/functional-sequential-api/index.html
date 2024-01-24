@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Functional vs Sequetial API for Keras in less then 3 minutes | Shahid Hussain      Blog      </title>
+<meta name="description" content="Functional vs Sequetial API for Keras in less then 3 minutes">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Functional vs Sequetial API for Keras in less then 3 minutes">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/functional-sequential-api/">
+
+
+  <meta property="og:description" content="Functional vs Sequetial API for Keras in less then 3 minutes">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-24T00:00:00+11:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/machine%20learning/functional-sequential-api/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Functional vs Sequetial API for Keras in less then 3 minutes">
+    <meta itemprop="description" content="Functional vs Sequetial API for Keras in less then 3 minutes">
+    <meta itemprop="datePublished" content="2024-01-24T00:00:00+11:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/machine%20learning/functional-sequential-api/" class="u-url" itemprop="url">Functional vs Sequetial API for Keras in less then 3 minutes
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="functional-vs-sequetial-api-for-keras-in-less-then-3-minutes">Functional vs Sequetial API for Keras in less then 3 minutes</h1>
+
+<p>Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</p>
+
+<p>Lets talk visually:</p>
+
+<p><img src="/assets/images/function_sequential_api/function_sequential_api.png" alt="function_sequential_api.png" /></p>
+
+<p>The whole point of Tensorflow with Keras is to simply the process of creating neural networks so now we dont spend time on manully coding a neural network, but rather focus on improving the performance of our model. Now how exactly does Functional api improve flexibility but at the cost of complexity?</p>
+
+<h2 id="sequential-api">Sequential API</h2>
+<p>Sequential API’s tipically look like this:</p>
+
+<p><img src="/assets/images/function_sequential_api/sequential.png" alt="sequential.png" /></p>
+
+<p>Notice, although we specify the pooling dimensions and strides and other arguements within the tf.keras.layers call , we can’t input specific paramters like Z1,A1 or Z2. Importantly it all happens sequentially so the model will start from the top end go by each call one by one until the end.</p>
+
+<h1 id="function-api--spot-the-difference">Function API : spot the difference</h1>
+<p>Alternatively, comparing this to functional API it allows use to play around with the parameters:</p>
+
+<p><img src="/assets/images/function_sequential_api/sequential.png" alt="functional_api.png" /></p>
+
+<p>Notice how we adding paramters to our calls to tf.keras.layers()(Paramter) providing us flexibility to choose which parameters we want to trasnform. Note this is just one way of taking advantage of function API. Other possible options are :</p>
+<ol>
+  <li>Multiple inputs - Now we can have multiple paramters since our functional isnt called linearly</li>
+  <li>Sharing inputs - say we want Z1 to have multiple acitivations say Leaky-RelU and ReLU</li>
+</ol>
+
+<p>But as you can see the possibility or errors increases since you can play around with which inputs you want where. So be careful!</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Hopefully now you understand the difference between Sequential and Functional API!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#machine-learning" class="page__taxonomy-item p-category" rel="tag">Machine Learning</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-01-24T00:00:00+11:00">January 24, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/machine%20learning/machine-learning-curriculum/" class="pagination--pager" title="My Machine Learing Mastery Roadmap
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

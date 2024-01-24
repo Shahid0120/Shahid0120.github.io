@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-13T15:18:43+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-24T20:59:05+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;h1 id=&quot;functional-vs-sequetial-api-for-keras-in-less-then-3-minutes&quot;&gt;Functional vs Sequetial API for Keras in less then 3 minutes&lt;/h1&gt;
+
+&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
+
+&lt;p&gt;Lets talk visually:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/function_sequential_api.png&quot; alt=&quot;function_sequential_api.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The whole point of Tensorflow with Keras is to simply the process of creating neural networks so now we dont spend time on manully coding a neural network, but rather focus on improving the performance of our model. Now how exactly does Functional api improve flexibility but at the cost of complexity?&lt;/p&gt;
+
+&lt;h2 id=&quot;sequential-api&quot;&gt;Sequential API&lt;/h2&gt;
+&lt;p&gt;Sequential API’s tipically look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;sequential.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice, although we specify the pooling dimensions and strides and other arguements within the tf.keras.layers call , we can’t input specific paramters like Z1,A1 or Z2. Importantly it all happens sequentially so the model will start from the top end go by each call one by one until the end.&lt;/p&gt;
+
+&lt;h1 id=&quot;function-api--spot-the-difference&quot;&gt;Function API : spot the difference&lt;/h1&gt;
+&lt;p&gt;Alternatively, comparing this to functional API it allows use to play around with the parameters:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;functional_api.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice how we adding paramters to our calls to tf.keras.layers()(Paramter) providing us flexibility to choose which parameters we want to trasnform. Note this is just one way of taking advantage of function API. Other possible options are :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Multiple inputs - Now we can have multiple paramters since our functional isnt called linearly&lt;/li&gt;
+  &lt;li&gt;Sharing inputs - say we want Z1 to have multiple acitivations say Leaky-RelU and ReLU&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But as you can see the possibility or errors increases since you can play around with which inputs you want where. So be careful!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Functional vs Sequetial API for Keras in less then 3 minutes</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
 and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
 
 &lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
