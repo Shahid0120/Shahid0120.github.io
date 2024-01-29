@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "David Goggins : An Inspiration"
+title: "David Goggins : An Inspiration."
 header:
 categories:
   - Inspiration
@@ -17,7 +17,7 @@ I remember watching a Huberman podcast about how to learn faster, and he states 
 
 Now going back to David Goggins, his transformation started a lot older in his life, and I know many people can't believe how someone can turn their life around once it's settled down. Funny enough, I remember Joe Rogan talking about how Hitler was just a normal soldier until one day he became this leader out of nowhere—I put it down to cocaine. Hahaha. People just don't believe change can come.
 
-Importantly, many people reserve his mindset for physical activity, one of which I always questioned, 'I'm a student; he doesn't spend hours studying though.' I feel like physically exerting yourself is a lot easier to me than mentally exercising yourself. But are these two fruits from the same tree? Well, I guess so. My mind is completely changed now; David Goggins is becoming a paramedic, even though he has diagnosed severe ADHD, stating his state ranking marks. In a recent podcast with Andrew Huberman (link here), David Goggins explores his latest endeavor, emphasizing his daily challenge of fighting the urges of drugs. For years, Goggins has been an advocate of the importance of doing tasks you don't like in building an indomitable mind and body. Interestingly, he talks about how much he hates running, yet every day he wakes up and runs a marathon. Finally, it's been scientifically proven: the importance of doing tasks you don't like to build a part of your brain
+Importantly, many people reserve his mindset for physical activity, one of which I always questioned, 'I'm a student; he doesn't spend hours studying though.' I feel like physically exerting yourself is a lot easier to me than mentally exercising yourself. But are these two fruits from the same tree? Well, I guess so. My mind is completely changed now; David Goggins is becoming a paramedic, even though he has diagnosed severe ADHD, stating his state ranking marks. In a recent podcast with Andrew Huberman [link here!](https://www.youtube.com/watch?v=nDLb8_wgX50&t=7864s), David Goggins explores his latest endeavor, emphasizing his daily challenge of fighting the urges of drugs. For years, Goggins has been an advocate of the importance of doing tasks you don't like in building an indomitable mind and body. Interestingly, he talks about how much he hates running, yet every day he wakes up and runs a marathon. Finally, it's been scientifically proven: the importance of doing tasks you don't like to build a part of your brain
 
 My final thoughts: Am I  doing everything I can?
 

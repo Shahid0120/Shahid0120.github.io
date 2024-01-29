@@ -7,8 +7,6 @@ categories:
 author_profile: false
 ---
 
-# Functional vs Sequetial API for Keras in less then 3 minutes
-
 Reading to Keras/Tensorflow documentation, it's a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!
 
 Lets talk visually:
