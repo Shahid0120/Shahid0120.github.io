@@ -1,0 +1,89 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "64b63bf1",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "layout: single\n",
+    "title: \"BLEU score\"\n",
+    "header:\n",
+    "categories:\n",
+    "  - Machine Learning\n",
+    "author_profile: True\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "48a538db",
+   "metadata": {},
+   "source": [
+    "Today I was reading paper [Learning Phrase Representation using RNN Encoder-Decoder for statistical Machine Translation](https://arxiv.org/abs/1406.1078) by Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio.The authos in the paper kept referencing an evaluation system for NLP known as BLEU score. In the aims of finding out more this lead me to the paper [\n",
+    "BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf) by \n",
+    "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu who 'invented' the evaluation system, a very novel but effective evluation system"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "05d40177",
+   "metadata": {},
+   "source": [
+    "# Why did they create a BLUE score?\n",
+    "prior to creating the BLUE score, most evluatiom system interms of translation was conducted using Human evaluation. Now of course this took allot of time and resources. But importanlty, if we have multiple human evlauting thre best translation, all these translators might have different translation to a given sentence, how do we ensure they are valued the same into one score?\n",
+    "\n",
+    "The main idea was to create a single number evluation which reduced time to evaluate Mahcine trasnlations yet still mathed professional human translation. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "144a3eae",
+   "metadata": {},
+   "source": [
+    "# BLUE score in plain words\n",
+    "Okay, if you have ever done a project, you would know how hard it is to evaluate you're ML algorithms output is extremely hard when they arn't numerical values.\n",
+    "\n",
+    "### Motivator : say I tell you describe a dog sitting on a grass. You could get many different way to describe the event : \n",
+    "    1. There is a dog sitting on the grass.\n",
+    "    2. The dog is sitting on the grass.\n",
+    "    3. There is grass, and a dog sits ontop of it.\n",
+    "  \n",
+    "These are all valid ways to describe the event, how would could we evluate this to our Machine output?\n",
+    "\n",
+    "One way would be to evaluate the eahc sentence (1) to (3) to our given output by the ML algorithm, say \"the dog sit on the grass over there\" and match each word to to each sentence. \n",
+    "\n",
+    "So for sentence (1) There is a dog sitting on the grass,  there is one \"the\". In our translation \"the dog sit on the grass over there\" there is two \"the\" so overall this would be.... "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6d1a6b41",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

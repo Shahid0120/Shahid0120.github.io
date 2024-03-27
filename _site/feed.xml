@@ -1,6 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-29T23:05:51+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;h1 id=&quot;functional-vs-sequetial-api-for-keras-in-less-then-3-minutes&quot;&gt;Functional vs Sequetial API for Keras in less then 3 minutes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-27T22:18:49+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Olympiad Level Counting Made Easy with Jensen’s inequality</title><link href="http://localhost:4000/statistics/Olympaid-Level-Counting/" rel="alternate" type="text/html" title="Olympiad Level Counting Made Easy with Jensen’s inequality" /><published>2024-03-27T00:00:00+11:00</published><updated>2024-03-27T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Olympaid-Level-Counting</id><content type="html" xml:base="http://localhost:4000/statistics/Olympaid-Level-Counting/">&lt;p&gt;Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that&lt;/p&gt;
 
-&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
+\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
+
+&lt;p&gt;Or&lt;/p&gt;
+
+\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
+
+&lt;p&gt;Many of you have no idea how some 14 year old kid is able to solve these questions, yet at my final year of university, I am still not able to intuitively solve these. I believe that this is true for most university students.&lt;/p&gt;
+
+&lt;p&gt;Now, of course, the most rational method would be trying to move all the variables to one side, then try estimating the values for which the right-hand side equals the left-hand side. Then, the exam hits you with give me exact values for \(x,y,z\) and now you are stumped with this 1 hour exam and  you’ll just about spend most of your time guessing possible values. Here comes the bang, Olympiad contestants in my eyes now are of course genius, but they know a set of specialised tools in their tool bag of which they select the appropriate tool for the job. Now, selecting a the right tool can be difficult (Mathematics tool bags a very,very deep).&lt;/p&gt;
+
+&lt;h2 id=&quot;one-of-the-most-powerful-tools-in-the-mathematics-tool-bag--jensens-inequality&quot;&gt;One of the most powerful tools in the mathematics tool bag : Jensen’s Inequality.&lt;/h2&gt;
+&lt;p&gt;For any convex function \(h\), we have,&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y)\]
+
+&lt;p&gt;How did we get to conclusion of the great ‘power’ of Jensen’s Inequality? According to my professor, Dr.Zdravko Botev, power comes from two key characteristics (1) simplicity (2) usefulness. Not only is Jensen Inequality applicable in a range of context, including counting as above, but also real analysis, probability, economics, statistics, and machine learning, but it’s proof that it is so simple.&lt;/p&gt;
+
+&lt;p&gt;\(\textit{Proof.}\) From the definition of convexity, we have for x and all Y:&lt;/p&gt;
+
+\[h(Y) \geq h(x) + v^T(Y-x)\]
+
+&lt;p&gt;By the monotonicty and linearity of expectation, we have&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(x) + v^T\mathbb{E}(Y-x)\]
+
+&lt;p&gt;Now, since this is true for each \(x\) we can chose \(x = \mathbb{E}(Y)\). So,&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y) + v^T\mathbb{E}(Y-\mathbb{E}Y) \Rightarrow  \mathbb{E}h(Y) \geq h(\mathbb{E}Y).\]
+
+&lt;p&gt;Which is Jensen’s Inequality.&lt;/p&gt;
+
+&lt;h2 id=&quot;now-how-do-we-apply-this-powerful-tool-to-our-counting-problem&quot;&gt;Now, how do we apply this powerful tool to our counting problem?&lt;/h2&gt;
+&lt;p&gt;The idea is that we want to find a convex function which applies to the problem and hence we can use Jensen’s Inequality. So, for:&lt;/p&gt;
+
+\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
+
+&lt;p&gt;We can try \(h(x) = \frac{1}{x}\) or \(h(x) = \frac{1}{x + 1}\) or \(h(x) = \frac{1}{x - 1}\) and we can confirm that these a convex function by showing  \(h&quot;(x) &amp;gt; 0, \forall x \in \mathbb{R}\). Now, lets try  \(h(x) = \frac{1}{x}, x &amp;gt; 1\).
+Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
+
+\[\mathbb{E}[\frac{1}{Y}] \geq \frac{1}{\mathbb{E}Y}\]
+
+&lt;p&gt;Next we consider a distribution for \(Y\). Since, we have 3 fractions a logical choice would be for \(Y\) distribution,&lt;/p&gt;
+
+\[\mathbb{P}(Y = x) = \mathbb{P}(Y = x + 1) = \mathbb{P}(Y = x - 1) = \frac{1}{3}.\]
+
+&lt;p&gt;For this \(Y\), we have a three point distribution, we can compute the expectations and hence Jensen’s inequality,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathbb{E}[\frac{1}{Y}] = \frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}, \\
+    \frac{1}{\mathbb{E}Y} = \frac{1}{\frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}} = \frac{1}{x}.
+\end{align*}\]
+
+&lt;p&gt;So,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathbb{E}[\frac{1}{Y}] &amp;amp;\geq \frac{1}{\mathbb{E}Y} \Rightarrow \\
+    \frac{1}{3}[\frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1}] &amp;amp;\geq \frac{1}{x} \Rightarrow \\
+    \frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1} &amp;amp;\geq \frac{3}{x}.
+\end{align*}\]
+
+&lt;p&gt;Wala! Wasn’t that hard, right? Maybe you can try this one,&lt;/p&gt;
+
+\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
+
+&lt;p&gt;hint: \(h(x) = \text{ln}(1 + \frac{1}{x})\)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that</summary></entry><entry><title type="html">Markov Process</title><link href="http://localhost:4000/stochastic%20processes/markov-process/" rel="alternate" type="text/html" title="Markov Process" /><published>2024-03-22T00:00:00+11:00</published><updated>2024-03-22T00:00:00+11:00</updated><id>http://localhost:4000/stochastic%20processes/markov-process</id><content type="html" xml:base="http://localhost:4000/stochastic%20processes/markov-process/">A \cup B</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Stochastic processes" /><summary type="html">A \cup B</summary></entry><entry><title type="html">Bleu Score Comprehensive</title><link href="http://localhost:4000/BLEU-score-comprehensive/" rel="alternate" type="text/html" title="Bleu Score Comprehensive" /><published>2024-02-03T00:00:00+11:00</published><updated>2024-02-03T00:00:00+11:00</updated><id>http://localhost:4000/BLEU-score-comprehensive</id><content type="html" xml:base="http://localhost:4000/BLEU-score-comprehensive/">{
+ &quot;cells&quot;: [
+  {
+   &quot;cell_type&quot;: &quot;markdown&quot;,
+   &quot;id&quot;: &quot;64b63bf1&quot;,
+   &quot;metadata&quot;: {},
+   &quot;source&quot;: [
+    &quot;---\n&quot;,
+    &quot;layout: single\n&quot;,
+    &quot;title: \&quot;BLEU score\&quot;\n&quot;,
+    &quot;header:\n&quot;,
+    &quot;categories:\n&quot;,
+    &quot;  - Machine Learning\n&quot;,
+    &quot;author_profile: True\n&quot;,
+    &quot;---&quot;
+   ]
+  },
+  {
+   &quot;cell_type&quot;: &quot;markdown&quot;,
+   &quot;id&quot;: &quot;48a538db&quot;,
+   &quot;metadata&quot;: {},
+   &quot;source&quot;: [
+    &quot;Today I was reading paper [Learning Phrase Representation using RNN Encoder-Decoder for statistical Machine Translation](https://arxiv.org/abs/1406.1078) by Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio.The authos in the paper kept referencing an evaluation system for NLP known as BLEU score. In the aims of finding out more this lead me to the paper [\n&quot;,
+    &quot;BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf) by \n&quot;,
+    &quot;Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu who &apos;invented&apos; the evaluation system, a very novel but effective evluation system&quot;
+   ]
+  },
+  {
+   &quot;cell_type&quot;: &quot;markdown&quot;,
+   &quot;id&quot;: &quot;05d40177&quot;,
+   &quot;metadata&quot;: {},
+   &quot;source&quot;: [
+    &quot;# Why did they create a BLUE score?\n&quot;,
+    &quot;prior to creating the BLUE score, most evluatiom system interms of translation was conducted using Human evaluation. Now of course this took allot of time and resources. But importanlty, if we have multiple human evlauting thre best translation, all these translators might have different translation to a given sentence, how do we ensure they are valued the same into one score?\n&quot;,
+    &quot;\n&quot;,
+    &quot;The main idea was to create a single number evluation which reduced time to evaluate Mahcine trasnlations yet still mathed professional human translation. &quot;
+   ]
+  },
+  {
+   &quot;cell_type&quot;: &quot;markdown&quot;,
+   &quot;id&quot;: &quot;144a3eae&quot;,
+   &quot;metadata&quot;: {},
+   &quot;source&quot;: [
+    &quot;# BLUE score in plain words\n&quot;,
+    &quot;Okay, if you have ever done a project, you would know how hard it is to evaluate you&apos;re ML algorithms output is extremely hard when they arn&apos;t numerical values.\n&quot;,
+    &quot;\n&quot;,
+    &quot;### Motivator : say I tell you describe a dog sitting on a grass. You could get many different way to describe the event : \n&quot;,
+    &quot;    1. There is a dog sitting on the grass.\n&quot;,
+    &quot;    2. The dog is sitting on the grass.\n&quot;,
+    &quot;    3. There is grass, and a dog sits ontop of it.\n&quot;,
+    &quot;  \n&quot;,
+    &quot;These are all valid ways to describe the event, how would could we evluate this to our Machine output?\n&quot;,
+    &quot;\n&quot;,
+    &quot;One way would be to evaluate the eahc sentence (1) to (3) to our given output by the ML algorithm, say \&quot;the dog sit on the grass over there\&quot; and match each word to to each sentence. \n&quot;,
+    &quot;\n&quot;,
+    &quot;So for sentence (1) There is a dog sitting on the grass,  there is one \&quot;the\&quot;. In our translation \&quot;the dog sit on the grass over there\&quot; there is two \&quot;the\&quot; so overall this would be.... &quot;
+   ]
+  },
+  {
+   &quot;cell_type&quot;: &quot;code&quot;,
+   &quot;execution_count&quot;: null,
+   &quot;id&quot;: &quot;6d1a6b41&quot;,
+   &quot;metadata&quot;: {},
+   &quot;outputs&quot;: [],
+   &quot;source&quot;: []
+  }
+ ],
+ &quot;metadata&quot;: {
+  &quot;kernelspec&quot;: {
+   &quot;display_name&quot;: &quot;Python 3 (ipykernel)&quot;,
+   &quot;language&quot;: &quot;python&quot;,
+   &quot;name&quot;: &quot;python3&quot;
+  },
+  &quot;language_info&quot;: {
+   &quot;codemirror_mode&quot;: {
+    &quot;name&quot;: &quot;ipython&quot;,
+    &quot;version&quot;: 3
+   },
+   &quot;file_extension&quot;: &quot;.py&quot;,
+   &quot;mimetype&quot;: &quot;text/x-python&quot;,
+   &quot;name&quot;: &quot;python&quot;,
+   &quot;nbconvert_exporter&quot;: &quot;python&quot;,
+   &quot;pygments_lexer&quot;: &quot;ipython3&quot;,
+   &quot;version&quot;: &quot;3.11.5&quot;
+  }
+ },
+ &quot;nbformat&quot;: 4,
+ &quot;nbformat_minor&quot;: 5
+}</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><summary type="html">{ &quot;cells&quot;: [ { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;64b63bf1&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;---\n&quot;, &quot;layout: single\n&quot;, &quot;title: \&quot;BLEU score\&quot;\n&quot;, &quot;header:\n&quot;, &quot;categories:\n&quot;, &quot; - Machine Learning\n&quot;, &quot;author_profile: True\n&quot;, &quot;---&quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;48a538db&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;Today I was reading paper [Learning Phrase Representation using RNN Encoder-Decoder for statistical Machine Translation](https://arxiv.org/abs/1406.1078) by Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio.The authos in the paper kept referencing an evaluation system for NLP known as BLEU score. In the aims of finding out more this lead me to the paper [\n&quot;, &quot;BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf) by \n&quot;, &quot;Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu who &apos;invented&apos; the evaluation system, a very novel but effective evluation system&quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;05d40177&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;# Why did they create a BLUE score?\n&quot;, &quot;prior to creating the BLUE score, most evluatiom system interms of translation was conducted using Human evaluation. Now of course this took allot of time and resources. But importanlty, if we have multiple human evlauting thre best translation, all these translators might have different translation to a given sentence, how do we ensure they are valued the same into one score?\n&quot;, &quot;\n&quot;, &quot;The main idea was to create a single number evluation which reduced time to evaluate Mahcine trasnlations yet still mathed professional human translation. &quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;144a3eae&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;# BLUE score in plain words\n&quot;, &quot;Okay, if you have ever done a project, you would know how hard it is to evaluate you&apos;re ML algorithms output is extremely hard when they arn&apos;t numerical values.\n&quot;, &quot;\n&quot;, &quot;### Motivator : say I tell you describe a dog sitting on a grass. You could get many different way to describe the event : \n&quot;, &quot; 1. There is a dog sitting on the grass.\n&quot;, &quot; 2. The dog is sitting on the grass.\n&quot;, &quot; 3. There is grass, and a dog sits ontop of it.\n&quot;, &quot; \n&quot;, &quot;These are all valid ways to describe the event, how would could we evluate this to our Machine output?\n&quot;, &quot;\n&quot;, &quot;One way would be to evaluate the eahc sentence (1) to (3) to our given output by the ML algorithm, say \&quot;the dog sit on the grass over there\&quot; and match each word to to each sentence. \n&quot;, &quot;\n&quot;, &quot;So for sentence (1) There is a dog sitting on the grass, there is one \&quot;the\&quot;. In our translation \&quot;the dog sit on the grass over there\&quot; there is two \&quot;the\&quot; so overall this would be.... &quot; ] }, { &quot;cell_type&quot;: &quot;code&quot;, &quot;execution_count&quot;: null, &quot;id&quot;: &quot;6d1a6b41&quot;, &quot;metadata&quot;: {}, &quot;outputs&quot;: [], &quot;source&quot;: [] } ], &quot;metadata&quot;: { &quot;kernelspec&quot;: { &quot;display_name&quot;: &quot;Python 3 (ipykernel)&quot;, &quot;language&quot;: &quot;python&quot;, &quot;name&quot;: &quot;python3&quot; }, &quot;language_info&quot;: { &quot;codemirror_mode&quot;: { &quot;name&quot;: &quot;ipython&quot;, &quot;version&quot;: 3 }, &quot;file_extension&quot;: &quot;.py&quot;, &quot;mimetype&quot;: &quot;text/x-python&quot;, &quot;name&quot;: &quot;python&quot;, &quot;nbconvert_exporter&quot;: &quot;python&quot;, &quot;pygments_lexer&quot;: &quot;ipython3&quot;, &quot;version&quot;: &quot;3.11.5&quot; } }, &quot;nbformat&quot;: 4, &quot;nbformat_minor&quot;: 5 }</summary></entry><entry><title type="html">A world without unicode? Where would we be?</title><link href="http://localhost:4000/cs/world-without-unicode/" rel="alternate" type="text/html" title="A world without unicode? Where would we be?" /><published>2024-02-02T00:00:00+11:00</published><updated>2024-02-02T00:00:00+11:00</updated><id>http://localhost:4000/cs/world-without-unicode</id><content type="html" xml:base="http://localhost:4000/cs/world-without-unicode/">&lt;p&gt;Recently, i was studying about bit manipulation, and it brought me into a rabit hole of character encoding to binary numbers.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="CS" /><summary type="html">Recently, i was studying about bit manipulation, and it brought me into a rabit hole of character encoding to binary numbers.</summary></entry><entry><title type="html">Roadmap to Learn Transformers in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/how-to-learn-transformers/" rel="alternate" type="text/html" title="Roadmap to Learn Transformers in less then 3 minutes" /><published>2024-01-29T00:00:00+11:00</published><updated>2024-01-29T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/how-to-learn-transformers</id><content type="html" xml:base="http://localhost:4000/machine%20learning/how-to-learn-transformers/">&lt;p&gt;When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.&lt;/p&gt;
+
+&lt;p&gt;But upon looking online for a simple roadmap of the topic I needed to cover, I found that most blog posts focus on the individual components you need to know inside a transformer architecture rather than how to get to the point to potentially understand a transformer architecture.&lt;/p&gt;
+
+&lt;p&gt;Definition of Transformer: Machine learning architectures that allow asking multiple questions about an input and receiving answers out of questions from surrounding inputs, which helps us compute an output!&lt;/p&gt;
+
+&lt;h1 id=&quot;so-lets-beging&quot;&gt;So lets beging&lt;/h1&gt;
+
+&lt;h1 id=&quot;1--some-basic-understanding-on-machine-learning&quot;&gt;1 . Some basic understanding on Machine Learning&lt;/h1&gt;
+
+&lt;p&gt;Definition of Machine Learning: process of exploring data using mathematics to create scalable and reusable algorithms in order to make decisions/improve society. Pretty much give an algorithm some data with output or no outputs and hope it can solve new data using this given data.&lt;/p&gt;
+
+&lt;p&gt;Machine Learning is broken down into two parts: Supervised and Unsupervised learning (kinda there are a few subsets of machine learning, but we only need to focus on these)&lt;/p&gt;
+
+&lt;p&gt;Supervised: given we feed the algorithm with pairs of inputs and corresponding outputs. The goal of supervised learning is to feed new inputs and try to figure out an output.&lt;/p&gt;
+
+&lt;p&gt;Unsupervised learning: where you feed the algorithm inputs and outputs, but your goal isn’t to predict new outputs but rather identifying patterns, visualizations, etc.&lt;/p&gt;
+
+&lt;p&gt;I recommend just going through “The Hundred-Page Machine Learning Book” by Andriy Burkov, getting a basic grip of the concepts.&lt;/p&gt;
+
+&lt;p&gt;So a subset of machine learning techniques is deep learning. A part of deep learning is the transformer architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;&apos;../assets/images/roadmap-to-trasnfomers/deep-learbning-machine-learning-picture.png&quot; alt=&quot;Ven Diagram of where transfomers realtionship with Machine Learning&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;deep-learing&quot;&gt;Deep learing&lt;/h1&gt;
+
+&lt;p&gt;Now the main concept you should learn is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Feedfoward Neural Networks -&amp;gt; Focus!&lt;/li&gt;
+  &lt;li&gt;CNN - the basics&lt;/li&gt;
+  &lt;li&gt;RNN - learn GRU’s and LSTM’s&lt;/li&gt;
+  &lt;li&gt;Attention Architecture&lt;/li&gt;
+  &lt;li&gt;Transformers Architecture&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You should complete these processes in order and ensure you have a strong understanding of feedforward neural networks. I recommend these two resources:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;(Neural Networks and Deep Learning)[http://neuralnetworksanddeeplearning.com]&lt;/li&gt;
+  &lt;li&gt;(3blue2brown)[https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
 
 &lt;p&gt;Lets talk visually:&lt;/p&gt;
 
@@ -30,7 +225,7 @@
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Functional vs Sequetial API for Keras in less then 3 minutes</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
+&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
 and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
 
 &lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
@@ -221,14 +416,4 @@ SQL database i will significnatly have to improve in this area. Addtionally, my 
 
 &lt;h1 id=&quot;concluding&quot;&gt;Concluding&lt;/h1&gt;
 
-&lt;p&gt;Watching CS290 has been a beatiful journey and i really appriate standford making this course acceisble to everyone if you want notes &lt;a href=&quot;https://drive.google.com/drive/folders/1XW7uEieisOC_UipbC2SFZlOux94MKkS5?usp=share_link&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Review" /><summary type="html">Review of Standford CS229 course</summary></entry><entry><title type="html">My First Post</title><link href="http://localhost:4000/miscellaneous/first-post/" rel="alternate" type="text/html" title="My First Post" /><published>2023-12-15T00:00:00+11:00</published><updated>2023-12-15T00:00:00+11:00</updated><id>http://localhost:4000/miscellaneous/first-post</id><content type="html" xml:base="http://localhost:4000/miscellaneous/first-post/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog!&lt;/h1&gt;
-
-&lt;p&gt;Welcome! This is my very first post on my new blog, and I’m thrilled to share my journey of exploration and information-sharing with fellow students like myself!&lt;/p&gt;
-
-&lt;h1 id=&quot;most-important-question-first-so-how-did-i-get-into-machine-learning&quot;&gt;Most important question first, so how did I get into Machine Learning?&lt;/h1&gt;
-
-&lt;p&gt;Well, I’ve always been interested in self-improvement. This interest started at a young age, focusing not only on becoming more effective in my studies but also on optimizing my mental and physical well-being. I regularly listen to inspiring figures like Andrew Huberman, Lex Friedman, and many more. More specifically, my journey into Machine Learning began when I took a course at UNSW called “Digital and Web Analytics.” One of the assessment tasks was to perform a sentiment analysis on a crisis a company had gone through.&lt;/p&gt;
-
-&lt;p&gt;Initially confused about what “sentiment analysis” entailed, I started exploring scientific papers, attending random lectures, and kept encountering the term “Machine Learning.” Somehow, I created a sentiment analysis of public opinion on whether comments on YouTube and Twitter were positive, negative, or neutral using Natural Language Processing. I coded, but I faced one big problem—I had no idea how the sentiment analysis packages worked.&lt;/p&gt;
-
-&lt;p&gt;Additionally, while navigating this, I was concurrently enrolled in a course on “Linear Models,” delving into topics like linear regression, which significantly sparked my interest. Unfortunately, the lectures never explained anything about what Machine Learning is! Why! Fueled by motivation to learn how exactly a machine categorizes words and wha alternative are there to linear regression, I scoured the internet to learn more, eventually leading me to discover the vast world of Machine Learning! And that’s the current journey I’m on now, and I can’t wait to learn more!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Miscellaneous" /><summary type="html">Welcome to My Blog!</summary></entry></feed>
+&lt;p&gt;Watching CS290 has been a beatiful journey and i really appriate standford making this course acceisble to everyone if you want notes &lt;a href=&quot;https://drive.google.com/drive/folders/1XW7uEieisOC_UipbC2SFZlOux94MKkS5?usp=share_link&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Review" /><summary type="html">Review of Standford CS229 course</summary></entry></feed>

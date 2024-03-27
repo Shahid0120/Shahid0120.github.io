@@ -305,3 +305,6 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+kramdown:
+  math_engine: mathjax  # or katex
