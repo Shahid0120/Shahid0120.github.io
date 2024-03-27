@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-27T22:18:49+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Olympiad Level Counting Made Easy with Jensen’s inequality</title><link href="http://localhost:4000/statistics/Olympaid-Level-Counting/" rel="alternate" type="text/html" title="Olympiad Level Counting Made Easy with Jensen’s inequality" /><published>2024-03-27T00:00:00+11:00</published><updated>2024-03-27T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Olympaid-Level-Counting</id><content type="html" xml:base="http://localhost:4000/statistics/Olympaid-Level-Counting/">&lt;p&gt;Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-27T22:22:14+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Olympiad Level Counting Made Easy with Jensen’s inequality</title><link href="http://localhost:4000/statistics/Olympaid-Level-Counting/" rel="alternate" type="text/html" title="Olympiad Level Counting Made Easy with Jensen’s inequality" /><published>2024-03-27T00:00:00+11:00</published><updated>2024-03-27T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Olympaid-Level-Counting</id><content type="html" xml:base="http://localhost:4000/statistics/Olympaid-Level-Counting/">&lt;p&gt;Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that&lt;/p&gt;
 
 \[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
 
@@ -64,95 +64,7 @@ Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
 
 \[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
 
-&lt;p&gt;hint: \(h(x) = \text{ln}(1 + \frac{1}{x})\)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that</summary></entry><entry><title type="html">Markov Process</title><link href="http://localhost:4000/stochastic%20processes/markov-process/" rel="alternate" type="text/html" title="Markov Process" /><published>2024-03-22T00:00:00+11:00</published><updated>2024-03-22T00:00:00+11:00</updated><id>http://localhost:4000/stochastic%20processes/markov-process</id><content type="html" xml:base="http://localhost:4000/stochastic%20processes/markov-process/">A \cup B</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Stochastic processes" /><summary type="html">A \cup B</summary></entry><entry><title type="html">Bleu Score Comprehensive</title><link href="http://localhost:4000/BLEU-score-comprehensive/" rel="alternate" type="text/html" title="Bleu Score Comprehensive" /><published>2024-02-03T00:00:00+11:00</published><updated>2024-02-03T00:00:00+11:00</updated><id>http://localhost:4000/BLEU-score-comprehensive</id><content type="html" xml:base="http://localhost:4000/BLEU-score-comprehensive/">{
- &quot;cells&quot;: [
-  {
-   &quot;cell_type&quot;: &quot;markdown&quot;,
-   &quot;id&quot;: &quot;64b63bf1&quot;,
-   &quot;metadata&quot;: {},
-   &quot;source&quot;: [
-    &quot;---\n&quot;,
-    &quot;layout: single\n&quot;,
-    &quot;title: \&quot;BLEU score\&quot;\n&quot;,
-    &quot;header:\n&quot;,
-    &quot;categories:\n&quot;,
-    &quot;  - Machine Learning\n&quot;,
-    &quot;author_profile: True\n&quot;,
-    &quot;---&quot;
-   ]
-  },
-  {
-   &quot;cell_type&quot;: &quot;markdown&quot;,
-   &quot;id&quot;: &quot;48a538db&quot;,
-   &quot;metadata&quot;: {},
-   &quot;source&quot;: [
-    &quot;Today I was reading paper [Learning Phrase Representation using RNN Encoder-Decoder for statistical Machine Translation](https://arxiv.org/abs/1406.1078) by Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio.The authos in the paper kept referencing an evaluation system for NLP known as BLEU score. In the aims of finding out more this lead me to the paper [\n&quot;,
-    &quot;BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf) by \n&quot;,
-    &quot;Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu who &apos;invented&apos; the evaluation system, a very novel but effective evluation system&quot;
-   ]
-  },
-  {
-   &quot;cell_type&quot;: &quot;markdown&quot;,
-   &quot;id&quot;: &quot;05d40177&quot;,
-   &quot;metadata&quot;: {},
-   &quot;source&quot;: [
-    &quot;# Why did they create a BLUE score?\n&quot;,
-    &quot;prior to creating the BLUE score, most evluatiom system interms of translation was conducted using Human evaluation. Now of course this took allot of time and resources. But importanlty, if we have multiple human evlauting thre best translation, all these translators might have different translation to a given sentence, how do we ensure they are valued the same into one score?\n&quot;,
-    &quot;\n&quot;,
-    &quot;The main idea was to create a single number evluation which reduced time to evaluate Mahcine trasnlations yet still mathed professional human translation. &quot;
-   ]
-  },
-  {
-   &quot;cell_type&quot;: &quot;markdown&quot;,
-   &quot;id&quot;: &quot;144a3eae&quot;,
-   &quot;metadata&quot;: {},
-   &quot;source&quot;: [
-    &quot;# BLUE score in plain words\n&quot;,
-    &quot;Okay, if you have ever done a project, you would know how hard it is to evaluate you&apos;re ML algorithms output is extremely hard when they arn&apos;t numerical values.\n&quot;,
-    &quot;\n&quot;,
-    &quot;### Motivator : say I tell you describe a dog sitting on a grass. You could get many different way to describe the event : \n&quot;,
-    &quot;    1. There is a dog sitting on the grass.\n&quot;,
-    &quot;    2. The dog is sitting on the grass.\n&quot;,
-    &quot;    3. There is grass, and a dog sits ontop of it.\n&quot;,
-    &quot;  \n&quot;,
-    &quot;These are all valid ways to describe the event, how would could we evluate this to our Machine output?\n&quot;,
-    &quot;\n&quot;,
-    &quot;One way would be to evaluate the eahc sentence (1) to (3) to our given output by the ML algorithm, say \&quot;the dog sit on the grass over there\&quot; and match each word to to each sentence. \n&quot;,
-    &quot;\n&quot;,
-    &quot;So for sentence (1) There is a dog sitting on the grass,  there is one \&quot;the\&quot;. In our translation \&quot;the dog sit on the grass over there\&quot; there is two \&quot;the\&quot; so overall this would be.... &quot;
-   ]
-  },
-  {
-   &quot;cell_type&quot;: &quot;code&quot;,
-   &quot;execution_count&quot;: null,
-   &quot;id&quot;: &quot;6d1a6b41&quot;,
-   &quot;metadata&quot;: {},
-   &quot;outputs&quot;: [],
-   &quot;source&quot;: []
-  }
- ],
- &quot;metadata&quot;: {
-  &quot;kernelspec&quot;: {
-   &quot;display_name&quot;: &quot;Python 3 (ipykernel)&quot;,
-   &quot;language&quot;: &quot;python&quot;,
-   &quot;name&quot;: &quot;python3&quot;
-  },
-  &quot;language_info&quot;: {
-   &quot;codemirror_mode&quot;: {
-    &quot;name&quot;: &quot;ipython&quot;,
-    &quot;version&quot;: 3
-   },
-   &quot;file_extension&quot;: &quot;.py&quot;,
-   &quot;mimetype&quot;: &quot;text/x-python&quot;,
-   &quot;name&quot;: &quot;python&quot;,
-   &quot;nbconvert_exporter&quot;: &quot;python&quot;,
-   &quot;pygments_lexer&quot;: &quot;ipython3&quot;,
-   &quot;version&quot;: &quot;3.11.5&quot;
-  }
- },
- &quot;nbformat&quot;: 4,
- &quot;nbformat_minor&quot;: 5
-}</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><summary type="html">{ &quot;cells&quot;: [ { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;64b63bf1&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;---\n&quot;, &quot;layout: single\n&quot;, &quot;title: \&quot;BLEU score\&quot;\n&quot;, &quot;header:\n&quot;, &quot;categories:\n&quot;, &quot; - Machine Learning\n&quot;, &quot;author_profile: True\n&quot;, &quot;---&quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;48a538db&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;Today I was reading paper [Learning Phrase Representation using RNN Encoder-Decoder for statistical Machine Translation](https://arxiv.org/abs/1406.1078) by Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk and Yoshua Bengio.The authos in the paper kept referencing an evaluation system for NLP known as BLEU score. In the aims of finding out more this lead me to the paper [\n&quot;, &quot;BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf) by \n&quot;, &quot;Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu who &apos;invented&apos; the evaluation system, a very novel but effective evluation system&quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;05d40177&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;# Why did they create a BLUE score?\n&quot;, &quot;prior to creating the BLUE score, most evluatiom system interms of translation was conducted using Human evaluation. Now of course this took allot of time and resources. But importanlty, if we have multiple human evlauting thre best translation, all these translators might have different translation to a given sentence, how do we ensure they are valued the same into one score?\n&quot;, &quot;\n&quot;, &quot;The main idea was to create a single number evluation which reduced time to evaluate Mahcine trasnlations yet still mathed professional human translation. &quot; ] }, { &quot;cell_type&quot;: &quot;markdown&quot;, &quot;id&quot;: &quot;144a3eae&quot;, &quot;metadata&quot;: {}, &quot;source&quot;: [ &quot;# BLUE score in plain words\n&quot;, &quot;Okay, if you have ever done a project, you would know how hard it is to evaluate you&apos;re ML algorithms output is extremely hard when they arn&apos;t numerical values.\n&quot;, &quot;\n&quot;, &quot;### Motivator : say I tell you describe a dog sitting on a grass. You could get many different way to describe the event : \n&quot;, &quot; 1. There is a dog sitting on the grass.\n&quot;, &quot; 2. The dog is sitting on the grass.\n&quot;, &quot; 3. There is grass, and a dog sits ontop of it.\n&quot;, &quot; \n&quot;, &quot;These are all valid ways to describe the event, how would could we evluate this to our Machine output?\n&quot;, &quot;\n&quot;, &quot;One way would be to evaluate the eahc sentence (1) to (3) to our given output by the ML algorithm, say \&quot;the dog sit on the grass over there\&quot; and match each word to to each sentence. \n&quot;, &quot;\n&quot;, &quot;So for sentence (1) There is a dog sitting on the grass, there is one \&quot;the\&quot;. In our translation \&quot;the dog sit on the grass over there\&quot; there is two \&quot;the\&quot; so overall this would be.... &quot; ] }, { &quot;cell_type&quot;: &quot;code&quot;, &quot;execution_count&quot;: null, &quot;id&quot;: &quot;6d1a6b41&quot;, &quot;metadata&quot;: {}, &quot;outputs&quot;: [], &quot;source&quot;: [] } ], &quot;metadata&quot;: { &quot;kernelspec&quot;: { &quot;display_name&quot;: &quot;Python 3 (ipykernel)&quot;, &quot;language&quot;: &quot;python&quot;, &quot;name&quot;: &quot;python3&quot; }, &quot;language_info&quot;: { &quot;codemirror_mode&quot;: { &quot;name&quot;: &quot;ipython&quot;, &quot;version&quot;: 3 }, &quot;file_extension&quot;: &quot;.py&quot;, &quot;mimetype&quot;: &quot;text/x-python&quot;, &quot;name&quot;: &quot;python&quot;, &quot;nbconvert_exporter&quot;: &quot;python&quot;, &quot;pygments_lexer&quot;: &quot;ipython3&quot;, &quot;version&quot;: &quot;3.11.5&quot; } }, &quot;nbformat&quot;: 4, &quot;nbformat_minor&quot;: 5 }</summary></entry><entry><title type="html">A world without unicode? Where would we be?</title><link href="http://localhost:4000/cs/world-without-unicode/" rel="alternate" type="text/html" title="A world without unicode? Where would we be?" /><published>2024-02-02T00:00:00+11:00</published><updated>2024-02-02T00:00:00+11:00</updated><id>http://localhost:4000/cs/world-without-unicode</id><content type="html" xml:base="http://localhost:4000/cs/world-without-unicode/">&lt;p&gt;Recently, i was studying about bit manipulation, and it brought me into a rabit hole of character encoding to binary numbers.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="CS" /><summary type="html">Recently, i was studying about bit manipulation, and it brought me into a rabit hole of character encoding to binary numbers.</summary></entry><entry><title type="html">Roadmap to Learn Transformers in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/how-to-learn-transformers/" rel="alternate" type="text/html" title="Roadmap to Learn Transformers in less then 3 minutes" /><published>2024-01-29T00:00:00+11:00</published><updated>2024-01-29T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/how-to-learn-transformers</id><content type="html" xml:base="http://localhost:4000/machine%20learning/how-to-learn-transformers/">&lt;p&gt;When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.&lt;/p&gt;
+&lt;p&gt;hint: \(h(x) = \text{ln}(1 + \frac{1}{x})\)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that</summary></entry><entry><title type="html">Roadmap to Learn Transformers in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/how-to-learn-transformers/" rel="alternate" type="text/html" title="Roadmap to Learn Transformers in less then 3 minutes" /><published>2024-01-29T00:00:00+11:00</published><updated>2024-01-29T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/how-to-learn-transformers</id><content type="html" xml:base="http://localhost:4000/machine%20learning/how-to-learn-transformers/">&lt;p&gt;When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.&lt;/p&gt;
 
 &lt;p&gt;But upon looking online for a simple roadmap of the topic I needed to cover, I found that most blog posts focus on the individual components you need to know inside a transformer architecture rather than how to get to the point to potentially understand a transformer architecture.&lt;/p&gt;
 
@@ -416,4 +328,14 @@ SQL database i will significnatly have to improve in this area. Addtionally, my 
 
 &lt;h1 id=&quot;concluding&quot;&gt;Concluding&lt;/h1&gt;
 
-&lt;p&gt;Watching CS290 has been a beatiful journey and i really appriate standford making this course acceisble to everyone if you want notes &lt;a href=&quot;https://drive.google.com/drive/folders/1XW7uEieisOC_UipbC2SFZlOux94MKkS5?usp=share_link&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Review" /><summary type="html">Review of Standford CS229 course</summary></entry></feed>
+&lt;p&gt;Watching CS290 has been a beatiful journey and i really appriate standford making this course acceisble to everyone if you want notes &lt;a href=&quot;https://drive.google.com/drive/folders/1XW7uEieisOC_UipbC2SFZlOux94MKkS5?usp=share_link&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Review" /><summary type="html">Review of Standford CS229 course</summary></entry><entry><title type="html">My First Post</title><link href="http://localhost:4000/miscellaneous/first-post/" rel="alternate" type="text/html" title="My First Post" /><published>2023-12-15T00:00:00+11:00</published><updated>2023-12-15T00:00:00+11:00</updated><id>http://localhost:4000/miscellaneous/first-post</id><content type="html" xml:base="http://localhost:4000/miscellaneous/first-post/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog!&lt;/h1&gt;
+
+&lt;p&gt;Welcome! This is my very first post on my new blog, and I’m thrilled to share my journey of exploration and information-sharing with fellow students like myself!&lt;/p&gt;
+
+&lt;h1 id=&quot;most-important-question-first-so-how-did-i-get-into-machine-learning&quot;&gt;Most important question first, so how did I get into Machine Learning?&lt;/h1&gt;
+
+&lt;p&gt;Well, I’ve always been interested in self-improvement. This interest started at a young age, focusing not only on becoming more effective in my studies but also on optimizing my mental and physical well-being. I regularly listen to inspiring figures like Andrew Huberman, Lex Friedman, and many more. More specifically, my journey into Machine Learning began when I took a course at UNSW called “Digital and Web Analytics.” One of the assessment tasks was to perform a sentiment analysis on a crisis a company had gone through.&lt;/p&gt;
+
+&lt;p&gt;Initially confused about what “sentiment analysis” entailed, I started exploring scientific papers, attending random lectures, and kept encountering the term “Machine Learning.” Somehow, I created a sentiment analysis of public opinion on whether comments on YouTube and Twitter were positive, negative, or neutral using Natural Language Processing. I coded, but I faced one big problem—I had no idea how the sentiment analysis packages worked.&lt;/p&gt;
+
+&lt;p&gt;Additionally, while navigating this, I was concurrently enrolled in a course on “Linear Models,” delving into topics like linear regression, which significantly sparked my interest. Unfortunately, the lectures never explained anything about what Machine Learning is! Why! Fueled by motivation to learn how exactly a machine categorizes words and wha alternative are there to linear regression, I scoured the internet to learn more, eventually leading me to discover the vast world of Machine Learning! And that’s the current journey I’m on now, and I can’t wait to learn more!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Miscellaneous" /><summary type="html">Welcome to My Blog!</summary></entry></feed>
