@@ -4,6 +4,13 @@
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
     {% include head.html %}
     {% include head/custom.html %}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
