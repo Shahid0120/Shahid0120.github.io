@@ -10,25 +10,24 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Shahid Hussain | Blog &#124; Page 2</title>
-<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+<!-- begin _includes/seo.html --><title>            Statistical Learning Theory Episode One ‘Building the foundation’  | Shahid Hussain      Blog      </title>
+<meta name="description" content="I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik)       MIT Deep Learning Series’. Lets get into it!">
 
 
   <meta name="author" content="Shahid Hussain">
   
+  <meta property="article:author" content="Shahid Hussain">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="            Shahid Hussain      Blog      ">
-<meta property="og:url" content="http://localhost:4000/page2/">
+<meta property="og:title" content="Statistical Learning Theory Episode One ‘Building the foundation’">
+<meta property="og:url" content="http://localhost:4000/statistics/Overview-of-staticial-theory-learning/">
 
 
-  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
-
-
-
+  <meta property="og:description" content="I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik)       MIT Deep Learning Series’. Lets get into it!">
 
 
 
@@ -36,15 +35,16 @@
 
 
 
+  <meta property="article:published_time" content="2024-05-15T00:00:00+10:00">
 
 
-<link rel="canonical" href="http://localhost:4000/page2/">
 
 
-  <link rel="prev" href="http://localhost:4000/">
 
 
-  <link rel="next" href="http://localhost:4000/page3/">
+<link rel="canonical" href="http://localhost:4000/statistics/Overview-of-staticial-theory-learning/">
+
+
 
 
 <script type="application/ld+json">
@@ -98,7 +98,7 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -144,6 +144,8 @@
 
     <div class="initial-content">
       
+
+
 
 
 
@@ -271,176 +273,117 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
-  
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Statistical Learning Theory Episode One ‘Building the foundation’">
+    <meta itemprop="description" content="            I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik)      MIT Deep Learning Series’. Lets get into it!      ">
+    <meta itemprop="datePublished" content="2024-05-15T00:00:00+10:00">
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/machine%20learning/how-to-learn-transformers/" rel="permalink">Roadmap to Learn Transformers in less then 3 minutes
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/statistics/Overview-of-staticial-theory-learning/" class="u-url" itemprop="url">Statistical Learning Theory Episode One ‘Building the foundation’
 </a>
+          </h1>
+          
+
+
+        </header>
       
-    </h2>
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <table>
+  <tbody>
+    <tr>
+      <td>I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik)</td>
+      <td>MIT Deep Learning Series’. Lets get into it!</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="why-do-we-care-about-statistical-learning-theory">Why do we care about statistical learning theory?</h1>
+
+<p>Statistical learnign theory predates today machie learing algorithsm. Originally originated from Russia in the 1960’s, the key goals was to understanding formualting ‘learning’ through data. Machine learing algorithm take example training data then it infers ‘general ruels’ which can both answer a its label and over time after many samples can generalised to unseen examples known as inductive reasoning/inferences.</p>
+
+<p>This domain of study lead to the now famous algorithsm known as Support Vector Machines which is now a staple of patter recognition.To enable this learning process statistician devleoped a framework to formuale this process; regression, classification, clustering.</p>
+
+<h1 id="framework-of-staitsitcal-learning-theory">Framework of staitsitcal learning theory</h1>
+
+<p>General SLT attems to answer 4 main questions;</p>
+
+<ol>
+  <li>Which learning tasks can be performed by computers in general (positive and negative re- sults)?</li>
+  <li>What kind of assumptions do we have to make such that machine learning can be successful a.k.a inductive bias? (Turns out this is inevitable for a sucessfull learning algorithsm “No Free-Lunch Theorem”!)</li>
+  <li>What are the key properties a learning algorithm needs to satisfy in order to be successful?</li>
+  <li>Which performance guarantees can we give on the results of certain learning algorithms? - this ones important we want to ensure our mechanism learns the right outcome</li>
+</ol>
+
+<h1 id="types-of-learning">Types of learning</h1>
+
+<p>We will be focusing on explanation through the leaner-teacher model, in which the learning is the algorithm, the environment is the training data and the teacher guides the experience</p>
+<ol>
+  <li>Supervised vs unsupervised learning : the learner interects with the environment in suprervised learning the leaners “uses experiences from environment to gain expertise” in which a teacher provides the experiecnes (training data) and then “apply” its experiecnes to new data given by the teacher (test data). However, in unserpvised learning the teacher provides ‘experiences’ to the learner (training data), and the leaner aims to ‘summerise’ the experiences</li>
+  <li>Active vs Passive : If the learner interects with the enviuronement provided by the teacher (training data) and gives the teacher quiries about the experiecnes then is is an acitvie leaner, else if it doesnt inquire about the experiences and merlery just take the experiecnes in then its is passive</li>
+</ol>
+
+<p>The goals is the teacher naturlally is to provide the best informatio for the leaner to understand the taks as quickly as possible, but course how the teacher learner the task itself is unknown so we assume it is random process. An alternative is adversiary teacher, who pruposefuly provides bad information to see if the leaner undertsanding the experinces, usualyl used in worst-case scienario’s!</p>
+
+<h1 id="formulising-the-learning-equation">Formulising the learning equation</h1>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
     
+      <a href="/categories/#statistics" class="page__taxonomy-item p-category" rel="tag">Statistics</a>
+    
+    </span>
+  </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman pod...</p>
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-15T00:00:00+10:00">May 15, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/statistics/Linear-Search-Methods/" class="pagination--pager" title="Line Search Methods for Numerical Optimisation
+">Previous</a>
+    
+    
+      <a href="/statistics/tradeoffs-methods/" class="pagination--pager" title="Bias-variance tradeoff vs approximation-estimation tradeoff
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
   </article>
-</div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/machine%20learning/functional-sequential-api/" rel="permalink">Functional vs Sequetial API for Keras in less then 3 minutes
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all othe...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/machine%20learning/machine-learning-curriculum/" rel="permalink">My Machine Learing Mastery Roadmap
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">After watching many videos and having a solid foundational of a overview of concepts 
-and tool in machine learing i beleive it finally time for me to make a ...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/projects/nba-risk-injury/" rel="permalink">Is it true that long-term injuries comes from prior minior injuries?
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?
-
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/inspiration/David-Goggins/" rel="permalink">David Goggins : An Inspiration.
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">I just wanted to take some time and appreciate the man who is David Goggins. He is someone I have admired for years. The man is the definition of hard work a...</p>
-  </article>
-</div>
-
   
 </div>
 
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-      
-        <li><a href="/">Previous</a></li>
-      
-    
-
-    
-    
-      <li><a href="/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-        <li><a href="/page2/" class="disabled current">2</a></li>
-      
-    
-
-    
-    
-
-    
-      <li><a href="/page3/">3</a></li>
-    
-
-    
-    
-      <li><a href="/page3/">Next</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
-</div>
     </div>
 
     
