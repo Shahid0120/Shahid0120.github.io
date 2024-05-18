@@ -6,11 +6,12 @@ categories:
   - Statistics
 author_profile: True
 ---
-I'v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on 'Complete Statistical Theory of Learning (Vladimir Vapnik) | MIT Deep Learning Series'. Lets get into it!
+# Overview
+ I'v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on 'Complete Statistical Theory of Learning (Vladimir Vapnik) | MIT Deep Learning Series'. Lets get into it!
 
 # Why do we care about statistical learning theory? 
 
-Statistical learnign theory predates today machie learing algorithsm. Originally originated from Russia in the 1960's, the key goals was to understanding formualting 'learning' through data. Machine learing algorithm take example training data then it infers 'general ruels' which can both answer a its label and over time after many samples can generalised to unseen examples known as inductive reasoning/inferences. 
+Statistical learnign theory predates today machie learing algorithsm. Originating from Russia in the 1960's, the key goals was to formualting 'learning' through data. Machine learing algorithm take example training data then it infers 'general ruels' which can both answer a its label and over time after many samples can generalised to unseen examples known as inductive reasoning/inferences. 
 
 This domain of study lead to the now famous algorithsm known as Support Vector Machines which is now a staple of patter recognition.To enable this learning process statistician devleoped a framework to formuale this process; regression, classification, clustering. 
 
@@ -18,7 +19,7 @@ This domain of study lead to the now famous algorithsm known as Support Vector M
 
 General SLT attems to answer 4 main questions; 
 
-1. Which learning tasks can be performed by computers in general (positive and negative re- sults)?
+1. Which learning tasks can be performed by computers in general (positive and negative results)?
 2. What kind of assumptions do we have to make such that machine learning can be successful a.k.a inductive bias? (Turns out this is inevitable for a sucessfull learning algorithsm "No Free-Lunch Theorem"!)
 3. What are the key properties a learning algorithm needs to satisfy in order to be successful?
 4. Which performance guarantees can we give on the results of certain learning algorithms? - this ones important we want to ensure our mechanism learns the right outcome 
