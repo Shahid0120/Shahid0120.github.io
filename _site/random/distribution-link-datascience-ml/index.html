@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            How sampling distribution is the link between Machine Learning and data science | Shahid Hussain      Blog      </title>
+<meta name="description" content="Ever wondered how these two field like with concrete examples? Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="How sampling distribution is the link between Machine Learning and data science">
+<meta property="og:url" content="http://localhost:4000/random/distribution-link-datascience-ml/">
+
+
+  <meta property="og:description" content="Ever wondered how these two field like with concrete examples? Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-18T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/random/distribution-link-datascience-ml/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How sampling distribution is the link between Machine Learning and data science">
+    <meta itemprop="description" content="Ever wondered how these two field like with concrete examples?Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.">
+    <meta itemprop="datePublished" content="2024-05-18T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/random/distribution-link-datascience-ml/" class="u-url" itemprop="url">How sampling distribution is the link between Machine Learning and data science
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="ever-wondered-how-these-two-field-like-with-concrete-examples">Ever wondered how these two field like with concrete examples?</h1>
+<p>Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.</p>
+
+<h1 id="little-about-machine-learning">Little about machine learning</h1>
+<p>Machine learning is a process where by a machine, usually a program, learns from given data where by we have input, \(X\) and output \(Y\), known as feature inputs and labels, respectively. Now the goals is to create a program which can adequatly be able to given predict ‘label’ given a new input. An exmaples can be classify females and males, know a data scientist will go out and take picture of males and females, and then label them both males or female, then this is given to a machine leanring program for which is looks at data and tries to understand distinction bewteen male and females, untill it get very good at it. Then we will given it new picture and then hopefully it will be able to identify correctly geneder of the male or female.</p>
+
+<h1 id="now-an-important-assumptio-we-make-is-machine-learning-is-that-all-samples-take-have-the-same-distribtion-p-and-are-iid-why">Now an important assumptio we make is Machine learning is that all samples take have the same distribtion \(P\) and are i.i.d why?</h1>
+
+<p>This creates the link between machien learning and data sciecne. Ifall possible data that we can be given is from the same distribition, since if they it would be impossible to predict or classify random selected people since we a any random input.</p>
+
+<h2 id="example--gender-shades-project-2018">Example : Gender Shades project 2018</h2>
+
+<p>In 2018 gender classification algorithms developed by IBM and Microsoft was studye based on miclassification based upon skin tone, from four cateogires: darker-skinned females, darker-skinned males, lighter-skinned females, and lighter-skinned males. All three algorithms performed the worst on darker-skinned females, with error rates up to 34% higher than for lighter-skinned males.</p>
+
+<p>A key reaosn might be the samples distribution, now say the task to recognise face, if a data scientist provides face of only light-skinned males then cleary the algorithsm will only be able to identify these indviduals and fall short on other skins tones. So the distribution we wrong for the task since the data that the algorith was trained was different to the actually dsitirbution it was testet on</p>
+
+<h1 id="continying">Continying</h1>
+<p>Additionaly, these samples must be i.i.d, so we have already adressed the identifcallty distribution, but indepecne is importance is to ensure that these samples done effect one another cause if they do it would be impossible to find the relationship between two samples (x_i, y_i)</p>
+
+<h1 id="how-a-machine-algorithm-works-using-out-asusmption">How a Machine algorithm works using out asusmption</h1>
+
+<p>So currently I’ve talked about the assumption that all possible data that an algorithsm will very see is given by data sciecntist so the roels of trhe data sciecne to provides data which will represent all possible data it will be given in the future.</p>
+
+<h1 id="how-then-does-a-machine-learning-engineer-optimise-this-data">How then does a Machine learning engineer optimise this data?</h1>
+<p>(add picture)
+so out goals to minimise the error rates of our algorithm chosen h, we do this through choose a loss function which is appropriate to the task, now importantly iv talked about teh improtance of the algorithm bening able to generalise to any data set and that the data, of course  is assumpted to from the same distribution \(P\). Our easier first guess is for out loos function</p>
+
+<p>l(h;D)</p>
+
+<p>but the key problem is that this only optimsised out dataset in a sense it memories out data givne but give new sample it would not be able to rpedict it well, so we must create a denfition which generlaise well for all possible data from a asusmed distirbution 
+\(E(l(X,Y))_{(x_i,y_i) ~ P}\)
+That is we want to find the middle weight of all possible samples from data future and past</p>
+
+<h1 id="how-we-we-implement-this-into-our-machine-leanring-program">How we we implement this into our machine leanring program?</h1>
+
+<p>This is why we split data into test and training set, for the sole reason is that out assumption is all points are (xi,yi) ~ P so we act like our data is a represnetaiotn of the whole population of task we need to learn and for that reason we only touch our test set for final evaluation process. we it would givne use a interpretation of how well</p>
+
+<h1 id="conlusion">Conlusion</h1>
+<p>So the reaosn why data sciecne is importacne of machine learning engineers is that since machine leanirng engineeers assume that all data for a learnign as has the same distribution, the data scienctist roles is to ensure that the data they provides represent all possible inputs for that task.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#random" class="page__taxonomy-item p-category" rel="tag">Random</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-18T00:00:00+10:00">May 18, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/random/improving-typing-speed/" class="pagination--pager" title="How I went from 40 WPM to 100 WPM in 3 months without trying!
+">Previous</a>
+    
+    
+      <a href="/weak-strong-law-large-numbers/" class="pagination--pager" title="Weak Strong Law Large Numbers
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

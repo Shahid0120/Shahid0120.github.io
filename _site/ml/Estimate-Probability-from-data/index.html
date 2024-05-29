@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Bayesian statistics vs frequentist statistics : Estimating Probability From Data | Shahid Hussain      Blog      </title>
+<meta name="description" content="Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Bayesian statistics vs frequentist statistics : Estimating Probability From Data">
+<meta property="og:url" content="http://localhost:4000/ml/Estimate-Probability-from-data/">
+
+
+  <meta property="og:description" content="Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-21T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/ml/Estimate-Probability-from-data/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Bayesian statistics vs frequentist statistics : Estimating Probability From Data">
+    <meta itemprop="description" content="Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.">
+    <meta itemprop="datePublished" content="2024-05-21T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/ml/Estimate-Probability-from-data/" class="u-url" itemprop="url">Bayesian statistics vs frequentist statistics : Estimating Probability From Data
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.</p>
+
+<h1 id="recall">Recall</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>An important part of why machine can learning is that we assume that all samples points taken are from the same distribution, $ (x_i, y_i) ~ P, \forall i \in \mathbb{Z}^{+} $ and are i.i.d. Now using this assumption which is the backbone of all learning algorithms, then there $ \exists P(x,y) $, for which a conditional expectation can also be calculated, $ P(y</td>
+      <td>x) $, that is, given a feature what the the probability that it lands on this specific label. Alternatively , $ P(x</td>
+      <td>y) $ must also exist, that is given a label what is the probability that it displays certain features. The study of both conditional probabilities are separated using Bayes Theorem,</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\begin{align*}
+    P(x | y) &amp;\propto P(y | x)P(x) \quad\quad\text{Discriminative Learning} \\ 
+    P(y | x) &amp;\propto P(x | y)P(y) \quad\quad\text{Generative Learning}
+\end{align*}\]
+
+<p>In essence, discriminative learning aims to create explicit boundaries between classes of labels, similar to SVMs, Perceptron, and k-NN. On the other hand, generative learning tries to model the distribution of individual classes, such as Naive Bayes or Gaussian Mixture Models (GMM). Within each of these types of learning, you can have parametric models, where we assume the distribution of ( p(x,y) ) comes from a certain well-known distribution like normal, Bernoulli, exponential, or non-parametric.</p>
+
+<h1 id="what-is-a-parameter">What is a parameter?</h1>
+<p>given some distribution a parameter is a point estimate that characteristics a known class of distribution. I’m sure you have heard of common well know distribution including $N(\mu, \sigma^2)$ or $ \mathrm{Bern}(\lambda)$. In this case $\theta$, our parameter can be a set, or singular point estimate which character our distribution so $\theta = (\sigma^2, \mu)$ or $\theta = (\lambda) $</p>
+
+<h1 id="motivating-example">Motivating example</h1>
+
+<p>For a motivating exmaples consdier flipped a equally wieghted coin. Say we coin and we get \(D = \{ T , T, T, H, H, H, H, T, T, T, T \}\). Now considering it is eually wieghted coin we would hope that our probbilities of getting each side of the dice as \(\frac{1}{2}\) something from pervious years we have come to know. Say we want to know what is the probaiblites of getting a head, then the most intuitive method would be to</p>
+
+\[\begin{equation*}
+    P(\text{getting heads}) = \frac{n_h}{n_t + n_h}
+\end{equation*}\]
+
+<p>where $ \text{n} = \text{Number of times gotten a side}$ . Yet it used this equation for our set of outcomes $ D $, we find $ P(\text{heads}) = \frac{4}{11} $, which isn’t 50 \% as we expected. Why is that did we not find the right probability?</p>
+
+<h1 id="frequentist-vs-bayesian-n-perspective">Frequentist vs Bayesian n Perspective</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>When studying probability theory, we are concerned with $ p(D</td>
+      <td>\theta) $, which models the distribution with some known $ \theta $. On the other hand, in statistics, previously known as inverse probability theory, we are given some data, and we aim to infer the unknown parameters $ \theta $ given observations, $ p(\theta</td>
+      <td>D) $.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Generally, Frequentist are concerned with ‘frequency’, meaning that over time, the asymptotic behavior of our probability will converge to a certain number, as in the example above. Importantly, this requires a lot of data; otherwise, we would be overfitting. On the other hand, Bayesian statisticians know that data is readily available, and indeed, we have some assumptions we know about the data. Thus, they assume some ‘prior’ distribution of $p(\theta)$ from expertise, enabling them to readily use it when a small sample size is available.</p>
+
+<h1 id="frequentist-mle">Frequentist: MLE</h1>
+
+<p>So, we define</p>
+
+\[\begin{align*}
+p(\mathcal{D}|\theta) = \prod_{n=1}^N p(y_n|x_n, \theta)
+\end{align*}\]
+
+<p>that is our i.i.d assumption of machine learning. Then applying a log (we use to simply computation), we get the log-likelihood,</p>
+
+\[\begin{align*}
+\mathcal{L}(\theta) = \sum_{n=1}^N log( p(y_n|x_n, \theta)).
+\end{align*}\]
+
+<p>So, then we define MLE of a parameter</p>
+
+\[\hat{\theta}_{MLE} = \arg\max_{\theta} \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
+
+<p>So optimisations theory is easier, to optimise a function through minimize cost functions so,</p>
+
+\[\theta_{\text{MLE}}^{\hat{}} = \arg\max_{\theta} - \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
+
+<h1 id="mle-example">MLE example</h1>
+<p>Going back to our examples we flips coins, we now can assume that $p(x,y) ~ Bern(\lambda) $, where now $\theta = P(Y = 1) $, where $Y = number of times of getting heads heads$</p>
+
+<p>So,</p>
+
+\[\begin{align*}
+    \mathcal{L}(\theta) = \arg\max_{\theta} - \left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right).
+\end{align*}\]
+
+<p>Let, $ N1 = \sum_{n=1}^N \mathbb{1}<em>{y_n=1}$ and $ N0 =  sum</em>{n=1}^N \mathbb{1}<em>{y_n=0} $. Now, we can use differentiating and let the loss function equal 0 to find the minimum (like in high school finding the minimum point of a function) to find $\hat{\theta}</em>{MLE}$,</p>
+
+\[\begin{align*}
+    \hat{\theta}_{MLE}= \frac{N1}{N0 + N1}
+\end{align*}\]
+
+<p>Isn’t this similar to our intuition right? This is known as classical statistics, or Frequentist statistics. Importantly we done assume  $\theta$ has any distribution itself but rather is a parameter which contains information about the distribution of a data points.</p>
+
+<h1 id="what-is-we-didnt-get-any-heads-in-out-sample">What is we didnt get any heads in out sample?</h1>
+<p>he $ \hat{\theta}_{MLE} = 0 $. Is this correct? Well, of course not. We know from our intuition it should be $ \frac{1}{2} $. So Frequentists use this method, knowing we (plus one) Laplace Smoothing to ensure in the case of our sample not having an event occurring,</p>
+
+\[\begin{equation*}
+\hat{\theta}_{MLE}= \frac{N1 + 1 }{N0 + N1 + 2}
+\end{equation*}\]
+
+<p>Since there is only two classes in our examples head or tails so we add 2 in the denominator.</p>
+
+<h1 id="map">MAP</h1>
+<p>Alternatively in Bayesian statistics we don’t consider Laplace smoothing or $\theta$ as just a parameter but rather in build upon the notion that we don’t have allot of data and data can’t always model the distribution of the sample accurately. So we make this assumption (adding bias) that $ \theta $ random variable. Now a random variable is neither a variables or random but rather a function which maps points of a measurable set $ \sigma$-algebra to the real number line, but a important property is that random variables can have distributions. So, now we can express to new equations, using Bayes Theorem,</p>
+
+\[\begin{align*}
+P(\theta | D) &amp;= \frac{P(D | \theta) P(\theta)}{ P(D)} \Rightarrow \\ 
+P(\theta | D) &amp;\quad\propto\quad P(D | \theta) P(\theta). \\ 
+\end{align*}\]
+
+<p>Now in Bayesian Statistics, each component is named,</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$ P(D</td>
+          <td>\theta) $ Likelihood of data given ( \theta )</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$ P(\theta</td>
+          <td>D)$ (posterior distribution): Distribution over the parameter(s) ( \theta ) after we have observed the data</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>$P(\theta) $ (prior): Distribution over the parameter(s) ( \theta ) before we see any data. 
+We need to choose the prior distribution using our expertise and knowledge which of course can work out great, or horribly wrong if we assume the distribution of our prior wrong. So now,</li>
+</ul>
+
+\[\begin{align*}
+     p(\mathcal{D}|\theta) &amp;= \prod_{n=1}^N p(y_n|x_n, \theta)p(\theta) \\
+\end{align*}\]
+
+<p>Applying log,</p>
+
+\[\begin{align*}
+    \mathcal{L}(\theta)&amp;= \sum_{n=1}^N log(p(y_n|x_n, \theta))+ \sum_{n=1}^N log( p(\theta)) \\
+\end{align*}\]
+
+<p>So,</p>
+
+\[\begin{align*}
+    \hat{\theta}_{map} = \arg\max_{\theta} \mathcal{L}(\theta)
+\end{align*}\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>Going back to the coin flip we can assume our prior distribution (guess) is $  p(\theta) = Beta(\theta</td>
+      <td>a, b) $ then our log likelihood ends up becoming</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\begin{align*}
+    \mathcal{L}(\theta) = &amp;\left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right) + [(a - 1)log(\theta) + (b - 1)log(1 - \theta)]
+\end{align*}\]
+
+<p>Then using normal minimisation method of finding first derivative letting it equal to zero to find minimizer for $\hat{\theta})$ we get</p>
+
+\[\begin{align*}
+    \hat{\theta}_{map} = \frac{N1 + a - 1}{N1 + N0 + a + b - 2}
+\end{align*}\]
+
+<p>So by assuming a prior distribution in Bayesian statistics we end up getting a very similar estimator found in Frequentist statistics using Laplace Smoothing. So in a sense they are very similar!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ml" class="page__taxonomy-item p-category" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-21T00:00:00+10:00">May 21, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/random/why-using-test-set-bad/" class="pagination--pager" title="Why using our test set multiple times is bad idea in Machine Learning
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

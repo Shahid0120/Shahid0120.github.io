@@ -1,4 +1,209 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-17T11:41:27+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">How I went from 40 WPM to 100 WPM in 3 months without trying!</title><link href="http://localhost:4000/random/improving-typing-speed/" rel="alternate" type="text/html" title="How I went from 40 WPM to 100 WPM in 3 months without trying!" /><published>2024-05-17T00:00:00+10:00</published><updated>2024-05-17T00:00:00+10:00</updated><id>http://localhost:4000/random/improving-typing-speed</id><content type="html" xml:base="http://localhost:4000/random/improving-typing-speed/">&lt;p&gt;Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-29T14:41:01+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
+
+&lt;h1 id=&quot;recall&quot;&gt;Recall&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;An important part of why machine can learning is that we assume that all samples points taken are from the same distribution, $ (x_i, y_i) ~ P, \forall i \in \mathbb{Z}^{+} $ and are i.i.d. Now using this assumption which is the backbone of all learning algorithms, then there $ \exists P(x,y) $, for which a conditional expectation can also be calculated, $ P(y&lt;/td&gt;
+      &lt;td&gt;x) $, that is, given a feature what the the probability that it lands on this specific label. Alternatively , $ P(x&lt;/td&gt;
+      &lt;td&gt;y) $ must also exist, that is given a label what is the probability that it displays certain features. The study of both conditional probabilities are separated using Bayes Theorem,&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+\[\begin{align*}
+    P(x | y) &amp;amp;\propto P(y | x)P(x) \quad\quad\text{Discriminative Learning} \\ 
+    P(y | x) &amp;amp;\propto P(x | y)P(y) \quad\quad\text{Generative Learning}
+\end{align*}\]
+
+&lt;p&gt;In essence, discriminative learning aims to create explicit boundaries between classes of labels, similar to SVMs, Perceptron, and k-NN. On the other hand, generative learning tries to model the distribution of individual classes, such as Naive Bayes or Gaussian Mixture Models (GMM). Within each of these types of learning, you can have parametric models, where we assume the distribution of ( p(x,y) ) comes from a certain well-known distribution like normal, Bernoulli, exponential, or non-parametric.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-a-parameter&quot;&gt;What is a parameter?&lt;/h1&gt;
+&lt;p&gt;given some distribution a parameter is a point estimate that characteristics a known class of distribution. I’m sure you have heard of common well know distribution including $N(\mu, \sigma^2)$ or $ \mathrm{Bern}(\lambda)$. In this case $\theta$, our parameter can be a set, or singular point estimate which character our distribution so $\theta = (\sigma^2, \mu)$ or $\theta = (\lambda) $&lt;/p&gt;
+
+&lt;h1 id=&quot;motivating-example&quot;&gt;Motivating example&lt;/h1&gt;
+
+&lt;p&gt;For a motivating exmaples consdier flipped a equally wieghted coin. Say we coin and we get \(D = \{ T , T, T, H, H, H, H, T, T, T, T \}\). Now considering it is eually wieghted coin we would hope that our probbilities of getting each side of the dice as \(\frac{1}{2}\) something from pervious years we have come to know. Say we want to know what is the probaiblites of getting a head, then the most intuitive method would be to&lt;/p&gt;
+
+\[\begin{equation*}
+    P(\text{getting heads}) = \frac{n_h}{n_t + n_h}
+\end{equation*}\]
+
+&lt;p&gt;where $ \text{n} = \text{Number of times gotten a side}$ . Yet it used this equation for our set of outcomes $ D $, we find $ P(\text{heads}) = \frac{4}{11} $, which isn’t 50 \% as we expected. Why is that did we not find the right probability?&lt;/p&gt;
+
+&lt;h1 id=&quot;frequentist-vs-bayesian-n-perspective&quot;&gt;Frequentist vs Bayesian n Perspective&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;When studying probability theory, we are concerned with $ p(D&lt;/td&gt;
+      &lt;td&gt;\theta) $, which models the distribution with some known $ \theta $. On the other hand, in statistics, previously known as inverse probability theory, we are given some data, and we aim to infer the unknown parameters $ \theta $ given observations, $ p(\theta&lt;/td&gt;
+      &lt;td&gt;D) $.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Generally, Frequentist are concerned with ‘frequency’, meaning that over time, the asymptotic behavior of our probability will converge to a certain number, as in the example above. Importantly, this requires a lot of data; otherwise, we would be overfitting. On the other hand, Bayesian statisticians know that data is readily available, and indeed, we have some assumptions we know about the data. Thus, they assume some ‘prior’ distribution of $p(\theta)$ from expertise, enabling them to readily use it when a small sample size is available.&lt;/p&gt;
+
+&lt;h1 id=&quot;frequentist-mle&quot;&gt;Frequentist: MLE&lt;/h1&gt;
+
+&lt;p&gt;So, we define&lt;/p&gt;
+
+\[\begin{align*}
+p(\mathcal{D}|\theta) = \prod_{n=1}^N p(y_n|x_n, \theta)
+\end{align*}\]
+
+&lt;p&gt;that is our i.i.d assumption of machine learning. Then applying a log (we use to simply computation), we get the log-likelihood,&lt;/p&gt;
+
+\[\begin{align*}
+\mathcal{L}(\theta) = \sum_{n=1}^N log( p(y_n|x_n, \theta)).
+\end{align*}\]
+
+&lt;p&gt;So, then we define MLE of a parameter&lt;/p&gt;
+
+\[\hat{\theta}_{MLE} = \arg\max_{\theta} \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
+
+&lt;p&gt;So optimisations theory is easier, to optimise a function through minimize cost functions so,&lt;/p&gt;
+
+\[\theta_{\text{MLE}}^{\hat{}} = \arg\max_{\theta} - \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
+
+&lt;h1 id=&quot;mle-example&quot;&gt;MLE example&lt;/h1&gt;
+&lt;p&gt;Going back to our examples we flips coins, we now can assume that $p(x,y) ~ Bern(\lambda) $, where now $\theta = P(Y = 1) $, where $Y = number of times of getting heads heads$&lt;/p&gt;
+
+&lt;p&gt;So,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathcal{L}(\theta) = \arg\max_{\theta} - \left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right).
+\end{align*}\]
+
+&lt;p&gt;Let, $ N1 = \sum_{n=1}^N \mathbb{1}&lt;em&gt;{y_n=1}$ and $ N0 =  sum&lt;/em&gt;{n=1}^N \mathbb{1}&lt;em&gt;{y_n=0} $. Now, we can use differentiating and let the loss function equal 0 to find the minimum (like in high school finding the minimum point of a function) to find $\hat{\theta}&lt;/em&gt;{MLE}$,&lt;/p&gt;
+
+\[\begin{align*}
+    \hat{\theta}_{MLE}= \frac{N1}{N0 + N1}
+\end{align*}\]
+
+&lt;p&gt;Isn’t this similar to our intuition right? This is known as classical statistics, or Frequentist statistics. Importantly we done assume  $\theta$ has any distribution itself but rather is a parameter which contains information about the distribution of a data points.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-we-didnt-get-any-heads-in-out-sample&quot;&gt;What is we didnt get any heads in out sample?&lt;/h1&gt;
+&lt;p&gt;he $ \hat{\theta}_{MLE} = 0 $. Is this correct? Well, of course not. We know from our intuition it should be $ \frac{1}{2} $. So Frequentists use this method, knowing we (plus one) Laplace Smoothing to ensure in the case of our sample not having an event occurring,&lt;/p&gt;
+
+\[\begin{equation*}
+\hat{\theta}_{MLE}= \frac{N1 + 1 }{N0 + N1 + 2}
+\end{equation*}\]
+
+&lt;p&gt;Since there is only two classes in our examples head or tails so we add 2 in the denominator.&lt;/p&gt;
+
+&lt;h1 id=&quot;map&quot;&gt;MAP&lt;/h1&gt;
+&lt;p&gt;Alternatively in Bayesian statistics we don’t consider Laplace smoothing or $\theta$ as just a parameter but rather in build upon the notion that we don’t have allot of data and data can’t always model the distribution of the sample accurately. So we make this assumption (adding bias) that $ \theta $ random variable. Now a random variable is neither a variables or random but rather a function which maps points of a measurable set $ \sigma$-algebra to the real number line, but a important property is that random variables can have distributions. So, now we can express to new equations, using Bayes Theorem,&lt;/p&gt;
+
+\[\begin{align*}
+P(\theta | D) &amp;amp;= \frac{P(D | \theta) P(\theta)}{ P(D)} \Rightarrow \\ 
+P(\theta | D) &amp;amp;\quad\propto\quad P(D | \theta) P(\theta). \\ 
+\end{align*}\]
+
+&lt;p&gt;Now in Bayesian Statistics, each component is named,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;$ P(D&lt;/td&gt;
+          &lt;td&gt;\theta) $ Likelihood of data given ( \theta )&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;$ P(\theta&lt;/td&gt;
+          &lt;td&gt;D)$ (posterior distribution): Distribution over the parameter(s) ( \theta ) after we have observed the data&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$P(\theta) $ (prior): Distribution over the parameter(s) ( \theta ) before we see any data. 
+We need to choose the prior distribution using our expertise and knowledge which of course can work out great, or horribly wrong if we assume the distribution of our prior wrong. So now,&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\begin{align*}
+     p(\mathcal{D}|\theta) &amp;amp;= \prod_{n=1}^N p(y_n|x_n, \theta)p(\theta) \\
+\end{align*}\]
+
+&lt;p&gt;Applying log,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathcal{L}(\theta)&amp;amp;= \sum_{n=1}^N log(p(y_n|x_n, \theta))+ \sum_{n=1}^N log( p(\theta)) \\
+\end{align*}\]
+
+&lt;p&gt;So,&lt;/p&gt;
+
+\[\begin{align*}
+    \hat{\theta}_{map} = \arg\max_{\theta} \mathcal{L}(\theta)
+\end{align*}\]
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Going back to the coin flip we can assume our prior distribution (guess) is $  p(\theta) = Beta(\theta&lt;/td&gt;
+      &lt;td&gt;a, b) $ then our log likelihood ends up becoming&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+\[\begin{align*}
+    \mathcal{L}(\theta) = &amp;amp;\left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right) + [(a - 1)log(\theta) + (b - 1)log(1 - \theta)]
+\end{align*}\]
+
+&lt;p&gt;Then using normal minimisation method of finding first derivative letting it equal to zero to find minimizer for $\hat{\theta})$ we get&lt;/p&gt;
+
+\[\begin{align*}
+    \hat{\theta}_{map} = \frac{N1 + a - 1}{N1 + N0 + a + b - 2}
+\end{align*}\]
+
+&lt;p&gt;So by assuming a prior distribution in Bayesian statistics we end up getting a very similar estimator found in Frequentist statistics using Laplace Smoothing. So in a sense they are very similar!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.</summary></entry><entry><title type="html">Weak Strong Law Large Numbers</title><link href="http://localhost:4000/weak-strong-law-large-numbers/" rel="alternate" type="text/html" title="Weak Strong Law Large Numbers" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/weak-strong-law-large-numbers</id><content type="html" xml:base="http://localhost:4000/weak-strong-law-large-numbers/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">How sampling distribution is the link between Machine Learning and data science</title><link href="http://localhost:4000/random/distribution-link-datascience-ml/" rel="alternate" type="text/html" title="How sampling distribution is the link between Machine Learning and data science" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/random/distribution-link-datascience-ml</id><content type="html" xml:base="http://localhost:4000/random/distribution-link-datascience-ml/">&lt;h1 id=&quot;ever-wondered-how-these-two-field-like-with-concrete-examples&quot;&gt;Ever wondered how these two field like with concrete examples?&lt;/h1&gt;
+&lt;p&gt;Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.&lt;/p&gt;
+
+&lt;h1 id=&quot;little-about-machine-learning&quot;&gt;Little about machine learning&lt;/h1&gt;
+&lt;p&gt;Machine learning is a process where by a machine, usually a program, learns from given data where by we have input, \(X\) and output \(Y\), known as feature inputs and labels, respectively. Now the goals is to create a program which can adequatly be able to given predict ‘label’ given a new input. An exmaples can be classify females and males, know a data scientist will go out and take picture of males and females, and then label them both males or female, then this is given to a machine leanring program for which is looks at data and tries to understand distinction bewteen male and females, untill it get very good at it. Then we will given it new picture and then hopefully it will be able to identify correctly geneder of the male or female.&lt;/p&gt;
+
+&lt;h1 id=&quot;now-an-important-assumptio-we-make-is-machine-learning-is-that-all-samples-take-have-the-same-distribtion-p-and-are-iid-why&quot;&gt;Now an important assumptio we make is Machine learning is that all samples take have the same distribtion \(P\) and are i.i.d why?&lt;/h1&gt;
+
+&lt;p&gt;This creates the link between machien learning and data sciecne. Ifall possible data that we can be given is from the same distribition, since if they it would be impossible to predict or classify random selected people since we a any random input.&lt;/p&gt;
+
+&lt;h2 id=&quot;example--gender-shades-project-2018&quot;&gt;Example : Gender Shades project 2018&lt;/h2&gt;
+
+&lt;p&gt;In 2018 gender classification algorithms developed by IBM and Microsoft was studye based on miclassification based upon skin tone, from four cateogires: darker-skinned females, darker-skinned males, lighter-skinned females, and lighter-skinned males. All three algorithms performed the worst on darker-skinned females, with error rates up to 34% higher than for lighter-skinned males.&lt;/p&gt;
+
+&lt;p&gt;A key reaosn might be the samples distribution, now say the task to recognise face, if a data scientist provides face of only light-skinned males then cleary the algorithsm will only be able to identify these indviduals and fall short on other skins tones. So the distribution we wrong for the task since the data that the algorith was trained was different to the actually dsitirbution it was testet on&lt;/p&gt;
+
+&lt;h1 id=&quot;continying&quot;&gt;Continying&lt;/h1&gt;
+&lt;p&gt;Additionaly, these samples must be i.i.d, so we have already adressed the identifcallty distribution, but indepecne is importance is to ensure that these samples done effect one another cause if they do it would be impossible to find the relationship between two samples (x_i, y_i)&lt;/p&gt;
+
+&lt;h1 id=&quot;how-a-machine-algorithm-works-using-out-asusmption&quot;&gt;How a Machine algorithm works using out asusmption&lt;/h1&gt;
+
+&lt;p&gt;So currently I’ve talked about the assumption that all possible data that an algorithsm will very see is given by data sciecntist so the roels of trhe data sciecne to provides data which will represent all possible data it will be given in the future.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-then-does-a-machine-learning-engineer-optimise-this-data&quot;&gt;How then does a Machine learning engineer optimise this data?&lt;/h1&gt;
+&lt;p&gt;(add picture)
+so out goals to minimise the error rates of our algorithm chosen h, we do this through choose a loss function which is appropriate to the task, now importantly iv talked about teh improtance of the algorithm bening able to generalise to any data set and that the data, of course  is assumpted to from the same distribution \(P\). Our easier first guess is for out loos function&lt;/p&gt;
+
+&lt;p&gt;l(h;D)&lt;/p&gt;
+
+&lt;p&gt;but the key problem is that this only optimsised out dataset in a sense it memories out data givne but give new sample it would not be able to rpedict it well, so we must create a denfition which generlaise well for all possible data from a asusmed distirbution 
+\(E(l(X,Y))_{(x_i,y_i) ~ P}\)
+That is we want to find the middle weight of all possible samples from data future and past&lt;/p&gt;
+
+&lt;h1 id=&quot;how-we-we-implement-this-into-our-machine-leanring-program&quot;&gt;How we we implement this into our machine leanring program?&lt;/h1&gt;
+
+&lt;p&gt;This is why we split data into test and training set, for the sole reason is that out assumption is all points are (xi,yi) ~ P so we act like our data is a represnetaiotn of the whole population of task we need to learn and for that reason we only touch our test set for final evaluation process. we it would givne use a interpretation of how well&lt;/p&gt;
+
+&lt;h1 id=&quot;conlusion&quot;&gt;Conlusion&lt;/h1&gt;
+&lt;p&gt;So the reaosn why data sciecne is importacne of machine learning engineers is that since machine leanirng engineeers assume that all data for a learnign as has the same distribution, the data scienctist roles is to ensure that the data they provides represent all possible inputs for that task.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Ever wondered how these two field like with concrete examples? Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem. So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.</summary></entry><entry><title type="html">Why using our test set multiple times is bad idea in Machine Learning</title><link href="http://localhost:4000/random/why-using-test-set-bad/" rel="alternate" type="text/html" title="Why using our test set multiple times is bad idea in Machine Learning" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/random/why-using-test-set-bad</id><content type="html" xml:base="http://localhost:4000/random/why-using-test-set-bad/">&lt;h1 id=&quot;ever-though-why-it-is-based-to-use-our-test-set-multiple-times&quot;&gt;Ever though why it is based to use our test set multiple times?&lt;/h1&gt;
+
+&lt;p&gt;When learning machine learning one of the first thigns you lear is to always split your data into 2 part; training and test set. Generally, if it a larger data set then 90/10 split or a smaller dataset a 80/20 split, respectively. Why is that though?&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Ever though why it is based to use our test set multiple times?</summary></entry><entry><title type="html">How I went from 40 WPM to 100 WPM in 3 months without trying!</title><link href="http://localhost:4000/random/improving-typing-speed/" rel="alternate" type="text/html" title="How I went from 40 WPM to 100 WPM in 3 months without trying!" /><published>2024-05-17T00:00:00+10:00</published><updated>2024-05-17T00:00:00+10:00</updated><id>http://localhost:4000/random/improving-typing-speed</id><content type="html" xml:base="http://localhost:4000/random/improving-typing-speed/">&lt;p&gt;Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.&lt;/p&gt;
 
 &lt;p&gt;Recently, I’ve begun to understand the importance of being able to type fast and its perks. Not only does it help with completing computer tasks faster, but as technology natives, it’s almost a necessity. More importantly, I believe in having mastery over all parts of my body! I feel there’s some hidden neurological benefits in being able to control your fingers eloquently; it helps in learning other skills faster. From my observations, people who type fast usually pick up instruments a lot quicker compared to myself; trying to learn guitar was extremely difficult!&lt;/p&gt;
 
@@ -233,179 +438,4 @@ Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
   &lt;li&gt;(3blue2brown)[https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
-
-&lt;p&gt;Lets talk visually:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/function_sequential_api.png&quot; alt=&quot;function_sequential_api.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The whole point of Tensorflow with Keras is to simply the process of creating neural networks so now we dont spend time on manully coding a neural network, but rather focus on improving the performance of our model. Now how exactly does Functional api improve flexibility but at the cost of complexity?&lt;/p&gt;
-
-&lt;h2 id=&quot;sequential-api&quot;&gt;Sequential API&lt;/h2&gt;
-&lt;p&gt;Sequential API’s tipically look like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;sequential.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notice, although we specify the pooling dimensions and strides and other arguements within the tf.keras.layers call , we can’t input specific paramters like Z1,A1 or Z2. Importantly it all happens sequentially so the model will start from the top end go by each call one by one until the end.&lt;/p&gt;
-
-&lt;h1 id=&quot;function-api--spot-the-difference&quot;&gt;Function API : spot the difference&lt;/h1&gt;
-&lt;p&gt;Alternatively, comparing this to functional API it allows use to play around with the parameters:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;functional_api.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notice how we adding paramters to our calls to tf.keras.layers()(Paramter) providing us flexibility to choose which parameters we want to trasnform. Note this is just one way of taking advantage of function API. Other possible options are :&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Multiple inputs - Now we can have multiple paramters since our functional isnt called linearly&lt;/li&gt;
-  &lt;li&gt;Sharing inputs - say we want Z1 to have multiple acitivations say Leaky-RelU and ReLU&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;But as you can see the possibility or errors increases since you can play around with which inputs you want where. So be careful!&lt;/p&gt;
-
-&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
-and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
-
-&lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
-
-&lt;p&gt;Before asessing my weakness, what are my inspiration say is a good pathway? 
-Well after watching Lex Fridman interview with Andrew Ng &lt;a href=&quot;https://www.youtube.com/watch?v=1k37OcjH7BM&amp;amp;t=1381s&quot;&gt;here!&lt;/a&gt; 
-he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
-once you have taken enough courses then work on projects and reading research papers.&lt;/p&gt;
-
-&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer (here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
-
-&lt;h2 id=&quot;focus-on-the-weakness&quot;&gt;Focus on the weakness&lt;/h2&gt;
-
-&lt;p&gt;I beleive (currently?) Machine learning ecosystem can be broken down into the follow skills&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mathematics&lt;/li&gt;
-  &lt;li&gt;ML algorithms&lt;/li&gt;
-  &lt;li&gt;MLops&lt;/li&gt;
-  &lt;li&gt;Python skills&lt;/li&gt;
-  &lt;li&gt;Cloud Services&lt;/li&gt;
-  &lt;li&gt;SQL database&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Since i have a currenlty pursuing a Mathhematics and Marketing degree, the main focus should be builing later half. Althought i have expericnes with Cloud Services including AWS and 
-SQL database i will significnatly have to improve in this area. Addtionally, my Python skills a desent but thtere is a way to go&lt;/p&gt;
-
-&lt;h1 id=&quot;what-i-have-currently-done&quot;&gt;What i have currently done?&lt;/h1&gt;
-
-&lt;p&gt;Well currently i have completed/doing:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CS29 by Andrew Ng&lt;/li&gt;
-  &lt;li&gt;Hands-On Machine Learning with Scikit-Learn and Tensorflow&lt;/li&gt;
-  &lt;li&gt;The Hundred-page Machine Learning Book by Andriy Burkov&lt;/li&gt;
-  &lt;li&gt;Deep learning Specialisation by Andrew Ng&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;the-roadmap-with-certifications&quot;&gt;The Roadmap With Certifications&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Programming
-    &lt;ul&gt;
-      &lt;li&gt;“Python 3 Object-Oriented Programming” by Dusty Phillips&lt;/li&gt;
-      &lt;li&gt;“Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
-      &lt;li&gt;“Algorithms” Princeton University&lt;/li&gt;
-      &lt;li&gt;“Coding Interview University” (github)[https://github.com/jwasham/coding-interview-university]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ML algorithms
-    &lt;ul&gt;
-      &lt;li&gt;Deep Learning for Coders with fastai &amp;amp; PyTorch&lt;/li&gt;
-      &lt;li&gt;Introduction to Machine Learning with Python: A Guide for Data Scientists&lt;/li&gt;
-      &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy&lt;/li&gt;
-      &lt;li&gt;Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
-      &lt;li&gt;Papers with Code : Most popular and Recent machine learning papers&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;MLops
-    &lt;ul&gt;
-      &lt;li&gt;Desigining Machine Learing Systems by Chip Huyen&lt;/li&gt;
-      &lt;li&gt;Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
-      &lt;li&gt;Coursera’s MLOps Specialization by DeepLearning.AI&lt;/li&gt;
-      &lt;li&gt;Full Stack Deep Learning&lt;/li&gt;
-      &lt;li&gt;fast.ai&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Cloud
-    &lt;ul&gt;
-      &lt;li&gt;Microsoft Certified: Azure Fundamentals&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SQL
-    &lt;ul&gt;
-      &lt;li&gt;LeetCode SQL&lt;/li&gt;
-      &lt;li&gt;SQL for Data Analysis Advanced Techniques for Transforming Data into Insights&lt;/li&gt;
-      &lt;li&gt;SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;structure&quot;&gt;Structure&lt;/h1&gt;
-
-&lt;p&gt;Currently since unviersity off i have a little time to concurrently complete 2 courses at the same time, the plan is i want to read for projects i want to have a project in mind work on whilst reading/watching resources. The currentl systtemiatic plan is;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Deep learning Specialisation by Andrew Ng  + Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
-  &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy + Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
-  &lt;li&gt;“Algorithms” Princeton University + “Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
-  &lt;li&gt;Full Stack Deep Learning + fast.ai&lt;/li&gt;
-  &lt;li&gt;Microsoft Certified: Azure Fundamentals + SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry><entry><title type="html">Is it true that long-term injuries comes from prior minior injuries?</title><link href="http://localhost:4000/projects/nba-risk-injury/" rel="alternate" type="text/html" title="Is it true that long-term injuries comes from prior minior injuries?" /><published>2024-01-07T00:00:00+11:00</published><updated>2024-01-07T00:00:00+11:00</updated><id>http://localhost:4000/projects/nba-risk-injury</id><content type="html" xml:base="http://localhost:4000/projects/nba-risk-injury/">&lt;h1 id=&quot;a-lense-from-a-statistical-point-of-view-can-we-create-a-ml-model-to-predicit-the-outcomes&quot;&gt;A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?&lt;/h1&gt;
-
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;After watching sports for many years, I noticed non-contact injuries, especially in the NBA. I went on to examine it. Randomly, I clicked on a video where a popular YouTuber states, ‘Look at KD; he had an ACL injury, and before that, he had a calf strain.’ Is this really true? The YouTube channel mentioned is MPJPerformance, and the video link is &lt;a href=&quot;https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;amp;t=47s.&quot;&gt;here!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;retriving-and-cleaning-the-data&quot;&gt;Retriving and Cleaning the data&lt;/h1&gt;
-
-&lt;h2 id=&quot;firstly-getting-the-data&quot;&gt;Firstly getting the data&lt;/h2&gt;
-
-&lt;p&gt;Luckly for me the raw data is already avaliable, big thanks to JaseZiv for the github repositry &lt;a href=&quot;https://github.com/JaseZiv/NBA_data/tree/main&quot;&gt;click here!&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-is-the-data-currently-structured&quot;&gt;How is the data currently structured?&lt;/h2&gt;
-
-&lt;p&gt;the file named “nba_injuries” has webcrawled various NBA sources and the origian files follow a JSON schema as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Date:&lt;/strong&gt; 1947-08-05&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Team:&lt;/strong&gt; Bombers (BAA)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Acquired:&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Relinquished:&lt;/strong&gt; Jack Underman&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Notes:&lt;/strong&gt; fractured legs (in auto accident) (out indefinitely) (date approximate)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;creating-a-database-and-cleaning-up-the-data&quot;&gt;Creating a database and cleaning up the data&lt;/h2&gt;
-
-&lt;p&gt;Before we can clean the data to remove duplicates and unnessary/missing inputs we first need to create a database scehema appropriate to our queries and data retrival goals.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Identify all injured playes easily&lt;/li&gt;
-  &lt;li&gt;Idenify length of injury easily&lt;/li&gt;
-  &lt;li&gt;Identify if this play has prior/future injury&lt;/li&gt;
-  &lt;li&gt;Proximity of next injury/prior injury&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Based on these retrival goals we can take a view from a statisatical POV if “long term injuries are srouced from short term injuries”. Where we can explore…&lt;/p&gt;
-
-&lt;p&gt;As pointed out by Chip Huyen in Chapter two of “Designing Machine Learning Systems” states the importance of Data Models “How you choose to represent data not only affects the way your systems are built, but also the problems your systems can solve”. Using this chapter as a out Chip outlines “NoSQL” to follow a strict schema, therefore for time saving we will use a “Relational Database”.&lt;/p&gt;
-
-&lt;h1 id=&quot;lets-start-off-by-examing-it-from-a-statistics-point-of-view&quot;&gt;Let’s start off by examing it from a statistics point of view?&lt;/h1&gt;
-
-&lt;p&gt;building the story&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html">A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?</summary></entry><entry><title type="html">David Goggins : An Inspiration.</title><link href="http://localhost:4000/inspiration/David-Goggins/" rel="alternate" type="text/html" title="David Goggins : An Inspiration." /><published>2024-01-05T00:00:00+11:00</published><updated>2024-01-05T00:00:00+11:00</updated><id>http://localhost:4000/inspiration/David-Goggins</id><content type="html" xml:base="http://localhost:4000/inspiration/David-Goggins/">&lt;p&gt;I just wanted to take some time and appreciate the man who is David Goggins. He is someone I have admired for years. The man is the definition of hard work always beating talent. No matter where you are at in life, you don’t have to have started off at 15 years old working towards your dream.&lt;/p&gt;
-
-&lt;p&gt;Weirdly enough, I’ve seen a lot of people around me recently settling down into full-time roles and, I guess, kind of just accepting where they are at in life. I currently work at officeowkrs, where I get to interact with slightly older co-workers, and I always hear “I’m too old to change my job,” “I’m too old to learn this now.” I am just astonished at the little self-belief and motivation some people have. Now, don’t get me wrong; there is nothing bad about working at officeowkrs, but the importance of having a job that allows you to explore your creativity and limits is something that I hold very highly.&lt;/p&gt;
-
-&lt;p&gt;Even my mum, when she says recently, “Oh, I won’t be able to learn sewing these clothes; I’ll just give it to the lady even though I’m not happy with her services.” Like DAM mum, come on, age does not equal can’t learn new things.&lt;/p&gt;
-
-&lt;p&gt;I remember watching a Huberman podcast about how to learn faster, and he states one of the most important things is “failure” leads to skill acquisition; right now, that’s definitely true with the relationship I have with LeetCode. Humph. But that’s the process; it’s failure leading to success.&lt;/p&gt;
-
-&lt;p&gt;Now going back to David Goggins, his transformation started a lot older in his life, and I know many people can’t believe how someone can turn their life around once it’s settled down. Funny enough, I remember Joe Rogan talking about how Hitler was just a normal soldier until one day he became this leader out of nowhere—I put it down to cocaine. Hahaha. People just don’t believe change can come.&lt;/p&gt;
-
-&lt;p&gt;Importantly, many people reserve his mindset for physical activity, one of which I always questioned, ‘I’m a student; he doesn’t spend hours studying though.’ I feel like physically exerting yourself is a lot easier to me than mentally exercising yourself. But are these two fruits from the same tree? Well, I guess so. My mind is completely changed now; David Goggins is becoming a paramedic, even though he has diagnosed severe ADHD, stating his state ranking marks. In a recent podcast with Andrew Huberman &lt;a href=&quot;https://www.youtube.com/watch?v=nDLb8_wgX50&amp;amp;t=7864s&quot;&gt;link here!&lt;/a&gt;, David Goggins explores his latest endeavor, emphasizing his daily challenge of fighting the urges of drugs. For years, Goggins has been an advocate of the importance of doing tasks you don’t like in building an indomitable mind and body. Interestingly, he talks about how much he hates running, yet every day he wakes up and runs a marathon. Finally, it’s been scientifically proven: the importance of doing tasks you don’t like to build a part of your brain&lt;/p&gt;
-
-&lt;p&gt;My final thoughts: Am I  doing everything I can?&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Inspiration" /><summary type="html">I just wanted to take some time and appreciate the man who is David Goggins. He is someone I have admired for years. The man is the definition of hard work always beating talent. No matter where you are at in life, you don’t have to have started off at 15 years old working towards your dream.</summary></entry></feed>
+&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry></feed>
