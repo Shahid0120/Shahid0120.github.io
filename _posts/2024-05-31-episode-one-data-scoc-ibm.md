@@ -1,14 +1,14 @@
 ---
 layout: single
 classes: wide
-title: "Episode One (UNSW Data Soc x IBM ML project) : Data Preproccessing"
+title: "Episode One (IBM x UNSW machine learning project) : Data Preprocessing"
 header:
 categories:
-  - Projects
+  - ML
 author_profile: True
 ---
 
-Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms. 
+Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms. 
 
 
 # The client and objective

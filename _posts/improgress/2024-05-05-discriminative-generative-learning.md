@@ -1,21 +1,66 @@
 ---
 layout: single
-title: "Intuition about Dscriminative vs Generative Learning for Machine Learning"
+title: " Discriminative vs Generative Learning intuition for Machine Learning"
 header:
 categories:
-  - Databases
+  - ML
 author_profile: True
 ---
 
-Generative and Discriminative Classifiers: The most important difference be- tween naive Bayes and logistic regression is that logistic regression is a discrimina- tive classifier while naive Bayes is a generative classifier.
-These are two very different frameworks for how
-to build a machine learning model. Consider a visual
-metaphor: imagine we’re trying to distinguish dog
-images from cat images. A generative model would
-have the goal of understanding what dogs look like
-and what cats look like. You might literally ask such
-a model to ‘generate’, i.e., draw, a dog. Given a test
-image, the system then asks whether it’s the cat model or the dog model that better fits (is less surprised by) the image, and chooses that as its label.
-A discriminative model, by contrast, is only try- ing to learn to distinguish the classes (perhaps with- out learning much about them). So maybe all the dogs in the training data are wearing collars and the cats aren’t. If that one feature neatly separates the classes, the model is satisfied. If you ask such a model what it knows about cats all it can say is that they don’t wear collars.
+Today i was reading "Probabilistic Machine Learning: An Introduction" by Kevin P. Murphy and i read this very interesting intuition. So generally there are two types of i guess probabilistic supervising learning model. One form is 
+$$ 
+P(y|x) 
+$$ 
+thats is given some features (x's) i want to classify some label, our y, this is known as discriminative learning models. These models includes algorithm such as Logistic regression (for classification) and linear models (for regression).
+
+# Breif Introduction 
+
+An alternatvie approach say hey we can use Bayes Theorem on 
+$$ 
+P(y|x) 
+$$ 
+so,
+
+$$
+\begin{align*}
+  P(y|x) = \frac{P(y | x)P(x)}{P(y)}
+\end{align*}
+$$
+
+So since $ P(y) $ it not effect by our features (x's) we don't care about is so,
+
+$$
+\begin{align*}
+  P(y|x) \propto P(x | y)P(x)
+\end{align*}
+$$
+
+Now, depending on the school of thought—Bayesian or frequentist— 
+$$ 
+P(x) 
+$$ 
+can be thought of as having its own distribution or not, respectively. But the important thing is that we now have another method of classifying/predicting new data using 
+$$
+P(x∣y) 
+$$
+, which is quite interesting. This is known as generative learning and includes algorithms such as naive Bayes and LDA.
+
+# Intutively whats the difference?
+
+Let's say we want to classify the difference between cats and dogs. A discriminative model, 
+$$ 
+P(y | x) 
+$$
+, takes features of cats versus dogs and uses these features to predict a label. Intuitively, it's trying to understand the difference between a cat and a dog. For example, cats might have pointy ears, while dogs have droopy ears.
+
+On the other hand, generative models, denoted as 
+$$ 
+P(x | y) 
+$$, focus on understanding the features of each category separately. Given all the cats, a generative model tries to understand cat features: how they look, what color they are, and other characteristics. Rather than comparing both pictures directly, the model generalizes the identification of cats.
+
+However, if the model only tries to understand each animal on its own, it might not effectively distinguish between cats and dogs, unlike the discriminative model which explicitly learns the differences between the two categories, but then lacks the ability to understand maybe different species of cats.
+
+
+
 
 
