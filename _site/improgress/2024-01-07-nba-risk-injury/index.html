@@ -10,39 +10,35 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            Weak Strong Law Large Numbers | Shahid Hussain      Blog      </title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>            Is it true that long-term injuries comes from prior minior injuries? | Shahid Hussain      Blog      </title>
+<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
 
 
   <meta name="author" content="Shahid Hussain">
   
-  <meta property="article:author" content="Shahid Hussain">
-  
 
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="Weak Strong Law Large Numbers">
-<meta property="og:url" content="http://localhost:4000/weak-strong-law-large-numbers/">
+<meta property="og:title" content="Is it true that long-term injuries comes from prior minior injuries?">
+<meta property="og:url" content="http://localhost:4000/improgress/2024-01-07-nba-risk-injury/">
 
 
-  <meta property="og:description" content="">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-05-18T00:00:00+10:00">
+  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/weak-strong-law-large-numbers/">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/improgress/2024-01-07-nba-risk-injury/">
 
 
 
@@ -98,7 +94,7 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
-  <body class="layout--post">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -144,6 +140,117 @@
 
     <div class="initial-content">
       
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Is it true that long-term injuries comes from prior minior injuries?">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/improgress/2024-01-07-nba-risk-injury/" class="u-url" itemprop="url">Is it true that long-term injuries comes from prior minior injuries?
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="a-lense-from-a-statistical-point-of-view-can-we-create-a-ml-model-to-predicit-the-outcomes">A lense from a statistical point of view. Can we create a ML model to predicit the outcomes?</h1>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>After watching sports for many years, I noticed non-contact injuries, especially in the NBA. I went on to examine it. Randomly, I clicked on a video where a popular YouTuber states, ‘Look at KD; he had an ACL injury, and before that, he had a calf strain.’ Is this really true? The YouTube channel mentioned is MPJPerformance, and the video link is <a href="https://www.youtube.com/watch?v=HnPjGpcTU8A&amp;t=47s.">here!</a></p>
+
+<h1 id="retriving-and-cleaning-the-data">Retriving and Cleaning the data</h1>
+
+<h2 id="firstly-getting-the-data">Firstly getting the data</h2>
+
+<p>Luckly for me the raw data is already avaliable, big thanks to JaseZiv for the github repositry <a href="https://github.com/JaseZiv/NBA_data/tree/main">click here!</a></p>
+
+<h2 id="how-is-the-data-currently-structured">How is the data currently structured?</h2>
+
+<p>the file named “nba_injuries” has webcrawled various NBA sources and the origian files follow a JSON schema as follows:</p>
+
+<ul>
+  <li><strong>Date:</strong> 1947-08-05</li>
+  <li><strong>Team:</strong> Bombers (BAA)</li>
+  <li><strong>Acquired:</strong></li>
+  <li><strong>Relinquished:</strong> Jack Underman</li>
+  <li><strong>Notes:</strong> fractured legs (in auto accident) (out indefinitely) (date approximate)</li>
+</ul>
+
+<h2 id="creating-a-database-and-cleaning-up-the-data">Creating a database and cleaning up the data</h2>
+
+<p>Before we can clean the data to remove duplicates and unnessary/missing inputs we first need to create a database scehema appropriate to our queries and data retrival goals.</p>
+
+<ul>
+  <li>Identify all injured playes easily</li>
+  <li>Idenify length of injury easily</li>
+  <li>Identify if this play has prior/future injury</li>
+  <li>Proximity of next injury/prior injury</li>
+</ul>
+
+<p>Based on these retrival goals we can take a view from a statisatical POV if “long term injuries are srouced from short term injuries”. Where we can explore…</p>
+
+<p>As pointed out by Chip Huyen in Chapter two of “Designing Machine Learning Systems” states the importance of Data Models “How you choose to represent data not only affects the way your systems are built, but also the problems your systems can solve”. Using this chapter as a out Chip outlines “NoSQL” to follow a strict schema, therefore for time saving we will use a “Relational Database”.</p>
+
+<h1 id="lets-start-off-by-examing-it-from-a-statistics-point-of-view">Let’s start off by examing it from a statistics point of view?</h1>
+
+<p>building the story</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#projects" class="page__taxonomy-item p-category" rel="tag">Projects</a>
+    
+    </span>
+  </p>
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
 
     </div>
 

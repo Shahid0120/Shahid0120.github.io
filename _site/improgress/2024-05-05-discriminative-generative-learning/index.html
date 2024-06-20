@@ -10,39 +10,35 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            Dimension Reduction Methods | Shahid Hussain      Blog      </title>
-<meta name="description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE  https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=4Zk2UFGIrd0">
+<!-- begin _includes/seo.html --><title>            Discriminative vs Generative Learning intuition for Machine Learning | Shahid Hussain      Blog      </title>
+<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
 
 
   <meta name="author" content="Shahid Hussain">
   
-  <meta property="article:author" content="Shahid Hussain">
-  
 
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="Dimension Reduction Methods">
-<meta property="og:url" content="http://localhost:4000/projects/identifying-when-to-use-pca/">
+<meta property="og:title" content="Discriminative vs Generative Learning intuition for Machine Learning">
+<meta property="og:url" content="http://localhost:4000/improgress/2024-05-05-discriminative-generative-learning/">
 
 
-  <meta property="og:description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE  https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=4Zk2UFGIrd0">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-06-12T00:00:00+10:00">
+  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
 
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/projects/identifying-when-to-use-pca/">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/improgress/2024-05-05-discriminative-generative-learning/">
 
 
 
@@ -98,7 +94,7 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
-  <body class="layout--single wide">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -274,16 +270,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Dimension Reduction Methods">
-    <meta itemprop="description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6https://www.youtube.com/watch?v=4Zk2UFGIrd0">
-    <meta itemprop="datePublished" content="2024-06-12T00:00:00+10:00">
+    <meta itemprop="headline" content="Discriminative vs Generative Learning intuition for Machine Learning">
+    
+    
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/projects/identifying-when-to-use-pca/" class="u-url" itemprop="url">Dimension Reduction Methods
+            <a href="http://localhost:4000/improgress/2024-05-05-discriminative-generative-learning/" class="u-url" itemprop="url">Discriminative vs Generative Learning intuition for Machine Learning
 </a>
           </h1>
           
@@ -294,55 +290,43 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE 
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
-https://www.youtube.com/watch?v=4Zk2UFGIrd0</p>
+        <p>Today i was reading “Probabilistic Machine Learning: An Introduction” by Kevin P. Murphy and i read this very interesting intuition. So generally there are two types of i guess probabilistic supervising learning model. One form is 
+\(P(y|x)\) 
+thats is given some features (x’s) i want to classify some label, our y, this is known as discriminative learning models. These models includes algorithm such as Logistic regression (for classification) and linear models (for regression).</p>
 
-<p>Today i was learning about Spectral decomposition and the implciation leading to Spectral Value Decompositon, and as many of you guys know the important role SVD plays to Priciple component anlysis, but then the question arise, I want to use PCA but when should I?
-The following notes are from “Introduction to Dimensionality Reduction - Presentation at WangLab in the University of Toronto”. What i will try to do is outline the main methodologies used in dimension reductionality.</p>
+<h1 id="breif-introduction">Breif Introduction</h1>
 
-<h1 id="what-is-a-manifold">What is a Manifold?</h1>
+<p>An alternatvie approach say hey we can use Bayes Theorem on 
+\(P(y|x)\) 
+so,</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>When we work with data we have many attributes to describe a certain event we combine all the into  a feature vector $ X = [x_1</td>
-      <td>x_2</td>
-      <td>x_3</td>
-      <td>…</td>
-      <td>x_n] $ . Suppose we have a table describing people then each column can be age, income, location etc. so $ x_i $ represent columns which we combina into a column vector.</td>
-    </tr>
-  </tbody>
-</table>
+\[\begin{align*}
+  P(y|x) = \frac{P(y | x)P(x)}{P(y)}
+\end{align*}\]
 
-<p>if the only have less then 3 attribute then we can graph these attributes. Majority of the time given there is not major noise in a data, that is error in sample, data naturally stay close to one another, this is known as the Manifold Hypothesis.</p>
+<p>So since $ P(y) $ it not effect by our features (x’s) we don’t care about is so,</p>
 
-<p><img src="/assets/images/manifolds/manifold_types.jpg" alt="Manifold-types" /></p>
+\[\begin{align*}
+  P(y|x) \propto P(x | y)P(x)
+\end{align*}\]
 
-<p>There are two many types of ways data can lay in a low dimensional space, (a) subspace : which is hyperplane  in, subspace are importantly always linear OR  (b) submanifold, which is like a squiskly hyperplane, but importantly, locally linear, that is, if we zoom in very close into the submanifold it would seem we were in a flat plane.</p>
+<p>Now, depending on the school of thought—Bayesian or frequentist— 
+\(P(x)\) 
+can be thought of as having its own distribution or not, respectively. But the important thing is that we now have another method of classifying/predicting new data using 
+\(P(x∣y)\)
+, which is quite interesting. This is known as generative learning and includes algorithms such as naive Bayes and LDA.</p>
 
-<p>Additionally, a submanifold is a smooth continous function, as it allows use to use calculus. Before we cover the identify submanifold we need to cover the types of dimentionaliy reductions</p>
+<h1 id="intutively-whats-the-difference">Intutively whats the difference?</h1>
 
-<h1 id="types-of-reduction-dimensionality">Types of Reduction Dimensionality</h1>
-<p>Generally Reduct of Dimension can be placed into three categories</p>
+<p>Let’s say we want to classify the difference between cats and dogs. A discriminative model, 
+\(P(y | x)\)
+, takes features of cats versus dogs and uses these features to predict a label. Intuitively, it’s trying to understand the difference between a cat and a dog. For example, cats might have pointy ears, while dogs have droopy ears.</p>
 
-<p><img src="/assets/images/manifolds/type_of_dimension_reductionality.jpg" alt="Type-reduction-methods" /></p>
+<p>On the other hand, generative models, denoted as 
+\(P(x | y)\), focus on understanding the features of each category separately. Given all the cats, a generative model tries to understand cat features: how they look, what color they are, and other characteristics. Rather than comparing both pictures directly, the model generalizes the identification of cats.</p>
 
-<h2 id="spectral-dimentional-reductionaly">Spectral Dimentional Reductionaly</h2>
+<p>However, if the model only tries to understand each animal on its own, it might not effectively distinguish between cats and dogs, unlike the discriminative model which explicitly learns the differences between the two categories, but then lacks the ability to understand maybe different species of cats.</p>
 
-<p>There dimension method take a geometric approach, an a Example PCA, which uses the Coaraicne Matrix to computre eigenvalues and eigenvector. Now Since eigenvalues are the length of eigenvectors, then this can be used to identify the varaicne of a singualr feature (age). 
-The problem then arrises since PCA uses eigenvalues and vector what happens if the data is in a submanifold?</p>
-
-<p><img src="/assets/images/manifolds/spectral_decomposition.jpg" alt="Spectral-methods" /></p>
-
-<p>clearly from (a) consdier the Green and red dots if we use PCA, the eigenvalue would be small, indicating small variacne, even though that data really sits on a submanifold,thus would lead to a underfitting model.</p>
-
-<p>So by idenfitying our data is in a submanifold, we we properly reduced the dimenstion by flatting out the submanifold and then reducing the size of the space, which would over underfitting.</p>
-
-<h2 id="probabilistic-dimension-reductionaliy">Probabilistic Dimension Reductionaliy</h2>
-
-<p>As the name suggest, this take a probalisitc approach to dimention reductionaly, which includes Probabilistic Principal Component Analysis (PPCA), SNE, T-SNE, UMAP and random projection, factor analysis and SDR.</p>
 
         
       </section>
@@ -361,7 +345,7 @@ The problem then arrises since PCA uses eigenvalues and vector what happens if t
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#projects" class="page__taxonomy-item p-category" rel="tag">Projects</a>
+      <a href="/categories/#ml" class="page__taxonomy-item p-category" rel="tag">ML</a>
     
     </span>
   </p>
@@ -369,23 +353,11 @@ The problem then arrises since PCA uses eigenvalues and vector what happens if t
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-06-12T00:00:00+10:00">June 12, 2024</time></p>
-
       </footer>
 
       
 
       
-  <nav class="pagination">
-    
-      <a href="/ml/episode-one-data-scoc-ibm/" class="pagination--pager" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
-    
-  </nav>
-
     </div>
 
     

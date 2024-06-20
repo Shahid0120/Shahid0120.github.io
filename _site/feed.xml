@@ -1,52 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-21T00:36:42+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Dimension Reduction Methods</title><link href="http://localhost:4000/projects/identifying-when-to-use-pca/" rel="alternate" type="text/html" title="Dimension Reduction Methods" /><published>2024-06-12T00:00:00+10:00</published><updated>2024-06-12T00:00:00+10:00</updated><id>http://localhost:4000/projects/identifying-when-to-use-pca</id><content type="html" xml:base="http://localhost:4000/projects/identifying-when-to-use-pca/">&lt;p&gt;Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE 
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;amp;index=6
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;amp;index=6
-https://www.youtube.com/watch?v=4Zk2UFGIrd0&lt;/p&gt;
-
-&lt;p&gt;Today i was learning about Spectral decomposition and the implciation leading to Spectral Value Decompositon, and as many of you guys know the important role SVD plays to Priciple component anlysis, but then the question arise, I want to use PCA but when should I?
-The following notes are from “Introduction to Dimensionality Reduction - Presentation at WangLab in the University of Toronto”. What i will try to do is outline the main methodologies used in dimension reductionality.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-a-manifold&quot;&gt;What is a Manifold?&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;When we work with data we have many attributes to describe a certain event we combine all the into  a feature vector $ X = [x_1&lt;/td&gt;
-      &lt;td&gt;x_2&lt;/td&gt;
-      &lt;td&gt;x_3&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;x_n] $ . Suppose we have a table describing people then each column can be age, income, location etc. so $ x_i $ represent columns which we combina into a column vector.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;if the only have less then 3 attribute then we can graph these attributes. Majority of the time given there is not major noise in a data, that is error in sample, data naturally stay close to one another, this is known as the Manifold Hypothesis.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/manifolds/manifold_types.jpg&quot; alt=&quot;Manifold-types&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are two many types of ways data can lay in a low dimensional space, (a) subspace : which is hyperplane  in, subspace are importantly always linear OR  (b) submanifold, which is like a squiskly hyperplane, but importantly, locally linear, that is, if we zoom in very close into the submanifold it would seem we were in a flat plane.&lt;/p&gt;
-
-&lt;p&gt;Additionally, a submanifold is a smooth continous function, as it allows use to use calculus. Before we cover the identify submanifold we need to cover the types of dimentionaliy reductions&lt;/p&gt;
-
-&lt;h1 id=&quot;types-of-reduction-dimensionality&quot;&gt;Types of Reduction Dimensionality&lt;/h1&gt;
-&lt;p&gt;Generally Reduct of Dimension can be placed into three categories&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/manifolds/type_of_dimension_reductionality.jpg&quot; alt=&quot;Type-reduction-methods&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;spectral-dimentional-reductionaly&quot;&gt;Spectral Dimentional Reductionaly&lt;/h2&gt;
-
-&lt;p&gt;There dimension method take a geometric approach, an a Example PCA, which uses the Coaraicne Matrix to computre eigenvalues and eigenvector. Now Since eigenvalues are the length of eigenvectors, then this can be used to identify the varaicne of a singualr feature (age). 
-The problem then arrises since PCA uses eigenvalues and vector what happens if the data is in a submanifold?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/manifolds/spectral_decomposition.jpg&quot; alt=&quot;Spectral-methods&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;clearly from (a) consdier the Green and red dots if we use PCA, the eigenvalue would be small, indicating small variacne, even though that data really sits on a submanifold,thus would lead to a underfitting model.&lt;/p&gt;
-
-&lt;p&gt;So by idenfitying our data is in a submanifold, we we properly reduced the dimenstion by flatting out the submanifold and then reducing the size of the space, which would over underfitting.&lt;/p&gt;
-
-&lt;h2 id=&quot;probabilistic-dimension-reductionaliy&quot;&gt;Probabilistic Dimension Reductionaliy&lt;/h2&gt;
-
-&lt;p&gt;As the name suggest, this take a probalisitc approach to dimention reductionaly, which includes Probabilistic Principal Component Analysis (PPCA), SNE, T-SNE, UMAP and random projection, factor analysis and SDR.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html">Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;amp;index=6 https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;amp;index=6 https://www.youtube.com/watch?v=4Zk2UFGIrd0</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/projects/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/projects/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/projects/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-21T00:37:54+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/projects/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/projects/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/projects/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -112,7 +64,7 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Confidence Intervals vs Credible Intervals</title><link href="http://localhost:4000/stats/Confidence-Intervals-Credible-Intervals/" rel="alternate" type="text/html" title="Confidence Intervals vs Credible Intervals" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/stats/Confidence-Intervals-Credible-Intervals</id><content type="html" xml:base="http://localhost:4000/stats/Confidence-Intervals-Credible-Intervals/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Stats" /><summary type="html"></summary></entry><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
 
 &lt;h1 id=&quot;recall&quot;&gt;Recall&lt;/h1&gt;
 
@@ -277,7 +229,7 @@ We need to choose the prior distribution using our expertise and knowledge which
     \hat{\theta}_{map} = \frac{N1 + a - 1}{N1 + N0 + a + b - 2}
 \end{align*}\]
 
-&lt;p&gt;So by assuming a prior distribution in Bayesian statistics we end up getting a very similar estimator found in Frequentist statistics using Laplace Smoothing. So in a sense they are very similar!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.</summary></entry><entry><title type="html">Weak Strong Law Large Numbers</title><link href="http://localhost:4000/weak-strong-law-large-numbers/" rel="alternate" type="text/html" title="Weak Strong Law Large Numbers" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/weak-strong-law-large-numbers</id><content type="html" xml:base="http://localhost:4000/weak-strong-law-large-numbers/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">How sampling distribution is the link between Machine Learning and data science</title><link href="http://localhost:4000/random/distribution-link-datascience-ml/" rel="alternate" type="text/html" title="How sampling distribution is the link between Machine Learning and data science" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/random/distribution-link-datascience-ml</id><content type="html" xml:base="http://localhost:4000/random/distribution-link-datascience-ml/">&lt;h1 id=&quot;ever-wondered-how-these-two-field-like-with-concrete-examples&quot;&gt;Ever wondered how these two field like with concrete examples?&lt;/h1&gt;
+&lt;p&gt;So by assuming a prior distribution in Bayesian statistics we end up getting a very similar estimator found in Frequentist statistics using Laplace Smoothing. So in a sense they are very similar!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.</summary></entry><entry><title type="html">How sampling distribution is the link between Machine Learning and data science</title><link href="http://localhost:4000/random/distribution-link-datascience-ml/" rel="alternate" type="text/html" title="How sampling distribution is the link between Machine Learning and data science" /><published>2024-05-18T00:00:00+10:00</published><updated>2024-05-18T00:00:00+10:00</updated><id>http://localhost:4000/random/distribution-link-datascience-ml</id><content type="html" xml:base="http://localhost:4000/random/distribution-link-datascience-ml/">&lt;h1 id=&quot;ever-wondered-how-these-two-field-like-with-concrete-examples&quot;&gt;Ever wondered how these two field like with concrete examples?&lt;/h1&gt;
 &lt;p&gt;Data science formull is defined “statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data”. In a informal sense we are trying to transform raw data into strucutre data for a specific task. Now this take can range from mere simple data analysis to more complex task including classifying data or regression problems. Now, one role of data sciecne is to provide data to machine learning engineers for a spcifci learning problem.  So the next question begins ‘what does the macvhien learnign requires from a data scientist to ensrue data is correct?’. We will look at the basics of machine learning algorithsm, including loss functions, assumptions and then devlve into the importance of data quality given by data scientist.&lt;/p&gt;
 
 &lt;h1 id=&quot;little-about-machine-learning&quot;&gt;Little about machine learning&lt;/h1&gt;
@@ -332,40 +284,308 @@ That is we want to find the middle weight of all possible samples from data futu
 
 &lt;p&gt;As computer natives, even though we think we don’t know where the keys are, we subconsciously already know where all the letters are on the keyboard; we just need to practice a little!&lt;/p&gt;
 
-&lt;p&gt;It’s as simple as that!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.</summary></entry><entry><title type="html">Bias-variance tradeoff vs approximation-estimation tradeoff</title><link href="http://localhost:4000/statistics/tradeoffs-methods/" rel="alternate" type="text/html" title="Bias-variance tradeoff vs approximation-estimation tradeoff" /><published>2024-05-15T00:00:00+10:00</published><updated>2024-05-15T00:00:00+10:00</updated><id>http://localhost:4000/statistics/tradeoffs-methods</id><content type="html" xml:base="http://localhost:4000/statistics/tradeoffs-methods/">&lt;p&gt;Recently I’ve been reading a textbook called ‘Data Science and Machine Learning Mathematical and Statistical Methods’ by a previous professor Zdravko I. Botev and i came across an interesting nation ‘approximation-estimation tradeoff’. Uptil now I, like most people was only aware of bias-variacne tradeoff being the most common problem with optimsing mahcine learning algorithms. So the aim of this post of to classify the difference between the two using the aid of a provious textbook and a the article ‘Bias/Variancer is not the same as Approimation/Estimation’ by Gavin brown and Riccardo Ali.&lt;/p&gt;
+&lt;p&gt;It’s as simple as that!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.</summary></entry><entry><title type="html">Line Search Methods for Numerical Optimisation</title><link href="http://localhost:4000/statistics/Linear-Search-Methods/" rel="alternate" type="text/html" title="Line Search Methods for Numerical Optimisation" /><published>2024-03-30T00:00:00+11:00</published><updated>2024-03-30T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Linear-Search-Methods</id><content type="html" xml:base="http://localhost:4000/statistics/Linear-Search-Methods/">&lt;p&gt;Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Linear search strategy&lt;/li&gt;
+  &lt;li&gt;Trust region&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h1 id=&quot;adressing-perspectives&quot;&gt;Adressing Perspective’s&lt;/h1&gt;
+&lt;p&gt;This blog post will focus on the linear search strategy for optimisation techniques. This blog post requires a basic understanding on optimisation - objective functions, variables and constrained, so lets get into it.&lt;/p&gt;
 
-&lt;p&gt;Many people are aware that machine learning and data sciecne originated from the field of Statistics and Mathematics, yet many course taught focus on using training data to optimsatie machine learning algorithsm.&lt;/p&gt;
+&lt;h1 id=&quot;what-is-line-search-and-trust-region-how-do-they-differ&quot;&gt;What is line search and trust region, how do they differ?&lt;/h1&gt;
 
-&lt;p&gt;So the importanat distinction is ‘approximation-estimation tradeoff was published first and orignates from Statistical learning theory, which focuses on a excess risk in mathematical defintiion (Bayes model), yet bias-variacne trade off focuses on a defintion akin to protical, focusing on the problem risk when using training data for trainfed models, more akin to the problems faced practically in the industry today’&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Recently I’ve been reading a textbook called ‘Data Science and Machine Learning Mathematical and Statistical Methods’ by a previous professor Zdravko I. Botev and i came across an interesting nation ‘approximation-estimation tradeoff’. Uptil now I, like most people was only aware of bias-variacne tradeoff being the most common problem with optimsing mahcine learning algorithms. So the aim of this post of to classify the difference between the two using the aid of a provious textbook and a the article ‘Bias/Variancer is not the same as Approimation/Estimation’ by Gavin brown and Riccardo Ali.</summary></entry><entry><title type="html">Statistical Learning Theory Episode One ‘Building the foundation’</title><link href="http://localhost:4000/statistics/Overview-of-staticial-theory-learning/" rel="alternate" type="text/html" title="Statistical Learning Theory Episode One ‘Building the foundation’" /><published>2024-05-15T00:00:00+10:00</published><updated>2024-05-15T00:00:00+10:00</updated><id>http://localhost:4000/statistics/Overview-of-staticial-theory-learning</id><content type="html" xml:base="http://localhost:4000/statistics/Overview-of-staticial-theory-learning/">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik) | MIT Deep Learning Series’. Lets get into it!&lt;/p&gt;
+&lt;p&gt;Our main goal with optimsiation is to find a global minimimum points which in real life minimum point which reduced the time, cost etc. Now given we can algebraically find this optimal solution through other optimisation techniques. Let’s see an example,&lt;/p&gt;
 
-&lt;h1 id=&quot;why-do-we-care-about-statistical-learning-theory&quot;&gt;Why do we care about statistical learning theory?&lt;/h1&gt;
+\[\begin{align*}
+\min_{x \in \mathbb{R}^2} \quad &amp;amp; x^2 - sin(x)\\
+\end{align*}\]
 
-&lt;p&gt;Statistical learnign theory predates today machie learing algorithsm. Originating from Russia in the 1960’s, the key goals was to formualting ‘learning’ through data. Machine learing algorithm take example training data then it infers ‘general ruels’ which can both answer a its label and over time after many samples can generalised to unseen examples known as inductive reasoning/inferences.&lt;/p&gt;
+&lt;p&gt;Now, if we were to use algebratic methods using First order sufficient condition we find the unconstrained stationary point by $\triangledown f(\mathbf{x}) = \mathbf{0}$. But,&lt;/p&gt;
 
-&lt;p&gt;This domain of study lead to the now famous algorithsm known as Support Vector Machines which is now a staple of patter recognition.To enable this learning process statistician devleoped a framework to formuale this process; regression, classification, clustering.&lt;/p&gt;
+\[\triangledown f(\mathbf{x}) = \mathbf{0} \Leftrightarrow 2x - cos(x) = 0\]
 
-&lt;h1 id=&quot;framework-of-staitsitcal-learning-theory&quot;&gt;Framework of staitsitcal learning theory&lt;/h1&gt;
+&lt;p&gt;So the only way to finding a $ x $ algebratically is through guessing possible $ x $ values, even though the solution exists,&lt;/p&gt;
 
-&lt;p&gt;General SLT attems to answer 4 main questions;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/2x.png&quot; alt=&quot;image tooltip here&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So this is where numerical optimsiation comes in. In essense rather then using algebraic methods to solve the optimisation problem we now is iterative process through a starting point $ x^{(0)} $ and then generatign a sequecnes of sets $ x^{(k)} $ which termiantes when a global minimum is reached, $ x^* $. Finding a new iteration step $ x^{(k)} $ is through finding where the rule of function value decreases known as decent methods,&lt;/p&gt;
+
+\[\begin{align*}
+f(x^{(k+1)}) &amp;lt; f(x^{(k)})
+\end{align*}\]
+
+&lt;p&gt;We denote $ s^{(k)} $ as a search direction, which is is just given a point, $ x^{(k)} $ in which direction we move in? 
+so intutively with no restricstion $ s^{(k)} $ can be in all directions from at point $ x^{(k)} $. Now, since restricitions imposed on $ x^{(k)} $ is the decent method how do apply this?&lt;/p&gt;
+
+&lt;p&gt;Definition : At a point $ x^{(k)} $ , a direction $ s^{(k)} $ is a descent direction if&lt;/p&gt;
+
+\[\begin{align*}
+\triangledown f(x^{(k)})^T s^{k} &amp;lt; 0 
+\end{align*}\]
+
+&lt;p&gt;Why?&lt;/p&gt;
+
+&lt;p&gt;Now $\triangledown f(x) $ points in direction of , so by taking $ - \triangledown f(x) $ we point any $ x $ to direction of steepest descent. So, $ \triangledown f(x^{(k)})^T s^{k} &amp;lt; 0 $.&lt;/p&gt;
+
+&lt;p&gt;So, since we know that $ s_{(k)} $ can be in any direction then to restirict we want all search direction which ensures we are in descent getting closer to minimiser ,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/decent-direction.png&quot; alt=&quot;decent-direciton&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Intitively, we want to next iteration to be $ x^{(k + 1)} $ to be as a know in ferences to out previous iteration,  $ x^{(k)} $, and  $ s^{(k)} $, but since our search direction is also a vector direction we we dont impose a ‘length’ the search direction can be then we can overeach out minimiser $ x^* $&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/step-size-overeach.png&quot; alt=&quot;step-size-overeach&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So we impose a step length $ \alpha_{k} $, in most algorithms, we will chose a step-size and after eahc iterations we optimise the step-size inrdoer to find the optimal ‘jump’ we want to impose.&lt;/p&gt;
+
+&lt;p&gt;Therfore by definition $ s^{(k)}$ is in decent direction of  $ x^{(k)} $, if $ f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)})$ where we define $ x^{(k + 1)} =  x^{(k)} + \alpha s^{(k)} $. Our goals is to prove that this is try using our definition of decent direction.&lt;/p&gt;
+
+&lt;p&gt;Let $ l(\alpha) = f(x^{(k)} + \alpha s^{(k)}) $ then $ \frac{d}{dx}(l(\alpha)) = \frac{d}{dx}f(x^{(k)} + \alpha s^{(k)}) $ when $ x^{(k)} = 0$ then, intuitively, if we can show that $ l’(\alpha) &amp;lt; 0 \Rightarrow l(\alpha) &amp;lt; l(0) \Rightarrow f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)}) $. Visually, in $\mathbb{R}^2$ for this to hold true then ,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/direction-decent-proof.png&quot; alt=&quot;direction-desecnet-proof&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, since $ x^{(k)} \in \mathbb{R}^n $ we have to use the chain rule to find  $ \frac{d}{dx}f(x^{(k)} + \alpha s^{(k)}) $. Let $x_{i}(\alpha) = x_{i}^{(k)} + \alpha s_{n}^{(k)}$ for all $ i \in \mathbb{Z^+} $ and for a fixed $ x^{(k)}, s^{(k)} $ we have,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/chain-rule-decent-direciton.png&quot; alt=&quot;chain-rule&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then applying $ \alpha = 0 \Rightarrow l’(0) = f(x^{(k)})^Ts^{(k)} $. Now given $ s^{(k)} $ is in decent direction then  $ l’(0) = f(x^{(k)})^Ts^{(k)} &amp;lt; 0 $
+so hence, $ f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)}) $&lt;/p&gt;
+
+&lt;h1 id=&quot;how-do-we-ensure-that-we-pick-a-point--xk1--such-that--fxk--alpha-sk--is-closest-to--x-&quot;&gt;How do we ensure that we pick a point $ x^{(k+1)} $ such that $ f(x^{(k)} + \alpha s^{(k)}) $ is closest to $ x^* $?&lt;/h1&gt;
+&lt;p&gt;Finally, the process is known line search strategy which by definition is&lt;/p&gt;
+
+\[\begin{align*}
+\min_{\alpha \geq 0} \quad &amp;amp; f(x^{(k)} + \alpha s^{(k)})
+\end{align*}\]
+
+&lt;p&gt;Importantly, this is known as exact line search since, finds the optimal step size that minimizes the objective function along the search direction. But there exsit different types of line search including Backtracking Line Search, Golden Section Search, interpolation-Based Line Search. All these line search play around with step size, $ \alpha $ to find the most optimal method to minimer objective function.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods; Linear search strategy Trust region</summary></entry><entry><title type="html">Olympiad Level Counting Made Easy with Jensen’s inequality</title><link href="http://localhost:4000/statistics/Olympaid-Level-Counting/" rel="alternate" type="text/html" title="Olympiad Level Counting Made Easy with Jensen’s inequality" /><published>2024-03-27T00:00:00+11:00</published><updated>2024-03-27T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Olympaid-Level-Counting</id><content type="html" xml:base="http://localhost:4000/statistics/Olympaid-Level-Counting/">&lt;p&gt;Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that&lt;/p&gt;
+
+\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
+
+&lt;p&gt;Or&lt;/p&gt;
+
+\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
+
+&lt;p&gt;Many of you have no idea how some 14 year old kid is able to solve these questions, yet at my final year of university, I am still not able to intuitively solve these. I believe that this is true for most university students.&lt;/p&gt;
+
+&lt;p&gt;Now, of course, the most rational method would be trying to move all the variables to one side, then try estimating the values for which the right-hand side equals the left-hand side. Then, the exam hits you with give me exact values for \(x,y,z\) and now you are stumped with this 1 hour exam and  you’ll just about spend most of your time guessing possible values. Here comes the bang, Olympiad contestants in my eyes now are of course genius, but they know a set of specialised tools in their tool bag of which they select the appropriate tool for the job. Now, selecting a the right tool can be difficult (Mathematics tool bags a very,very deep).&lt;/p&gt;
+
+&lt;h2 id=&quot;one-of-the-most-powerful-tools-in-the-mathematics-tool-bag--jensens-inequality&quot;&gt;One of the most powerful tools in the mathematics tool bag : Jensen’s Inequality.&lt;/h2&gt;
+&lt;p&gt;For any convex function \(h\), we have,&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y)\]
+
+&lt;p&gt;How did we get to conclusion of the great ‘power’ of Jensen’s Inequality? According to my professor, Dr.Zdravko Botev, power comes from two key characteristics (1) simplicity (2) usefulness. Not only is Jensen Inequality applicable in a range of context, including counting as above, but also real analysis, probability, economics, statistics, and machine learning, but it’s proof that it is so simple.&lt;/p&gt;
+
+&lt;p&gt;\(\textit{Proof.}\) From the definition of convexity, we have for x and all Y:&lt;/p&gt;
+
+\[h(Y) \geq h(x) + v^T(Y-x)\]
+
+&lt;p&gt;By the monotonicty and linearity of expectation, we have&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(x) + v^T\mathbb{E}(Y-x)\]
+
+&lt;p&gt;Now, since this is true for each \(x\) we can chose \(x = \mathbb{E}(Y)\). So,&lt;/p&gt;
+
+\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y) + v^T\mathbb{E}(Y-\mathbb{E}Y) \Rightarrow  \mathbb{E}h(Y) \geq h(\mathbb{E}Y).\]
+
+&lt;p&gt;Which is Jensen’s Inequality.&lt;/p&gt;
+
+&lt;h2 id=&quot;now-how-do-we-apply-this-powerful-tool-to-our-counting-problem&quot;&gt;Now, how do we apply this powerful tool to our counting problem?&lt;/h2&gt;
+&lt;p&gt;The idea is that we want to find a convex function which applies to the problem and hence we can use Jensen’s Inequality. So, for:&lt;/p&gt;
+
+\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
+
+&lt;p&gt;We can try \(h(x) = \frac{1}{x}\) or \(h(x) = \frac{1}{x + 1}\) or \(h(x) = \frac{1}{x - 1}\) and we can confirm that these a convex function by showing  \(h&quot;(x) &amp;gt; 0, \forall x \in \mathbb{R}\). Now, lets try  \(h(x) = \frac{1}{x}, x &amp;gt; 1\).
+Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
+
+\[\mathbb{E}[\frac{1}{Y}] \geq \frac{1}{\mathbb{E}Y}\]
+
+&lt;p&gt;Next we consider a distribution for \(Y\). Since, we have 3 fractions a logical choice would be for \(Y\) distribution,&lt;/p&gt;
+
+\[\mathbb{P}(Y = x) = \mathbb{P}(Y = x + 1) = \mathbb{P}(Y = x - 1) = \frac{1}{3}.\]
+
+&lt;p&gt;For this \(Y\), we have a three point distribution, we can compute the expectations and hence Jensen’s inequality,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathbb{E}[\frac{1}{Y}] = \frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}, \\
+    \frac{1}{\mathbb{E}Y} = \frac{1}{\frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}} = \frac{1}{x}.
+\end{align*}\]
+
+&lt;p&gt;So,&lt;/p&gt;
+
+\[\begin{align*}
+    \mathbb{E}[\frac{1}{Y}] &amp;amp;\geq \frac{1}{\mathbb{E}Y} \Rightarrow \\
+    \frac{1}{3}[\frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1}] &amp;amp;\geq \frac{1}{x} \Rightarrow \\
+    \frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1} &amp;amp;\geq \frac{3}{x}.
+\end{align*}\]
+
+&lt;p&gt;Wala! Wasn’t that hard, right? Maybe you can try this one,&lt;/p&gt;
+
+\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
+
+&lt;p&gt;hint: \(h(x) = \text{ln}(1 + \frac{1}{x})\)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that</summary></entry><entry><title type="html">Roadmap to Learn Transformers in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/how-to-learn-transformers/" rel="alternate" type="text/html" title="Roadmap to Learn Transformers in less then 3 minutes" /><published>2024-01-29T00:00:00+11:00</published><updated>2024-01-29T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/how-to-learn-transformers</id><content type="html" xml:base="http://localhost:4000/machine%20learning/how-to-learn-transformers/">&lt;p&gt;When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.&lt;/p&gt;
+
+&lt;p&gt;But upon looking online for a simple roadmap of the topic I needed to cover, I found that most blog posts focus on the individual components you need to know inside a transformer architecture rather than how to get to the point to potentially understand a transformer architecture.&lt;/p&gt;
+
+&lt;p&gt;Definition of Transformer: Machine learning architectures that allow asking multiple questions about an input and receiving answers out of questions from surrounding inputs, which helps us compute an output!&lt;/p&gt;
+
+&lt;h1 id=&quot;so-lets-beging&quot;&gt;So lets beging&lt;/h1&gt;
+
+&lt;h1 id=&quot;1--some-basic-understanding-on-machine-learning&quot;&gt;1 . Some basic understanding on Machine Learning&lt;/h1&gt;
+
+&lt;p&gt;Definition of Machine Learning: process of exploring data using mathematics to create scalable and reusable algorithms in order to make decisions/improve society. Pretty much give an algorithm some data with output or no outputs and hope it can solve new data using this given data.&lt;/p&gt;
+
+&lt;p&gt;Machine Learning is broken down into two parts: Supervised and Unsupervised learning (kinda there are a few subsets of machine learning, but we only need to focus on these)&lt;/p&gt;
+
+&lt;p&gt;Supervised: given we feed the algorithm with pairs of inputs and corresponding outputs. The goal of supervised learning is to feed new inputs and try to figure out an output.&lt;/p&gt;
+
+&lt;p&gt;Unsupervised learning: where you feed the algorithm inputs and outputs, but your goal isn’t to predict new outputs but rather identifying patterns, visualizations, etc.&lt;/p&gt;
+
+&lt;p&gt;I recommend just going through “The Hundred-Page Machine Learning Book” by Andriy Burkov, getting a basic grip of the concepts.&lt;/p&gt;
+
+&lt;p&gt;So a subset of machine learning techniques is deep learning. A part of deep learning is the transformer architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;&apos;../assets/images/roadmap-to-trasnfomers/deep-learbning-machine-learning-picture.png&quot; alt=&quot;Ven Diagram of where transfomers realtionship with Machine Learning&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;deep-learing&quot;&gt;Deep learing&lt;/h1&gt;
+
+&lt;p&gt;Now the main concept you should learn is:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Which learning tasks can be performed by computers in general (positive and negative results)?&lt;/li&gt;
-  &lt;li&gt;What kind of assumptions do we have to make such that machine learning can be successful a.k.a inductive bias? (Turns out this is inevitable for a sucessfull learning algorithsm “No Free-Lunch Theorem”!)&lt;/li&gt;
-  &lt;li&gt;What are the key properties a learning algorithm needs to satisfy in order to be successful?&lt;/li&gt;
-  &lt;li&gt;Which performance guarantees can we give on the results of certain learning algorithms? - this ones important we want to ensure our mechanism learns the right outcome&lt;/li&gt;
+  &lt;li&gt;Feedfoward Neural Networks -&amp;gt; Focus!&lt;/li&gt;
+  &lt;li&gt;CNN - the basics&lt;/li&gt;
+  &lt;li&gt;RNN - learn GRU’s and LSTM’s&lt;/li&gt;
+  &lt;li&gt;Attention Architecture&lt;/li&gt;
+  &lt;li&gt;Transformers Architecture&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&quot;types-of-learning&quot;&gt;Types of learning&lt;/h1&gt;
+&lt;p&gt;You should complete these processes in order and ensure you have a strong understanding of feedforward neural networks. I recommend these two resources:&lt;/p&gt;
 
-&lt;p&gt;We will be focusing on explanation through the leaner-teacher model, in which the learning is the algorithm, the environment is the training data and the teacher guides the experience&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Supervised vs unsupervised learning : the learner interects with the environment in suprervised learning the leaners “uses experiences from environment to gain expertise” in which a teacher provides the experiecnes (training data) and then “apply” its experiecnes to new data given by the teacher (test data). However, in unserpvised learning the teacher provides ‘experiences’ to the learner (training data), and the leaner aims to ‘summerise’ the experiences&lt;/li&gt;
-  &lt;li&gt;Active vs Passive : If the learner interects with the enviuronement provided by the teacher (training data) and gives the teacher quiries about the experiecnes then is is an acitvie leaner, else if it doesnt inquire about the experiences and merlery just take the experiecnes in then its is passive&lt;/li&gt;
+  &lt;li&gt;(Neural Networks and Deep Learning)[http://neuralnetworksanddeeplearning.com]&lt;/li&gt;
+  &lt;li&gt;(3blue2brown)[https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The goals is the teacher naturlally is to provide the best informatio for the leaner to understand the taks as quickly as possible, but course how the teacher learner the task itself is unknown so we assume it is random process. An alternative is adversiary teacher, who pruposefuly provides bad information to see if the leaner undertsanding the experinces, usualyl used in worst-case scienario’s!&lt;/p&gt;
+&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
 
-&lt;h1 id=&quot;formulising-the-learning-equation&quot;&gt;Formulising the learning equation&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Overview I’v been currently learning about staticial learning theory to gain a mathematical udnertsanding of machine learning. So today the first part of a few psot focusing in undertsanding statistical learning theory. This first post is based on ‘Complete Statistical Theory of Learning (Vladimir Vapnik) | MIT Deep Learning Series’. Lets get into it!</summary></entry></feed>
+&lt;p&gt;Lets talk visually:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/function_sequential_api.png&quot; alt=&quot;function_sequential_api.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The whole point of Tensorflow with Keras is to simply the process of creating neural networks so now we dont spend time on manully coding a neural network, but rather focus on improving the performance of our model. Now how exactly does Functional api improve flexibility but at the cost of complexity?&lt;/p&gt;
+
+&lt;h2 id=&quot;sequential-api&quot;&gt;Sequential API&lt;/h2&gt;
+&lt;p&gt;Sequential API’s tipically look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;sequential.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice, although we specify the pooling dimensions and strides and other arguements within the tf.keras.layers call , we can’t input specific paramters like Z1,A1 or Z2. Importantly it all happens sequentially so the model will start from the top end go by each call one by one until the end.&lt;/p&gt;
+
+&lt;h1 id=&quot;function-api--spot-the-difference&quot;&gt;Function API : spot the difference&lt;/h1&gt;
+&lt;p&gt;Alternatively, comparing this to functional API it allows use to play around with the parameters:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;functional_api.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice how we adding paramters to our calls to tf.keras.layers()(Paramter) providing us flexibility to choose which parameters we want to trasnform. Note this is just one way of taking advantage of function API. Other possible options are :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Multiple inputs - Now we can have multiple paramters since our functional isnt called linearly&lt;/li&gt;
+  &lt;li&gt;Sharing inputs - say we want Z1 to have multiple acitivations say Leaky-RelU and ReLU&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But as you can see the possibility or errors increases since you can play around with which inputs you want where. So be careful!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
+and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
+
+&lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
+
+&lt;p&gt;Before asessing my weakness, what are my inspiration say is a good pathway? 
+Well after watching Lex Fridman interview with Andrew Ng &lt;a href=&quot;https://www.youtube.com/watch?v=1k37OcjH7BM&amp;amp;t=1381s&quot;&gt;here!&lt;/a&gt; 
+he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
+once you have taken enough courses then work on projects and reading research papers.&lt;/p&gt;
+
+&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer (here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
+
+&lt;h2 id=&quot;focus-on-the-weakness&quot;&gt;Focus on the weakness&lt;/h2&gt;
+
+&lt;p&gt;I beleive (currently?) Machine learning ecosystem can be broken down into the follow skills&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mathematics&lt;/li&gt;
+  &lt;li&gt;ML algorithms&lt;/li&gt;
+  &lt;li&gt;MLops&lt;/li&gt;
+  &lt;li&gt;Python skills&lt;/li&gt;
+  &lt;li&gt;Cloud Services&lt;/li&gt;
+  &lt;li&gt;SQL database&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since i have a currenlty pursuing a Mathhematics and Marketing degree, the main focus should be builing later half. Althought i have expericnes with Cloud Services including AWS and 
+SQL database i will significnatly have to improve in this area. Addtionally, my Python skills a desent but thtere is a way to go&lt;/p&gt;
+
+&lt;h1 id=&quot;what-i-have-currently-done&quot;&gt;What i have currently done?&lt;/h1&gt;
+
+&lt;p&gt;Well currently i have completed/doing:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CS29 by Andrew Ng&lt;/li&gt;
+  &lt;li&gt;Hands-On Machine Learning with Scikit-Learn and Tensorflow&lt;/li&gt;
+  &lt;li&gt;The Hundred-page Machine Learning Book by Andriy Burkov&lt;/li&gt;
+  &lt;li&gt;Deep learning Specialisation by Andrew Ng&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-roadmap-with-certifications&quot;&gt;The Roadmap With Certifications&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Programming
+    &lt;ul&gt;
+      &lt;li&gt;“Python 3 Object-Oriented Programming” by Dusty Phillips&lt;/li&gt;
+      &lt;li&gt;“Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
+      &lt;li&gt;“Algorithms” Princeton University&lt;/li&gt;
+      &lt;li&gt;“Coding Interview University” (github)[https://github.com/jwasham/coding-interview-university]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ML algorithms
+    &lt;ul&gt;
+      &lt;li&gt;Deep Learning for Coders with fastai &amp;amp; PyTorch&lt;/li&gt;
+      &lt;li&gt;Introduction to Machine Learning with Python: A Guide for Data Scientists&lt;/li&gt;
+      &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy&lt;/li&gt;
+      &lt;li&gt;Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
+      &lt;li&gt;Papers with Code : Most popular and Recent machine learning papers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;MLops
+    &lt;ul&gt;
+      &lt;li&gt;Desigining Machine Learing Systems by Chip Huyen&lt;/li&gt;
+      &lt;li&gt;Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
+      &lt;li&gt;Coursera’s MLOps Specialization by DeepLearning.AI&lt;/li&gt;
+      &lt;li&gt;Full Stack Deep Learning&lt;/li&gt;
+      &lt;li&gt;fast.ai&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cloud
+    &lt;ul&gt;
+      &lt;li&gt;Microsoft Certified: Azure Fundamentals&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SQL
+    &lt;ul&gt;
+      &lt;li&gt;LeetCode SQL&lt;/li&gt;
+      &lt;li&gt;SQL for Data Analysis Advanced Techniques for Transforming Data into Insights&lt;/li&gt;
+      &lt;li&gt;SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;structure&quot;&gt;Structure&lt;/h1&gt;
+
+&lt;p&gt;Currently since unviersity off i have a little time to concurrently complete 2 courses at the same time, the plan is i want to read for projects i want to have a project in mind work on whilst reading/watching resources. The currentl systtemiatic plan is;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Deep learning Specialisation by Andrew Ng  + Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
+  &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy + Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
+  &lt;li&gt;“Algorithms” Princeton University + “Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
+  &lt;li&gt;Full Stack Deep Learning + fast.ai&lt;/li&gt;
+  &lt;li&gt;Microsoft Certified: Azure Fundamentals + SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry></feed>
