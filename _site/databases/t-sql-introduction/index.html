@@ -10,25 +10,24 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            A world without unicode? Where would we be? | Shahid Hussain      Blog      </title>
-<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+<!-- begin _includes/seo.html --><title>            Relational Database Management System Introduction: From Mathematics to Relations | Shahid Hussain      Blog      </title>
+<meta name="description" content="Developed About SQL Invented in the ealry 1970’s by IBM called SEQUEL (strucut English quary Language) which provided a relation dabase manager system. This was then changed from SEQUEL to SQL due to trademark issues.">
 
 
   <meta name="author" content="Shahid Hussain">
   
+  <meta property="article:author" content="Shahid Hussain">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="A world without unicode? Where would we be?">
-<meta property="og:url" content="http://localhost:4000/improgress/2024-02-02-world-without-unicode/">
+<meta property="og:title" content="Relational Database Management System Introduction: From Mathematics to Relations">
+<meta property="og:url" content="http://localhost:4000/databases/t-sql-introduction/">
 
 
-  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
-
-
-
+  <meta property="og:description" content="Developed About SQL Invented in the ealry 1970’s by IBM called SEQUEL (strucut English quary Language) which provided a relation dabase manager system. This was then changed from SEQUEL to SQL due to trademark issues.">
 
 
 
@@ -36,9 +35,14 @@
 
 
 
+  <meta property="article:published_time" content="2024-05-03T00:00:00+10:00">
 
 
-<link rel="canonical" href="http://localhost:4000/improgress/2024-02-02-world-without-unicode/">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/databases/t-sql-introduction/">
 
 
 
@@ -270,16 +274,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="A world without unicode? Where would we be?">
-    
-    
+    <meta itemprop="headline" content="Relational Database Management System Introduction: From Mathematics to Relations">
+    <meta itemprop="description" content="Developed About SQLInvented in the ealry 1970’s by IBM called SEQUEL (strucut English quary Language) which provided a relation dabase manager system. This was then changed from SEQUEL to SQL due to trademark issues.">
+    <meta itemprop="datePublished" content="2024-05-03T00:00:00+10:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/improgress/2024-02-02-world-without-unicode/" class="u-url" itemprop="url">A world without unicode? Where would we be?
+            <a href="http://localhost:4000/databases/t-sql-introduction/" class="u-url" itemprop="url">Relational Database Management System Introduction: From Mathematics to Relations
 </a>
           </h1>
           
@@ -290,7 +294,71 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>Recently, i was studying about bit manipulation, and it brought me into a rabit hole of character encoding to binary numbers.</p>
+        <h1 id="developed-about-sql">Developed About SQL</h1>
+<p>Invented in the ealry 1970’s by IBM called SEQUEL (strucut English quary Language) which provided a relation dabase manager system. This was then changed from SEQUEL to SQL due to trademark issues.</p>
+
+<p>People often rever to SQL was a American national standard istitude and Itnernation organisation for stadnardisation (ISO) standard laguage for relational model for manging/querying Relationsl dabase manager systems.</p>
+
+<h1 id="what-is-a-relational-database">What is a relational database?</h1>
+<p>Relantional models was invented by mathematicians who studies set theory and predicate logic.</p>
+
+<p>Set theory is the study or collection of objectives. An exmaples lets S = {a,b,c}, where S is the set and the objetive are contained within the set (a,b,c). 
+According to Georg Cantor, the discovery of set theory,  a set has a few main proeprties.</p>
+
+<ol>
+  <li>a set is a single entity - we should look at sets over individuals objects.</li>
+  <li>eact elemtn is distinct - a set cant contains two of the same elements {a,a,b,c} is not a set</li>
+  <li>sets are subjective - how a set is created is depdende on the person</li>
+  <li>order of elements in a set doesnt matter - {a,b,c} = {b,c,a}</li>
+</ol>
+
+<p>All of which was utilised in relational databases architecture</p>
+
+<ol>
+  <li>When we do quries on on SQL we focus on say a whole colums (gender of table) over indviduals people (1 person gender)</li>
+  <li>defining key contraints</li>
+  <li>Relational database systems can be designed  depending on the applciation required. So data is not represented uniquely.</li>
+  <li>We dont care how a indviduals sits in a table but rather if it is containe din a table.</li>
+</ol>
+
+<p>Predicate logic is a branch of methamtcis which basically studies true or false statement. Relationals models relies on constrained to maing logic for queries. An exmaples given a salary, salary &gt; 20,000.</p>
+
+<p>Set theory and predicate logic is linked by being able to define sets through predicate logic, since sets can have a infinte amount of elements. An example “x is a postive number thats is divible by 2” whicich {2,4,6,8,10…}.</p>
+
+<h1 id="initail-mdoels-of-relational-models">Initail mdoels of Relational Models</h1>
+
+<p>The intials models as invented in 1969 by IBM reseach reported valled “Derivbaility, Reudcndancy and COnsistency of rtleational stored Lsarge Data bnkas”.</p>
+
+<p>A RDBMS implements a relational models to allows stroage, management, enforcement and query of data. In the paper the authors identfied proeprties of RDBS including propsotions,predicates,rleations,tuplaes and attributes.</p>
+
+<h1 id="what-is-a-propositionpredicates-and-relation">What is a proposition,predicates and relation?</h1>
+
+<p>Relational does not meaing relation between table, but rather ‘relation’ in set theory. which means a set of relation information.
+So in a relational model a relation is a table which conatasins relational information.</p>
+
+<p>When creating a relation you start of with a proposition/statement of truth or false. Given a relation (table) of Cars which includes car brand, car number, car type, year of manufacturting then a proposition is “The toyota supra is a 2-door sport car made in 2024”. Then we cosider this prospotion to our relations. If true then we write it into our relation, in this case yes! Else we if its false prospotion then we dont right it, known as clsoe world asusmption.So what we have done is placing a predicate on a proposition.</p>
+
+<p>(picture)</p>
+
+<p>Next we take the data out of proposition if true through predicates.</p>
+
+<h2 id="how-can-we-put-predicate-on-prposition">how can we put predicate on prposition?</h2>
+<p>One was it puting type constraints, thats is the value of a attritube it either ‘char, int, string’ and length constrains.</p>
+
+<p>Finally we place it into our relation by inseting it into a  set of tuples(row), under the corresponding set og attribtues (columns)</p>
+
+<h1 id="role-of-keys-and-normilisation">Role of keys and Normilisation</h1>
+
+<p>We have a problem John recently chnages his number we want to now chnage his number in our relation. How would we do this? Say we qeyr but we find there are 3 johns but we only want index 100 john.</p>
+
+<p>This process mathematically is called normalisation which guarenties a single relation for each relation, ensugin (1) minimisation of reducancy and (2) avoiding Anaomilies.</p>
+
+<h1 id="type-of-normisliations-correposbonding-to-key-relationships">Type of Normisliations, correposbonding to key relationships</h1>
+<h2 id="1-normlisation">1-Normlisation</h2>
+<h2 id="2-normlsiation">2-Normlsiation</h2>
+<h2 id="3-normilisation">3 normilisation</h2>
+
+<p>candidate keys, doreign keys, altenrate keys, non key</p>
 
         
       </section>
@@ -309,7 +377,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#cs" class="page__taxonomy-item p-category" rel="tag">CS</a>
+      <a href="/categories/#databases" class="page__taxonomy-item p-category" rel="tag">Databases</a>
     
     </span>
   </p>
@@ -317,11 +385,24 @@
 
         
 
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-03T00:00:00+10:00">May 3, 2024</time></p>
+
       </footer>
 
       
 
       
+  <nav class="pagination">
+    
+      <a href="/statistics/Linear-Search-Methods/" class="pagination--pager" title="Line Search Methods for Numerical Optimisation
+">Previous</a>
+    
+    
+      <a href="/databases/RSS-MLE/" class="pagination--pager" title="Residual Sum of Squares from a Machine learning perspective using MLE
+">Next</a>
+    
+  </nav>
+
     </div>
 
     

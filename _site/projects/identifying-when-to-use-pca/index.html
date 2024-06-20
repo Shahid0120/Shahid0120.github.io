@@ -10,25 +10,24 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Shahid Hussain | Blog &#124; Page 3</title>
-<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+<!-- begin _includes/seo.html --><title>            Dimension Reduction Methods | Shahid Hussain      Blog      </title>
+<meta name="description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE  https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=4Zk2UFGIrd0">
 
 
   <meta name="author" content="Shahid Hussain">
   
+  <meta property="article:author" content="Shahid Hussain">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="            Shahid Hussain      Blog      ">
-<meta property="og:url" content="http://localhost:4000/page3/">
+<meta property="og:title" content="Dimension Reduction Methods">
+<meta property="og:url" content="http://localhost:4000/projects/identifying-when-to-use-pca/">
 
 
-  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
-
-
-
+  <meta property="og:description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE  https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6 https://www.youtube.com/watch?v=4Zk2UFGIrd0">
 
 
 
@@ -36,15 +35,16 @@
 
 
 
+  <meta property="article:published_time" content="2024-06-12T00:00:00+10:00">
 
 
-<link rel="canonical" href="http://localhost:4000/page3/">
 
 
-  <link rel="prev" href="http://localhost:4000/page2/">
 
 
-  <link rel="next" href="http://localhost:4000/page4/">
+<link rel="canonical" href="http://localhost:4000/projects/identifying-when-to-use-pca/">
+
+
 
 
 <script type="application/ld+json">
@@ -98,7 +98,7 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -144,6 +144,8 @@
 
     <div class="initial-content">
       
+
+
 
 
 
@@ -271,196 +273,128 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
-  
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Dimension Reduction Methods">
+    <meta itemprop="description" content="Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6https://www.youtube.com/watch?v=4Zk2UFGIrd0">
+    <meta itemprop="datePublished" content="2024-06-12T00:00:00+10:00">
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/databases/discriminative-generative-learning/" rel="permalink">Intuition about Dscriminative vs Generative Learning for Machine Learning
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/projects/identifying-when-to-use-pca/" class="u-url" itemprop="url">Dimension Reduction Methods
 </a>
+          </h1>
+          
+
+
+        </header>
       
-    </h2>
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE 
+https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
+https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
+https://www.youtube.com/watch?v=4Zk2UFGIrd0</p>
+
+<p>Today i was learning about Spectral decomposition and the implciation leading to Spectral Value Decompositon, and as many of you guys know the important role SVD plays to Priciple component anlysis, but then the question arise, I want to use PCA but when should I?
+The following notes are from “Introduction to Dimensionality Reduction - Presentation at WangLab in the University of Toronto”. What i will try to do is outline the main methodologies used in dimension reductionality.</p>
+
+<h1 id="what-is-a-manifold">What is a Manifold?</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>When we work with data we have many attributes to describe a certain event we combine all the into  a feature vector $ X = [x_1</td>
+      <td>x_2</td>
+      <td>x_3</td>
+      <td>…</td>
+      <td>x_n] $ . Suppose we have a table describing people then each column can be age, income, location etc. so $ x_i $ represent columns which we combina into a column vector.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>if the only have less then 3 attribute then we can graph these attributes. Majority of the time given there is not major noise in a data, that is error in sample, data naturally stay close to one another, this is known as the Manifold Hypothesis.</p>
+
+<p><img src="/assets/images/manifolds/manifold_types.jpg" alt="Manifold-types" /></p>
+
+<p>There are two many types of ways data can lay in a low dimensional space, (a) subspace : which is hyperplane  in, subspace are importantly always linear OR  (b) submanifold, which is like a squiskly hyperplane, but importantly, locally linear, that is, if we zoom in very close into the submanifold it would seem we were in a flat plane.</p>
+
+<p>Additionally, a submanifold is a smooth continous function, as it allows use to use calculus. Before we cover the identify submanifold we need to cover the types of dimentionaliy reductions</p>
+
+<h1 id="types-of-reduction-dimensionality">Types of Reduction Dimensionality</h1>
+<p>Generally Reduct of Dimension can be placed into three categories</p>
+
+<p><img src="/assets/images/manifolds/type_of_dimension_reductionality.jpg" alt="Type-reduction-methods" /></p>
+
+<h2 id="spectral-dimentional-reductionaly">Spectral Dimentional Reductionaly</h2>
+
+<p>There dimension method take a geometric approach, an a Example PCA, which uses the Coaraicne Matrix to computre eigenvalues and eigenvector. Now Since eigenvalues are the length of eigenvectors, then this can be used to identify the varaicne of a singualr feature (age). 
+The problem then arrises since PCA uses eigenvalues and vector what happens if the data is in a submanifold?</p>
+
+<p><img src="/assets/images/manifolds/spectral_decomposition.jpg" alt="Spectral-methods" /></p>
+
+<p>clearly from (a) consdier the Green and red dots if we use PCA, the eigenvalue would be small, indicating small variacne, even though that data really sits on a submanifold,thus would lead to a underfitting model.</p>
+
+<p>So by idenfitying our data is in a submanifold, we we properly reduced the dimenstion by flatting out the submanifold and then reducing the size of the space, which would over underfitting.</p>
+
+<h2 id="probabilistic-dimension-reductionaliy">Probabilistic Dimension Reductionaliy</h2>
+
+<p>As the name suggest, this take a probalisitc approach to dimention reductionaly, which includes Probabilistic Principal Component Analysis (PPCA), SNE, T-SNE, UMAP and random projection, factor analysis and SDR.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
     
+      <a href="/categories/#projects" class="page__taxonomy-item p-category" rel="tag">Projects</a>
+    
+    </span>
+  </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Generative and Discriminative Classifiers: The most important difference be- tween naive Bayes and logistic regression is that logistic regression is a discr...</p>
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-06-12T00:00:00+10:00">June 12, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/episode-one-data-scoc-ibm/" class="pagination--pager" title="Episode One (UNSW Data Soc x IBM ML project) : Data Preproccessing
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
   </article>
-</div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/databases/RSS-MLE/" rel="permalink">Residual Sum of Squares from a Machine learning perspective using MLE
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/databases/t-sql-introduction/" rel="permalink">Relational Database Management System Introduction: From Mathematics to Relations
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Developed About SQL
-Invented in the ealry 1970’s by IBM called SEQUEL (strucut English quary Language) which provided a relation dabase manager system. This ...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/statistics/Linear-Search-Methods/" rel="permalink">Line Search Methods for Numerical Optimisation
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, num...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/statistics/Olympaid-Level-Counting/" rel="permalink">Olympiad Level Counting Made Easy with Jensen’s inequality
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove t...</p>
-  </article>
-</div>
-
   
 </div>
 
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-      
-        <li><a href="/page2/">Previous</a></li>
-      
-    
-
-    
-    
-      <li><a href="/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-        
-        
-        
-        <li><a href="/page2/">2</a></li>
-      
-    
-      
-        <li><a href="/page3/" class="disabled current">3</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page4/">4</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page5/">5</a></li>
-      
-    
-
-    
-    
-
-    
-      <li><a href="/page6/">6</a></li>
-    
-
-    
-    
-      <li><a href="/page4/">Next</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
-</div>
     </div>
 
     

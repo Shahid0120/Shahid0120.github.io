@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "How Logistic Regression is the counter part to Logistic Regression "
+classes: wide
+title: "The link between Naive Bayes and Logistic Regression "
 header:
   image:
 categories:
