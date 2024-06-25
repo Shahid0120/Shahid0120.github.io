@@ -7,17 +7,17 @@ categories:
   - ML
 author_profile: True
 ---
-Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.
+Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.
 
 # What is clustering?
 
-It is form of unsupervised learning, which means there is nothing we a trying to predict or classify, rather we are trying to put samples together based on similarity, therefore our data is unlabeled. What does this really mean? In supervised learning our client our label feature “we are trying to predict project failure”, but in unlablled data they still give use an objective, but there is not specific feature why are trying to predict or classify using.
+It is form of unsupervised learning, which means there is nothing we a trying to predict or classify, rather we are trying to put samples together based on similarity, therefore our data is unlabeled. What does this really mean? In supervised learning our client our label feature “we are trying to predict project failure”, but in unlabeled data they still give use an objective, but there is not specific feature why are trying to predict or classify using.
 
 So in a sense we are trying to find inherent structure of the date, even though it may not entirely exist!
 
-Definition of clustering : group of instances based on similarity and disimilarity.
+Definition of clustering : group of instances based on similarity and dissimilarity.
 
-Regularly, clustering is used for market segmentation, that is given a set of data, form groups on with inherent characteristic (features) so that was can maximise return on advertisement.
+Regularly, clustering is used for market segmentation, that is given a set of data, form groups on with inherent characteristic (features) so that was can maximize return on advertisement.
 
 # Types of clustering algorithms
 
@@ -26,6 +26,8 @@ There are four main types of clustering approaches:
 2. Partitioning Approach
 3. Density based approach
 4. others - NN, Kernal, Affinity Prop
+
+Today I want to give intuition and overview of  hierarchical approaches to Clustering 
 
 # Should I perform clustering on cleaned data or do some transformations?
 
@@ -73,13 +75,25 @@ As you can see we only have 8 data-points in this case. Now we that maybe the be
 
 How would a computer do this?
 
-# Agglomerative Hierarchical AlgorithmsPermalink
+# Agglomerative Hierarchical Algorithms
 
 Generally Agglomerative Hierarchical Algorithms are cateogrised in to these cateogries,
 
 ![aggol-cateogries](/assets/images/clustering/aggol-cats.png)
 
-Down up approach, so in we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,
+for each graph method (Single/Complete/Grouped-Average) is present different methods of measuring simialirty, which leads to disicions of merging clusters. Which method you chose can chnages they way a cluster is merged.
+
+# Graph Methods : Agglomerative Hierarchical Single-Link Method
+This is the most used method to perform hierarchical agglomerative clustering, in this case 
+we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as 
+$$
+\begin{align*}
+d(C_i, C_j) = \text{min } d(x_i, x_j)
+\end{align*}
+$$
+where C represent cluster, $$x_i$$ points in cluster $$C_i$$ and $$x_j$$ points in $$C_j$$.
+
+So,  we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,
 
 ![human-intution-clustering](/assets/images/clustering/human-intuition-clustering-example.png)
 
@@ -95,7 +109,7 @@ Then we calculate each pnts distance inside the blue cluster to each pnt to othe
 
 ![distance-one-point-three-clusters-agglomerative](/assets/images/clustering/finding-distances-three-cluster-agglomerative.png)
 
-So this is done another 4 times this case in the purple cluster and then we find the mimum distance between a datapoint in purple to another cluster that is in this case,
+So this is done for all points times this case in the purple cluster and then we find the mimum distance between a datapoint in purple to another cluster that is in this case,
 
 ![min-dist-point-three-clusters-agglomerative](/assets/images/clustering/best-point-three-cluster-aggol.png)
 
@@ -107,11 +121,27 @@ This continues until we finally have one cluster, that is all points are in the 
 
 ![one-clusters-agglomerative](/assets/images/clustering/one-cluster-aggol.png)
 
-# How to effectivley visualise this our different opottions for clusters?
+# Graph Methods : Agglomerative Hierarchical Complete-List Method
+This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by 
+$$
+\begin{align*}
+d(C_i, C_j) = \text{max} d(p, p^')
+\end{align*}
+$$
+Visually this looks like 
+
+![complete-list-cluster-distance](/assets/images/clustering/complete-list-cluster-distance.png)
+
+# Geoemtric Agglomerative Hierarchical Methods
+
+From the geometric part of Agglomerative Hierarchical Methods, each method is extremely intuitive.
+For Agglomerative Hierarchical Clustering Centriod  Methods, we find the centriod (centre) of the cluster and then we measure simularity simialr to single-method based on $$min d(c_i, c_j)$$ so we find the clostest two centriod and merge them together. This continue untill all data points are in one cluster!
+
+# How to effectivley visualise this our different options for clusters?
 
 In most cases we dealing with multidimentional features space, so visualising it impossible unless we do some dimension reductionality technique like PCA etc. So the most effective way to visualise thses different potential cluster is through tree-diagrams, althought there are other methods including banner, point representation, etc. There are two main types of tree diagrams used in clustering representation dendrograms and n-tree.
 
-# Dendrograms
+## Dendrograms
 
 ![dendogram-aggol-clustering](/assets/images/clustering/dendogram-aggol.png)
 
@@ -119,7 +149,7 @@ So in the for a agglomerative hierarchical algorithms we start at the bottom and
 
 Importantly, for point 1 the clostes point was point 4 (not shown in graph), so bacuase of this it form 1 big cluster with point 1, 4, 6 rather then point 4 only since point 4 clostes point isn’t 1 but 6.
 
-# n-tree
+## n-tree
 Below, internal nodes are clusters (A,B,C) whilst the terminal notes/leaves are the data points.
 
 ![n-tree-diagram](/assets/images/clustering/n-tree-diagram.png)
@@ -130,8 +160,24 @@ $$
 h(A) \leq h(C) \Longleftrightarrow A \subseteq C
 \end{align*}
 $$ 
-where h: height on n-tree. And A and C a clusters. Intutivley clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So 
+where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So 
 
-# Divisive Hierarchical Clustering
 
-In this instance we want to do the opposite of of agglomerative clustering where we start we one large cluster an
+# Divisive Hierarchical Clustering 
+
+In this instance we want to do the opposite of of agglomerative clustering where we start we one large cluster and then break into the smallest cluster (ak.k a cluster containing only two points). There are two main types of Divisive Hierarchical Clustering;
+1. monothetic - we use one feature as a basis of cluster division 
+2. polythetic - take all features as basis of cluster division
+
+Lets show an example of single-link Divisive Hierarchical Clustering, where we measure simialirty by minium distance. In this case we sperate points which are further away since they show the highest dismilarity in this method. So given, 
+
+![divisive-mini-span-one-cluster](/assets/images/clustering/divisive-min-spanning-one-cluster.png)
+
+the lies show the Minimum Spanning tree. Clearly, the point with the shortest distance to all other points is P2 to P5, therefore we break that ed and create two clusters as so, 
+
+![divise-two-cluster](/assets/images/clustering/divise-two-cluster.png)
+
+This continue until each point has it own cluster. Now importantly we can also use single-methods complete method, mean-method or any methods, but this chnages our similarity metric
+
+# Conclusion 
+And there we have it! I hope you have gained some intuition about Heiarchial Clustering !
