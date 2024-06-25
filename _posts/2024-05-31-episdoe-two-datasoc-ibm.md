@@ -1,10 +1,10 @@
 ---
-layout: Archive
+layout: archive
 classes: wide
 title: "Episode Two (IBM x UNSW machine learning project) : Learning Models"
 header:
 categories:
-  - Projects
+  - ML
 author_profile: True
 ---
 

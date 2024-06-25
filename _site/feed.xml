@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-21T00:37:54+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/projects/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/projects/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/projects/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-25T16:11:50+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -64,7 +64,138 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Hierarchical Clustering: Intuition and Types</title><link href="http://localhost:4000/ml/clustering/" rel="alternate" type="text/html" title="Hierarchical Clustering: Intuition and Types" /><published>2024-05-24T00:00:00+10:00</published><updated>2024-05-24T00:00:00+10:00</updated><id>http://localhost:4000/ml/clustering</id><content type="html" xml:base="http://localhost:4000/ml/clustering/">&lt;p&gt;Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-clustering&quot;&gt;What is clustering?&lt;/h1&gt;
+
+&lt;p&gt;It is form of unsupervised learning, which means there is nothing we a trying to predict or classify, rather we are trying to put samples together based on similarity, therefore our data is unlabeled. What does this really mean? In supervised learning our client our label feature “we are trying to predict project failure”, but in unlablled data they still give use an objective, but there is not specific feature why are trying to predict or classify using.&lt;/p&gt;
+
+&lt;p&gt;So in a sense we are trying to find inherent structure of the date, even though it may not entirely exist!&lt;/p&gt;
+
+&lt;p&gt;Definition of clustering : group of instances based on similarity and disimilarity.&lt;/p&gt;
+
+&lt;p&gt;Regularly, clustering is used for market segmentation, that is given a set of data, form groups on with inherent characteristic (features) so that was can maximise return on advertisement.&lt;/p&gt;
+
+&lt;h1 id=&quot;types-of-clustering-algorithms&quot;&gt;Types of clustering algorithms&lt;/h1&gt;
+
+&lt;p&gt;There are four main types of clustering approaches:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Hierarchical Approach&lt;/li&gt;
+  &lt;li&gt;Partitioning Approach&lt;/li&gt;
+  &lt;li&gt;Density based approach&lt;/li&gt;
+  &lt;li&gt;others - NN, Kernal, Affinity Prop&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;should-i-perform-clustering-on-cleaned-data-or-do-some-transformations&quot;&gt;Should I perform clustering on cleaned data or do some transformations?&lt;/h1&gt;
+
+&lt;p&gt;Clustering can be performed directly on cleaned data, but also can be performed AFTER a dimention reduction algorithm is performed, like PCA. Majority of the times this usually leads to better reduced , since reducing dimentionality reduce non-importanly features and vairacne thus present a more accurate manifold/hyper-plane of the data.&lt;/p&gt;
+
+&lt;h1 id=&quot;does-clustering-requres-a-training-pahse-like-supervised-learning&quot;&gt;Does Clustering requres a training pahse like supervised learning?&lt;/h1&gt;
+
+&lt;p&gt;Since we are not trying to predict/classify our goals now is to organise data into groups thus we dont split our datase but rather trying to optimsie division of data with respect to an optimsiation criteria, we choose.&lt;/p&gt;
+
+&lt;p&gt;When is clustering performed in a data sciecne pipeline.Permalink&lt;/p&gt;
+
+&lt;p&gt;Clustering is usually perofrmed in the exploratory data anlytics stages&lt;/p&gt;
+
+&lt;p&gt;Questions to ask when doing Clustering AlgorithmPermalink&lt;/p&gt;
+
+&lt;p&gt;Some of the questions we ask priror to starting the clustering algorithm is;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;How do we represent patterns? Do we represent them as sets of points?&lt;/li&gt;
+  &lt;li&gt;How we we decided our measure of similarity? Remember in KNN algorithm we use distance in  norm to measure&lt;/li&gt;
+  &lt;li&gt;How many cluster to we have? Again similar to KNN we decides the number of neightbour we choose, how do we know this is right?&lt;/li&gt;
+  &lt;li&gt;How do we assess the performance of our clusters? Given we cluster a gorup, then how do we evaluate this?&lt;/li&gt;
+  &lt;li&gt;How do we interpret the results?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;measuring-similarity-for-clustering&quot;&gt;Measuring Similarity for Clustering&lt;/h1&gt;
+
+&lt;p&gt;Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).&lt;/p&gt;
+
+&lt;p&gt;clustering simialrity&lt;/p&gt;
+
+&lt;h1 id=&quot;hierarchical-algorithms&quot;&gt;Hierarchical Algorithms&lt;/h1&gt;
+
+&lt;p&gt;This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Agglomerative - lowest to highest; start with a bunch of cluster then move to one cluster using a optimization criteria&lt;/li&gt;
+  &lt;li&gt;Divisive - highest to lowest; start with 1 cluster then divide into multiple cluster using optimization criteria&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;visualising-the-problem&quot;&gt;Visualising the problem&lt;/h1&gt;
+&lt;p&gt;Lets use an simple example, say we want given a client comes to use with customer information. The client ask’s ‘find customer segments for us to create a targeted a marketing strategy’. Now we are given only two features ‘Age’ of customer and ‘Annual Spending’. So the first step is to visualise the two groups.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/visualise-problem.png&quot; alt=&quot;visualise-cluster&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see we only have 8 data-points in this case. Now we that maybe the best approach would be to cluster into maybe 4 clusters,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/human-intuition-clustering-example.png&quot; alt=&quot;human-intution-clustering&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How would a computer do this?&lt;/p&gt;
+
+&lt;h1 id=&quot;agglomerative-hierarchical-algorithmspermalink&quot;&gt;Agglomerative Hierarchical AlgorithmsPermalink&lt;/h1&gt;
+
+&lt;p&gt;Generally Agglomerative Hierarchical Algorithms are cateogrised in to these cateogries,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/aggol-cats.png&quot; alt=&quot;aggol-cateogries&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Down up approach, so in we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/human-intuition-clustering-example.png&quot; alt=&quot;human-intution-clustering&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although in this case this may be the best number of cluster, in reality this may not be the case. Since all points are in a cluster we next try to find minimum distance to each neighbouring cluster. In this case the purple cluster is clostes to the botton on the green cluster is&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/best-point-three-cluster-aggol.png&quot; alt=&quot;closest-pnt-cluster&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;and then join these clusters, so,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/three-cluster-algglomerative.png&quot; alt=&quot;three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we calculate each pnts distance inside the blue cluster to each pnt to other clusters. That is for say a given point in the purple cluster,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/finding-distances-three-cluster-agglomerative.png&quot; alt=&quot;distance-one-point-three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So this is done another 4 times this case in the purple cluster and then we find the mimum distance between a datapoint in purple to another cluster that is in this case,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/best-point-three-cluster-aggol.png&quot; alt=&quot;min-dist-point-three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And so we combine these two clusters,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/two-clusters-aggol.png&quot; alt=&quot;two-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This continues until we finally have one cluster, that is all points are in the same cluster, which is where we initially started!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/one-cluster-aggol.png&quot; alt=&quot;one-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-effectivley-visualise-this-our-different-opottions-for-clusters&quot;&gt;How to effectivley visualise this our different opottions for clusters?&lt;/h1&gt;
+
+&lt;p&gt;In most cases we dealing with multidimentional features space, so visualising it impossible unless we do some dimension reductionality technique like PCA etc. So the most effective way to visualise thses different potential cluster is through tree-diagrams, althought there are other methods including banner, point representation, etc. There are two main types of tree diagrams used in clustering representation dendrograms and n-tree.&lt;/p&gt;
+
+&lt;h1 id=&quot;dendrograms&quot;&gt;Dendrograms&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/dendogram-aggol.png&quot; alt=&quot;dendogram-aggol-clustering&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So in the for a agglomerative hierarchical algorithms we start at the bottom and compute, even thought we compute the distance between each point and all other points, we only graph the closest point in the dendrograms. In this case, point 3 was clostes to point 8 with distance of 0.07, while for point 4 closest point was point 6.&lt;/p&gt;
+
+&lt;p&gt;Importantly, for point 1 the clostes point was point 4 (not shown in graph), so bacuase of this it form 1 big cluster with point 1, 4, 6 rather then point 4 only since point 4 clostes point isn’t 1 but 6.&lt;/p&gt;
+
+&lt;h1 id=&quot;n-tree&quot;&gt;n-tree&lt;/h1&gt;
+&lt;p&gt;Below, internal nodes are clusters (A,B,C) whilst the terminal notes/leaves are the data points.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/n-tree-diagram.png&quot; alt=&quot;n-tree-diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Importantly a dendrograms is a type of n-tree, which all internal notes satisify, 
+\(\begin{align*}
+h(A) \leq h(C) \Longleftrightarrow A \subseteq C
+\end{align*}\) 
+where h: height on n-tree. And A and C a clusters. Intutivley clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So&lt;/p&gt;
+
+&lt;h1 id=&quot;divisive-hierarchical-clustering&quot;&gt;Divisive Hierarchical Clustering&lt;/h1&gt;
+
+&lt;p&gt;In this instance we want to do the opposite of of agglomerative clustering where we start we one large cluster an&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.</summary></entry><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
 
 &lt;h1 id=&quot;recall&quot;&gt;Recall&lt;/h1&gt;
 
@@ -496,96 +627,4 @@ Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry><entry><title type="html">My Machine Learing Mastery Roadmap</title><link href="http://localhost:4000/machine%20learning/machine-learning-curriculum/" rel="alternate" type="text/html" title="My Machine Learing Mastery Roadmap" /><published>2024-01-11T00:00:00+11:00</published><updated>2024-01-11T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/machine-learning-curriculum</id><content type="html" xml:base="http://localhost:4000/machine%20learning/machine-learning-curriculum/">&lt;p&gt;After watching many videos and having a solid foundational of a overview of concepts 
-and tool in machine learing i beleive it finally time for me to make a curriculm!&lt;/p&gt;
-
-&lt;h2 id=&quot;hmmmhow-do-i-go-about-this&quot;&gt;Hmmm…How do i go about this?&lt;/h2&gt;
-
-&lt;p&gt;Before asessing my weakness, what are my inspiration say is a good pathway? 
-Well after watching Lex Fridman interview with Andrew Ng &lt;a href=&quot;https://www.youtube.com/watch?v=1k37OcjH7BM&amp;amp;t=1381s&quot;&gt;here!&lt;/a&gt; 
-he speicficed the improtance of taking the refined coursework including ML, Deep Learning, Mlops, tensorflow certification courses then focusing
-once you have taken enough courses then work on projects and reading research papers.&lt;/p&gt;
-
-&lt;p&gt;Addtionally, Daniel Bourke, a fellow Australian has created a amazing mindmap (i love mindmaps) for a stack needed to become a ML engineer (here!)[https://whimsical.com/machine-learning-roadmap-2020-CA7f3ykvXpnJ9Az32vYXva]. The main focuses resrouces including fast.ai, CS50’s, Hnads-on Machine Learning by Aurelien Geron.&lt;/p&gt;
-
-&lt;h2 id=&quot;focus-on-the-weakness&quot;&gt;Focus on the weakness&lt;/h2&gt;
-
-&lt;p&gt;I beleive (currently?) Machine learning ecosystem can be broken down into the follow skills&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mathematics&lt;/li&gt;
-  &lt;li&gt;ML algorithms&lt;/li&gt;
-  &lt;li&gt;MLops&lt;/li&gt;
-  &lt;li&gt;Python skills&lt;/li&gt;
-  &lt;li&gt;Cloud Services&lt;/li&gt;
-  &lt;li&gt;SQL database&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Since i have a currenlty pursuing a Mathhematics and Marketing degree, the main focus should be builing later half. Althought i have expericnes with Cloud Services including AWS and 
-SQL database i will significnatly have to improve in this area. Addtionally, my Python skills a desent but thtere is a way to go&lt;/p&gt;
-
-&lt;h1 id=&quot;what-i-have-currently-done&quot;&gt;What i have currently done?&lt;/h1&gt;
-
-&lt;p&gt;Well currently i have completed/doing:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CS29 by Andrew Ng&lt;/li&gt;
-  &lt;li&gt;Hands-On Machine Learning with Scikit-Learn and Tensorflow&lt;/li&gt;
-  &lt;li&gt;The Hundred-page Machine Learning Book by Andriy Burkov&lt;/li&gt;
-  &lt;li&gt;Deep learning Specialisation by Andrew Ng&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;the-roadmap-with-certifications&quot;&gt;The Roadmap With Certifications&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Programming
-    &lt;ul&gt;
-      &lt;li&gt;“Python 3 Object-Oriented Programming” by Dusty Phillips&lt;/li&gt;
-      &lt;li&gt;“Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
-      &lt;li&gt;“Algorithms” Princeton University&lt;/li&gt;
-      &lt;li&gt;“Coding Interview University” (github)[https://github.com/jwasham/coding-interview-university]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ML algorithms
-    &lt;ul&gt;
-      &lt;li&gt;Deep Learning for Coders with fastai &amp;amp; PyTorch&lt;/li&gt;
-      &lt;li&gt;Introduction to Machine Learning with Python: A Guide for Data Scientists&lt;/li&gt;
-      &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy&lt;/li&gt;
-      &lt;li&gt;Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
-      &lt;li&gt;Papers with Code : Most popular and Recent machine learning papers&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;MLops
-    &lt;ul&gt;
-      &lt;li&gt;Desigining Machine Learing Systems by Chip Huyen&lt;/li&gt;
-      &lt;li&gt;Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
-      &lt;li&gt;Coursera’s MLOps Specialization by DeepLearning.AI&lt;/li&gt;
-      &lt;li&gt;Full Stack Deep Learning&lt;/li&gt;
-      &lt;li&gt;fast.ai&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Cloud
-    &lt;ul&gt;
-      &lt;li&gt;Microsoft Certified: Azure Fundamentals&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SQL
-    &lt;ul&gt;
-      &lt;li&gt;LeetCode SQL&lt;/li&gt;
-      &lt;li&gt;SQL for Data Analysis Advanced Techniques for Transforming Data into Insights&lt;/li&gt;
-      &lt;li&gt;SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;structure&quot;&gt;Structure&lt;/h1&gt;
-
-&lt;p&gt;Currently since unviersity off i have a little time to concurrently complete 2 courses at the same time, the plan is i want to read for projects i want to have a project in mind work on whilst reading/watching resources. The currentl systtemiatic plan is;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Deep learning Specialisation by Andrew Ng  + Stanford’s CS 329S: Machine Learning Systems Design by Chip Huyen&lt;/li&gt;
-  &lt;li&gt;Neural Networks : Zero to hero by Andrej Karpathy + Recipe for training neural networks by Andrej Karpathy&lt;/li&gt;
-  &lt;li&gt;“Algorithms” Princeton University + “Fluent Python” Book by Luciano Ramalho&lt;/li&gt;
-  &lt;li&gt;Full Stack Deep Learning + fast.ai&lt;/li&gt;
-  &lt;li&gt;Microsoft Certified: Azure Fundamentals + SQL Tutorial for Beginners (and Technical Interview Questions Solved) by freeCodeCamp.org&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">After watching many videos and having a solid foundational of a overview of concepts and tool in machine learing i beleive it finally time for me to make a curriculm!</summary></entry></feed>
+&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry></feed>

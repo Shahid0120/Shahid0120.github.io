@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Hierarchical Clustering: Intuition and Types | Shahid Hussain      Blog      </title>
+<meta name="description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Hierarchical Clustering: Intuition and Types">
+<meta property="og:url" content="http://localhost:4000/ml/clustering/">
+
+
+  <meta property="og:description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-24T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/ml/clustering/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Hierarchical Clustering: Intuition and Types">
+    <meta itemprop="description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.">
+    <meta itemprop="datePublished" content="2024-05-24T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/ml/clustering/" class="u-url" itemprop="url">Hierarchical Clustering: Intuition and Types
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo.</p>
+
+<h1 id="what-is-clustering">What is clustering?</h1>
+
+<p>It is form of unsupervised learning, which means there is nothing we a trying to predict or classify, rather we are trying to put samples together based on similarity, therefore our data is unlabeled. What does this really mean? In supervised learning our client our label feature “we are trying to predict project failure”, but in unlablled data they still give use an objective, but there is not specific feature why are trying to predict or classify using.</p>
+
+<p>So in a sense we are trying to find inherent structure of the date, even though it may not entirely exist!</p>
+
+<p>Definition of clustering : group of instances based on similarity and disimilarity.</p>
+
+<p>Regularly, clustering is used for market segmentation, that is given a set of data, form groups on with inherent characteristic (features) so that was can maximise return on advertisement.</p>
+
+<h1 id="types-of-clustering-algorithms">Types of clustering algorithms</h1>
+
+<p>There are four main types of clustering approaches:</p>
+<ol>
+  <li>Hierarchical Approach</li>
+  <li>Partitioning Approach</li>
+  <li>Density based approach</li>
+  <li>others - NN, Kernal, Affinity Prop</li>
+</ol>
+
+<h1 id="should-i-perform-clustering-on-cleaned-data-or-do-some-transformations">Should I perform clustering on cleaned data or do some transformations?</h1>
+
+<p>Clustering can be performed directly on cleaned data, but also can be performed AFTER a dimention reduction algorithm is performed, like PCA. Majority of the times this usually leads to better reduced , since reducing dimentionality reduce non-importanly features and vairacne thus present a more accurate manifold/hyper-plane of the data.</p>
+
+<h1 id="does-clustering-requres-a-training-pahse-like-supervised-learning">Does Clustering requres a training pahse like supervised learning?</h1>
+
+<p>Since we are not trying to predict/classify our goals now is to organise data into groups thus we dont split our datase but rather trying to optimsie division of data with respect to an optimsiation criteria, we choose.</p>
+
+<p>When is clustering performed in a data sciecne pipeline.Permalink</p>
+
+<p>Clustering is usually perofrmed in the exploratory data anlytics stages</p>
+
+<p>Questions to ask when doing Clustering AlgorithmPermalink</p>
+
+<p>Some of the questions we ask priror to starting the clustering algorithm is;</p>
+
+<ol>
+  <li>How do we represent patterns? Do we represent them as sets of points?</li>
+  <li>How we we decided our measure of similarity? Remember in KNN algorithm we use distance in  norm to measure</li>
+  <li>How many cluster to we have? Again similar to KNN we decides the number of neightbour we choose, how do we know this is right?</li>
+  <li>How do we assess the performance of our clusters? Given we cluster a gorup, then how do we evaluate this?</li>
+  <li>How do we interpret the results?</li>
+</ol>
+
+<h1 id="measuring-similarity-for-clustering">Measuring Similarity for Clustering</h1>
+
+<p>Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).</p>
+
+<p>clustering simialrity</p>
+
+<h1 id="hierarchical-algorithms">Hierarchical Algorithms</h1>
+
+<p>This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of</p>
+
+<ol>
+  <li>Agglomerative - lowest to highest; start with a bunch of cluster then move to one cluster using a optimization criteria</li>
+  <li>Divisive - highest to lowest; start with 1 cluster then divide into multiple cluster using optimization criteria</li>
+</ol>
+
+<h1 id="visualising-the-problem">Visualising the problem</h1>
+<p>Lets use an simple example, say we want given a client comes to use with customer information. The client ask’s ‘find customer segments for us to create a targeted a marketing strategy’. Now we are given only two features ‘Age’ of customer and ‘Annual Spending’. So the first step is to visualise the two groups.</p>
+
+<p><img src="/assets/images/clustering/visualise-problem.png" alt="visualise-cluster" /></p>
+
+<p>As you can see we only have 8 data-points in this case. Now we that maybe the best approach would be to cluster into maybe 4 clusters,</p>
+
+<p><img src="/assets/images/clustering/human-intuition-clustering-example.png" alt="human-intution-clustering" /></p>
+
+<p>How would a computer do this?</p>
+
+<h1 id="agglomerative-hierarchical-algorithmspermalink">Agglomerative Hierarchical AlgorithmsPermalink</h1>
+
+<p>Generally Agglomerative Hierarchical Algorithms are cateogrised in to these cateogries,</p>
+
+<p><img src="/assets/images/clustering/aggol-cats.png" alt="aggol-cateogries" /></p>
+
+<p>Down up approach, so in we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,</p>
+
+<p><img src="/assets/images/clustering/human-intuition-clustering-example.png" alt="human-intution-clustering" /></p>
+
+<p>Although in this case this may be the best number of cluster, in reality this may not be the case. Since all points are in a cluster we next try to find minimum distance to each neighbouring cluster. In this case the purple cluster is clostes to the botton on the green cluster is</p>
+
+<p><img src="/assets/images/clustering/best-point-three-cluster-aggol.png" alt="closest-pnt-cluster" /></p>
+
+<p>and then join these clusters, so,</p>
+
+<p><img src="/assets/images/clustering/three-cluster-algglomerative.png" alt="three-clusters-agglomerative" /></p>
+
+<p>Then we calculate each pnts distance inside the blue cluster to each pnt to other clusters. That is for say a given point in the purple cluster,</p>
+
+<p><img src="/assets/images/clustering/finding-distances-three-cluster-agglomerative.png" alt="distance-one-point-three-clusters-agglomerative" /></p>
+
+<p>So this is done another 4 times this case in the purple cluster and then we find the mimum distance between a datapoint in purple to another cluster that is in this case,</p>
+
+<p><img src="/assets/images/clustering/best-point-three-cluster-aggol.png" alt="min-dist-point-three-clusters-agglomerative" /></p>
+
+<p>And so we combine these two clusters,</p>
+
+<p><img src="/assets/images/clustering/two-clusters-aggol.png" alt="two-clusters-agglomerative" /></p>
+
+<p>This continues until we finally have one cluster, that is all points are in the same cluster, which is where we initially started!</p>
+
+<p><img src="/assets/images/clustering/one-cluster-aggol.png" alt="one-clusters-agglomerative" /></p>
+
+<h1 id="how-to-effectivley-visualise-this-our-different-opottions-for-clusters">How to effectivley visualise this our different opottions for clusters?</h1>
+
+<p>In most cases we dealing with multidimentional features space, so visualising it impossible unless we do some dimension reductionality technique like PCA etc. So the most effective way to visualise thses different potential cluster is through tree-diagrams, althought there are other methods including banner, point representation, etc. There are two main types of tree diagrams used in clustering representation dendrograms and n-tree.</p>
+
+<h1 id="dendrograms">Dendrograms</h1>
+
+<p><img src="/assets/images/clustering/dendogram-aggol.png" alt="dendogram-aggol-clustering" /></p>
+
+<p>So in the for a agglomerative hierarchical algorithms we start at the bottom and compute, even thought we compute the distance between each point and all other points, we only graph the closest point in the dendrograms. In this case, point 3 was clostes to point 8 with distance of 0.07, while for point 4 closest point was point 6.</p>
+
+<p>Importantly, for point 1 the clostes point was point 4 (not shown in graph), so bacuase of this it form 1 big cluster with point 1, 4, 6 rather then point 4 only since point 4 clostes point isn’t 1 but 6.</p>
+
+<h1 id="n-tree">n-tree</h1>
+<p>Below, internal nodes are clusters (A,B,C) whilst the terminal notes/leaves are the data points.</p>
+
+<p><img src="/assets/images/clustering/n-tree-diagram.png" alt="n-tree-diagram" /></p>
+
+<p>Importantly a dendrograms is a type of n-tree, which all internal notes satisify, 
+\(\begin{align*}
+h(A) \leq h(C) \Longleftrightarrow A \subseteq C
+\end{align*}\) 
+where h: height on n-tree. And A and C a clusters. Intutivley clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So</p>
+
+<h1 id="divisive-hierarchical-clustering">Divisive Hierarchical Clustering</h1>
+
+<p>In this instance we want to do the opposite of of agglomerative clustering where we start we one large cluster an</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ml" class="page__taxonomy-item p-category" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-24T00:00:00+10:00">May 24, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/ml/Estimate-Probability-from-data/" class="pagination--pager" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data
+">Previous</a>
+    
+    
+      <a href="/ml/episdoe-two-datasoc-ibm/" class="pagination--pager" title="Episode Two (IBM x UNSW machine learning project) : Learning Models
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
