@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-25T17:56:26+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-26T14:58:07+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -64,7 +64,138 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Hierarchical Clustering: Intuition and Types</title><link href="http://localhost:4000/ml/clustering/" rel="alternate" type="text/html" title="Hierarchical Clustering: Intuition and Types" /><published>2024-05-24T00:00:00+10:00</published><updated>2024-05-24T00:00:00+10:00</updated><id>http://localhost:4000/ml/clustering</id><content type="html" xml:base="http://localhost:4000/ml/clustering/">&lt;p&gt;Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Evaluating You’re Clustering Model</title><link href="http://localhost:4000/ml/evluating-clustering-model/" rel="alternate" type="text/html" title="Evaluating You’re Clustering Model" /><published>2024-05-25T00:00:00+10:00</published><updated>2024-05-25T00:00:00+10:00</updated><id>http://localhost:4000/ml/evluating-clustering-model</id><content type="html" xml:base="http://localhost:4000/ml/evluating-clustering-model/">&lt;p&gt;This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.&lt;/p&gt;
+
+&lt;p&gt;Generally clustering is a form of unsupervised learning that is we dont have any labels, thus evaluvating a clustering algoirthm can be a diffult job. Although, clustering can be used to classify samples which form a semi-supervised learning. Alternativly, if the training data uses the labels as a method of optimisation then clustering can be in the form of supervised learning&lt;/p&gt;
+
+&lt;h1 id=&quot;types&quot;&gt;Types&lt;/h1&gt;
+&lt;p&gt;Evaluation metric fall under two main catagories :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Internal - when no label for evaluation (unsupervised) we use the density of cluster, and ingerent properiteis of data to evluate the clusters&lt;/li&gt;
+  &lt;li&gt;External - givne we have a label for the clusters we can evalute each samples using this label, importantly we didnt use these labels in the traning phase&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;external&quot;&gt;External&lt;/h1&gt;
+&lt;p&gt;These clustering eveluation method rely on being able to  have labels. How this is evaluted is done throuhg using Indicator functions. Let $U = {U_1, U_2,…,U_R}$ be the set of labels classes and $V={V_1, V_2,…,V_K}$ the set of cluster then,&lt;/p&gt;
+
+\[\begin{align*}
+\mathbf{1}_{U}(i,j) = 
+\begin{cases}
+1 &amp;amp; \text{if } x_i \in U_r \text{ and } x_j \in U_r , \quad 1 \leq r \leq R\\
+0 &amp;amp; \text{if } \text{otherwise} \\ 
+\end{cases} \\
+\mathbf{1}_{V}(i,j) = 
+\begin{cases}
+1 &amp;amp; \text{if } x_i \in U_s \text{ and } x_s \in U_r ,\quad 1 \leq s \leq K\\
+0 &amp;amp; \text{if } \text{otherwise} \\ 
+\end{cases}
+\end{align*}\]
+
+&lt;h2 id=&quot;external-method-1--confusion-matrix&quot;&gt;External Method 1 : Confusion Matrix&lt;/h2&gt;
+&lt;p&gt;which leads to the contingency table,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/continugency-table-expanded.png&quot; alt=&quot;contingency-table-expanded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now each $n_{i,j}$ represents the number of times it is present. So say our class label is {Male, Female}, and from our clustering algorithm it classifies in 3 clusters ${V_1, V_2, V_3}$, then our contingency table would look like this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/examples-contingency-table.png&quot; alt=&quot;example-contigency-table&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Using this information in the contingency table we can create a confusion matrix,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/contingency-table.png&quot; alt=&quot;contingency-table&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+\[\begin{align*}
+TP = \text{True positive} &amp;amp;= \text{model correctly predicts the positive class} \\ 
+FP =  \text{False positive} &amp;amp;= \text{model incorrectly predicts the positive class} \\
+TN = \text{true negative} &amp;amp;= \text{model correctly predicts the negative class} \\
+FN = \text{false negative} &amp;amp;= \text{model incorrectly predicts the negative class}
+\end{align*}\]
+
+&lt;p&gt;How does this relate to our example? Given we have only two classes then for (class) Males are our positive class and (class) Female are our negative class. Then for the Males (positive) suppose  V_1 cluster the correct class for males and females are the negative class given by V_2,&lt;/p&gt;
+
+\[\begin{align*}
+TP &amp;amp;= \text{model correctly predicts the positive class} = 1   \\ 
+FP &amp;amp;= \text{model incorrectly predicts the positive class} =  1 \\
+TN &amp;amp;= \text{model correctly predicts the negative class} = 1\\
+FN &amp;amp;= \text{model incorrectly predicts the negative class} = 0\\
+\end{align*} \\\]
+
+&lt;p&gt;Thus, our confusion matrix is,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/contingency-table-one-example.png&quot; alt=&quot;contingency-table-example&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;external-method-2-standard-measures-f-score-recall-precision-&quot;&gt;External Method 2: standard measures (F-score, Recall, precision )&lt;/h2&gt;
+&lt;p&gt;Now to use standard measures we need to modify what standard measures met w.r.t clusters, generally precision, accuracy and F-score are defined as,&lt;/p&gt;
+
+\[\begin{align*}
+precision = \frac{TP}{TP + FP} \\ 
+recall = \frac{TP}{TP + FN} \\ 
+accuracy = \frac{TP + TN}{TP + TN + FN + FP}  \\ 
+F1\text{-score} = \frac{2}{\frac{1}{precision} + \frac{1}{recall}} \\ 
+\end{align*}\]
+
+&lt;p&gt;Given from all labels (males) how many did it correctly classify and recall is given Males labels in our algorithm did our algorithm get correct?
+Now interms of clustering;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;precision: From our positive label what percentage did the algorithm correctly classify&lt;/li&gt;
+  &lt;li&gt;recall: From our cluster how many what percentage of labels inside that cluster are correctly classified (positive)&lt;/li&gt;
+  &lt;li&gt;accuracy : how of all cluster how many labels did the cluster get right all together&lt;/li&gt;
+  &lt;li&gt;F1-score: Overall score performance of precision and accuracy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;external-method-3-entropy-in-clustering-perspective&quot;&gt;External Method 3: Entropy in Clustering perspective&lt;/h2&gt;
+&lt;p&gt;Entropy enables the abiilty to quantiy simialrities and dfifferences thoruhg probaiblity through measuring expected suprise. Generally entropy is measured as&lt;/p&gt;
+
+&lt;p&gt;\(\begin{align*}
+Entrophy &amp;amp;= \mathbb{E}(Surprise) \Longleftrightarrow\\
+&amp;amp;= \sum{x P(X = x)} \Longleftrightarrow \\ 
+&amp;amp;= \sum{log(\frac{1}{P(X = x)}) P(X = x)} \Longleftrightarrow\\
+&amp;amp;= \sum{log(\frac{1}{p(x)}) p(x)} \Longleftrightarrow \\ 
+&amp;amp;= \sum{p(x)(log(1) - log(p(x)))} \Longleftrightarrow \\ 
+&amp;amp;= - \sum{p_i(x)log(p_i(x))}
+\end{align*}\)
+Now this is the entropy of a cluster i, and then the total entrophy is&lt;/p&gt;
+
+\[\begin{align*}
+Total\text{ }Entrophy &amp;amp;= \text{Sum of all Entropy Clusters}\Longleftrightarrow \\ 
+e &amp;amp;= \sum_{i = 1}^k \frac{n_i}{n} e_i \\ 
+\end{align*}\]
+
+&lt;h1 id=&quot;internal-measures&quot;&gt;Internal Measures&lt;/h1&gt;
+&lt;p&gt;Given we create a cluster without any labels, evaluating a cluster algorithm is extremely difficult. There are two main types,&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Cluster Cohesion - Measure compactness/tightness. How closely related are patterns in the same cluster?&lt;/li&gt;
+  &lt;li&gt;Cluster separation - Measures isolation. How well separated are the clusters?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;internal-measures-1--cluster-cohesion&quot;&gt;Internal Measures 1 : Cluster Cohesion&lt;/h2&gt;
+&lt;p&gt;Cluster Cohesion is a measure of spread out each cluster is, that is whats the dimension of a cluster’s&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/cluster-cohesion-example.png&quot; alt=&quot;cluster-cohesion-example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly, the width of left side cluster is larger then the right hand cluster, so left side cluster has lower cohesion score then right side cluster. Mathematicaly,
+\(\begin{align*}
+cohesion(C_i) = \sum_{x \in C_i , y \in C_i} proximity(x,y) \\ 
+\end{align*}\)
+proximity is any measure metric include Euclidean, Mahanttan, or L_p norm. Thus the smaller the proximity the samller then distance between each point within a cluster, thus the smaller the cohesion, and hence the better the result.&lt;/p&gt;
+
+&lt;h2 id=&quot;internal-measures-2--cluster-separation&quot;&gt;Internal Measures 2 : Cluster separation&lt;/h2&gt;
+&lt;p&gt;Cluster seperation measure inter-measure metric, which measure the distance between cluster, that is the futher away the cluster the higher the isolation, thus the hopefully better the cluster generalises.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-measure-cluster-separation&quot;&gt;How to measure Cluster separation&lt;/h3&gt;
+&lt;p&gt;Similar, to creating clusters using aggolmetric hierarchical clustering, you can use a range of methods including single-method, complete-method, mean-method, centroid-method, all of which will create different interpretation of cluster separation metric. 
+Mathematically cluster separation is defined as in single-method&lt;/p&gt;
+
+\[\begin{align*}
+d(C_i, C_j) = \text{min } d(x, y)
+\end{align*}\]
+
+&lt;p&gt;where $x_i$ are all elements in cluster $C_i$ and $y_i$ elements of cluster $C_j$.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I hope after reading this, both you and i have gained a more solid understanding of evaluating our clustering!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.</summary></entry><entry><title type="html">Hierarchial Clustering: Intuition and Types</title><link href="http://localhost:4000/ml/hierarchial-clustering/" rel="alternate" type="text/html" title="Hierarchial Clustering: Intuition and Types" /><published>2024-05-24T00:00:00+10:00</published><updated>2024-05-24T00:00:00+10:00</updated><id>http://localhost:4000/ml/hierarchial-clustering</id><content type="html" xml:base="http://localhost:4000/ml/hierarchial-clustering/">&lt;p&gt;Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.&lt;/p&gt;
 
 &lt;h1 id=&quot;what-is-clustering&quot;&gt;What is clustering?&lt;/h1&gt;
 
@@ -116,8 +247,6 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).&lt;/p&gt;
 
-&lt;p&gt;clustering simialrity&lt;/p&gt;
-
 &lt;h1 id=&quot;hierarchical-algorithms&quot;&gt;Hierarchical Algorithms&lt;/h1&gt;
 
 &lt;p&gt;This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of&lt;/p&gt;
@@ -147,12 +276,15 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 &lt;p&gt;for each graph method (Single/Complete/Grouped-Average) is present different methods of measuring simialirty, which leads to disicions of merging clusters. Which method you chose can chnages they way a cluster is merged.&lt;/p&gt;
 
 &lt;h1 id=&quot;graph-methods--agglomerative-hierarchical-single-link-method&quot;&gt;Graph Methods : Agglomerative Hierarchical Single-Link Method&lt;/h1&gt;
+
 &lt;p&gt;This is the most used method to perform hierarchical agglomerative clustering, in this case 
-we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as 
-\(\begin{align*}
+we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as&lt;/p&gt;
+
+\[\begin{align*}
 d(C_i, C_j) = \text{min } d(x_i, x_j)
-\end{align*}\)
-where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points in \(C_j\).&lt;/p&gt;
+\end{align*}\]
+
+&lt;p&gt;where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points in \(C_j\).&lt;/p&gt;
 
 &lt;p&gt;So,  we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,&lt;/p&gt;
 
@@ -183,11 +315,13 @@ where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points 
 &lt;p&gt;&lt;img src=&quot;/assets/images/clustering/one-cluster-aggol.png&quot; alt=&quot;one-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;graph-methods--agglomerative-hierarchical-complete-list-method&quot;&gt;Graph Methods : Agglomerative Hierarchical Complete-List Method&lt;/h1&gt;
-&lt;p&gt;This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by 
-\(\begin{align*}
+&lt;p&gt;This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by&lt;/p&gt;
+
+\[\begin{align*}
 d(C_i, C_j) = \text{max} d(p, p^&apos;)
-\end{align*}\)
-Visually this looks like&lt;/p&gt;
+\end{align*}\]
+
+&lt;p&gt;Visually this looks like&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/clustering/complete-list-cluster-distance.png&quot; alt=&quot;complete-list-cluster-distance&quot; /&gt;&lt;/p&gt;
 
@@ -213,11 +347,13 @@ For Agglomerative Hierarchical Clustering Centriod  Methods, we find the centrio
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/clustering/n-tree-diagram.png&quot; alt=&quot;n-tree-diagram&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Importantly a dendrograms is a type of n-tree, which all internal notes satisify, 
-\(\begin{align*}
+&lt;p&gt;Importantly a dendrograms is a type of n-tree, which all internal notes satisify,&lt;/p&gt;
+
+\[\begin{align*}
 h(A) \leq h(C) \Longleftrightarrow A \subseteq C
-\end{align*}\) 
-where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So&lt;/p&gt;
+\end{align*}\]
+
+&lt;p&gt;where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So&lt;/p&gt;
 
 &lt;h1 id=&quot;divisive-hierarchical-clustering&quot;&gt;Divisive Hierarchical Clustering&lt;/h1&gt;
 
@@ -640,34 +776,4 @@ Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
   &lt;li&gt;(3blue2brown)[https://www.youtube.com/watch?v=aircAruvnKk&amp;amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi]&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry><entry><title type="html">Functional vs Sequetial API for Keras in less then 3 minutes</title><link href="http://localhost:4000/machine%20learning/functional-sequential-api/" rel="alternate" type="text/html" title="Functional vs Sequetial API for Keras in less then 3 minutes" /><published>2024-01-24T00:00:00+11:00</published><updated>2024-01-24T00:00:00+11:00</updated><id>http://localhost:4000/machine%20learning/functional-sequential-api</id><content type="html" xml:base="http://localhost:4000/machine%20learning/functional-sequential-api/">&lt;p&gt;Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!&lt;/p&gt;
-
-&lt;p&gt;Lets talk visually:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/function_sequential_api.png&quot; alt=&quot;function_sequential_api.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The whole point of Tensorflow with Keras is to simply the process of creating neural networks so now we dont spend time on manully coding a neural network, but rather focus on improving the performance of our model. Now how exactly does Functional api improve flexibility but at the cost of complexity?&lt;/p&gt;
-
-&lt;h2 id=&quot;sequential-api&quot;&gt;Sequential API&lt;/h2&gt;
-&lt;p&gt;Sequential API’s tipically look like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;sequential.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notice, although we specify the pooling dimensions and strides and other arguements within the tf.keras.layers call , we can’t input specific paramters like Z1,A1 or Z2. Importantly it all happens sequentially so the model will start from the top end go by each call one by one until the end.&lt;/p&gt;
-
-&lt;h1 id=&quot;function-api--spot-the-difference&quot;&gt;Function API : spot the difference&lt;/h1&gt;
-&lt;p&gt;Alternatively, comparing this to functional API it allows use to play around with the parameters:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/function_sequential_api/sequential.png&quot; alt=&quot;functional_api.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notice how we adding paramters to our calls to tf.keras.layers()(Paramter) providing us flexibility to choose which parameters we want to trasnform. Note this is just one way of taking advantage of function API. Other possible options are :&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Multiple inputs - Now we can have multiple paramters since our functional isnt called linearly&lt;/li&gt;
-  &lt;li&gt;Sharing inputs - say we want Z1 to have multiple acitivations say Leaky-RelU and ReLU&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;But as you can see the possibility or errors increases since you can play around with which inputs you want where. So be careful!&lt;/p&gt;
-
-&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Hopefully now you understand the difference between Sequential and Functional API!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">Reading to Keras/Tensorflow documentation, it’s a little hard to understand what exactly is the difference between sequential and functional API and all other resources are too long to read, so lets simplify it!</summary></entry></feed>
+&lt;h1 id=&quot;there-you-go&quot;&gt;There you go!&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Machine Learning" /><summary type="html">When I started my journey into machine learning, I remember watching an interview with Andrej Karpathy, a Sr. Director of AI at Tesla, on the Lex Fridman podcast, where he talked about something called a “transformer,” and he described it so profoundly as a new way of computing. In combination, I had learned that ChatGPT, BERT were all powered by transformers and that in order to become a machine learning engineer, you NEEDED to know transformers.</summary></entry></feed>

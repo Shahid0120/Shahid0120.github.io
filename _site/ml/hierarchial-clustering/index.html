@@ -10,7 +10,7 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            Hierarchical Clustering: Intuition and Types | Shahid Hussain      Blog      </title>
+<!-- begin _includes/seo.html --><title>            Hierarchial Clustering: Intuition and Types | Shahid Hussain      Blog      </title>
 <meta name="description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.">
 
 
@@ -23,8 +23,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="Hierarchical Clustering: Intuition and Types">
-<meta property="og:url" content="http://localhost:4000/ml/clustering/">
+<meta property="og:title" content="Hierarchial Clustering: Intuition and Types">
+<meta property="og:url" content="http://localhost:4000/ml/hierarchial-clustering/">
 
 
   <meta property="og:description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.">
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/ml/clustering/">
+<link rel="canonical" href="http://localhost:4000/ml/hierarchial-clustering/">
 
 
 
@@ -274,7 +274,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Hierarchical Clustering: Intuition and Types">
+    <meta itemprop="headline" content="Hierarchial Clustering: Intuition and Types">
     <meta itemprop="description" content="Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.">
     <meta itemprop="datePublished" content="2024-05-24T00:00:00+10:00">
     
@@ -283,7 +283,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/ml/clustering/" class="u-url" itemprop="url">Hierarchical Clustering: Intuition and Types
+            <a href="http://localhost:4000/ml/hierarchial-clustering/" class="u-url" itemprop="url">Hierarchial Clustering: Intuition and Types
 </a>
           </h1>
           
@@ -346,8 +346,6 @@
 
 <p>Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).</p>
 
-<p>clustering simialrity</p>
-
 <h1 id="hierarchical-algorithms">Hierarchical Algorithms</h1>
 
 <p>This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of</p>
@@ -377,12 +375,15 @@
 <p>for each graph method (Single/Complete/Grouped-Average) is present different methods of measuring simialirty, which leads to disicions of merging clusters. Which method you chose can chnages they way a cluster is merged.</p>
 
 <h1 id="graph-methods--agglomerative-hierarchical-single-link-method">Graph Methods : Agglomerative Hierarchical Single-Link Method</h1>
+
 <p>This is the most used method to perform hierarchical agglomerative clustering, in this case 
-we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as 
-\(\begin{align*}
+we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as</p>
+
+\[\begin{align*}
 d(C_i, C_j) = \text{min } d(x_i, x_j)
-\end{align*}\)
-where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points in \(C_j\).</p>
+\end{align*}\]
+
+<p>where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points in \(C_j\).</p>
 
 <p>So,  we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,</p>
 
@@ -413,11 +414,13 @@ where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points 
 <p><img src="/assets/images/clustering/one-cluster-aggol.png" alt="one-clusters-agglomerative" /></p>
 
 <h1 id="graph-methods--agglomerative-hierarchical-complete-list-method">Graph Methods : Agglomerative Hierarchical Complete-List Method</h1>
-<p>This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by 
-\(\begin{align*}
+<p>This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by</p>
+
+\[\begin{align*}
 d(C_i, C_j) = \text{max} d(p, p^')
-\end{align*}\)
-Visually this looks like</p>
+\end{align*}\]
+
+<p>Visually this looks like</p>
 
 <p><img src="/assets/images/clustering/complete-list-cluster-distance.png" alt="complete-list-cluster-distance" /></p>
 
@@ -443,11 +446,13 @@ For Agglomerative Hierarchical Clustering Centriod  Methods, we find the centrio
 
 <p><img src="/assets/images/clustering/n-tree-diagram.png" alt="n-tree-diagram" /></p>
 
-<p>Importantly a dendrograms is a type of n-tree, which all internal notes satisify, 
-\(\begin{align*}
+<p>Importantly a dendrograms is a type of n-tree, which all internal notes satisify,</p>
+
+\[\begin{align*}
 h(A) \leq h(C) \Longleftrightarrow A \subseteq C
-\end{align*}\) 
-where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So</p>
+\end{align*}\]
+
+<p>where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So</p>
 
 <h1 id="divisive-hierarchical-clustering">Divisive Hierarchical Clustering</h1>
 
@@ -508,7 +513,7 @@ where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-
 ">Previous</a>
     
     
-      <a href="/ml/episdoe-two-datasoc-ibm/" class="pagination--pager" title="Episode Two (IBM x UNSW machine learning project) : Learning Models
+      <a href="/ml/evluating-clustering-model/" class="pagination--pager" title="Evaluating You’re Clustering Model
 ">Next</a>
     
   </nav>

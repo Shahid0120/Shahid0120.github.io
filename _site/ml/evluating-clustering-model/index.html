@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Evaluating You’re Clustering Model | Shahid Hussain      Blog      </title>
+<meta name="description" content="This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Evaluating You’re Clustering Model">
+<meta property="og:url" content="http://localhost:4000/ml/evluating-clustering-model/">
+
+
+  <meta property="og:description" content="This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-25T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/ml/evluating-clustering-model/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Evaluating You’re Clustering Model">
+    <meta itemprop="description" content="This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.">
+    <meta itemprop="datePublished" content="2024-05-25T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/ml/evluating-clustering-model/" class="u-url" itemprop="url">Evaluating You’re Clustering Model
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.</p>
+
+<p>Generally clustering is a form of unsupervised learning that is we dont have any labels, thus evaluvating a clustering algoirthm can be a diffult job. Although, clustering can be used to classify samples which form a semi-supervised learning. Alternativly, if the training data uses the labels as a method of optimisation then clustering can be in the form of supervised learning</p>
+
+<h1 id="types">Types</h1>
+<p>Evaluation metric fall under two main catagories :</p>
+<ol>
+  <li>Internal - when no label for evaluation (unsupervised) we use the density of cluster, and ingerent properiteis of data to evluate the clusters</li>
+  <li>External - givne we have a label for the clusters we can evalute each samples using this label, importantly we didnt use these labels in the traning phase</li>
+</ol>
+
+<h1 id="external">External</h1>
+<p>These clustering eveluation method rely on being able to  have labels. How this is evaluted is done throuhg using Indicator functions. Let $U = {U_1, U_2,…,U_R}$ be the set of labels classes and $V={V_1, V_2,…,V_K}$ the set of cluster then,</p>
+
+\[\begin{align*}
+\mathbf{1}_{U}(i,j) = 
+\begin{cases}
+1 &amp; \text{if } x_i \in U_r \text{ and } x_j \in U_r , \quad 1 \leq r \leq R\\
+0 &amp; \text{if } \text{otherwise} \\ 
+\end{cases} \\
+\mathbf{1}_{V}(i,j) = 
+\begin{cases}
+1 &amp; \text{if } x_i \in U_s \text{ and } x_s \in U_r ,\quad 1 \leq s \leq K\\
+0 &amp; \text{if } \text{otherwise} \\ 
+\end{cases}
+\end{align*}\]
+
+<h2 id="external-method-1--confusion-matrix">External Method 1 : Confusion Matrix</h2>
+<p>which leads to the contingency table,</p>
+
+<p><img src="/assets/images/clustering/continugency-table-expanded.png" alt="contingency-table-expanded" /></p>
+
+<p>Now each $n_{i,j}$ represents the number of times it is present. So say our class label is {Male, Female}, and from our clustering algorithm it classifies in 3 clusters ${V_1, V_2, V_3}$, then our contingency table would look like this</p>
+
+<p><img src="/assets/images/clustering/examples-contingency-table.png" alt="example-contigency-table" /></p>
+
+<p>Using this information in the contingency table we can create a confusion matrix,</p>
+
+<p><img src="/assets/images/clustering/contingency-table.png" alt="contingency-table" /></p>
+
+<p>where,</p>
+
+\[\begin{align*}
+TP = \text{True positive} &amp;= \text{model correctly predicts the positive class} \\ 
+FP =  \text{False positive} &amp;= \text{model incorrectly predicts the positive class} \\
+TN = \text{true negative} &amp;= \text{model correctly predicts the negative class} \\
+FN = \text{false negative} &amp;= \text{model incorrectly predicts the negative class}
+\end{align*}\]
+
+<p>How does this relate to our example? Given we have only two classes then for (class) Males are our positive class and (class) Female are our negative class. Then for the Males (positive) suppose  V_1 cluster the correct class for males and females are the negative class given by V_2,</p>
+
+\[\begin{align*}
+TP &amp;= \text{model correctly predicts the positive class} = 1   \\ 
+FP &amp;= \text{model incorrectly predicts the positive class} =  1 \\
+TN &amp;= \text{model correctly predicts the negative class} = 1\\
+FN &amp;= \text{model incorrectly predicts the negative class} = 0\\
+\end{align*} \\\]
+
+<p>Thus, our confusion matrix is,</p>
+
+<p><img src="/assets/images/clustering/contingency-table-one-example.png" alt="contingency-table-example" /></p>
+
+<h2 id="external-method-2-standard-measures-f-score-recall-precision-">External Method 2: standard measures (F-score, Recall, precision )</h2>
+<p>Now to use standard measures we need to modify what standard measures met w.r.t clusters, generally precision, accuracy and F-score are defined as,</p>
+
+\[\begin{align*}
+precision = \frac{TP}{TP + FP} \\ 
+recall = \frac{TP}{TP + FN} \\ 
+accuracy = \frac{TP + TN}{TP + TN + FN + FP}  \\ 
+F1\text{-score} = \frac{2}{\frac{1}{precision} + \frac{1}{recall}} \\ 
+\end{align*}\]
+
+<p>Given from all labels (males) how many did it correctly classify and recall is given Males labels in our algorithm did our algorithm get correct?
+Now interms of clustering;</p>
+<ul>
+  <li>precision: From our positive label what percentage did the algorithm correctly classify</li>
+  <li>recall: From our cluster how many what percentage of labels inside that cluster are correctly classified (positive)</li>
+  <li>accuracy : how of all cluster how many labels did the cluster get right all together</li>
+  <li>F1-score: Overall score performance of precision and accuracy</li>
+</ul>
+
+<h2 id="external-method-3-entropy-in-clustering-perspective">External Method 3: Entropy in Clustering perspective</h2>
+<p>Entropy enables the abiilty to quantiy simialrities and dfifferences thoruhg probaiblity through measuring expected suprise. Generally entropy is measured as</p>
+
+<p>\(\begin{align*}
+Entrophy &amp;= \mathbb{E}(Surprise) \Longleftrightarrow\\
+&amp;= \sum{x P(X = x)} \Longleftrightarrow \\ 
+&amp;= \sum{log(\frac{1}{P(X = x)}) P(X = x)} \Longleftrightarrow\\
+&amp;= \sum{log(\frac{1}{p(x)}) p(x)} \Longleftrightarrow \\ 
+&amp;= \sum{p(x)(log(1) - log(p(x)))} \Longleftrightarrow \\ 
+&amp;= - \sum{p_i(x)log(p_i(x))}
+\end{align*}\)
+Now this is the entropy of a cluster i, and then the total entrophy is</p>
+
+\[\begin{align*}
+Total\text{ }Entrophy &amp;= \text{Sum of all Entropy Clusters}\Longleftrightarrow \\ 
+e &amp;= \sum_{i = 1}^k \frac{n_i}{n} e_i \\ 
+\end{align*}\]
+
+<h1 id="internal-measures">Internal Measures</h1>
+<p>Given we create a cluster without any labels, evaluating a cluster algorithm is extremely difficult. There are two main types,</p>
+<ol>
+  <li>Cluster Cohesion - Measure compactness/tightness. How closely related are patterns in the same cluster?</li>
+  <li>Cluster separation - Measures isolation. How well separated are the clusters?</li>
+</ol>
+
+<h2 id="internal-measures-1--cluster-cohesion">Internal Measures 1 : Cluster Cohesion</h2>
+<p>Cluster Cohesion is a measure of spread out each cluster is, that is whats the dimension of a cluster’s</p>
+
+<p><img src="/assets/images/clustering/cluster-cohesion-example.png" alt="cluster-cohesion-example" /></p>
+
+<p>Clearly, the width of left side cluster is larger then the right hand cluster, so left side cluster has lower cohesion score then right side cluster. Mathematicaly,
+\(\begin{align*}
+cohesion(C_i) = \sum_{x \in C_i , y \in C_i} proximity(x,y) \\ 
+\end{align*}\)
+proximity is any measure metric include Euclidean, Mahanttan, or L_p norm. Thus the smaller the proximity the samller then distance between each point within a cluster, thus the smaller the cohesion, and hence the better the result.</p>
+
+<h2 id="internal-measures-2--cluster-separation">Internal Measures 2 : Cluster separation</h2>
+<p>Cluster seperation measure inter-measure metric, which measure the distance between cluster, that is the futher away the cluster the higher the isolation, thus the hopefully better the cluster generalises.</p>
+
+<h3 id="how-to-measure-cluster-separation">How to measure Cluster separation</h3>
+<p>Similar, to creating clusters using aggolmetric hierarchical clustering, you can use a range of methods including single-method, complete-method, mean-method, centroid-method, all of which will create different interpretation of cluster separation metric. 
+Mathematically cluster separation is defined as in single-method</p>
+
+\[\begin{align*}
+d(C_i, C_j) = \text{min } d(x, y)
+\end{align*}\]
+
+<p>where $x_i$ are all elements in cluster $C_i$ and $y_i$ elements of cluster $C_j$.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>I hope after reading this, both you and i have gained a more solid understanding of evaluating our clustering!</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ml" class="page__taxonomy-item p-category" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-25T00:00:00+10:00">May 25, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/ml/hierarchial-clustering/" class="pagination--pager" title="Hierarchial Clustering: Intuition and Types
+">Previous</a>
+    
+    
+      <a href="/ml/episdoe-two-datasoc-ibm/" class="pagination--pager" title="Episode Two (IBM x UNSW machine learning project) : Learning Models
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

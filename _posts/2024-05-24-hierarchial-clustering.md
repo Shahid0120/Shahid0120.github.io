@@ -1,7 +1,7 @@
 ---
 layout: single
 classes: wide
-title: "Hierarchical Clustering: Intuition and Types"
+title: "Hierarchial Clustering: Intuition and Types"
 header:
 categories:
   - ML
@@ -55,8 +55,6 @@ Some of the questions we ask priror to starting the clustering algorithm is;
 
 Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).
 
-clustering simialrity
-
 # Hierarchical Algorithms
 
 This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of
@@ -84,13 +82,16 @@ Generally Agglomerative Hierarchical Algorithms are cateogrised in to these cate
 for each graph method (Single/Complete/Grouped-Average) is present different methods of measuring simialirty, which leads to disicions of merging clusters. Which method you chose can chnages they way a cluster is merged.
 
 # Graph Methods : Agglomerative Hierarchical Single-Link Method
+
 This is the most used method to perform hierarchical agglomerative clustering, in this case 
 we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as 
+
 $$
 \begin{align*}
 d(C_i, C_j) = \text{min } d(x_i, x_j)
 \end{align*}
 $$
+
 where C represent cluster, $$x_i$$ points in cluster $$C_i$$ and $$x_j$$ points in $$C_j$$.
 
 So,  we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,
@@ -123,11 +124,13 @@ This continues until we finally have one cluster, that is all points are in the 
 
 # Graph Methods : Agglomerative Hierarchical Complete-List Method
 This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by 
+
 $$
 \begin{align*}
 d(C_i, C_j) = \text{max} d(p, p^')
 \end{align*}
 $$
+
 Visually this looks like 
 
 ![complete-list-cluster-distance](/assets/images/clustering/complete-list-cluster-distance.png)
@@ -154,12 +157,14 @@ Below, internal nodes are clusters (A,B,C) whilst the terminal notes/leaves are 
 
 ![n-tree-diagram](/assets/images/clustering/n-tree-diagram.png)
 
-Importantly a dendrograms is a type of n-tree, which all internal notes satisify, 
+Importantly a dendrograms is a type of n-tree, which all internal notes satisify,
+
 $$
 \begin{align*}
 h(A) \leq h(C) \Longleftrightarrow A \subseteq C
 \end{align*}
 $$ 
+
 where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So 
 
 
