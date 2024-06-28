@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Imputation : Methods | Shahid Hussain      Blog      </title>
+<meta name="description" content="Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from Flexible Imputation of Missing Data by Stef Van Buuren .">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Imputation : Methods">
+<meta property="og:url" content="http://localhost:4000/ml/Imputation/">
+
+
+  <meta property="og:description" content="Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from Flexible Imputation of Missing Data by Stef Van Buuren .">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-28T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/ml/Imputation/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Imputation : Methods">
+    <meta itemprop="description" content="Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from Flexible Imputation of Missing Data by Stef Van Buuren .">
+    <meta itemprop="datePublished" content="2024-05-28T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/ml/Imputation/" class="u-url" itemprop="url">Imputation : Methods
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from <a href="https://stefvanbuuren.name/fimd/">Flexible Imputation of Missing Data</a> by Stef Van Buuren .</p>
+
+<h1 id="types-of-missing-data">Types of Missing data</h1>
+<p>Let $D = {(x,y)^i}$  and $X$ be our missing data column where $X := (X_{obs}, X_{missing})$ for $\theta$ being the parameter of missing values then;</p>
+
+<p>(1)Missing completely at random (MCAR) - Unlucky out of control missing values that is 
+\(Pr(R = 0 |X_{obs}, X_{missing}, \theta) = Pr(R=0| \theta)\) .</p>
+
+<p>(2)Missing at random (MAR) - through our asusmption of sampling, data is missing that is 
+\(Pr(R = 0 |X_{obs}, X_{missing}, \theta) = Pr(R=0| X_{obs}, \theta)\) .</p>
+
+<p>(3)Not missing at random (NMAR): 
+\(Pr(R = 0 |X_{obs}, X_{missing}, \theta)\).</p>
+
+<h1 id="commonly-used-imputation-are-problematic">Commonly used Imputation are Problematic</h1>
+<h2 id="method-1--complete-case-anlysis---deleting-samples-why-any-features-missing">Method 1 : (Complete Case Anlysis) - deleting samples why any features missing</h2>
+<p>Revmoing all samples where there is a missing input. that is if i have D = (200, 30) if one of the index = 189 has one missing values in column = 5 then i would remove the whole index, but even thoruhg removing missing values is fast this assume missing data is MCAR,. If this assumption is not true then by removing these missing values is casue estimators for future paramettric models, such as linear regression etc to have bias estimators of (1) mean, (2) regression coefficients (3) correlation.</p>
+
+<h2 id="method-2-avaliable-case-anlalysis---not-deleting-any-missing-entries">Method 2: Avaliable Case Anlalysis - not deleting any missing entries</h2>
+
+<p>If we are anylysing two features $X_1$ and $X_2$ if both features have different index where data is missing, we don’t remove them missing values. Problems with this method is it assume missing values are MCAR, thus if the assumption is wrong then it bias estimators of future learning models. Secondly, sample size could be different for each category being analysed, leading to complication of analysis of whole dataset.</p>
+
+<h2 id="method-3-mean-imputation">Method 3: Mean Imputation</h2>
+
+<p>For each features the mean is taken then is placed into each missing values of that coloumn. The problem with this reguards of the type of missing data, this distors the variance. Also if tehre is a positive correlation between vairables then it icnrease the correlation by using eman imputation</p>
+
+<h2 id="method-4-regression-imputation">Method 4: Regression Imputation</h2>
+
+<p>Viaselection some slection method, we can compute univairate or multivairate regression and then use this information to fill in the missing values. Importantly we are not interpolation each data points, but rather estimated via dataset. The benefits of this method is if the data is MCAR or MAR has unbias estimatros for future parametirc learning models, but by using the relationship between variables and inputing these values into missing data point, we icnrease the correlation between the used features vairables in the regression model. Addtionally, it decrease the samples variables in sample, thus cause underestimation of variatability.</p>
+
+<p><img src="/assets/images/imputation/regression-imputation.png" alt="regression-imputation" /></p>
+
+<p>Even though this is the most commonly used method for imputation is it extremelt dagerous due to increased correlaotion (relation) between vairables, which cause more false positives in future learning models.</p>
+
+<h2 id="method-5-stochastic-regression-imputation-sri">Method 5: Stochastic regression imputation (SRI)</h2>
+<p>Doing Regression Imputation, but now we add noise to decrease correlation bias.</p>
+
+<p><img src="/assets/images/imputation/stochastic-regression-imputation.png" alt="sotchastic-regression-imputation" /></p>
+
+<p>Even thought the benfits of this model is it does not underestimate the variance, it has larger sample variacne of estimators then compared to other imptuation. Addtionaly, the standard error of learning models using on features using SRI n have are very small, thus dont adress uncertainty of estimation! Continuing, SRI genrally doesnt adress higher end of frequency, can randomly assign noise negative values even thought it might not be plausible (weight can be negative)</p>
+
+<h2 id="summary-of-commonly-used-imputation-methods">Summary of Commonly used Imputation methods</h2>
+<p>All these methods have inherent problems, effecting bias of future learning model estimators or not identifying the correct distribution. All the methods above are known as single imputation, that it they only given a method mean imputation, SRI imputation they all predict a single data value for each missing data point. Whihc increases biais since how do we know that our current sample is a accurate representation of the whole population/distribution?</p>
+
+<h1 id="current-solutions-to-imputations--multiple-imputation">Current Solutions to imputations : Multiple Imputation</h1>
+
+<h2 id="multiple-imputation">Multiple Imputation</h2>
+<p>Generally when we conduct supervised learning we can do it with one feature (X, Y) or with multiples features to predict one label.</p>
+
+<h3 id="univariate-multiple-imputation"><em>Univariate Multiple Imputation</em></h3>
+<p>this is the case when we only have missing values in one feature, there are two types</p>
+
+<h2 id="univariate-multiple-imputation--continuous-feature">Univariate Multiple Imputation : Continuous Feature</h2>
+
+<p>An example, suppoer we have a dataset, where the columns are weight, eye_colour, nationality, age, income, Body Mass Index, height. Suppose we want to want to make a classification algorithm to find the height of someone. So the potential features are weight, eye_colour, nationality, age, income, BMI. From a basic data profiling we find that age has a missing value in index 10. So what we can do is we find the correlation between (weight and age) have a high correlation, thus we use so what we do first is we split our dataset into say 10 parts. Then we conduct any learning model like regression, linear or non linear. Then from our subsamples we predic the missing values of age. Thus we have 10 different values for age in index 10, then we can one method is to compute the mean of all these estimates for age at index 10 and thus we have now reduced our bias, but using in a sense multiple samples from the unknown distribution, rather then computing it from one sample. The figure brlow illustrates this idea,</p>
+
+<p><img src="/assets/images/imputation/workflow-missing-multiple-imputaiton.png" alt="workflow-missing-multiple-imputation" /></p>
+
+<p>There are 4 main types of models to estimate the missing index via subsamples (not the missing column) is normally distributed</p>
+
+<ol>
+  <li>Regression Imputation - $$ \hat{y} = \hat{\beta_{0}} + X_{missing}\hat{\beta_{1}}</li>
+  <li>Stochastic Imputation \(\hat{y} = \hat{\beta_{0}} + X_{missing}\hat{\beta_{1}} + \epsilon\) where \(\epsilon ~ N(0, \sigma^2)\)</li>
+  <li>Bayesian multiple imputation - \(\hat{y} = \hat{\beta_{0}} + X_{missing}\hat{\beta_{1}} + \epsilon\), but now rather the above assume frequentist statistics, we use Bayesian Statistics and assume our parameters, \(\hat{\beta_{0}}, \hat{\beta_{1}} \text{ and } \sigma\) are from some posterior distribution we have chosen.</li>
+  <li>Bootstrap Multiple Imputation</li>
+</ol>
+
+<p>Note when our \(\hat{y}\) is not normally distributed then we conduct a transformation to make it normally distributed.</p>
+
+<h2 id="univariate-multiple-imputation--categorical-feature">Univariate Multiple Imputation : Categorical Feature</h2>
+<p>In this case we use generalized linear models, specifically logistic regression, for binary classes</p>
+
+\[\begin{align*}
+Pr(y_i | X_i, \beta) = \frac{\exp(X_iB)}{1 + \exp{X_i\beta}}
+\end{align*}\]
+
+<p>Multi-class using, multinomial logit model for nominal categorical variables</p>
+
+\[\begin{align*}
+Pr(y_i = K | X_i, \beta) = \frac{\exp(X_iB)}{1 + \exp(X_i\beta)}
+\end{align*}\]
+
+<p>Ordered Logit Model for ordinal categorical variables</p>
+
+<p>\(\begin{align*}
+Pr(y_i \leq K | X_i, \beta, \tau_k) = \frac{\exp( \tau_k - X_iB)}{1 + \exp( \tau_k - X_i\beta)}
+\end{align*}\)
+so for a given category</p>
+
+\[\begin{align*}
+Pr(y_i = k | X_i) = Pr(y_i \leq k | X_i) - Pr(y_i \leq k - 1 | X_i)
+\end{align*}\]
+
+<h3 id="multiple-multiple-imputation"><em>Multiple Multiple Imputation</em></h3>
+<p>THre problem wit the above example is that in the real world missing data span different index’es and multiple features, so</p>
+<ul>
+  <li>Imputation stronger if not multiples variables are missing for each data</li>
+  <li>Measuring Usability of dataset when multiple missing coloumns and index
+    <ul>
+      <li>Proportion of usable cases</li>
+      <li>Outbound Statistic, Inbound statistics (for two features measure )</li>
+      <li>Influx and outflux coefficient (comparison of Outbound Statistic, Inbound statistics for multiple featrues )</li>
+    </ul>
+  </li>
+  <li>Issues
+    <ul>
+      <li>predictors contain missing values</li>
+      <li>Variables are often of different types</li>
+      <li>collinearity can occur</li>
+      <li>he ordering of the rows and columns can be meaningful, e.g., as in longitudinal data</li>
+      <li>the relationshiup between variables can be non-linear</li>
+      <li>Imputation can create impossible combinations, such as pregnant fathers.</li>
+    </ul>
+  </li>
+  <li>Methods
+    <ul>
+      <li>Monotone data imputation. (MICE) For monotone missing data patterns, imputations are created by a sequence of univariate methods;</li>
+      <li>Joint modeling. For general patterns, imputations are drawn from a multivariate model fitted to the data;</li>
+      <li>Fully conditional specification, also known as chained equations and sequential regressions. For general patterns, a multivariate model is implicitly specified by a set of conditional univariate models. Imputations are created by drawing from iterated conditional models.</li>
+    </ul>
+  </li>
+  <li>Analysing Imputation
+    <ul>
+      <li>Workflows</li>
+      <li>dont use for pool part :
+        <ul>
+          <li>Average Mean -&gt;   incorrect standard errors, confidence intervals and  p-values -&gt; wrong statistical testing or uncertainty analysis</li>
+          <li>Stack imputed data -&gt;</li>
+        </ul>
+      </li>
+      <li>Use:
+        <ul>
+          <li>Repeated analyses</li>
+        </ul>
+      </li>
+      <li>Identify the best features for imputation: problem when using stepwise model selection:
+        <ul>
+          <li>When seperated data in subsamples then, The first step involves performing stepwise model selection separately on each imputed dataset, followed by the construction of a new supermodel that contains all variables that were present in at least half of the initial models.</li>
+          <li>Majority. A method that selects variables in the final that appear in at least half of the models.</li>
+          <li>tack. Stack the imputed datasets into a single dataset, assign a fixed weight to each record and apply the usual variable selection methods.</li>
+          <li>Wald. Stepwise model selection is based on the Wald statistic calculated from the multiply imputed data.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Application</p>
+<ul>
+  <li>Chosing which imputation model (regresion type etc after subsamples) is hardest choice ou goals is to
+    <ul>
+      <li>account for the process that created the missing data,</li>
+      <li>preserve the relations in the data, and</li>
+      <li>preserve the uncertainty about these relations.</li>
+    </ul>
+  </li>
+  <li>Choise we need to make
+    <ul>
+      <li>MAR assumption is plausible ?</li>
+      <li>form of the imputation model. The form encompasses both the structural part and the assumed error distribution?</li>
+      <li>set of variables to include as predictors in the imputation model. The general advice is to include as many relevant variables as possible, including their interactions</li>
+      <li>impute variables that are functions of other (incomplete) variables (like my time diff/ratio’s)</li>
+      <li>the order in which variables should be imputed.</li>
+      <li>setup of the starting imputations and the number of iterations</li>
+      <li>The number of multiply imputed datasets</li>
+    </ul>
+  </li>
+  <li>Generally</li>
+  <li>The MAR assumption is often a suitable starting point. If the MAR assumption is suspect for the data at hand, a next step is to find additional data that are strongly predictive of the missingness, and include these into the imputation model. If all possibilities for such data are exhausted and if the assumption is still suspect, perform a concise simulation study as in Collins, Schafer, and Kam (2001) customized for the problem at hand with the goal of finding out how extreme the MNAR mechanism needs to be to influence the parameters of scientific interest. Finally, use a nonignorable imputation model (cf. Section 3.8) to correct the direction of imputations created under MAR. Vary the most critical parameters, and study their influence on the final inferences. Section 9.2 contains an example of how this can be done in practice.</li>
+  <li>In my experience, the increase in explained variance in linear regression is typically negligible after the best, say, 15 variables have been included. For imputation purposes, it is expedient to select a suitable subset of data that contains no more than 15 to 25 variables. provide the following strategy for selecting predictor variables from a large database:
+    <ul>
+      <li>Include all variables that appear in the complete-data model, i.e., the model that will be applied to the data after imputation, including the outcome (Little 1992; Moons et al. 2006). Failure to do so may bias the complete-data model, especially if the complete-data model contains strong predictive relations. Note that this step is somewhat counter-intuitive, as it may seem that imputation would artificially strengthen the relations of the complete-data model, which would be clearly undesirable. If done properly however, this is not the case. On the contrary, not including the complete-data model variables will tend to bias the results toward zero. Note that interactions of scientific interest also need to be included in the imputation model.</li>
+      <li>In addition, include the variables that are related to the nonresponse. Factors that are known to have influenced the occurrence of missing data (stratification, reasons for nonresponse) are to be included on substantive grounds. Other variables of interest are those for which the distributions differ between the response and nonresponse groups. These can be found by inspecting their correlations with the response indicator of the variable to be imputed. If the magnitude of this correlation exceeds a certain level, then the variable should be included.</li>
+      <li>In addition, include variables that explain a considerable amount of variance. Such predictors help reduce the uncertainty of the imputations. They are basically identified by their correlation with the target variable.</li>
+      <li>Remove from the variables selected in steps 2 and 3 those variables that have too many missing values within the subgroup of incomplete cases. A simple indicator is the percentage of observed cases within this subgroup, the percentage of usable cases (cf. Section 4.1)</li>
+      <li>In practice, there is often a small set of key variables, for which imputations are needed, which suggests that steps 1 through 4 are to be performed for key variables only. The mice package contains several tools that aid in automatic predictor selection. The quickpred() function is a quick way to define the predictor matrix using the strategy outlined above. The flux() function was introduced in Section 4.1.3. The mice() function detects multicollinearity, and solves the problem by removing one or more predictors for the model.</li>
+    </ul>
+  </li>
+  <li>Say our time_diff = based on end_time and start_time if we impute all these values we will have values for that index which don’t make sense, The easiest way to deal with the problem is to leave any derived data outside the imputation process.</li>
+  <li>Conditional imputation : In some cases it makes sense to restrict the imputations, possibly conditional on other data. The method in Section 1.3.5 produced negative values for the positive-valued variable Ozone. One way of dealing with this mismatch between the imputed and observed values is to censor the values at some specified minimum or maximum value. The mice() function has an argument called post that takes a vector of strings of R commands. These commands are parsed and evaluated just after the univariate imputation function returns, and thus provide a way to post-process the imputed values. Note that post only affects the synthetic values, and leaves the observed data untouched. The squeeze() function in mice replaces values beyond the specified bounds by the minimum and maximal scale values. A hacky way to ensure positive imputations for Ozone under stochastic regression imputation is</li>
+  <li>Interaction terms</li>
+  <li>Quadratic relations
+Algorithms type
+    <ul>
+      <li>Visit sequence</li>
+      <li>Convergence
+Diagnostics</li>
+      <li>Model fit versus distributional discrepancy</li>
+      <li>Diagnostic graphs</li>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ml" class="page__taxonomy-item p-category" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-05-28T00:00:00+10:00">May 28, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/ml/evluating-clustering-model/" class="pagination--pager" title="Evaluating You’re Clustering Model
+">Previous</a>
+    
+    
+      <a href="/ml/episdoe-two-datasoc-ibm/" class="pagination--pager" title="Episode Two (IBM x UNSW machine learning project) : Learning Models
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
