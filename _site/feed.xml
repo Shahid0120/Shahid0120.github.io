@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-28T14:41:32+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-30T13:52:12+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -64,7 +64,116 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Imputation : Methods</title><link href="http://localhost:4000/ml/Imputation/" rel="alternate" type="text/html" title="Imputation : Methods" /><published>2024-05-28T00:00:00+10:00</published><updated>2024-05-28T00:00:00+10:00</updated><id>http://localhost:4000/ml/Imputation</id><content type="html" xml:base="http://localhost:4000/ml/Imputation/">&lt;p&gt;Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from &lt;a href=&quot;https://stefvanbuuren.name/fimd/&quot;&gt;Flexible Imputation of Missing Data&lt;/a&gt; by Stef Van Buuren .&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Understanding the Roles/Links between Samples, Inference and Learning Models</title><link href="http://localhost:4000/ml/sampling-inference-learning/" rel="alternate" type="text/html" title="Understanding the Roles/Links between Samples, Inference and Learning Models" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/ml/sampling-inference-learning</id><content type="html" xml:base="http://localhost:4000/ml/sampling-inference-learning/">&lt;p&gt;I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!&lt;/p&gt;
+
+&lt;h1 id=&quot;sampling-who-are-you&quot;&gt;Sampling? Who are you&lt;/h1&gt;
+&lt;p&gt;When learning about phenomenon’s we want to study we ask everyone in the best method would be to ask population right, so the population;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Set of all elements from who the sample will be drawn
+Unfortunately, this is not always possible because of financial resource issues. But in some cases it is done, when?
+Umm election? Everyone in the population has to vote on who there president is, but the question to ask is how does this news corporations show polls of potential presidential ranking before the election is finished? Well they take the proportion of the population a.k.a sample and hope this sample is a reflection of the whole population!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;what-are-different-ways-these-news-corporation-could-sample&quot;&gt;What are different ways these news corporation could sample?&lt;/h1&gt;
+&lt;p&gt;Generally when taking sample there are two main issues;
+(1) Sample Bias - based on the individuals in our sample we can bias a certain outcome which can include selection bias, response bias, nonresponsive bias
+(2) Chance error - random samples can vary from what is expected in any direction&lt;/p&gt;
+
+&lt;p&gt;General steps would be creating a sample is;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-identify-our-population&quot;&gt;1. Identify our population&lt;/h3&gt;
+&lt;h3 id=&quot;2create-a-sampling-frame&quot;&gt;2.Create a sampling frame&lt;/h3&gt;
+&lt;p&gt;a subset of population of potential people who can be in our sample&lt;/p&gt;
+&lt;h3 id=&quot;3chose-a-sampling-scheme&quot;&gt;3.Chose a sampling scheme&lt;/h3&gt;
+&lt;p&gt;note sampling method quality is more important then sampling size a few sampling methods includes;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Convenience sample: is whoever is available we take them as our sample, but this has high bias&lt;/li&gt;
+  &lt;li&gt;Deterministic Sampling: When we specifically choose from our sampling frame, no chance&lt;/li&gt;
+  &lt;li&gt;probability/random sample : Given a sampling frame we give ‘chance’ of anyone being selected in our sample, thus there is a randomness about this. Through the use of probability we can know measure errors and thus we have reduced bias by not sampling non-randomly. The most common random sampling methods are
+    &lt;ul&gt;
+      &lt;li&gt;Systematic sample : randomly align all potential individuals in a line, then random choose from the start of sequences and then evenly choose between each individual to create the sample&lt;/li&gt;
+      &lt;li&gt;uniform random sample with replacement :  uniformly at random with replacement, but the problem is some people may be picked more then once!&lt;/li&gt;
+      &lt;li&gt;simple random sample : sample drawn uniformly at random without replacement.&lt;/li&gt;
+      &lt;li&gt;stratified random sample : where random sampling are performed on specific group, which each group is combined into a sample , thus stop the unbalanced class!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;given-we-have-our-sample-how-does-new-corporation-make-predictions-about-population&quot;&gt;Given we have our sample how does new corporation make predictions about population&lt;/h1&gt;
+&lt;p&gt;A ‘statistic’ , a number calculated from the sample and a ‘parameter’, a number associated with the population, now a statistic can be calculated from our sample can be used as an estimate of our ‘parameter’ which we cant feasible measure . 
+Think Sample Mean vs Population Mean, \(\overline{X_n}\) and \(\mu\). Here Sample Mean is our statistic which estimates the population mean.&lt;/p&gt;
+
+&lt;p&gt;Now defining statistical inference; is using our ‘random sample’ we make conclusion about the population, i.e our we hope our sample mean is close to the population mean which we don’t know. How can we check our sample statistic/estimator is close to our population paramter?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Variance: How does my statistic changes with each sample: \(Var(\theta) = \mathbb{E}((\hat{\theta} - \theta)^2)\)&lt;/li&gt;
+  &lt;li&gt;Bias : Did we get the right answer to our parameter? \(Bias(\hat{\theta})= \mathbb{E}(\hat{\theta} - \theta)\)&lt;/li&gt;
+  &lt;li&gt;Risk/MSE = Variance + Bias^2 : How close is our parameter ? \(MSE(\hat{\theta}) = \mathbb{E}(\hat{\theta} - \theta)^2\)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So for our new coporation they will want to find the sample mean for votes for say trump.&lt;/p&gt;
+
+&lt;h1 id=&quot;learning-models&quot;&gt;Learning Models&lt;/h1&gt;
+&lt;p&gt;Now, when building models we have either two goals, 
+(1) Prediction of unseen data, regression or classification
+(2) Inference: draw conclusions about the underlying relationships between features and response, so training is the process of fitting a model while inference is making the prediction&lt;/p&gt;
+
+&lt;p&gt;Now lets take an example, suppose  we have a simple linear regression, our population parameter is which we want to find but we don’t know,&lt;/p&gt;
+
+\[\begin{align*}
+y = \beta_0 + \beta_1 x_0  
+\end{align*}\]
+
+&lt;p&gt;Now using our random sample we get our estimated parameters,&lt;/p&gt;
+
+\[\begin{align*}
+y &amp;amp;= b_0 + b_1 x_0  \Longleftrightarrow  \\
+y &amp;amp;= 9.3 + 4.3 x_0
+\end{align*}\]
+
+&lt;p&gt;Okay so our estimated statistic/estimator \(b_1 = 4.3\) so then can we conclude that our parameter is \(\beta_1 = 4.3\) ? Is this right? No! Well not right now we only considered 1 random sample, we could have totally got it wrong, since we hadn’t compared it to any other samples!&lt;/p&gt;
+
+&lt;p&gt;So to find the true parameter \(\beta_1\) we make conclusion from the distribution/probability of statistic \(b_1\) from all possible random samples! And then we use hypothesis testing check check if potentially is \(\beta_1 = 4.3\).&lt;/p&gt;
+
+&lt;h1 id=&quot;how-can-we-do-this-hypothesis-testing&quot;&gt;How can we do this hypothesis testing?&lt;/h1&gt;
+
+&lt;p&gt;Outlined in “Computation Age of Statistical Inference” by Bradley Efron and Trevor Hastie, we can check our estimator from classifical statistical inference methods like Taylor-series approximations, plug-in principle to modern methods including bootstrapping, Jackknife resampling.&lt;/p&gt;
+
+&lt;p&gt;Let’s take Jackknife resampling. \&lt;/p&gt;
+
+&lt;p&gt;This is a resampling method invented by Quenouille in 1949 for the sole purpose of reducing bias of estimators! In this method since it is always difficult to resample from the population, so jackknife resampling takes N-subsample, in each subsample 1 individual taken out each time so the subsample size is always N - 1, since we have N individuals in our original sample, thus the every individual in the original sample is taken out atleast once. Then we do our simple linear regression again and get our \(b_1\) statistic, a estimate of our parameter \(\beta_1\), we then taken the mean of all \(b_1\) from each sample&lt;/p&gt;
+
+\[\begin{align*}
+\overline{b_1} = \frac{1}{n - 1} \sum_{i = 1}^n b_{1,i}
+\end{align*}\]
+
+&lt;p&gt;Therefore, we know from our subsample some \(b_1\) will over shoot our original parameter and some subsample \(b_1\) will undershoot, but we hope on average \(\overline{b_1} = \beta_1\) .&lt;/p&gt;
+
+&lt;p&gt;Since, we have a range of \(b_1\) values we can create a empirical probability density distribution graph and then find 95% confidence interval \(b_1\)
+So our hypothesis is
+\(\begin{align*}
+H_0 &amp;amp;: b_1 = 4.3 \\ 
+H_a &amp;amp;: b_1 \neq 4.3
+\end{align*}\)&lt;/p&gt;
+
+&lt;p&gt;So we conduct jackknife sampling to find the jackknife empirical distribution of statistic \(b_1\);&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/inference-learning-sampling/Screenshot%202024-06-30%20at%2012.17.55%20pm.png&quot; alt=&quot;sampling-95-inference&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly,&lt;/p&gt;
+
+\[CI(b_0) = [2.92, 5.62] = [2.5\%, 97.5\%]\]
+
+&lt;p&gt;so we don’t have enough evidence to reject our null hypothesis. Thus our regression model is valid&lt;/p&gt;
+
+\[\begin{align*}
+y &amp;amp;= 9.3 + 4.3 x_0
+\end{align*}\]
+
+&lt;p&gt;Note : if our model doesnt hold say, the relationship bertween y and x is not linear then the inference also doesnt hold!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Now both you and me both understand the relationship between sampling, inference and learning models!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!</summary></entry><entry><title type="html">Imputation : Methods</title><link href="http://localhost:4000/ml/Imputation/" rel="alternate" type="text/html" title="Imputation : Methods" /><published>2024-05-28T00:00:00+10:00</published><updated>2024-05-28T00:00:00+10:00</updated><id>http://localhost:4000/ml/Imputation</id><content type="html" xml:base="http://localhost:4000/ml/Imputation/">&lt;p&gt;Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from &lt;a href=&quot;https://stefvanbuuren.name/fimd/&quot;&gt;Flexible Imputation of Missing Data&lt;/a&gt; by Stef Van Buuren .&lt;/p&gt;
 
 &lt;h1 id=&quot;types-of-missing-data&quot;&gt;Types of Missing data&lt;/h1&gt;
 &lt;p&gt;Let $D = {(x,y)^i}$  and $X$ be our missing data column where $X := (X_{obs}, X_{missing})$ for $\theta$ being the parameter of missing values then;&lt;/p&gt;
@@ -859,70 +968,4 @@ so hence, $ f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)}) $&lt;/p&gt;
 \min_{\alpha \geq 0} \quad &amp;amp; f(x^{(k)} + \alpha s^{(k)})
 \end{align*}\]
 
-&lt;p&gt;Importantly, this is known as exact line search since, finds the optimal step size that minimizes the objective function along the search direction. But there exsit different types of line search including Backtracking Line Search, Golden Section Search, interpolation-Based Line Search. All these line search play around with step size, $ \alpha $ to find the most optimal method to minimer objective function.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods; Linear search strategy Trust region</summary></entry><entry><title type="html">Olympiad Level Counting Made Easy with Jensen’s inequality</title><link href="http://localhost:4000/statistics/Olympaid-Level-Counting/" rel="alternate" type="text/html" title="Olympiad Level Counting Made Easy with Jensen’s inequality" /><published>2024-03-27T00:00:00+11:00</published><updated>2024-03-27T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Olympaid-Level-Counting</id><content type="html" xml:base="http://localhost:4000/statistics/Olympaid-Level-Counting/">&lt;p&gt;Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that&lt;/p&gt;
-
-\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
-
-&lt;p&gt;Or&lt;/p&gt;
-
-\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
-
-&lt;p&gt;Many of you have no idea how some 14 year old kid is able to solve these questions, yet at my final year of university, I am still not able to intuitively solve these. I believe that this is true for most university students.&lt;/p&gt;
-
-&lt;p&gt;Now, of course, the most rational method would be trying to move all the variables to one side, then try estimating the values for which the right-hand side equals the left-hand side. Then, the exam hits you with give me exact values for \(x,y,z\) and now you are stumped with this 1 hour exam and  you’ll just about spend most of your time guessing possible values. Here comes the bang, Olympiad contestants in my eyes now are of course genius, but they know a set of specialised tools in their tool bag of which they select the appropriate tool for the job. Now, selecting a the right tool can be difficult (Mathematics tool bags a very,very deep).&lt;/p&gt;
-
-&lt;h2 id=&quot;one-of-the-most-powerful-tools-in-the-mathematics-tool-bag--jensens-inequality&quot;&gt;One of the most powerful tools in the mathematics tool bag : Jensen’s Inequality.&lt;/h2&gt;
-&lt;p&gt;For any convex function \(h\), we have,&lt;/p&gt;
-
-\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y)\]
-
-&lt;p&gt;How did we get to conclusion of the great ‘power’ of Jensen’s Inequality? According to my professor, Dr.Zdravko Botev, power comes from two key characteristics (1) simplicity (2) usefulness. Not only is Jensen Inequality applicable in a range of context, including counting as above, but also real analysis, probability, economics, statistics, and machine learning, but it’s proof that it is so simple.&lt;/p&gt;
-
-&lt;p&gt;\(\textit{Proof.}\) From the definition of convexity, we have for x and all Y:&lt;/p&gt;
-
-\[h(Y) \geq h(x) + v^T(Y-x)\]
-
-&lt;p&gt;By the monotonicty and linearity of expectation, we have&lt;/p&gt;
-
-\[\mathbb{E}h(Y) \geq h(x) + v^T\mathbb{E}(Y-x)\]
-
-&lt;p&gt;Now, since this is true for each \(x\) we can chose \(x = \mathbb{E}(Y)\). So,&lt;/p&gt;
-
-\[\mathbb{E}h(Y) \geq h(\mathbb{E}Y) + v^T\mathbb{E}(Y-\mathbb{E}Y) \Rightarrow  \mathbb{E}h(Y) \geq h(\mathbb{E}Y).\]
-
-&lt;p&gt;Which is Jensen’s Inequality.&lt;/p&gt;
-
-&lt;h2 id=&quot;now-how-do-we-apply-this-powerful-tool-to-our-counting-problem&quot;&gt;Now, how do we apply this powerful tool to our counting problem?&lt;/h2&gt;
-&lt;p&gt;The idea is that we want to find a convex function which applies to the problem and hence we can use Jensen’s Inequality. So, for:&lt;/p&gt;
-
-\[\frac{1}{x-1}+ \frac{1}{x} + \frac{1}{x+1} \geq \frac{3}{x},\quad x &amp;gt; 1.\]
-
-&lt;p&gt;We can try \(h(x) = \frac{1}{x}\) or \(h(x) = \frac{1}{x + 1}\) or \(h(x) = \frac{1}{x - 1}\) and we can confirm that these a convex function by showing  \(h&quot;(x) &amp;gt; 0, \forall x \in \mathbb{R}\). Now, lets try  \(h(x) = \frac{1}{x}, x &amp;gt; 1\).
-Now, for a random variables \(Y\) we apply Jensen’s Inequality,&lt;/p&gt;
-
-\[\mathbb{E}[\frac{1}{Y}] \geq \frac{1}{\mathbb{E}Y}\]
-
-&lt;p&gt;Next we consider a distribution for \(Y\). Since, we have 3 fractions a logical choice would be for \(Y\) distribution,&lt;/p&gt;
-
-\[\mathbb{P}(Y = x) = \mathbb{P}(Y = x + 1) = \mathbb{P}(Y = x - 1) = \frac{1}{3}.\]
-
-&lt;p&gt;For this \(Y\), we have a three point distribution, we can compute the expectations and hence Jensen’s inequality,&lt;/p&gt;
-
-\[\begin{align*}
-    \mathbb{E}[\frac{1}{Y}] = \frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}, \\
-    \frac{1}{\mathbb{E}Y} = \frac{1}{\frac{1}{3} \times \frac{1}{x} + \frac{1}{3} \times \frac{1}{x - 1} + \frac{1}{3} \times \frac{1}{x + 1}} = \frac{1}{x}.
-\end{align*}\]
-
-&lt;p&gt;So,&lt;/p&gt;
-
-\[\begin{align*}
-    \mathbb{E}[\frac{1}{Y}] &amp;amp;\geq \frac{1}{\mathbb{E}Y} \Rightarrow \\
-    \frac{1}{3}[\frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1}] &amp;amp;\geq \frac{1}{x} \Rightarrow \\
-    \frac{1}{x-1} + \frac{1}{x} + \frac{1}{x+1} &amp;amp;\geq \frac{3}{x}.
-\end{align*}\]
-
-&lt;p&gt;Wala! Wasn’t that hard, right? Maybe you can try this one,&lt;/p&gt;
-
-\[(1 + \frac{1}{x})(1 + \frac{1}{y})(1 + \frac{1}{z}) \geq 64.\]
-
-&lt;p&gt;hint: \(h(x) = \text{ln}(1 + \frac{1}{x})\)&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Have you every wondered how high school students with no formal higher level of mathematical knowledge are able to solve complex questions like this? Prove that</summary></entry></feed>
+&lt;p&gt;Importantly, this is known as exact line search since, finds the optimal step size that minimizes the objective function along the search direction. But there exsit different types of line search including Backtracking Line Search, Golden Section Search, interpolation-Based Line Search. All these line search play around with step size, $ \alpha $ to find the most optimal method to minimer objective function.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods; Linear search strategy Trust region</summary></entry></feed>
