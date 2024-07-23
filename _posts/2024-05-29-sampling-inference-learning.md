@@ -116,7 +116,9 @@ y &= 9.3 + 4.3 x_0
 \end{align*}
 $$
 
-Note : if our model doesnt hold say, the relationship bertween y and x is not linear then the inference also doesnt hold!
+Note : if our model doesn't hold say, the relationship between y and x is not linear then the inference also doesn't hold!
+
+So now we have a learning model which holds true and thus we can predict future values of $$ y $$ using $$ x_0 $$
 
 # Conclusion
 Now both you and me both understand the relationship between sampling, inference and learning models!
