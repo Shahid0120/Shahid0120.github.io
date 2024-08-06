@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Kaggle Model Review: Optiver - Trading at the Close | Shahid Hussain      Blog      </title>
+<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Kaggle Model Review: Optiver - Trading at the Close">
+<meta property="og:url" content="http://localhost:4000/improgress/2024-07-23-optiver-code-review-grandmaster-kaggle/">
+
+
+  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/improgress/2024-07-23-optiver-code-review-grandmaster-kaggle/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Aspiring mathematician and data scientist. Fan of basketball, technology, the gym, and much more.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Kaggle Model Review: Optiver - Trading at the Close">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/improgress/2024-07-23-optiver-code-review-grandmaster-kaggle/" class="u-url" itemprop="url">Kaggle Model Review: Optiver - Trading at the Close
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Recently I’ve been learning about time series analysis, numerical analysis and financial analysis. So I’ve wanting to review the latest optimal models for this process. 
+After looking online i came across Kaggle competition “Optiver - Trading at the Close” and luckily for me the solution to the top solution is avaliable. So i would like to have a run down of what i learnt by analyzing the model and code.</p>
+
+<h1 id="goals-of-the-regression-model">Goals of the Regression Model</h1>
+
+<p>“Predicting the closing price movements for Nasdaq stocks”
+through order book and the closing auction of the stock.</p>
+
+<h1 id="overview---why-we-need-a-model">Overview - Why we need a model?</h1>
+
+<p>(1) Peak intensity of stock exchange is during the last 10 minutes of stock closing times.
+(2) Closing Times are characterized by 
+    - High Volatility 
+    - Rapid Price Fluctuations
+During the last 10 minutes there is a “Nasdaq Closing Cross auction” which established closing prices for stocks.</p>
+
+<h2 id="what-do-traders-do-during-the-closing-times">What do Traders do during the Closing Times</h2>
+
+<p>During the last 10 minutes traders “merge order book data with auction book data”. Thus, the challenge is the predict closing price movement using (1) order book (2) closing auction book.</p>
+
+<h2 id="what-is-a-auction-order-book-and-auction-order-book">What is a Auction, Order book and Auction order book?</h2>
+<p>for a detailed introduction read <a href="https://www.kaggle.com/code/tomforbes/optiver-trading-at-the-close-introduction">Optiver - Trading At The Close Introduction</a></p>
+
+<h3 id="auction">Auction</h3>
+<p>Auction : Process of allowing buyers and seller to interact “directly” within the financial regualtions. Types of auctions includes;</p>
+<ul>
+  <li>Opening Auction: sets the intial prices for trading day for securities</li>
+  <li>Closing Auction: sets final prices of security at the end of the trading day</li>
+  <li>Reverse Auction : how governments sell securities, usually undler buyer agress prices</li>
+</ul>
+
+<p>THere are many more, but for this they focused on closing auction. The closing auction it determined by “price at which the maximum number of shares can be matched”.</p>
+
+<h3 id="order-book">Order Book</h3>
+<p>Electronic List of buyers (bid) and sellers (ask) there is a continual trade between number of bids vs number of ask. Say there exist 9 ask at price of 9 then if someones big for 10 at price of 9, then the seller will receive for 9 shares, and thus the new order book contains 1 bid at price of 1 rather then the original 9 ask at price of 9. The range of price level is continuous for 0 to inf.</p>
+
+<h3 id="auction-order-book">Auction order book</h3>
+<p>Auction order books is different to the order book is called “uncross” price, rather then only referring to specific price level for interactions between bid and ask, It now allows interactions between price levels. In the order books the order are immediately match at price levels, but in Auction order books, orders are matched in auction closing time.</p>
+
+<p>Say the price levels are 10, 9, 8. Suppose,</p>
+<ul>
+  <li>ask : {10: 1,  9: 3, 8:2}</li>
+  <li>bid {10: 4,  9: 2, 8:1}
+Then at auction end times. for bid price of price level 10, since there is only 1 ask price of 10 it will match it and then go down to cheap price level, aka 9 then do the remaining 3 bid orders. so after the first big price level 10. we have,</li>
+  <li>ask: {10: 0,  9: 0, 8:2}</li>
+  <li>bid {10: 0,  9: 2, 8:1}
+Now it goes down to price level 9, so for ask at price level 9 there is none so it goes down a price level to 8 and since there is only 1, the bider has only 1 order. unfortunately bider 8 doesn’t buy any order since there is none remaining. 
+So the final auction order book is</li>
+  <li>ask : {10: 0,  9: 0, 8:0}</li>
+  <li>bid {10: 0,  9: 0, 8:1}</li>
+</ul>
+
+<h2 id="combined-book">Combined book</h2>
+<p>Combing two books allows more accurate reflection of market’s buying and selling interest at different price levels, allowing price discovery.</p>
+
+<h1 id="how-the-models-were-evaluated">How the models were evaluated</h1>
+<p>Each solution was evaluated Via Mean Absolute Error</p>
+
+\[\begin{align*}
+MAE = \frac{1}{n} \sum_{i=1}^n |y_i - x_i|
+\end{align*}\]
+
+<p>Which makes logical sense since we average the model prediction \(y_i\) with our observed \(x_i\).</p>
+
+<h2 id="solutions-overview">Solutions Overview</h2>
+<p>From looking at multiple solutions i found that the most used models were</p>
+<ul>
+  <li>XGboost</li>
+  <li>CatBoost</li>
+  <li>Lightgbm</li>
+  <li>Transformer</li>
+  <li>LSTM
+Most of the top solutions used  Moving Average windows, Online training, Ensemble learning
+    <h2 id="interesting-discussion">interesting discussion</h2>
+    <p>Key observations
+(1) Cross validation score doesn’t always lead to reducing MAE.
+(2) Local Cross Validation.
+(3) Implementing a Advanced Purging CV.</p>
+  </li>
+</ul>
+
+<p>By far the most common were XGBoost, CatBoost and LightGBM. So lets talk about it!</p>
+
+<h1 id="xgboost">XGBoost</h1>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ml-model-review" class="page__taxonomy-item p-category" rel="tag">ML Model Review</a>
+    
+    </span>
+  </p>
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
