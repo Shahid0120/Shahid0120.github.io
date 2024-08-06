@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-30T13:52:12+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-23T13:11:52+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Kaggle Model Review: Optiver - Trading at the Close</title><link href="http://localhost:4000/ml%20model%20review/optiver-code-review-grandmaster-kaggle/" rel="alternate" type="text/html" title="Kaggle Model Review: Optiver - Trading at the Close" /><published>2024-07-23T00:00:00+10:00</published><updated>2024-07-23T00:00:00+10:00</updated><id>http://localhost:4000/ml%20model%20review/optiver-code-review-grandmaster-kaggle</id><content type="html" xml:base="http://localhost:4000/ml%20model%20review/optiver-code-review-grandmaster-kaggle/">&lt;p&gt;Recently I’ve been learning about time series analysis, numerical analysis and financial analysis. So I’ve wanting to review the latest optimal models for this process. 
+After looking online i came across Kaggle competition “Optiver - Trading at the Close” and luckily for me the solution to the top solution is avaliable. So i would like to have a run down of what i learnt by analyzing the model and code.&lt;/p&gt;
+
+&lt;h1 id=&quot;goals-of-the-regression-model&quot;&gt;Goals of the Regression Model&lt;/h1&gt;
+
+&lt;p&gt;“Predicting the closing price movements for Nasdaq stocks”
+through order book and the closing auction of the stock.&lt;/p&gt;
+
+&lt;h1 id=&quot;overview---why-we-need-a-model&quot;&gt;Overview - Why we need a model?&lt;/h1&gt;
+
+&lt;p&gt;(1) Peak intensity of stock exchange is during the last 10 minutes of stock closing times.
+(2) Closing Times are characterized by 
+    - High Volatility 
+    - Rapid Price Fluctuations
+During the last 10 minutes there is a “Nasdaq Closing Cross auction” which established closing prices for stocks.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-do-traders-do-during-the-closing-times&quot;&gt;What do Traders do during the Closing Times&lt;/h2&gt;
+
+&lt;p&gt;During the last 10 minutes traders “merge order book data with auction book data”. Thus, the challenge is the predict closing price movement using (1) order book (2) closing auction book.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-auction-order-book-and-auction-order-book&quot;&gt;What is a Auction, Order book and Auction order book?&lt;/h2&gt;
+&lt;p&gt;for a detailed introduction read &lt;a href=&quot;https://www.kaggle.com/code/tomforbes/optiver-trading-at-the-close-introduction&quot;&gt;Optiver - Trading At The Close Introduction&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;auction&quot;&gt;Auction&lt;/h3&gt;
+&lt;p&gt;Auction : Process of allowing buyers and seller to interact “directly” within the financial regualtions. Types of auctions includes;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Opening Auction: sets the intial prices for trading day for securities&lt;/li&gt;
+  &lt;li&gt;Closing Auction: sets final prices of security at the end of the trading day&lt;/li&gt;
+  &lt;li&gt;Reverse Auction : how governments sell securities, usually undler buyer agress prices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;THere are many more, but for this they focused on closing auction. The closing auction it determined by “price at which the maximum number of shares can be matched”.&lt;/p&gt;
+
+&lt;h3 id=&quot;order-book&quot;&gt;Order Book&lt;/h3&gt;
+&lt;p&gt;Electronic List of buyers (bid) and sellers (ask) there is a continual trade between number of bids vs number of ask. Say there exist 9 ask at price of 9 then if someones big for 10 at price of 9, then the seller will receive for 9 shares, and thus the new order book contains 1 bid at price of 1 rather then the original 9 ask at price of 9. The range of price level is continuous for 0 to inf.&lt;/p&gt;
+
+&lt;h3 id=&quot;auction-order-book&quot;&gt;Auction order book&lt;/h3&gt;
+&lt;p&gt;Auction order books is different to the order book is called “uncross” price, rather then only referring to specific price level for interactions between bid and ask, It now allows interactions between price levels. In the order books the order are immediately match at price levels, but in Auction order books, orders are matched in auction closing time.&lt;/p&gt;
+
+&lt;p&gt;Say the price levels are 10, 9, 8. Suppose,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ask : {10: 1,  9: 3, 8:2}&lt;/li&gt;
+  &lt;li&gt;bid {10: 4,  9: 2, 8:1}
+Then at auction end times. for bid price of price level 10, since there is only 1 ask price of 10 it will match it and then go down to cheap price level, aka 9 then do the remaining 3 bid orders. so after the first big price level 10. we have,&lt;/li&gt;
+  &lt;li&gt;ask: {10: 0,  9: 0, 8:2}&lt;/li&gt;
+  &lt;li&gt;bid {10: 0,  9: 2, 8:1}
+Now it goes down to price level 9, so for ask at price level 9 there is none so it goes down a price level to 8 and since there is only 1, the bider has only 1 order. unfortunately bider 8 doesn’t buy any order since there is none remaining. 
+So the final auction order book is&lt;/li&gt;
+  &lt;li&gt;ask : {10: 0,  9: 0, 8:0}&lt;/li&gt;
+  &lt;li&gt;bid {10: 0,  9: 0, 8:1}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;combined-book&quot;&gt;Combined book&lt;/h2&gt;
+&lt;p&gt;Combing two books allows more accurate reflection of market’s buying and selling interest at different price levels, allowing price discovery.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-the-models-were-evaluated&quot;&gt;How the models were evaluated&lt;/h1&gt;
+&lt;p&gt;Each solution was evaluated Via Mean Absolute Error&lt;/p&gt;
+
+\[\begin{align*}
+MAE = \frac{1}{n} \sum_{i=1}^n |y_i - x_i|
+\end{align*}\]
+
+&lt;p&gt;Which makes logical sense since we average the model prediction \(y_i\) with our observed \(x_i\).&lt;/p&gt;
+
+&lt;h2 id=&quot;solutions-overview&quot;&gt;Solutions Overview&lt;/h2&gt;
+&lt;p&gt;From looking at multiple solutions i found that the most used models were&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;XGboost&lt;/li&gt;
+  &lt;li&gt;CatBoost&lt;/li&gt;
+  &lt;li&gt;Lightgbm&lt;/li&gt;
+  &lt;li&gt;Transformer&lt;/li&gt;
+  &lt;li&gt;LSTM
+Most of the top solutions used  Moving Average windows, Online training, Ensemble learning
+    &lt;h2 id=&quot;interesting-discussion&quot;&gt;interesting discussion&lt;/h2&gt;
+    &lt;p&gt;Key observations
+(1) Cross validation score doesn’t always lead to reducing MAE.
+(2) Local Cross Validation.
+(3) Implementing a Advanced Purging CV.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By far the most common were XGBoost, CatBoost and LightGBM. So lets talk about it!&lt;/p&gt;
+
+&lt;h1 id=&quot;xgboost&quot;&gt;XGBoost&lt;/h1&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML Model Review" /><summary type="html">Recently I’ve been learning about time series analysis, numerical analysis and financial analysis. So I’ve wanting to review the latest optimal models for this process. After looking online i came across Kaggle competition “Optiver - Trading at the Close” and luckily for me the solution to the top solution is avaliable. So i would like to have a run down of what i learnt by analyzing the model and code.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -64,7 +147,7 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Understanding the Roles/Links between Samples, Inference and Learning Models</title><link href="http://localhost:4000/ml/sampling-inference-learning/" rel="alternate" type="text/html" title="Understanding the Roles/Links between Samples, Inference and Learning Models" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/ml/sampling-inference-learning</id><content type="html" xml:base="http://localhost:4000/ml/sampling-inference-learning/">&lt;p&gt;I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Understanding the Roles/Links between Samples, Inference and Learning Models</title><link href="http://localhost:4000/ml/sampling-inference-learning/" rel="alternate" type="text/html" title="Understanding the Roles/Links between Samples, Inference and Learning Models" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/ml/sampling-inference-learning</id><content type="html" xml:base="http://localhost:4000/ml/sampling-inference-learning/">&lt;p&gt;I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!&lt;/p&gt;
 
 &lt;h1 id=&quot;sampling-who-are-you&quot;&gt;Sampling? Who are you&lt;/h1&gt;
 &lt;p&gt;When learning about phenomenon’s we want to study we ask everyone in the best method would be to ask population right, so the population;&lt;/p&gt;
@@ -170,7 +253,9 @@ H_a &amp;amp;: b_1 \neq 4.3
 y &amp;amp;= 9.3 + 4.3 x_0
 \end{align*}\]
 
-&lt;p&gt;Note : if our model doesnt hold say, the relationship bertween y and x is not linear then the inference also doesnt hold!&lt;/p&gt;
+&lt;p&gt;Note : if our model doesn’t hold say, the relationship between y and x is not linear then the inference also doesn’t hold!&lt;/p&gt;
+
+&lt;p&gt;So now we have a learning model which holds true and thus we can predict future values of \(y\) using \(x_0\)&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Now both you and me both understand the relationship between sampling, inference and learning models!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!</summary></entry><entry><title type="html">Imputation : Methods</title><link href="http://localhost:4000/ml/Imputation/" rel="alternate" type="text/html" title="Imputation : Methods" /><published>2024-05-28T00:00:00+10:00</published><updated>2024-05-28T00:00:00+10:00</updated><id>http://localhost:4000/ml/Imputation</id><content type="html" xml:base="http://localhost:4000/ml/Imputation/">&lt;p&gt;Today for my IBM project I wanted to learn more about imputation methods, selection of features, types. The following is from &lt;a href=&quot;https://stefvanbuuren.name/fimd/&quot;&gt;Flexible Imputation of Missing Data&lt;/a&gt; by Stef Van Buuren .&lt;/p&gt;
@@ -895,77 +980,4 @@ That is we want to find the middle weight of all possible samples from data futu
 
 &lt;p&gt;As computer natives, even though we think we don’t know where the keys are, we subconsciously already know where all the letters are on the keyboard; we just need to practice a little!&lt;/p&gt;
 
-&lt;p&gt;It’s as simple as that!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.</summary></entry><entry><title type="html">Line Search Methods for Numerical Optimisation</title><link href="http://localhost:4000/statistics/Linear-Search-Methods/" rel="alternate" type="text/html" title="Line Search Methods for Numerical Optimisation" /><published>2024-03-30T00:00:00+11:00</published><updated>2024-03-30T00:00:00+11:00</updated><id>http://localhost:4000/statistics/Linear-Search-Methods</id><content type="html" xml:base="http://localhost:4000/statistics/Linear-Search-Methods/">&lt;p&gt;Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Linear search strategy&lt;/li&gt;
-  &lt;li&gt;Trust region&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This blog post will focus on the linear search strategy for optimisation techniques. This blog post requires a basic understanding on optimisation - objective functions, variables and constrained, so lets get into it.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-line-search-and-trust-region-how-do-they-differ&quot;&gt;What is line search and trust region, how do they differ?&lt;/h1&gt;
-
-&lt;p&gt;Our main goal with optimsiation is to find a global minimimum points which in real life minimum point which reduced the time, cost etc. Now given we can algebraically find this optimal solution through other optimisation techniques. Let’s see an example,&lt;/p&gt;
-
-\[\begin{align*}
-\min_{x \in \mathbb{R}^2} \quad &amp;amp; x^2 - sin(x)\\
-\end{align*}\]
-
-&lt;p&gt;Now, if we were to use algebratic methods using First order sufficient condition we find the unconstrained stationary point by $\triangledown f(\mathbf{x}) = \mathbf{0}$. But,&lt;/p&gt;
-
-\[\triangledown f(\mathbf{x}) = \mathbf{0} \Leftrightarrow 2x - cos(x) = 0\]
-
-&lt;p&gt;So the only way to finding a $ x $ algebratically is through guessing possible $ x $ values, even though the solution exists,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/2x.png&quot; alt=&quot;image tooltip here&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So this is where numerical optimsiation comes in. In essense rather then using algebraic methods to solve the optimisation problem we now is iterative process through a starting point $ x^{(0)} $ and then generatign a sequecnes of sets $ x^{(k)} $ which termiantes when a global minimum is reached, $ x^* $. Finding a new iteration step $ x^{(k)} $ is through finding where the rule of function value decreases known as decent methods,&lt;/p&gt;
-
-\[\begin{align*}
-f(x^{(k+1)}) &amp;lt; f(x^{(k)})
-\end{align*}\]
-
-&lt;p&gt;We denote $ s^{(k)} $ as a search direction, which is is just given a point, $ x^{(k)} $ in which direction we move in? 
-so intutively with no restricstion $ s^{(k)} $ can be in all directions from at point $ x^{(k)} $. Now, since restricitions imposed on $ x^{(k)} $ is the decent method how do apply this?&lt;/p&gt;
-
-&lt;p&gt;Definition : At a point $ x^{(k)} $ , a direction $ s^{(k)} $ is a descent direction if&lt;/p&gt;
-
-\[\begin{align*}
-\triangledown f(x^{(k)})^T s^{k} &amp;lt; 0 
-\end{align*}\]
-
-&lt;p&gt;Why?&lt;/p&gt;
-
-&lt;p&gt;Now $\triangledown f(x) $ points in direction of , so by taking $ - \triangledown f(x) $ we point any $ x $ to direction of steepest descent. So, $ \triangledown f(x^{(k)})^T s^{k} &amp;lt; 0 $.&lt;/p&gt;
-
-&lt;p&gt;So, since we know that $ s_{(k)} $ can be in any direction then to restirict we want all search direction which ensures we are in descent getting closer to minimiser ,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/decent-direction.png&quot; alt=&quot;decent-direciton&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Intitively, we want to next iteration to be $ x^{(k + 1)} $ to be as a know in ferences to out previous iteration,  $ x^{(k)} $, and  $ s^{(k)} $, but since our search direction is also a vector direction we we dont impose a ‘length’ the search direction can be then we can overeach out minimiser $ x^* $&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/step-size-overeach.png&quot; alt=&quot;step-size-overeach&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So we impose a step length $ \alpha_{k} $, in most algorithms, we will chose a step-size and after eahc iterations we optimise the step-size inrdoer to find the optimal ‘jump’ we want to impose.&lt;/p&gt;
-
-&lt;p&gt;Therfore by definition $ s^{(k)}$ is in decent direction of  $ x^{(k)} $, if $ f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)})$ where we define $ x^{(k + 1)} =  x^{(k)} + \alpha s^{(k)} $. Our goals is to prove that this is try using our definition of decent direction.&lt;/p&gt;
-
-&lt;p&gt;Let $ l(\alpha) = f(x^{(k)} + \alpha s^{(k)}) $ then $ \frac{d}{dx}(l(\alpha)) = \frac{d}{dx}f(x^{(k)} + \alpha s^{(k)}) $ when $ x^{(k)} = 0$ then, intuitively, if we can show that $ l’(\alpha) &amp;lt; 0 \Rightarrow l(\alpha) &amp;lt; l(0) \Rightarrow f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)}) $. Visually, in $\mathbb{R}^2$ for this to hold true then ,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/direction-decent-proof.png&quot; alt=&quot;direction-desecnet-proof&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So, since $ x^{(k)} \in \mathbb{R}^n $ we have to use the chain rule to find  $ \frac{d}{dx}f(x^{(k)} + \alpha s^{(k)}) $. Let $x_{i}(\alpha) = x_{i}^{(k)} + \alpha s_{n}^{(k)}$ for all $ i \in \mathbb{Z^+} $ and for a fixed $ x^{(k)}, s^{(k)} $ we have,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linear-search/chain-rule-decent-direciton.png&quot; alt=&quot;chain-rule&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Then applying $ \alpha = 0 \Rightarrow l’(0) = f(x^{(k)})^Ts^{(k)} $. Now given $ s^{(k)} $ is in decent direction then  $ l’(0) = f(x^{(k)})^Ts^{(k)} &amp;lt; 0 $
-so hence, $ f(x^{(k)} + \alpha s^{(k)}) &amp;lt; f(x^{(k)}) $&lt;/p&gt;
-
-&lt;h1 id=&quot;how-do-we-ensure-that-we-pick-a-point--xk1--such-that--fxk--alpha-sk--is-closest-to--x-&quot;&gt;How do we ensure that we pick a point $ x^{(k+1)} $ such that $ f(x^{(k)} + \alpha s^{(k)}) $ is closest to $ x^* $?&lt;/h1&gt;
-&lt;p&gt;Finally, the process is known line search strategy which by definition is&lt;/p&gt;
-
-\[\begin{align*}
-\min_{\alpha \geq 0} \quad &amp;amp; f(x^{(k)} + \alpha s^{(k)})
-\end{align*}\]
-
-&lt;p&gt;Importantly, this is known as exact line search since, finds the optimal step size that minimizes the objective function along the search direction. But there exsit different types of line search including Backtracking Line Search, Golden Section Search, interpolation-Based Line Search. All these line search play around with step size, $ \alpha $ to find the most optimal method to minimer objective function.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Linear Search Methods are a integral part of numerical optimisation, which is a set of algorithms to solve mathematics programming problems. Importantly, numerical optimisation are solved in two key methods; Linear search strategy Trust region</summary></entry></feed>
+&lt;p&gt;It’s as simple as that!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Random" /><summary type="html">Flashbacks to high school when all my friends used to engage in typing test battles; touch typing, speed, the whole shebang. Then there was me, trying to look at the keyboard, using two fingers from each hand, and managing a grand total of 40 WPM. HUMPH.</summary></entry></feed>
