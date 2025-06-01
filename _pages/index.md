@@ -5,7 +5,7 @@ title: "Hello there!"
 author_profile: true
 ---
 
-Welcome to my blog! Gradtae University of New South Wales student studying Mathematics and Marketing, who has a obession with learning!
+Welcome to my blog! Graudate University of New South Wales student studying Mathematics and Marketing, who has a obession with learning!
 
 This blog is intended to be used as a diary I look back at and see my journey firsthand. Of course, another important part of it is to share knowledge across the world. It has been my lifelong aspiration to help people learn, from tutoring students and helping peers. I hate when someone says, "Oh, this is so hard; I'm never going to get it!" Along the journey, I wish to help people understand concepts easier and more intuitively. Although my main focus will be on machine learning, I will blog about anything I find interesting!
 
@@ -21,7 +21,8 @@ To continue my learning in a structured way, I plan to follow the Master of Actu
 
 # Journey Map
 
-June 2025: Focus on analysing financial statements and price making for actuary/brokers. 
+## June 2025
+Focus on analysing financial statements and price making for actuary/brokers. 
 
 - **Financial Statement Analysis**: Essentials of Corporate Finance Book by Bradford D. Jordan, Randolph W Westerfield, and Stephen Ross.
 - **Understanding Basic Rating Making**: BASIC RATEMAKING Fifth Edition by Geoff Werner, Claudine Modlin and Willis Towers Watson.
