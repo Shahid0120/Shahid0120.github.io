@@ -25,5 +25,5 @@ To continue my learning in a structured way, I plan to follow the Master of Actu
 Focus on analysing financial statements and price making for actuary/brokers. 
 
 - **Financial Statement Analysis**: Essentials of Corporate Finance Book by Bradford D. Jordan, Randolph W Westerfield, and Stephen Ross.
-- **Understanding Basic Rating Making**: BASIC RATEMAKING Fifth Edition by Geoff Werner, Claudine Modlin and Willis Towers Watson.
+- **Understanding Basic Rating Making**: Basic Ratingmaking by Geoff Werner, Claudine Modlin and Willis Towers Watson.
 
