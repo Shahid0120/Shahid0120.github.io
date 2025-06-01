@@ -5,24 +5,24 @@ title: "Hello there!"
 author_profile: true
 ---
 
-Welcome to my blog! I'm a current University of New South Wales student studying Mathematics and Marketing, who as a weird obsession with Machine Learning. 
+Welcome to my blog! Gradtae University of New South Wales student studying Mathematics and Marketing, who has a obession with learning!
 
 This blog is intended to be used as a diary I look back at and see my journey firsthand. Of course, another important part of it is to share knowledge across the world. It has been my lifelong aspiration to help people learn, from tutoring students and helping peers. I hate when someone says, "Oh, this is so hard; I'm never going to get it!" Along the journey, I wish to help people understand concepts easier and more intuitively. Although my main focus will be on machine learning, I will blog about anything I find interesting!
 
-# But wait, how did i get into Machine Learning? 
+# Carrer Goals?
 
-Well, I've always been interested in self-improvement. This interest started at a young age, focusing not only on becoming more effective in my studies but also on optimizing my mental and physical well-being. I regularly listen to inspiring figures like Andrew Huberman, Lex Friedman, and many more. More specifically, my journey into Machine Learning began when I took a course at UNSW called "Digital and Web Analytics." One of the assessment tasks was to perform a sentiment analysis on a crisis a company had gone through.
+Studying such a broad degree, I was lost in the options of which industry I wanted to move into. Unsure of my decision, I decided to start learning about AI, thinking it would be an important skill regardless of the path I chose. Along my journey of learning AI, particularly through a Deep Learning Specialisation and self-learning journey, I was led to compete in a data science competition held by Allianz and Atlassian. Coincidentally, the task was to classify fraudulent insurance claims — a blog post about this can be found [Allianz Data Science Competiion](/_posts/2024-08-06-Atlassian-Allianz-data-soc.md).
 
-Initially confused about what "sentiment analysis" entailed, I started exploring scientific papers, attending random lectures, and kept encountering the term "Machine Learning." Somehow, I created a sentiment analysis of public opinion on whether comments on YouTube and Twitter were positive, negative, or neutral using Natural Language Processing. I coded, but I faced one big problem—I had no idea how the sentiment analysis packages worked.
+This experience sparked my interest in a potential role in insurance. For the first time, I knew what I wanted to do! I understood that, having no experience in the industry, I needed to get my foot in the door.
 
-Additionally, while navigating this, I was concurrently enrolled in a course on "Linear Models," delving into topics like linear regression, which significantly sparked my interest. Unfortunately, the lectures never explained anything about what Machine Learning is! Why! Fueled by motivation to learn how exactly a machine categorizes words and wha alternative are there to linear regression, I scoured the internet to learn more, eventually leading me to discover the vast world of Machine Learning! And that's the current journey I'm on now, and I can't wait to learn more!
+Thus, I stepped into my first role as a Claims Consultant at Chubb Insurance. Not only did I gain hands-on experience in learning the fundamentals of the claims management process and lifecycle, but I also received my first introduction to policy wording and interpretation, particularly in accident and health. This only continued to fuel my excitement about the insurance industry — I've learned so much about the different roles, the intricacies of the industry, and the opportunities it offers. Over this period, I’ve been driven to continue my journey and develop my skills within the insurance industry — with a special focus on broking, underwriting, and actuarial capabilities.
 
-# Which Machine Learning algorithms am i interested in?
+To continue my learning in a structured way, I plan to follow the Master of Actuarial Studies program offered by UNSW. My aim is to focus first on foundational skills that can be applied as a broker and underwriter, and eventually move toward developing skills that can be applied as an actuary.
 
-I do love a little linear regression, but I'm super intrigued by deep learning.
+# Journey Map
 
-# Well, what do I find interesting other than Machine Learning?
+June 2025: Focus on analysing financial statements and price making for actuary/brokers. 
 
-I'm a massive fan of sports; I can just about watch any sport and be invested. My favorite sport is National Rugby League (NRL). Never heard of it? Well, just think of it as rugby, but instead of a massive scrum tackles, you can only hold a person down for 5 seconds, and then you have to play the ball. It's super fast and entertaining!
+- **Financial Statement Analysis**: Essentials of Corporate Finance Book by Bradford D. Jordan, Randolph W Westerfield, and Stephen Ross.
+- **Understanding Basic Rating Making**: BASIC RATEMAKING Fifth Edition by Geoff Werner, Claudine Modlin and Willis Towers Watson.
 
-Also, I'm a massive fan of fitness and working out. I try to constantly keep reading and watching YouTube videos and research papers on how to optimize workout regimens and recovery. So you'll see a little bit of that in here too!
