@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+      </script>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Portfolio Management: Understanding Single Index Model | Shahid Hussain      Blog      </title>
+<meta name="description" content="💼 Diving Into Portfolio Management: Understanding Portfolio Variance">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Portfolio Management: Understanding Single Index Model">
+<meta property="og:url" content="http://localhost:4000/portfolio%20managment/SIM/">
+
+
+  <meta property="og:description" content="💼 Diving Into Portfolio Management: Understanding Portfolio Variance">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-07-29T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/portfolio%20managment/SIM/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Passionate self-learner driven to deepen expertise in underwriting, brokering, and claims.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Portfolio Management: Understanding Single Index Model">
+    <meta itemprop="description" content="💼 Diving Into Portfolio Management: Understanding Portfolio Variance">
+    <meta itemprop="datePublished" content="2025-07-29T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/portfolio%20managment/SIM/" class="u-url" itemprop="url">Portfolio Management: Understanding Single Index Model
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="-diving-into-portfolio-management-understanding-portfolio-variance">💼 Diving Into Portfolio Management: Understanding Portfolio Variance</h2>
+
+<p>Recently, I began a new challenge: investing in stocks. One of the first questions I thought about was—regardless of individual returns—how could I best create an <strong>optimal investment set of assets</strong>?</p>
+
+<p>This led me into the world of <strong>portfolio management</strong>.</p>
+
+<p>After reading about <strong>Markowitz’s theory of optimal portfolios</strong>, I learned that constructing an ideal portfolio relies on just two components:</p>
+
+<ol>
+  <li><strong>Expected return (mean)</strong></li>
+  <li><strong>Variance or volatility of the portfolio</strong></li>
+</ol>
+
+<p>Based on this framework, each combination of possible portfolios occupies a unique space in the risk–return plane, forming what we call the <strong>efficient frontier</strong>. <em>(We’ll skip over the theoretical backdrop for now.)</em></p>
+
+<hr />
+
+<h3 id="️-the-key-problem">⚠️ The Key Problem</h3>
+
+<p>Given we know the volatility and return of all stocks, how do we <em>efficiently</em> find:</p>
+
+<ol>
+  <li>The <strong>variance</strong> of a given portfolio</li>
+  <li>The <strong>expected return</strong> of a given portfolio</li>
+</ol>
+
+<p>I’ll come back to the second part in another blog.<br />
+Today, I’m focusing on:</p>
+
+<h3 id="-how-do-we-calculate-the-variance-of-a-portfolio">📊 How Do We Calculate the Variance of a Portfolio?</h3>
+
+<p>Let’s break it down in practical, mathematical terms.</p>
+
+<h1 id="single-index-model">Single Index model</h1>
+
+<p>A key problem when calculating the variacne of a portfolio, 
+\(\sigma_p^2 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \sigma_i \sigma_j \rho_{ij}\)</p>
+
+<h2 id="-why-covariance-matrices-explode-with-portfolio-size">🧠 Why Covariance Matrices Explode with Portfolio Size</h2>
+
+<p>When analyzing a portfolio, one key ingredient is the <strong>covariance matrix</strong>—the foundation for calculating portfolio variance, optimal weights, and risk. But as the number of assets grows, so does the matrix… fast.</p>
+
+<h2 id="what-is-a-covariance-matrix">What Is a Covariance Matrix?</h2>
+
+<p>It’s a table showing how each asset moves in relation to the others. If you’re analyzing <strong>n</strong> stocks, you need an <strong>n × n</strong> matrix to account for every pairwise relationship—including each asset’s own variance.</p>
+
+<h3 id="️-scaling-example">⚖️ Scaling Example</h3>
+
+<ul>
+  <li>With <strong>3 stocks</strong>, the matrix size is<br />
+( 3 \times 3 = 9 ) components</li>
+  <li>With <strong>100 stocks</strong>, the matrix balloons to<br />
+( 100 \times 100 = 10{,}000 ) components 😬</li>
+</ul>
+
+<p>That’s 10,000 entries just for one statistical matrix!</p>
+
+<p>###💡 Are All Components Unique?</p>
+
+<p>Nope. Since the covariance matrix is <strong>symmetric</strong>, only the <strong>upper (or lower) triangle</strong> and <strong>diagonal</strong> contain unique data. The number of distinct elements is:</p>
+
+\[\frac{n(n + 1)}{2}\]
+
+<p>So for <strong>100 stocks</strong>:</p>
+
+\[\frac{100 \times 101}{2} = 5{,}050\]
+
+<p>Still huge—just not as bad as 10,000!</p>
+
+<h3 id="-why-it-matters">📈 Why It Matters</h3>
+
+<p>As portfolios scale into dozens or hundreds of assets, computing and inverting the covariance matrix becomes more intensive.</p>
+
+<h2 id="how-the-single-model-index-simplifies-this-process">How the Single Model Index simplifies this process?</h2>
+<p>We since we don’t want to do all these calculation, we can simplify this process by compared each stock in our portfolio to a given market index. We ‘assume’ that all stocks move with a a given market index. That is the return of any given stocks and made of, (1) Our Chosen market index , known as systmetic risk and (2) firm specific risk including company perforamcen, knownn as our unsystematic risk.This relation ship can be show through</p>
+
+<p>\begin{equation}
+R_i = = \text{unsystematic risk + systematic risk} = \alpha_i + \varepsilon_i + \beta_i R_m 
+\end{equation}</p>
+
+<p>Now, $\alpha$ is the portion of our stock’s return not explained by the market; $\varepsilon_i$ is our ‘variation’ or error term that is specific to the firm. These are unpredictable and uncorrelated with market movements — think scandals, product launches, or failures. Importantly, our $\beta$ represents the expected change in our stock’s return, $R_i$, given a change in the market index, $R_m$.</p>
+
+<p>As you would note, the Single-Index Model assumes a linear regression — that is, our stock return is linearly related to the market return. This is a strong assumption, but a useful starting point. Of course, we can later assume a non-linear relationship between $R_i$ and $R_m$, which leads us into models like GARCH, polynomial regression, and others.</p>
+
+<h1 id="lets-get-into-a-problem">Lets get into a problem</h1>
+
+<p>Monthly return data are presented below for each of three stocks and the S&amp;P index
+(corrected for dividends) for a 12-month period. Calculate the following quantities:</p>
+
+<ol>
+  <li>
+    <p>alpha for each stock</p>
+  </li>
+  <li>
+    <p>beta for each stock</p>
+  </li>
+  <li>
+    <p>the standard deviation of the residuals from each regression</p>
+  </li>
+  <li>
+    <p>the correlation coefficient between each security and the market</p>
+  </li>
+  <li>
+    <p>the average return on the market</p>
+  </li>
+  <li>
+    <p>the variance of the market</p>
+  </li>
+</ol>
+
+<h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
+<h2 id="time-series-plot">Time Series Plot</h2>
+
+<p><img src="/assets/images/SIM/time-series.png" alt="timeseries-of-stock" /></p>
+
+<p>By Visual Inspections we can note with S&amp;P as our benchmark</p>
+
+<ul>
+  <li>
+    <p>there a period of correlation for all three stocks A,B,C followed by some period.</p>
+  </li>
+  <li>
+    <p>From a visual inspection the highest correlated stock is A.</p>
+  </li>
+  <li>Seasonality:
+    <ul>
+      <li>
+        <p>1-2 : decline</p>
+      </li>
+      <li>
+        <p>5 - 6 : all stock prices declined</p>
+      </li>
+      <li>
+        <p>10 - 12 : all stock prices declined</p>
+      </li>
+    </ul>
+  </li>
+  <li>Stock C is extremelt volitile compare to other stocks</li>
+</ul>
+
+<h1 id="single-index-model-implementation">Single Index Model Implementation</h1>
+<h2 id="step-1--creating-a-linear-regression-to-find-our-beta-a_i">Step 1 : Creating a linear regression to find our $\beta$, $a_i$</h2>
+<p>Given in a Single Index Model we assume the relation between a given stocks is based on the market index. Suppose we have a S&amp;P500 as our market index. Now we can find out create a linear regression $ R_i = a_i + \beta_i R_m + \epsilon $. Graphing these result,</p>
+
+<p><img src="/assets/images/SIM/beta-regression.png" alt="beta regression" /></p>
+
+<p>Now given we can estimate the return of reach individual stock given by</p>
+
+\[\mathbb{E}[R_i] = \alpha_i + \beta_i \mathbb{E}[R_m]\]
+
+<p>Using our data, we can calculate our expected market return $ \mathbb{E}[R_m] = 3.005 $. From this for each stock A,B,C we can calculate our Expected return for each stock</p>
+
+\[\begin{aligned}
+\mathbb{E}
+\begin{bmatrix}
+R_a \\
+R_b \\
+R_c
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+a_a \\
+a_b \\
+a_c
+\end{bmatrix}
++
+
+\begin{bmatrix}
+\beta_a \\
+\beta_b \\
+\beta_c
+\end{bmatrix} \cdot \mathbb{E}[R_m] \\
+&amp;=
+\begin{bmatrix}
+-0.61 \\
+3.25 \\
+-0.13
+\end{bmatrix}
++
+\begin{bmatrix}
+1.18 \\
+0.98 \\
+2.4
+\end{bmatrix}
+\cdot 3.005 \\
+&amp;=
+\begin{bmatrix}
+2.9359 \\
+6.1949 \\
+7.082
+\end{bmatrix}.
+\end{aligned}\]
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#portfolio-managment" class="page__taxonomy-item p-category" rel="tag">Portfolio Managment</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-07-29T00:00:00+10:00">July 29, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/data%20visualisation/Data-viz-review-the-good-the-bad-the-biased/" class="pagination--pager" title="Data Viz Recap - The Good, the Bad and the Biased: Five ways Visaulisations can mislead (and how to fix them) by Danielle Szafir
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
