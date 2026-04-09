@@ -10,25 +10,24 @@
       </script>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>            Dimension Reduction Methods | Shahid Hussain      Blog      </title>
-<meta name="description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
+<!-- begin _includes/seo.html --><title>            Introduction to Pricing Strategies | Shahid Hussain      Blog      </title>
+<meta name="description" content="Understanding the World of Pricing Analytics">
 
 
   <meta name="author" content="Shahid Hussain">
   
+  <meta property="article:author" content="Shahid Hussain">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Shahid Hussain | Blog">
-<meta property="og:title" content="Dimension Reduction Methods">
-<meta property="og:url" content="http://localhost:4000/improgress/2024-06-12-identifying-when-to-use-pca/">
+<meta property="og:title" content="Introduction to Pricing Strategies">
+<meta property="og:url" content="http://localhost:4000/strategy/value-based-pricing-strategy/">
 
 
-  <meta property="og:description" content="A Data Science and Mathematics blog, focusing on Machine learning algorithms.">
-
-
-
+  <meta property="og:description" content="Understanding the World of Pricing Analytics">
 
 
 
@@ -36,9 +35,14 @@
 
 
 
+  <meta property="article:published_time" content="2026-04-09T00:00:00+10:00">
 
 
-<link rel="canonical" href="http://localhost:4000/improgress/2024-06-12-identifying-when-to-use-pca/">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/strategy/value-based-pricing-strategy/">
 
 
 
@@ -270,16 +274,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Dimension Reduction Methods">
-    
-    
+    <meta itemprop="headline" content="Introduction to Pricing Strategies">
+    <meta itemprop="description" content="Understanding the World of Pricing Analytics">
+    <meta itemprop="datePublished" content="2026-04-09T00:00:00+10:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/improgress/2024-06-12-identifying-when-to-use-pca/" class="u-url" itemprop="url">Dimension Reduction Methods
+            <a href="http://localhost:4000/strategy/value-based-pricing-strategy/" class="u-url" itemprop="url">Introduction to Pricing Strategies
 </a>
           </h1>
           
@@ -290,55 +294,125 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>Main Ones to cover : LLE LTSA Isomap MDS Spectral embedding t-SNE 
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
-https://www.youtube.com/watch?v=bqtNjwI60dQ&amp;list=PLPrxGIUWsqP3MNmrqbarg-FbMW88_fzsp&amp;index=6
-https://www.youtube.com/watch?v=4Zk2UFGIrd0</p>
+        <h1 id="understanding-the-world-of-pricing-analytics">Understanding the World of Pricing Analytics</h1>
 
-<p>Today i was learning about Spectral decomposition and the implciation leading to Spectral Value Decompositon, and as many of you guys know the important role SVD plays to Priciple component anlysis, but then the question arise, I want to use PCA but when should I?
-The following notes are from “Introduction to Dimensionality Reduction - Presentation at WangLab in the University of Toronto”. What i will try to do is outline the main methodologies used in dimension reductionality.</p>
+<p>I have been recently working with my of my friend’s at universitory whose studying marketing and was working on creating wanted to do a critical analysis for an organisation to use Value-based pricing model.</p>
 
-<h1 id="what-is-a-manifold">What is a Manifold?</h1>
+<p>Recently I have had a buzz over the word ‘criticial anlaysis’ from works, and on our senior spoke about dissecting report and undertsanding the pro’s and con’s. This got me really exited, when I heard this word again in the context of product strategy.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>When we work with data we have many attributes to describe a certain event we combine all the into  a feature vector $ X = [x_1</td>
-      <td>x_2</td>
-      <td>x_3</td>
-      <td>…</td>
-      <td>x_n] $ . Suppose we have a table describing people then each column can be age, income, location etc. so $ x_i $ represent columns which we combina into a column vector.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Haugom (2021) argues that pricing strategies can qualitatively be placed into the following categories:</p>
 
-<p>if the only have less then 3 attribute then we can graph these attributes. Majority of the time given there is not major noise in a data, that is error in sample, data naturally stay close to one another, this is known as the Manifold Hypothesis.</p>
+<ul>
+  <li>Cost-plus pricing (CP): Calculating costs and adding a margin when setting the price.</li>
+  <li>Market-based pricing (MB): Setting prices based on competitors’ actions.</li>
+  <li>Customer-driven pricing (CD): Placing the customer at the center of the pricing decision.</li>
+  <li>Value-based pricing (VB): Setting the price based on estimates of how customers value the product or service.</li>
+</ul>
 
-<p><img src="/assets/images/manifolds/manifold_types.jpg" alt="Manifold-types" /></p>
+<p>Implicitly, when creating a pricing strategy—or building a model—one must incorporate all four aspects into a unified approach. Conceptually, we can think of the pricing function as a combination of these four components:</p>
 
-<p>There are two many types of ways data can lay in a low dimensional space, (a) subspace : which is hyperplane  in, subspace are importantly always linear OR  (b) submanifold, which is like a squiskly hyperplane, but importantly, locally linear, that is, if we zoom in very close into the submanifold it would seem we were in a flat plane.</p>
+\[\text{Pricing Strategy}(w_1, w_2, w_3, w_4) = w_1 \cdot CP + w_2 \cdot MB + w_3 \cdot CD + w_4 \cdot VB\]
 
-<p>Additionally, a submanifold is a smooth continous function, as it allows use to use calculus. Before we cover the identify submanifold we need to cover the types of dimentionaliy reductions</p>
+<p>This is, of course, an extremely simplified representation. It assumes linearity and no interdependence among the different pricing methods, which is not functionally accurate in practice. However, it effectively illustrates the conceptual idea Haugom aimed to explain: that an integrated pricing strategy involves balancing multiple dimensions of pricing strategies simultaneously.</p>
 
-<h1 id="types-of-reduction-dimensionality">Types of Reduction Dimensionality</h1>
-<p>Generally Reduct of Dimension can be placed into three categories</p>
+<h2 id="econometric-pricing-analytics--elasticity">Econometric Pricing Analytics – Elasticity</h2>
 
-<p><img src="/assets/images/manifolds/type_of_dimension_reductionality.jpg" alt="Type-reduction-methods" /></p>
+<p>Diving deeper into our pricing function, Paczkowski (2018) presents a two-layered pricing strategy:</p>
 
-<h2 id="spectral-dimentional-reductionaly">Spectral Dimentional Reductionaly</h2>
+\[\text{Pricing Strategy}(w_i) = \text{function(Pricing Level, Pricing Structure)}\]
 
-<p>There dimension method take a geometric approach, an a Example PCA, which uses the Coaraicne Matrix to computre eigenvalues and eigenvector. Now Since eigenvalues are the length of eigenvectors, then this can be used to identify the varaicne of a singualr feature (age). 
-The problem then arrises since PCA uses eigenvalues and vector what happens if the data is in a submanifold?</p>
+\[\text{Pricing Strategy}(w_i) = w_1 \cdot CP + w_2 \cdot MB + w_3 \cdot CD + w_4 \cdot VB\]
 
-<p><img src="/assets/images/manifolds/spectral_decomposition.jpg" alt="Spectral-methods" /></p>
+<ul>
+  <li><strong>Pricing structure</strong> refers to <em>how the pricing is designed</em>, for example, subscription-based or dynamic pricing.</li>
+  <li><strong>Price level</strong> refers to <em>how much you charge for the product</em>, e.g., a coffee costs $5.</li>
+</ul>
 
-<p>clearly from (a) consdier the Green and red dots if we use PCA, the eigenvalue would be small, indicating small variacne, even though that data really sits on a submanifold,thus would lead to a underfitting model.</p>
+<h3 id="pricing-structure-vs-price-level">Pricing Structure vs Price Level</h3>
 
-<p>So by idenfitying our data is in a submanifold, we we properly reduced the dimenstion by flatting out the submanifold and then reducing the size of the space, which would over underfitting.</p>
+<p><strong>Pricing structure</strong> refers to how the pricing is designed—for example, subscription-based or dynamic pricing.<br />
+<strong>Price level</strong>, on the other hand, concerns how much you charge for the product, e.g., a coffee costs $5.</p>
 
-<h2 id="probabilistic-dimension-reductionaliy">Probabilistic Dimension Reductionaliy</h2>
+<hr />
 
-<p>As the name suggest, this take a probalisitc approach to dimention reductionaly, which includes Probabilistic Principal Component Analysis (PPCA), SNE, T-SNE, UMAP and random projection, factor analysis and SDR.</p>
+<h3 id="obtaining-data">Obtaining Data</h3>
+
+<p>Two methods of obtaining data for pricing analytics:</p>
+
+<ul>
+  <li><strong>Quantitative Data</strong>: Experimental and observational</li>
+  <li><strong>Qualitative Data</strong>: In-depth interviews, expert opinions, and focus groups</li>
+</ul>
+
+<p>Using quantitative data, one can build <strong>statistical econometric models</strong> based on the economic paradigm of consumer demand.</p>
+
+<p>Within quantitative data, there are two distinctions:</p>
+
+<ul>
+  <li><strong>Observational data</strong> (aka revealed preference data): Refers to actual customer behavior</li>
+  <li><strong>Experimental data</strong> (aka stated preference data): Refers to customers explicitly stating their preferences</li>
+</ul>
+
+<hr />
+
+<h3 id="role-of-quantitative-data-in-pricing-analytics">Role of Quantitative Data in Pricing Analytics</h3>
+
+<p>Paczkowski (2018) justifies the role of quantitative data as acting like a <strong>prior</strong> (referring to Bayesian statistical thought), providing additional information to aid in our statistical model. It acts as a starting point to ensure our model is accurate. Alone, qualitative data cannot form the basis of a pricing model.</p>
+
+<hr />
+
+<h3 id="three-layers-of-quantitative-pricing-analytics">Three Layers of Quantitative Pricing Analytics</h3>
+
+<p>Paczkowski (2018) separates pricing analytics into three distinct layers:</p>
+
+<ul>
+  <li><strong>Layer 1 – Theory foundation</strong>: Economic theory of consumer demand</li>
+  <li><strong>Layer 2 – Data analysis</strong>: Data cleaning and transformation</li>
+  <li><strong>Layer 3 – Statistical model</strong>: Non-parametric or parametric modeling</li>
+</ul>
+
+<p>This means that our statistical model (Layer 3) is <strong>founded on economic theory</strong> (Layer 1).</p>
+
+<hr />
+
+<h2 id="other-approaches-to-obtain-a-pricing-strategy">Other Approaches to Obtain a Pricing Strategy</h2>
+
+<h3 id="van-westendorps-price-sensitivity-meter-1976">Van Westendorp’s Price Sensitivity Meter (1976)</h3>
+
+<p>This technique determines consumer price preference through a series of four questions:</p>
+
+<ol>
+  <li>At what price would you consider the product to be <strong>so expensive that you would not consider buying it</strong>? (Too expensive)</li>
+  <li>At what price would you consider the product <strong>so low that you would feel the quality couldn’t be very good</strong>? (Too cheap)</li>
+  <li>At what price would you consider the product <strong>starting to get expensive, so that it is not out of the question, but you would have to give some thought to buying it</strong>? (Expensive/High Side)</li>
+  <li>At what price would you consider the product to be a <strong>bargain—a great buy for the money</strong>? (Cheap/Good Value)</li>
+</ol>
+
+<p>The cumulative frequency is plotted for each, and then a recommended price is interpreted from the intersection points.</p>
+
+<hr />
+
+<h3 id="gabor-granger-method">Gabor-Granger Method</h3>
+
+<ul>
+  <li>Present 5 different price points to a consumer.</li>
+  <li>The consumer chooses the top two they would consider buying.</li>
+  <li>Then the consumer is re-tested with new price points based on the previous answers until they consistently indicate the <strong>“definitely buy”</strong> and <strong>“probably buy”</strong> price points.</li>
+</ul>
+
+<p>This method finds the <strong>optimal price range</strong> where consumers are most likely to purchase.</p>
+
+<hr />
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>This concludes the introduction to pricing analytics. In the next blog, we will dive deeper into the <strong>statistical model introduction</strong> as described by Paczkowski (2018).</p>
+
+<h3 id="references">References</h3>
+
+<p>Haugom, E., &amp; Alnes, P. K. (2021). Essentials of Pricing Analytics: Tools and Implementation with Excel . Routledge.</p>
+
+<p>Paczkowski, W. R. (2018). Pricing analytics: Models and advanced quantitative techniques for product pricing. Routledge.</p>
 
         
       </section>
@@ -357,7 +431,7 @@ The problem then arrises since PCA uses eigenvalues and vector what happens if t
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#projects" class="page__taxonomy-item p-category" rel="tag">Projects</a>
+      <a href="/categories/#strategy" class="page__taxonomy-item p-category" rel="tag">Strategy</a>
     
     </span>
   </p>
@@ -365,11 +439,23 @@ The problem then arrises since PCA uses eigenvalues and vector what happens if t
 
         
 
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-04-09T00:00:00+10:00">April 9, 2026</time></p>
+
       </footer>
 
       
 
       
+  <nav class="pagination">
+    
+      <a href="/portfolio%20managment/SIM/" class="pagination--pager" title="Portfolio Management: Understanding Single Index Model
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
     </div>
 
     

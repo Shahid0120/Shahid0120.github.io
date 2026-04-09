@@ -81,6 +81,10 @@
 <lastmod>2025-07-29T00:00:00+10:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/strategy/value-based-pricing-strategy/</loc>
+<lastmod>2026-04-09T00:00:00+10:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/improgress/2023-05-25-naive-bayes-logistic-regression/</loc>
 </url>
 <url>
@@ -148,5 +152,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 </urlset>

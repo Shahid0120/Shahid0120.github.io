@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-29T18:16:14+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Portfolio Management: Understanding Single Index Model</title><link href="http://localhost:4000/portfolio%20managment/SIM/" rel="alternate" type="text/html" title="Portfolio Management: Understanding Single Index Model" /><published>2025-07-29T00:00:00+10:00</published><updated>2025-07-29T00:00:00+10:00</updated><id>http://localhost:4000/portfolio%20managment/SIM</id><content type="html" xml:base="http://localhost:4000/portfolio%20managment/SIM/">&lt;h2 id=&quot;-diving-into-portfolio-management-understanding-portfolio-variance&quot;&gt;💼 Diving Into Portfolio Management: Understanding Portfolio Variance&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-04-09T19:34:23+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Introduction to Pricing Strategies</title><link href="http://localhost:4000/strategy/value-based-pricing-strategy/" rel="alternate" type="text/html" title="Introduction to Pricing Strategies" /><published>2026-04-09T00:00:00+10:00</published><updated>2026-04-09T00:00:00+10:00</updated><id>http://localhost:4000/strategy/value-based-pricing-strategy</id><content type="html" xml:base="http://localhost:4000/strategy/value-based-pricing-strategy/">&lt;h1 id=&quot;understanding-the-world-of-pricing-analytics&quot;&gt;Understanding the World of Pricing Analytics&lt;/h1&gt;
+
+&lt;p&gt;I have been recently working with my of my friend’s at universitory whose studying marketing and was working on creating wanted to do a critical analysis for an organisation to use Value-based pricing model.&lt;/p&gt;
+
+&lt;p&gt;Recently I have had a buzz over the word ‘criticial anlaysis’ from works, and on our senior spoke about dissecting report and undertsanding the pro’s and con’s. This got me really exited, when I heard this word again in the context of product strategy.&lt;/p&gt;
+
+&lt;p&gt;Haugom (2021) argues that pricing strategies can qualitatively be placed into the following categories:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cost-plus pricing (CP): Calculating costs and adding a margin when setting the price.&lt;/li&gt;
+  &lt;li&gt;Market-based pricing (MB): Setting prices based on competitors’ actions.&lt;/li&gt;
+  &lt;li&gt;Customer-driven pricing (CD): Placing the customer at the center of the pricing decision.&lt;/li&gt;
+  &lt;li&gt;Value-based pricing (VB): Setting the price based on estimates of how customers value the product or service.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Implicitly, when creating a pricing strategy—or building a model—one must incorporate all four aspects into a unified approach. Conceptually, we can think of the pricing function as a combination of these four components:&lt;/p&gt;
+
+\[\text{Pricing Strategy}(w_1, w_2, w_3, w_4) = w_1 \cdot CP + w_2 \cdot MB + w_3 \cdot CD + w_4 \cdot VB\]
+
+&lt;p&gt;This is, of course, an extremely simplified representation. It assumes linearity and no interdependence among the different pricing methods, which is not functionally accurate in practice. However, it effectively illustrates the conceptual idea Haugom aimed to explain: that an integrated pricing strategy involves balancing multiple dimensions of pricing strategies simultaneously.&lt;/p&gt;
+
+&lt;h2 id=&quot;econometric-pricing-analytics--elasticity&quot;&gt;Econometric Pricing Analytics – Elasticity&lt;/h2&gt;
+
+&lt;p&gt;Diving deeper into our pricing function, Paczkowski (2018) presents a two-layered pricing strategy:&lt;/p&gt;
+
+\[\text{Pricing Strategy}(w_i) = \text{function(Pricing Level, Pricing Structure)}\]
+
+\[\text{Pricing Strategy}(w_i) = w_1 \cdot CP + w_2 \cdot MB + w_3 \cdot CD + w_4 \cdot VB\]
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pricing structure&lt;/strong&gt; refers to &lt;em&gt;how the pricing is designed&lt;/em&gt;, for example, subscription-based or dynamic pricing.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Price level&lt;/strong&gt; refers to &lt;em&gt;how much you charge for the product&lt;/em&gt;, e.g., a coffee costs $5.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pricing-structure-vs-price-level&quot;&gt;Pricing Structure vs Price Level&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Pricing structure&lt;/strong&gt; refers to how the pricing is designed—for example, subscription-based or dynamic pricing.&lt;br /&gt;
+&lt;strong&gt;Price level&lt;/strong&gt;, on the other hand, concerns how much you charge for the product, e.g., a coffee costs $5.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;obtaining-data&quot;&gt;Obtaining Data&lt;/h3&gt;
+
+&lt;p&gt;Two methods of obtaining data for pricing analytics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Quantitative Data&lt;/strong&gt;: Experimental and observational&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Qualitative Data&lt;/strong&gt;: In-depth interviews, expert opinions, and focus groups&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using quantitative data, one can build &lt;strong&gt;statistical econometric models&lt;/strong&gt; based on the economic paradigm of consumer demand.&lt;/p&gt;
+
+&lt;p&gt;Within quantitative data, there are two distinctions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Observational data&lt;/strong&gt; (aka revealed preference data): Refers to actual customer behavior&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Experimental data&lt;/strong&gt; (aka stated preference data): Refers to customers explicitly stating their preferences&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;role-of-quantitative-data-in-pricing-analytics&quot;&gt;Role of Quantitative Data in Pricing Analytics&lt;/h3&gt;
+
+&lt;p&gt;Paczkowski (2018) justifies the role of quantitative data as acting like a &lt;strong&gt;prior&lt;/strong&gt; (referring to Bayesian statistical thought), providing additional information to aid in our statistical model. It acts as a starting point to ensure our model is accurate. Alone, qualitative data cannot form the basis of a pricing model.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;three-layers-of-quantitative-pricing-analytics&quot;&gt;Three Layers of Quantitative Pricing Analytics&lt;/h3&gt;
+
+&lt;p&gt;Paczkowski (2018) separates pricing analytics into three distinct layers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Layer 1 – Theory foundation&lt;/strong&gt;: Economic theory of consumer demand&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Layer 2 – Data analysis&lt;/strong&gt;: Data cleaning and transformation&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Layer 3 – Statistical model&lt;/strong&gt;: Non-parametric or parametric modeling&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that our statistical model (Layer 3) is &lt;strong&gt;founded on economic theory&lt;/strong&gt; (Layer 1).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;other-approaches-to-obtain-a-pricing-strategy&quot;&gt;Other Approaches to Obtain a Pricing Strategy&lt;/h2&gt;
+
+&lt;h3 id=&quot;van-westendorps-price-sensitivity-meter-1976&quot;&gt;Van Westendorp’s Price Sensitivity Meter (1976)&lt;/h3&gt;
+
+&lt;p&gt;This technique determines consumer price preference through a series of four questions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;At what price would you consider the product to be &lt;strong&gt;so expensive that you would not consider buying it&lt;/strong&gt;? (Too expensive)&lt;/li&gt;
+  &lt;li&gt;At what price would you consider the product &lt;strong&gt;so low that you would feel the quality couldn’t be very good&lt;/strong&gt;? (Too cheap)&lt;/li&gt;
+  &lt;li&gt;At what price would you consider the product &lt;strong&gt;starting to get expensive, so that it is not out of the question, but you would have to give some thought to buying it&lt;/strong&gt;? (Expensive/High Side)&lt;/li&gt;
+  &lt;li&gt;At what price would you consider the product to be a &lt;strong&gt;bargain—a great buy for the money&lt;/strong&gt;? (Cheap/Good Value)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The cumulative frequency is plotted for each, and then a recommended price is interpreted from the intersection points.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;gabor-granger-method&quot;&gt;Gabor-Granger Method&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Present 5 different price points to a consumer.&lt;/li&gt;
+  &lt;li&gt;The consumer chooses the top two they would consider buying.&lt;/li&gt;
+  &lt;li&gt;Then the consumer is re-tested with new price points based on the previous answers until they consistently indicate the &lt;strong&gt;“definitely buy”&lt;/strong&gt; and &lt;strong&gt;“probably buy”&lt;/strong&gt; price points.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This method finds the &lt;strong&gt;optimal price range&lt;/strong&gt; where consumers are most likely to purchase.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;This concludes the introduction to pricing analytics. In the next blog, we will dive deeper into the &lt;strong&gt;statistical model introduction&lt;/strong&gt; as described by Paczkowski (2018).&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;Haugom, E., &amp;amp; Alnes, P. K. (2021). Essentials of Pricing Analytics: Tools and Implementation with Excel . Routledge.&lt;/p&gt;
+
+&lt;p&gt;Paczkowski, W. R. (2018). Pricing analytics: Models and advanced quantitative techniques for product pricing. Routledge.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Strategy" /><summary type="html">Understanding the World of Pricing Analytics</summary></entry><entry><title type="html">Portfolio Management: Understanding Single Index Model</title><link href="http://localhost:4000/portfolio%20managment/SIM/" rel="alternate" type="text/html" title="Portfolio Management: Understanding Single Index Model" /><published>2025-07-29T00:00:00+10:00</published><updated>2025-07-29T00:00:00+10:00</updated><id>http://localhost:4000/portfolio%20managment/SIM</id><content type="html" xml:base="http://localhost:4000/portfolio%20managment/SIM/">&lt;h2 id=&quot;-diving-into-portfolio-management-understanding-portfolio-variance&quot;&gt;💼 Diving Into Portfolio Management: Understanding Portfolio Variance&lt;/h2&gt;
 
 &lt;p&gt;Recently, I began a new challenge: investing in stocks. One of the first questions I thought about was—regardless of individual returns—how could I best create an &lt;strong&gt;optimal investment set of assets&lt;/strong&gt;?&lt;/p&gt;
 
@@ -990,169 +1108,4 @@ h(A) \leq h(C) \Longleftrightarrow A \subseteq C
 &lt;p&gt;This continue until each point has it own cluster. Now importantly we can also use single-methods complete method, mean-method or any methods, but this chnages our similarity metric&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;And there we have it! I hope you have gained some intuition about Heiarchial Clustering !&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.</summary></entry><entry><title type="html">Bayesian statistics vs frequentist statistics : Estimating Probability From Data</title><link href="http://localhost:4000/ml/Estimate-Probability-from-data/" rel="alternate" type="text/html" title="Bayesian statistics vs frequentist statistics : Estimating Probability From Data" /><published>2024-05-21T00:00:00+10:00</published><updated>2024-05-21T00:00:00+10:00</updated><id>http://localhost:4000/ml/Estimate-Probability-from-data</id><content type="html" xml:base="http://localhost:4000/ml/Estimate-Probability-from-data/">&lt;p&gt;Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.&lt;/p&gt;
-
-&lt;h1 id=&quot;recall&quot;&gt;Recall&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;An important part of why machine can learning is that we assume that all samples points taken are from the same distribution, $ (x_i, y_i) ~ P, \forall i \in \mathbb{Z}^{+} $ and are i.i.d. Now using this assumption which is the backbone of all learning algorithms, then there $ \exists P(x,y) $, for which a conditional expectation can also be calculated, $ P(y&lt;/td&gt;
-      &lt;td&gt;x) $, that is, given a feature what the the probability that it lands on this specific label. Alternatively , $ P(x&lt;/td&gt;
-      &lt;td&gt;y) $ must also exist, that is given a label what is the probability that it displays certain features. The study of both conditional probabilities are separated using Bayes Theorem,&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-\[\begin{align*}
-    P(x | y) &amp;amp;\propto P(y | x)P(x) \quad\quad\text{Discriminative Learning} \\ 
-    P(y | x) &amp;amp;\propto P(x | y)P(y) \quad\quad\text{Generative Learning}
-\end{align*}\]
-
-&lt;p&gt;In essence, discriminative learning aims to create explicit boundaries between classes of labels, similar to SVMs, Perceptron, and k-NN. On the other hand, generative learning tries to model the distribution of individual classes, such as Naive Bayes or Gaussian Mixture Models (GMM). Within each of these types of learning, you can have parametric models, where we assume the distribution of ( p(x,y) ) comes from a certain well-known distribution like normal, Bernoulli, exponential, or non-parametric.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-a-parameter&quot;&gt;What is a parameter?&lt;/h1&gt;
-&lt;p&gt;given some distribution a parameter is a point estimate that characteristics a known class of distribution. I’m sure you have heard of common well know distribution including $N(\mu, \sigma^2)$ or $ \mathrm{Bern}(\lambda)$. In this case $\theta$, our parameter can be a set, or singular point estimate which character our distribution so $\theta = (\sigma^2, \mu)$ or $\theta = (\lambda) $&lt;/p&gt;
-
-&lt;h1 id=&quot;motivating-example&quot;&gt;Motivating example&lt;/h1&gt;
-
-&lt;p&gt;For a motivating exmaples consdier flipped a equally wieghted coin. Say we coin and we get \(D = \{ T , T, T, H, H, H, H, T, T, T, T \}\). Now considering it is eually wieghted coin we would hope that our probbilities of getting each side of the dice as \(\frac{1}{2}\) something from pervious years we have come to know. Say we want to know what is the probaiblites of getting a head, then the most intuitive method would be to&lt;/p&gt;
-
-\[\begin{equation*}
-    P(\text{getting heads}) = \frac{n_h}{n_t + n_h}
-\end{equation*}\]
-
-&lt;p&gt;where $ \text{n} = \text{Number of times gotten a side}$ . Yet it used this equation for our set of outcomes $ D $, we find $ P(\text{heads}) = \frac{4}{11} $, which isn’t 50 \% as we expected. Why is that did we not find the right probability?&lt;/p&gt;
-
-&lt;h1 id=&quot;frequentist-vs-bayesian-n-perspective&quot;&gt;Frequentist vs Bayesian n Perspective&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;When studying probability theory, we are concerned with $ p(D&lt;/td&gt;
-      &lt;td&gt;\theta) $, which models the distribution with some known $ \theta $. On the other hand, in statistics, previously known as inverse probability theory, we are given some data, and we aim to infer the unknown parameters $ \theta $ given observations, $ p(\theta&lt;/td&gt;
-      &lt;td&gt;D) $.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Generally, Frequentist are concerned with ‘frequency’, meaning that over time, the asymptotic behavior of our probability will converge to a certain number, as in the example above. Importantly, this requires a lot of data; otherwise, we would be overfitting. On the other hand, Bayesian statisticians know that data is readily available, and indeed, we have some assumptions we know about the data. Thus, they assume some ‘prior’ distribution of $p(\theta)$ from expertise, enabling them to readily use it when a small sample size is available.&lt;/p&gt;
-
-&lt;h1 id=&quot;frequentist-mle&quot;&gt;Frequentist: MLE&lt;/h1&gt;
-
-&lt;p&gt;So, we define&lt;/p&gt;
-
-\[\begin{align*}
-p(\mathcal{D}|\theta) = \prod_{n=1}^N p(y_n|x_n, \theta)
-\end{align*}\]
-
-&lt;p&gt;that is our i.i.d assumption of machine learning. Then applying a log (we use to simply computation), we get the log-likelihood,&lt;/p&gt;
-
-\[\begin{align*}
-\mathcal{L}(\theta) = \sum_{n=1}^N log( p(y_n|x_n, \theta)).
-\end{align*}\]
-
-&lt;p&gt;So, then we define MLE of a parameter&lt;/p&gt;
-
-\[\hat{\theta}_{MLE} = \arg\max_{\theta} \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
-
-&lt;p&gt;So optimisations theory is easier, to optimise a function through minimize cost functions so,&lt;/p&gt;
-
-\[\theta_{\text{MLE}}^{\hat{}} = \arg\max_{\theta} - \sum_{n=1}^N \log p(y_n | x_n, \theta)\]
-
-&lt;h1 id=&quot;mle-example&quot;&gt;MLE example&lt;/h1&gt;
-&lt;p&gt;Going back to our examples we flips coins, we now can assume that $p(x,y) ~ Bern(\lambda) $, where now $\theta = P(Y = 1) $, where $Y = number of times of getting heads heads$&lt;/p&gt;
-
-&lt;p&gt;So,&lt;/p&gt;
-
-\[\begin{align*}
-    \mathcal{L}(\theta) = \arg\max_{\theta} - \left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right).
-\end{align*}\]
-
-&lt;p&gt;Let, $ N1 = \sum_{n=1}^N \mathbb{1}&lt;em&gt;{y_n=1}$ and $ N0 =  sum&lt;/em&gt;{n=1}^N \mathbb{1}&lt;em&gt;{y_n=0} $. Now, we can use differentiating and let the loss function equal 0 to find the minimum (like in high school finding the minimum point of a function) to find $\hat{\theta}&lt;/em&gt;{MLE}$,&lt;/p&gt;
-
-\[\begin{align*}
-    \hat{\theta}_{MLE}= \frac{N1}{N0 + N1}
-\end{align*}\]
-
-&lt;p&gt;Isn’t this similar to our intuition right? This is known as classical statistics, or Frequentist statistics. Importantly we done assume  $\theta$ has any distribution itself but rather is a parameter which contains information about the distribution of a data points.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-we-didnt-get-any-heads-in-out-sample&quot;&gt;What is we didnt get any heads in out sample?&lt;/h1&gt;
-&lt;p&gt;he $ \hat{\theta}_{MLE} = 0 $. Is this correct? Well, of course not. We know from our intuition it should be $ \frac{1}{2} $. So Frequentists use this method, knowing we (plus one) Laplace Smoothing to ensure in the case of our sample not having an event occurring,&lt;/p&gt;
-
-\[\begin{equation*}
-\hat{\theta}_{MLE}= \frac{N1 + 1 }{N0 + N1 + 2}
-\end{equation*}\]
-
-&lt;p&gt;Since there is only two classes in our examples head or tails so we add 2 in the denominator.&lt;/p&gt;
-
-&lt;h1 id=&quot;map&quot;&gt;MAP&lt;/h1&gt;
-&lt;p&gt;Alternatively in Bayesian statistics we don’t consider Laplace smoothing or $\theta$ as just a parameter but rather in build upon the notion that we don’t have allot of data and data can’t always model the distribution of the sample accurately. So we make this assumption (adding bias) that $ \theta $ random variable. Now a random variable is neither a variables or random but rather a function which maps points of a measurable set $ \sigma$-algebra to the real number line, but a important property is that random variables can have distributions. So, now we can express to new equations, using Bayes Theorem,&lt;/p&gt;
-
-\[\begin{align*}
-P(\theta | D) &amp;amp;= \frac{P(D | \theta) P(\theta)}{ P(D)} \Rightarrow \\ 
-P(\theta | D) &amp;amp;\quad\propto\quad P(D | \theta) P(\theta). \\ 
-\end{align*}\]
-
-&lt;p&gt;Now in Bayesian Statistics, each component is named,&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;$ P(D&lt;/td&gt;
-          &lt;td&gt;\theta) $ Likelihood of data given ( \theta )&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;$ P(\theta&lt;/td&gt;
-          &lt;td&gt;D)$ (posterior distribution): Distribution over the parameter(s) ( \theta ) after we have observed the data&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$P(\theta) $ (prior): Distribution over the parameter(s) ( \theta ) before we see any data. 
-We need to choose the prior distribution using our expertise and knowledge which of course can work out great, or horribly wrong if we assume the distribution of our prior wrong. So now,&lt;/li&gt;
-&lt;/ul&gt;
-
-\[\begin{align*}
-     p(\mathcal{D}|\theta) &amp;amp;= \prod_{n=1}^N p(y_n|x_n, \theta)p(\theta) \\
-\end{align*}\]
-
-&lt;p&gt;Applying log,&lt;/p&gt;
-
-\[\begin{align*}
-    \mathcal{L}(\theta)&amp;amp;= \sum_{n=1}^N log(p(y_n|x_n, \theta))+ \sum_{n=1}^N log( p(\theta)) \\
-\end{align*}\]
-
-&lt;p&gt;So,&lt;/p&gt;
-
-\[\begin{align*}
-    \hat{\theta}_{map} = \arg\max_{\theta} \mathcal{L}(\theta)
-\end{align*}\]
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Going back to the coin flip we can assume our prior distribution (guess) is $  p(\theta) = Beta(\theta&lt;/td&gt;
-      &lt;td&gt;a, b) $ then our log likelihood ends up becoming&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-\[\begin{align*}
-    \mathcal{L}(\theta) = &amp;amp;\left( \sum_{n=1}^N \mathbb{1}_{y_n=1} \log(\theta) + \mathbb{1}_{y_n=0} \log(1 - \theta) \right) + [(a - 1)log(\theta) + (b - 1)log(1 - \theta)]
-\end{align*}\]
-
-&lt;p&gt;Then using normal minimisation method of finding first derivative letting it equal to zero to find minimizer for $\hat{\theta})$ we get&lt;/p&gt;
-
-\[\begin{align*}
-    \hat{\theta}_{map} = \frac{N1 + a - 1}{N1 + N0 + a + b - 2}
-\end{align*}\]
-
-&lt;p&gt;So by assuming a prior distribution in Bayesian statistics we end up getting a very similar estimator found in Frequentist statistics using Laplace Smoothing. So in a sense they are very similar!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I was watching Kilian Weinberger lecture on Estimating Probabilities from Data: Maximum Likelihood Estimation” Cornell CS4780 SP17 and now I finally understand the difference between the types of statistics (Also I read “Probabilistic Machine Learning: An Introduction” by Kevin Murphy). The following post will discuss the difference between the two most common schools of statistics, through the lens of machine learning, data estimation using probaiblity; MLE and MAP.</summary></entry></feed>
+&lt;p&gt;And there we have it! I hope you have gained some intuition about Heiarchial Clustering !&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.</summary></entry></feed>

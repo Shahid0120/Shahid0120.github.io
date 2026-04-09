@@ -5,25 +5,31 @@ title: "Hello!"
 author_profile: true
 ---
 
-Welcome to my blog! Graudate University of New South Wales student studying Mathematics and Marketing, who has a obession with learning!
+Welcome to my blog! I’m a Graduate student at the University of New South Wales, studying Mathematics and Marketing, with an obsession for learning.
 
-This blog is intended to be used as a diary I look back at and see my journey firsthand. Of course, another important part of it is to share knowledge across the world. It has been my lifelong aspiration to help people learn, from tutoring students and helping peers. I hate when someone says, "Oh, this is so hard; I'm never going to get it!" Along the journey, I wish to help people understand concepts easier and more intuitively. Although my main focus will be on machine learning, I will blog about anything I find interesting!
+This blog is my personal diary—a place where I can look back and see my journey unfold firsthand. But just as importantly, it’s a space to share knowledge with the world. Helping people learn has always been one of my biggest passions, whether through tutoring students or supporting my peers. I can’t stand hearing, “This is so hard; I’m never going to get it!” because I truly believe everyone can understand complex ideas with the right explanation.
 
-# Carrer Goals?
+# Passion!
 
-Studying such a broad degree, I was lost in the options of which industry I wanted to move into. Unsure of my decision, I decided to start learning about AI, thinking it would be an important skill regardless of the path I chose. Along my journey of learning AI, particularly through a Deep Learning Specialisation and self-learning journey, I was led to compete in a data science competition held by Allianz and Atlassian. Coincidentally, the task was to classify fraudulent insurance claims — a blog post about this can be found [Allianz Data Science Competiion](/_posts/2024-08-06-Atlassian-Allianz-data-soc.md).
+Coming from a background in Mathematics and Marketing, I’ve always had a passion for turning analysis into actionable insights. Whether it’s using my quantitative skills to develop effective pricing strategies or applying qualitative insights from competitor research to identify gaps in the market, I love transforming data into strategy that drives real impact.
 
-This experience sparked my interest in a potential role in insurance. For the first time, I knew what I wanted to do! I understood that, having no experience in the industry, I needed to get my foot in the door.
+# Carrer 
 
-Thus, I stepped into my first role as a Claims Consultant at Chubb Insurance. Not only did I gain hands-on experience in learning the fundamentals of the claims management process and lifecycle, but I also received my first introduction to policy wording and interpretation, particularly in accident and health. This only continued to fuel my excitement about the insurance industry — I've learned so much about the different roles, the intricacies of the industry, and the opportunities it offers. Over this period, I’ve been driven to continue my journey and develop my skills within the insurance industry — with a special focus on broking, underwriting, and actuarial capabilities.
+Studying such a broad degree, I initially felt overwhelmed by the many industries I could pursue.  
 
-To continue my learning in a structured way, I plan to follow the Master of Actuarial Studies program offered by UNSW. My aim is to focus first on foundational skills that can be applied as a broker and underwriter, and eventually move toward developing skills that can be applied as an actuary.
+During my learning journey, I participated in a data science competition organized by Allianz and Atlassian. Coincidentally, the task was to classify fraudulent insurance claims — a blog post about this experience can be found [here](/_posts/2024-08-06-Atlassian-Allianz-data-soc.md).  
 
-# Journey Map
+This experience sparked my interest in the insurance industry. For the first time, I felt a clear sense of direction. However, I also realized that, without prior industry experience, I would need to find a way to get my foot in the door.  
 
-## June 2025
-Focus on analysing financial statements and price making for actuary/brokers. 
+Initially unsure, I decided to enter the insurance industry. The opportunities are broad and varied, and I hoped that by gaining hands-on experience, I could eventually pivot into different roles.
 
-- **Financial Statement Analysis**: Essentials of Corporate Finance Book by Bradford D. Jordan, Randolph W Westerfield, and Stephen Ross.
-- **Understanding Basic Rating Making**: Basic Ratingmaking by Geoff Werner, Claudine Modlin and Willis Towers Watson.
+Currently, I am working as a claims specialist in property. Although I initially expected this role to be an easy transition, I have learned several extremely valuable long-term skills, including:  
 
+- **Qualitative Skills:** Analyzing and interpreting policy wording may appear straightforward, but policies often hinge on whether an event is "sudden and unforeseen." Understanding this requires a multifaceted, layered approach. Decisions involve analyzing reports from engineers, building consultants, and estimators to see the full picture. Through this process, I have honed my qualitative skills, improving my ability to synthesize complex information and make well-reasoned judgments.  
+
+- **Strategic Decision Making:** Writing decision letters to insureds, coordinating with consultants, and negotiating with brokers has strengthened my strategic thinking. I have learned to weigh multiple perspectives, anticipate potential outcomes, and make decisions that balance company policy, client expectations, and risk management. This experience has enhanced my ability to make thoughtful, informed decisions under pressure.
+
+
+# Future Aspirations 
+
+I have greatly enjoyed my experiences working as a claims specialist. At heart, I love thinking strategically, analyzing and interpreting information to generate actionable insights.
