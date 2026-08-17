@@ -62,10 +62,3 @@ I enjoy problems that require both mathematical reasoning and practical judgemen
 Going forward, I want to continue strengthening my foundations in statistical theory while developing the computational skills required to apply those ideas to real-world problems.
 
 Ultimately, I hope this blog becomes a record of that journey and, along the way, a useful resource for anyone else trying to understand the same ideas.
-"""
-
-path = "/mnt/data/blog_intro.md"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(content)
-
-print(path)

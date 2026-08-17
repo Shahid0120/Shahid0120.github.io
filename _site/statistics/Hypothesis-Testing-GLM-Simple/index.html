@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\[','\]'], ['$$', '$$']]
+        }
+      };
+    </script>
+
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>            Hypothesis Testing in GLMs: Testing a Single Parameter | Shahid Hussain      Blog      </title>
+<meta name="description" content="Hypothesis Testing in GLMs">
+
+
+  <meta name="author" content="Shahid Hussain">
+  
+  <meta property="article:author" content="Shahid Hussain">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Shahid Hussain | Blog">
+<meta property="og:title" content="Hypothesis Testing in GLMs: Testing a Single Parameter">
+<meta property="og:url" content="http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple/">
+
+
+  <meta property="og:description" content="Hypothesis Testing in GLMs">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-08-18T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Shahid Hussain",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Shahid Hussain | Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Shahid Hussain | Blog
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/IMG_D8180A2D5A0F-1.jpeg" alt="Shahid Hussain" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Shahid Hussain</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Passionate self-learner driven to deepen expertise in underwriting, brokering, and claims.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, AUS</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:shahid.hussain0120@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="shahid.hussain0120@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Hypothesis Testing in GLMs: Testing a Single Parameter">
+    <meta itemprop="description" content="Hypothesis Testing in GLMs">
+    <meta itemprop="datePublished" content="2026-08-18T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple/" class="u-url" itemprop="url">Hypothesis Testing in GLMs: Testing a Single Parameter
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="hypothesis-testing-in-glms">Hypothesis Testing in GLMs</h1>
+
+<h2 id="likelihood-based-testing">Likelihood-Based Testing</h2>
+
+<p>In a simple Generalised Linear Model (GLM) with one parameter, there are three common methods for testing our parameter using the likelihood function.</p>
+
+<p>Suppose we want to test:</p>
+
+\[H_0: \theta = \theta_0\]
+
+<p>The three likelihood-based methods are:</p>
+
+<ul>
+  <li>Wald Test</li>
+  <li>Score Test</li>
+  <li>Likelihood Ratio Test</li>
+</ul>
+
+<p>In this post, we will focus on the <strong>Wald Test</strong> and <strong>Score Test</strong>.</p>
+
+<h2 id="simple-glm-model---with-one-parameter">Simple GLM Model - With One Parameter</h2>
+
+<h3 id="wald-test">Wald Test</h3>
+
+<p>The <strong>Wald Test</strong> is based on the distance between our estimated parameter $\hat{\theta}$ and the hypothesised value $\theta_0$.</p>
+
+<p>The Wald statistic is defined as:</p>
+
+\[W =
+\frac{(\hat{\theta} - \theta_0)^2}
+{\widehat{\operatorname{Var}}(\hat{\theta})}\]
+
+<p>When $H_0$ is true,</p>
+
+\[W \sim \chi^2_1
+\qquad \text{as } n \rightarrow \infty.\]
+
+<p>Notice that:</p>
+
+<ul>
+  <li>$\sqrt{W} = Z$, thus $Z \sim \mathcal{N}(0,1)$, so $Z$ can be used as the test statistic.</li>
+  <li>A small $W$ means that the distance between $\hat{\theta}$ and $\theta_0$ is small relative to the uncertainty in $\hat{\theta}$. Therefore, we have less evidence against $H_0$ for a given significance level $\alpha$.</li>
+  <li>A large $W$ means that $\hat{\theta}$ is far from $\theta_0$ relative to its uncertainty, providing stronger evidence against $H_0$.</li>
+</ul>
+
+<p>Generally, in a simple GLM we may be interested in testing a coefficient using:</p>
+
+\[H_0: \beta_1 = 0\]
+
+<p>against an alternative such as:</p>
+
+\[H_a: \beta_1 &gt; 0.\]
+
+<h3 id="proof">Proof</h3>
+
+<p>We know that the second-order Taylor series expansion around $x=a$ is:</p>
+
+\[f(x)
+\approx
+f(a)
++
+f'(a)(x-a)
++
+\frac{1}{2}f''(a)(x-a)^2.\]
+
+<p>Taking the second-order Taylor series expansion of the log-likelihood around $\theta=\hat{\theta}$, where $\hat{\theta}=\hat{\theta}_{MLE}$, we obtain:</p>
+
+\[\ell(\theta;\mathbf{y})
+\approx
+\ell(\hat{\theta};\mathbf{y})
++
+\ell'(\hat{\theta})(\theta-\hat{\theta})
++
+\frac{1}{2}\ell''(\hat{\theta})(\theta-\hat{\theta})^2.\]
+
+<p>Since $\hat{\theta}$ is the maximum likelihood estimate,</p>
+
+\[\ell'(\hat{\theta})=0.\]
+
+<p>Therefore,</p>
+
+\[\ell(\theta;\mathbf{y})
+\approx
+\ell(\hat{\theta};\mathbf{y})
++
+\frac{1}{2}\ell''(\hat{\theta})(\theta-\hat{\theta})^2.\]
+
+<p>Let $\theta=\theta_0$. We obtain:</p>
+
+\[2\left(
+\ell(\theta_0;\mathbf{y})
+-
+\ell(\hat{\theta};\mathbf{y})
+\right)
+\approx
+\ell''(\hat{\theta})
+\left(\theta_0-\hat{\theta}\right)^2.\]
+
+<p>Recall that the observed information is:</p>
+
+\[J(\theta)=-\ell''(\theta).\]
+
+<p>Therefore,</p>
+
+\[2\left(
+\ell(\hat{\theta};\mathbf{y})
+-
+\ell(\theta_0;\mathbf{y})
+\right)
+\approx
+J(\hat{\theta})
+\left(\hat{\theta}-\theta_0\right)^2.\]
+
+<p>Since</p>
+
+\[\widehat{\operatorname{Var}}(\hat{\theta})
+\approx
+\frac{1}{J(\hat{\theta})},\]
+
+<p>we obtain:</p>
+
+\[2\left(
+\ell(\hat{\theta};\mathbf{y})
+-
+\ell(\theta_0;\mathbf{y})
+\right)
+\approx
+\frac{
+\left(\hat{\theta}-\theta_0\right)^2
+}{
+\widehat{\operatorname{Var}}(\hat{\theta})
+}.\]
+
+<p>The expression on the right-hand side is precisely the Wald statistic:</p>
+
+\[W =
+\frac{
+\left(\hat{\theta}-\theta_0\right)^2
+}{
+\widehat{\operatorname{Var}}(\hat{\theta})
+}.\]
+
+<p>This demonstrates the relationship between the Wald statistic and the local curvature of the log-likelihood around the maximum likelihood estimate.</p>
+
+<h2 id="score-test">Score Test</h2>
+
+<p>The <strong>Score Test</strong> works by normalising the score function and examining its value at $\theta_0$.</p>
+
+<p>Recall that the score function is:</p>
+
+\[U(\theta)
+=
+\frac{\partial \ell(\theta;\mathbf{y})}{\partial\theta}.\]
+
+<p>When calculating our parameter estimates, we find the maximum likelihood estimate $\hat{\theta}$ by solving:</p>
+
+\[U(\hat{\theta})=0.\]
+
+<p>The Score Test uses this idea but asks a slightly different question: <strong>what is the slope of the log-likelihood at the hypothesised value $\theta_0$?</strong></p>
+
+<p>If</p>
+
+\[U(\theta_0)\approx0,\]
+
+<p>then $\theta_0$ is likely to be near $\hat{\theta}$, meaning that we have less evidence against $H_0$.</p>
+
+<p>If $U(\theta_0)$ is far from zero, then the likelihood is still increasing or decreasing substantially at $\theta_0$, suggesting that $\theta_0$ is not close to the maximum likelihood estimate.</p>
+
+<p>The Score statistic is:</p>
+
+\[S =
+\frac{U(\theta_0)^2}
+{I(\theta_0)},\]
+
+<p>where $I(\theta_0)$ is the Fisher information evaluated at $\theta_0$.</p>
+
+<p>When $H_0$ is true,</p>
+
+\[S \sim \chi^2_1
+\qquad \text{as } n\rightarrow\infty.\]
+
+<p>Notice that:</p>
+
+<ul>
+  <li>$\sqrt{S}=Z$, thus $Z\sim\mathcal{N}(0,1)$.</li>
+  <li>The Score Test only requires quantities evaluated at $\theta_0$.</li>
+  <li>Unlike the Wald Test, we do not necessarily need to know the unrestricted estimate $\hat{\theta}$.</li>
+  <li>If $U(\theta_0)$ is close to zero, then the slope of the log-likelihood at $\theta_0$ is close to zero, providing less evidence against $H_0$.</li>
+</ul>
+
+<h3 id="proof-1">Proof</h3>
+
+<p>Take a first-order Taylor expansion of the score function around $\theta=\theta_0$:</p>
+
+\[U(\theta)
+\approx
+U(\theta_0)
++
+U'(\theta_0)(\theta-\theta_0).\]
+
+<p>Evaluate this when $\theta=\hat{\theta}$:</p>
+
+\[U(\hat{\theta})
+\approx
+U(\theta_0)
++
+U'(\theta_0)(\hat{\theta}-\theta_0).\]
+
+<p>Since $\hat{\theta}$ is the maximum likelihood estimate,</p>
+
+\[U(\hat{\theta})=0.\]
+
+<p>Therefore,</p>
+
+\[0
+\approx
+U(\theta_0)
++
+U'(\theta_0)(\hat{\theta}-\theta_0).\]
+
+<p>Recall that:</p>
+
+\[U'(\theta)
+=
+\ell''(\theta)
+=
+-J(\theta).\]
+
+<p>Therefore,</p>
+
+\[U(\theta_0)
+\approx
+J(\theta_0)(\hat{\theta}-\theta_0).\]
+
+<p>For sufficiently large samples, the observed information and Fisher information are approximately equivalent:</p>
+
+\[J_n(\theta_0)
+\approx
+I_n(\theta_0).\]
+
+<p>We also know that:</p>
+
+\[\operatorname{Var}(\hat{\theta})
+\approx
+\frac{1}{I_n(\theta_0)}.\]
+
+<p>Since $\theta_0$ is a constant,</p>
+
+\[\operatorname{Var}(\hat{\theta}-\theta_0)
+=
+\operatorname{Var}(\hat{\theta}).\]
+
+<p>Using</p>
+
+\[U_n(\theta_0)
+\approx
+I_n(\theta_0)(\hat{\theta}-\theta_0),\]
+
+<p>we can take the variance of both sides:</p>
+
+\[\begin{aligned}
+\operatorname{Var}\left[U_n(\theta_0)\right]
+&amp;\approx
+I_n(\theta_0)^2
+\operatorname{Var}(\hat{\theta}-\theta_0)
+\\
+&amp;=
+I_n(\theta_0)^2
+\operatorname{Var}(\hat{\theta})
+\\
+&amp;\approx
+I_n(\theta_0)^2
+\frac{1}{I_n(\theta_0)}
+\\
+&amp;=
+I_n(\theta_0).
+\end{aligned}\]
+
+<p>Therefore,</p>
+
+\[\operatorname{Var}\left[U_n(\theta_0)\right]
+\approx
+I_n(\theta_0).\]
+
+<p>Under $H_0$, we also have:</p>
+
+\[\mathbb{E}[U_n(\theta_0)]=0.\]
+
+<p>We can therefore standardise the score function:</p>
+
+\[Z_S
+=
+\frac{
+U_n(\theta_0)
+}{
+\sqrt{I_n(\theta_0)}
+}
+\overset{H_0}{\approx}
+\mathcal{N}(0,1).\]
+
+<p>Squaring the standardised statistic gives:</p>
+
+\[S
+=
+Z_S^2
+=
+\frac{
+U_n(\theta_0)^2
+}{
+I_n(\theta_0)
+}
+\overset{H_0}{\approx}
+\chi^2_1.\]
+
+<h2 id="wald-test-vs-score-test">Wald Test vs Score Test</h2>
+
+<p>The Wald Test and Score Test approach the same hypothesis from two different perspectives.</p>
+
+<p>The <strong>Wald Test</strong> examines the distance:</p>
+
+\[\hat{\theta}-\theta_0.\]
+
+<p>It asks: <em>How far is our estimated parameter from the value specified under the null hypothesis?</em></p>
+
+<p>The <strong>Score Test</strong> examines:</p>
+
+\[U(\theta_0).\]
+
+<p>It asks: <em>How steep is the log-likelihood at the value specified under the null hypothesis?</em></p>
+
+<p>Therefore, the Wald Test focuses on the <strong>distance between $\hat{\theta}$ and $\theta_0$</strong>, while the Score Test focuses on the <strong>slope of the likelihood at $\theta_0$</strong>.</p>
+
+<p>Under standard regularity conditions and as the sample size becomes large, both tests are asymptotically related and should generally lead to similar conclusions.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>For a simple GLM with a single parameter, likelihood-based hypothesis testing provides several ways of determining whether the data provide evidence against:</p>
+
+\[H_0:\theta=\theta_0.\]
+
+<p>In this post, we explored two of these methods.</p>
+
+<p>The <strong>Wald Test</strong> measures how far $\hat{\theta}$ is from $\theta_0$ relative to the uncertainty associated with $\hat{\theta}$.</p>
+
+<p>The <strong>Score Test</strong>, on the other hand, evaluates the slope of the log-likelihood at $\theta_0$. If the slope is close to zero, then $\theta_0$ may be close to the maximum likelihood estimate.</p>
+
+<p>Both approaches ultimately produce test statistics that asymptotically follow a $\chi^2_1$ distribution under $H_0$.</p>
+
+<p>The third likelihood-based approach is the <strong>Likelihood Ratio Test</strong>, which compares the likelihood under the null hypothesis with the maximised likelihood. This will complete the three main approaches to likelihood-based hypothesis testing.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#statistics" class="page__taxonomy-item p-category" rel="tag">Statistics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-08-18T00:00:00+10:00">August 18, 2026</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/strategy/value-based-pricing-strategy/" class="pagination--pager" title="Introduction to Pricing Strategies
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://www.linkedin.com/in/shahid-hussain-005952142/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Shahid0120" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/ShahidH2001" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Shahid Hussain.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

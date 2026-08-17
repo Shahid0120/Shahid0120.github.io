@@ -1,4 +1,352 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-08-18T09:16:52+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Introduction to Pricing Strategies</title><link href="http://localhost:4000/strategy/value-based-pricing-strategy/" rel="alternate" type="text/html" title="Introduction to Pricing Strategies" /><published>2026-04-09T00:00:00+10:00</published><updated>2026-04-09T00:00:00+10:00</updated><id>http://localhost:4000/strategy/value-based-pricing-strategy</id><content type="html" xml:base="http://localhost:4000/strategy/value-based-pricing-strategy/">&lt;h1 id=&quot;understanding-the-world-of-pricing-analytics&quot;&gt;Understanding the World of Pricing Analytics&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-08-18T09:41:11+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Shahid Hussain | Blog</title><subtitle>A Data Science and Mathematics blog, focusing on Machine learning algorithms.</subtitle><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><entry><title type="html">Hypothesis Testing in GLMs: Testing a Single Parameter</title><link href="http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple/" rel="alternate" type="text/html" title="Hypothesis Testing in GLMs: Testing a Single Parameter" /><published>2026-08-18T00:00:00+10:00</published><updated>2026-08-18T00:00:00+10:00</updated><id>http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple</id><content type="html" xml:base="http://localhost:4000/statistics/Hypothesis-Testing-GLM-Simple/">&lt;h1 id=&quot;hypothesis-testing-in-glms&quot;&gt;Hypothesis Testing in GLMs&lt;/h1&gt;
+
+&lt;h2 id=&quot;likelihood-based-testing&quot;&gt;Likelihood-Based Testing&lt;/h2&gt;
+
+&lt;p&gt;In a simple Generalised Linear Model (GLM) with one parameter, there are three common methods for testing our parameter using the likelihood function.&lt;/p&gt;
+
+&lt;p&gt;Suppose we want to test:&lt;/p&gt;
+
+\[H_0: \theta = \theta_0\]
+
+&lt;p&gt;The three likelihood-based methods are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wald Test&lt;/li&gt;
+  &lt;li&gt;Score Test&lt;/li&gt;
+  &lt;li&gt;Likelihood Ratio Test&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this post, we will focus on the &lt;strong&gt;Wald Test&lt;/strong&gt; and &lt;strong&gt;Score Test&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;simple-glm-model---with-one-parameter&quot;&gt;Simple GLM Model - With One Parameter&lt;/h2&gt;
+
+&lt;h3 id=&quot;wald-test&quot;&gt;Wald Test&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;Wald Test&lt;/strong&gt; is based on the distance between our estimated parameter $\hat{\theta}$ and the hypothesised value $\theta_0$.&lt;/p&gt;
+
+&lt;p&gt;The Wald statistic is defined as:&lt;/p&gt;
+
+\[W =
+\frac{(\hat{\theta} - \theta_0)^2}
+{\widehat{\operatorname{Var}}(\hat{\theta})}\]
+
+&lt;p&gt;When $H_0$ is true,&lt;/p&gt;
+
+\[W \sim \chi^2_1
+\qquad \text{as } n \rightarrow \infty.\]
+
+&lt;p&gt;Notice that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\sqrt{W} = Z$, thus $Z \sim \mathcal{N}(0,1)$, so $Z$ can be used as the test statistic.&lt;/li&gt;
+  &lt;li&gt;A small $W$ means that the distance between $\hat{\theta}$ and $\theta_0$ is small relative to the uncertainty in $\hat{\theta}$. Therefore, we have less evidence against $H_0$ for a given significance level $\alpha$.&lt;/li&gt;
+  &lt;li&gt;A large $W$ means that $\hat{\theta}$ is far from $\theta_0$ relative to its uncertainty, providing stronger evidence against $H_0$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Generally, in a simple GLM we may be interested in testing a coefficient using:&lt;/p&gt;
+
+\[H_0: \beta_1 = 0\]
+
+&lt;p&gt;against an alternative such as:&lt;/p&gt;
+
+\[H_a: \beta_1 &amp;gt; 0.\]
+
+&lt;h3 id=&quot;proof&quot;&gt;Proof&lt;/h3&gt;
+
+&lt;p&gt;We know that the second-order Taylor series expansion around $x=a$ is:&lt;/p&gt;
+
+\[f(x)
+\approx
+f(a)
++
+f&apos;(a)(x-a)
++
+\frac{1}{2}f&apos;&apos;(a)(x-a)^2.\]
+
+&lt;p&gt;Taking the second-order Taylor series expansion of the log-likelihood around $\theta=\hat{\theta}$, where $\hat{\theta}=\hat{\theta}_{MLE}$, we obtain:&lt;/p&gt;
+
+\[\ell(\theta;\mathbf{y})
+\approx
+\ell(\hat{\theta};\mathbf{y})
++
+\ell&apos;(\hat{\theta})(\theta-\hat{\theta})
++
+\frac{1}{2}\ell&apos;&apos;(\hat{\theta})(\theta-\hat{\theta})^2.\]
+
+&lt;p&gt;Since $\hat{\theta}$ is the maximum likelihood estimate,&lt;/p&gt;
+
+\[\ell&apos;(\hat{\theta})=0.\]
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+\[\ell(\theta;\mathbf{y})
+\approx
+\ell(\hat{\theta};\mathbf{y})
++
+\frac{1}{2}\ell&apos;&apos;(\hat{\theta})(\theta-\hat{\theta})^2.\]
+
+&lt;p&gt;Let $\theta=\theta_0$. We obtain:&lt;/p&gt;
+
+\[2\left(
+\ell(\theta_0;\mathbf{y})
+-
+\ell(\hat{\theta};\mathbf{y})
+\right)
+\approx
+\ell&apos;&apos;(\hat{\theta})
+\left(\theta_0-\hat{\theta}\right)^2.\]
+
+&lt;p&gt;Recall that the observed information is:&lt;/p&gt;
+
+\[J(\theta)=-\ell&apos;&apos;(\theta).\]
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+\[2\left(
+\ell(\hat{\theta};\mathbf{y})
+-
+\ell(\theta_0;\mathbf{y})
+\right)
+\approx
+J(\hat{\theta})
+\left(\hat{\theta}-\theta_0\right)^2.\]
+
+&lt;p&gt;Since&lt;/p&gt;
+
+\[\widehat{\operatorname{Var}}(\hat{\theta})
+\approx
+\frac{1}{J(\hat{\theta})},\]
+
+&lt;p&gt;we obtain:&lt;/p&gt;
+
+\[2\left(
+\ell(\hat{\theta};\mathbf{y})
+-
+\ell(\theta_0;\mathbf{y})
+\right)
+\approx
+\frac{
+\left(\hat{\theta}-\theta_0\right)^2
+}{
+\widehat{\operatorname{Var}}(\hat{\theta})
+}.\]
+
+&lt;p&gt;The expression on the right-hand side is precisely the Wald statistic:&lt;/p&gt;
+
+\[W =
+\frac{
+\left(\hat{\theta}-\theta_0\right)^2
+}{
+\widehat{\operatorname{Var}}(\hat{\theta})
+}.\]
+
+&lt;p&gt;This demonstrates the relationship between the Wald statistic and the local curvature of the log-likelihood around the maximum likelihood estimate.&lt;/p&gt;
+
+&lt;h2 id=&quot;score-test&quot;&gt;Score Test&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;Score Test&lt;/strong&gt; works by normalising the score function and examining its value at $\theta_0$.&lt;/p&gt;
+
+&lt;p&gt;Recall that the score function is:&lt;/p&gt;
+
+\[U(\theta)
+=
+\frac{\partial \ell(\theta;\mathbf{y})}{\partial\theta}.\]
+
+&lt;p&gt;When calculating our parameter estimates, we find the maximum likelihood estimate $\hat{\theta}$ by solving:&lt;/p&gt;
+
+\[U(\hat{\theta})=0.\]
+
+&lt;p&gt;The Score Test uses this idea but asks a slightly different question: &lt;strong&gt;what is the slope of the log-likelihood at the hypothesised value $\theta_0$?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If&lt;/p&gt;
+
+\[U(\theta_0)\approx0,\]
+
+&lt;p&gt;then $\theta_0$ is likely to be near $\hat{\theta}$, meaning that we have less evidence against $H_0$.&lt;/p&gt;
+
+&lt;p&gt;If $U(\theta_0)$ is far from zero, then the likelihood is still increasing or decreasing substantially at $\theta_0$, suggesting that $\theta_0$ is not close to the maximum likelihood estimate.&lt;/p&gt;
+
+&lt;p&gt;The Score statistic is:&lt;/p&gt;
+
+\[S =
+\frac{U(\theta_0)^2}
+{I(\theta_0)},\]
+
+&lt;p&gt;where $I(\theta_0)$ is the Fisher information evaluated at $\theta_0$.&lt;/p&gt;
+
+&lt;p&gt;When $H_0$ is true,&lt;/p&gt;
+
+\[S \sim \chi^2_1
+\qquad \text{as } n\rightarrow\infty.\]
+
+&lt;p&gt;Notice that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\sqrt{S}=Z$, thus $Z\sim\mathcal{N}(0,1)$.&lt;/li&gt;
+  &lt;li&gt;The Score Test only requires quantities evaluated at $\theta_0$.&lt;/li&gt;
+  &lt;li&gt;Unlike the Wald Test, we do not necessarily need to know the unrestricted estimate $\hat{\theta}$.&lt;/li&gt;
+  &lt;li&gt;If $U(\theta_0)$ is close to zero, then the slope of the log-likelihood at $\theta_0$ is close to zero, providing less evidence against $H_0$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;proof-1&quot;&gt;Proof&lt;/h3&gt;
+
+&lt;p&gt;Take a first-order Taylor expansion of the score function around $\theta=\theta_0$:&lt;/p&gt;
+
+\[U(\theta)
+\approx
+U(\theta_0)
++
+U&apos;(\theta_0)(\theta-\theta_0).\]
+
+&lt;p&gt;Evaluate this when $\theta=\hat{\theta}$:&lt;/p&gt;
+
+\[U(\hat{\theta})
+\approx
+U(\theta_0)
++
+U&apos;(\theta_0)(\hat{\theta}-\theta_0).\]
+
+&lt;p&gt;Since $\hat{\theta}$ is the maximum likelihood estimate,&lt;/p&gt;
+
+\[U(\hat{\theta})=0.\]
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+\[0
+\approx
+U(\theta_0)
++
+U&apos;(\theta_0)(\hat{\theta}-\theta_0).\]
+
+&lt;p&gt;Recall that:&lt;/p&gt;
+
+\[U&apos;(\theta)
+=
+\ell&apos;&apos;(\theta)
+=
+-J(\theta).\]
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+\[U(\theta_0)
+\approx
+J(\theta_0)(\hat{\theta}-\theta_0).\]
+
+&lt;p&gt;For sufficiently large samples, the observed information and Fisher information are approximately equivalent:&lt;/p&gt;
+
+\[J_n(\theta_0)
+\approx
+I_n(\theta_0).\]
+
+&lt;p&gt;We also know that:&lt;/p&gt;
+
+\[\operatorname{Var}(\hat{\theta})
+\approx
+\frac{1}{I_n(\theta_0)}.\]
+
+&lt;p&gt;Since $\theta_0$ is a constant,&lt;/p&gt;
+
+\[\operatorname{Var}(\hat{\theta}-\theta_0)
+=
+\operatorname{Var}(\hat{\theta}).\]
+
+&lt;p&gt;Using&lt;/p&gt;
+
+\[U_n(\theta_0)
+\approx
+I_n(\theta_0)(\hat{\theta}-\theta_0),\]
+
+&lt;p&gt;we can take the variance of both sides:&lt;/p&gt;
+
+\[\begin{aligned}
+\operatorname{Var}\left[U_n(\theta_0)\right]
+&amp;amp;\approx
+I_n(\theta_0)^2
+\operatorname{Var}(\hat{\theta}-\theta_0)
+\\
+&amp;amp;=
+I_n(\theta_0)^2
+\operatorname{Var}(\hat{\theta})
+\\
+&amp;amp;\approx
+I_n(\theta_0)^2
+\frac{1}{I_n(\theta_0)}
+\\
+&amp;amp;=
+I_n(\theta_0).
+\end{aligned}\]
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+\[\operatorname{Var}\left[U_n(\theta_0)\right]
+\approx
+I_n(\theta_0).\]
+
+&lt;p&gt;Under $H_0$, we also have:&lt;/p&gt;
+
+\[\mathbb{E}[U_n(\theta_0)]=0.\]
+
+&lt;p&gt;We can therefore standardise the score function:&lt;/p&gt;
+
+\[Z_S
+=
+\frac{
+U_n(\theta_0)
+}{
+\sqrt{I_n(\theta_0)}
+}
+\overset{H_0}{\approx}
+\mathcal{N}(0,1).\]
+
+&lt;p&gt;Squaring the standardised statistic gives:&lt;/p&gt;
+
+\[S
+=
+Z_S^2
+=
+\frac{
+U_n(\theta_0)^2
+}{
+I_n(\theta_0)
+}
+\overset{H_0}{\approx}
+\chi^2_1.\]
+
+&lt;h2 id=&quot;wald-test-vs-score-test&quot;&gt;Wald Test vs Score Test&lt;/h2&gt;
+
+&lt;p&gt;The Wald Test and Score Test approach the same hypothesis from two different perspectives.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Wald Test&lt;/strong&gt; examines the distance:&lt;/p&gt;
+
+\[\hat{\theta}-\theta_0.\]
+
+&lt;p&gt;It asks: &lt;em&gt;How far is our estimated parameter from the value specified under the null hypothesis?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Score Test&lt;/strong&gt; examines:&lt;/p&gt;
+
+\[U(\theta_0).\]
+
+&lt;p&gt;It asks: &lt;em&gt;How steep is the log-likelihood at the value specified under the null hypothesis?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Therefore, the Wald Test focuses on the &lt;strong&gt;distance between $\hat{\theta}$ and $\theta_0$&lt;/strong&gt;, while the Score Test focuses on the &lt;strong&gt;slope of the likelihood at $\theta_0$&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Under standard regularity conditions and as the sample size becomes large, both tests are asymptotically related and should generally lead to similar conclusions.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;For a simple GLM with a single parameter, likelihood-based hypothesis testing provides several ways of determining whether the data provide evidence against:&lt;/p&gt;
+
+\[H_0:\theta=\theta_0.\]
+
+&lt;p&gt;In this post, we explored two of these methods.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Wald Test&lt;/strong&gt; measures how far $\hat{\theta}$ is from $\theta_0$ relative to the uncertainty associated with $\hat{\theta}$.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Score Test&lt;/strong&gt;, on the other hand, evaluates the slope of the log-likelihood at $\theta_0$. If the slope is close to zero, then $\theta_0$ may be close to the maximum likelihood estimate.&lt;/p&gt;
+
+&lt;p&gt;Both approaches ultimately produce test statistics that asymptotically follow a $\chi^2_1$ distribution under $H_0$.&lt;/p&gt;
+
+&lt;p&gt;The third likelihood-based approach is the &lt;strong&gt;Likelihood Ratio Test&lt;/strong&gt;, which compares the likelihood under the null hypothesis with the maximised likelihood. This will complete the three main approaches to likelihood-based hypothesis testing.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Statistics" /><summary type="html">Hypothesis Testing in GLMs</summary></entry><entry><title type="html">Introduction to Pricing Strategies</title><link href="http://localhost:4000/strategy/value-based-pricing-strategy/" rel="alternate" type="text/html" title="Introduction to Pricing Strategies" /><published>2026-04-09T00:00:00+10:00</published><updated>2026-04-09T00:00:00+10:00</updated><id>http://localhost:4000/strategy/value-based-pricing-strategy</id><content type="html" xml:base="http://localhost:4000/strategy/value-based-pricing-strategy/">&lt;h1 id=&quot;understanding-the-world-of-pricing-analytics&quot;&gt;Understanding the World of Pricing Analytics&lt;/h1&gt;
 
 &lt;p&gt;I have been recently working with my of my friend’s at universitory whose studying marketing and was working on creating wanted to do a critical analysis for an organisation to use Value-based pricing model.&lt;/p&gt;
 
@@ -429,7 +777,7 @@ I wanted to give a breif summary of what I’ve found!&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;This was an invaluable experience. I can’t express my gratitude enough for the opportunity to participate in such an event. If one day I get the opportunity to be a judge at this event when I’m a senior data scientist, I will welcome it with open arms.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Datathons" /><summary type="html">Recently I’ve had the opportunity to to participate compete in the UNSW Atlassian Allianz Data Competition at their respective headquarters! This 3-day event required my team to classify fraudulent customers from insurance data collected by Allianz customers.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
+&lt;p&gt;This was an invaluable experience. I can’t express my gratitude enough for the opportunity to participate in such an event. If one day I get the opportunity to be a judge at this event when I’m a senior data scientist, I will welcome it with open arms.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="Datathons" /><summary type="html">Recently I’ve had the opportunity to to participate compete in the UNSW Atlassian Allianz Data Competition at their respective headquarters! This 3-day event required my team to classify fraudulent customers from insurance data collected by Allianz customers.</summary></entry><entry><title type="html">Episode One (IBM x UNSW machine learning project) : Data Preprocessing</title><link href="http://localhost:4000/ml/episode-one-data-scoc-ibm/" rel="alternate" type="text/html" title="Episode One (IBM x UNSW machine learning project) : Data Preprocessing" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episode-one-data-scoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episode-one-data-scoc-ibm/">&lt;p&gt;Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-client-and-objective&quot;&gt;The client and objective&lt;/h1&gt;
 
@@ -495,7 +843,7 @@ data so we can see what it really looks like, fixing critical issues&lt;/li&gt;
 
 &lt;p&gt;Feature reduction and selection involve reducing the number of variables. This is more commonly done under unsupervised learning using techniques such as PCA, factor analysis, and t-SNE. Amazingly, sk-learn has a whole user guide on feature selection!&lt;/p&gt;
 
-&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Understanding the Roles/Links between Samples, Inference and Learning Models</title><link href="http://localhost:4000/ml/sampling-inference-learning/" rel="alternate" type="text/html" title="Understanding the Roles/Links between Samples, Inference and Learning Models" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/ml/sampling-inference-learning</id><content type="html" xml:base="http://localhost:4000/ml/sampling-inference-learning/">&lt;p&gt;I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!&lt;/p&gt;
+&lt;p&gt;And there we have it! Now, we know the basic outline of data preprocessing. Just a little note: finding valuable, straight-to-the-point information on data preprocessing is extremely difficult. Some textbooks cover the basics, while others go too in-depth. There isn’t anything that’s just enough to perform a basic data science project.&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today was the first day of attending a term-long project with Data Society UNSW, in collaboration with IBM. The lecturer from Dr. Saeed Kasmani, a Senior AI engineer from IBM presented the fundamentals of data science workflow. The main premise is that throughout the term, we will try to optimize a machine learning algorithm with a dataset. During the term, an IBM machine learning engineer will teach us the fundamentals of machine learning, including data preprocessing and learning algorithms.</summary></entry><entry><title type="html">Episode Two (IBM x UNSW machine learning project) : Learning Models</title><link href="http://localhost:4000/ml/episdoe-two-datasoc-ibm/" rel="alternate" type="text/html" title="Episode Two (IBM x UNSW machine learning project) : Learning Models" /><published>2024-05-31T00:00:00+10:00</published><updated>2024-05-31T00:00:00+10:00</updated><id>http://localhost:4000/ml/episdoe-two-datasoc-ibm</id><content type="html" xml:base="http://localhost:4000/ml/episdoe-two-datasoc-ibm/"></content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html"></summary></entry><entry><title type="html">Understanding the Roles/Links between Samples, Inference and Learning Models</title><link href="http://localhost:4000/ml/sampling-inference-learning/" rel="alternate" type="text/html" title="Understanding the Roles/Links between Samples, Inference and Learning Models" /><published>2024-05-29T00:00:00+10:00</published><updated>2024-05-29T00:00:00+10:00</updated><id>http://localhost:4000/ml/sampling-inference-learning</id><content type="html" xml:base="http://localhost:4000/ml/sampling-inference-learning/">&lt;p&gt;I’v alway been confused of the role of statistical inference, sampling and learning models and how they all connect together. Although, I know statistical inference, it was unfortunately taught in a black box, so i always felt little incomplete when i begin learning Machine learning and modern statistical inference. How do these two connect? Well hopefully i can bridge this gap!&lt;/p&gt;
 
 &lt;h1 id=&quot;sampling-who-are-you&quot;&gt;Sampling? Who are you&lt;/h1&gt;
 &lt;p&gt;When learning about phenomenon’s we want to study we ask everyone in the best method would be to ask population right, so the population;&lt;/p&gt;
@@ -929,183 +1277,4 @@ d(C_i, C_j) = \text{min } d(x, y)
 &lt;p&gt;where $x_i$ are all elements in cluster $C_i$ and $y_i$ elements of cluster $C_j$.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;I hope after reading this, both you and i have gained a more solid understanding of evaluating our clustering!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.</summary></entry><entry><title type="html">Hierarchial Clustering: Intuition and Types</title><link href="http://localhost:4000/ml/hierarchial-clustering/" rel="alternate" type="text/html" title="Hierarchial Clustering: Intuition and Types" /><published>2024-05-24T00:00:00+10:00</published><updated>2024-05-24T00:00:00+10:00</updated><id>http://localhost:4000/ml/hierarchial-clustering</id><content type="html" xml:base="http://localhost:4000/ml/hierarchial-clustering/">&lt;p&gt;Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-clustering&quot;&gt;What is clustering?&lt;/h1&gt;
-
-&lt;p&gt;It is form of unsupervised learning, which means there is nothing we a trying to predict or classify, rather we are trying to put samples together based on similarity, therefore our data is unlabeled. What does this really mean? In supervised learning our client our label feature “we are trying to predict project failure”, but in unlabeled data they still give use an objective, but there is not specific feature why are trying to predict or classify using.&lt;/p&gt;
-
-&lt;p&gt;So in a sense we are trying to find inherent structure of the date, even though it may not entirely exist!&lt;/p&gt;
-
-&lt;p&gt;Definition of clustering : group of instances based on similarity and dissimilarity.&lt;/p&gt;
-
-&lt;p&gt;Regularly, clustering is used for market segmentation, that is given a set of data, form groups on with inherent characteristic (features) so that was can maximize return on advertisement.&lt;/p&gt;
-
-&lt;h1 id=&quot;types-of-clustering-algorithms&quot;&gt;Types of clustering algorithms&lt;/h1&gt;
-
-&lt;p&gt;There are four main types of clustering approaches:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Hierarchical Approach&lt;/li&gt;
-  &lt;li&gt;Partitioning Approach&lt;/li&gt;
-  &lt;li&gt;Density based approach&lt;/li&gt;
-  &lt;li&gt;others - NN, Kernal, Affinity Prop&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Today I want to give intuition and overview of  hierarchical approaches to Clustering&lt;/p&gt;
-
-&lt;h1 id=&quot;should-i-perform-clustering-on-cleaned-data-or-do-some-transformations&quot;&gt;Should I perform clustering on cleaned data or do some transformations?&lt;/h1&gt;
-
-&lt;p&gt;Clustering can be performed directly on cleaned data, but also can be performed AFTER a dimention reduction algorithm is performed, like PCA. Majority of the times this usually leads to better reduced , since reducing dimentionality reduce non-importanly features and vairacne thus present a more accurate manifold/hyper-plane of the data.&lt;/p&gt;
-
-&lt;h1 id=&quot;does-clustering-requres-a-training-pahse-like-supervised-learning&quot;&gt;Does Clustering requres a training pahse like supervised learning?&lt;/h1&gt;
-
-&lt;p&gt;Since we are not trying to predict/classify our goals now is to organise data into groups thus we dont split our datase but rather trying to optimsie division of data with respect to an optimsiation criteria, we choose.&lt;/p&gt;
-
-&lt;p&gt;When is clustering performed in a data sciecne pipeline.Permalink&lt;/p&gt;
-
-&lt;p&gt;Clustering is usually perofrmed in the exploratory data anlytics stages&lt;/p&gt;
-
-&lt;p&gt;Questions to ask when doing Clustering AlgorithmPermalink&lt;/p&gt;
-
-&lt;p&gt;Some of the questions we ask priror to starting the clustering algorithm is;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;How do we represent patterns? Do we represent them as sets of points?&lt;/li&gt;
-  &lt;li&gt;How we we decided our measure of similarity? Remember in KNN algorithm we use distance in  norm to measure&lt;/li&gt;
-  &lt;li&gt;How many cluster to we have? Again similar to KNN we decides the number of neightbour we choose, how do we know this is right?&lt;/li&gt;
-  &lt;li&gt;How do we assess the performance of our clusters? Given we cluster a gorup, then how do we evaluate this?&lt;/li&gt;
-  &lt;li&gt;How do we interpret the results?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;measuring-similarity-for-clustering&quot;&gt;Measuring Similarity for Clustering&lt;/h1&gt;
-
-&lt;p&gt;Similar, to KNN our goals is to put points close to each other in a cluster while far apart points in different cluster, but consequently how would we determine 2 cluster if points are close by. In the examples below one ration method woulc be to cluster data points together (right corner), but how would we seperate the the points seperatly even thought they are as close to each other (middle points).&lt;/p&gt;
-
-&lt;h1 id=&quot;hierarchical-algorithms&quot;&gt;Hierarchical Algorithms&lt;/h1&gt;
-
-&lt;p&gt;This methods entails building a “hierarchy” of cluster. Generally, “hierarchy” means to order somethings from highest to lower or from lowest to highest. There are two types of&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Agglomerative - lowest to highest; start with a bunch of cluster then move to one cluster using a optimization criteria&lt;/li&gt;
-  &lt;li&gt;Divisive - highest to lowest; start with 1 cluster then divide into multiple cluster using optimization criteria&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;visualising-the-problem&quot;&gt;Visualising the problem&lt;/h1&gt;
-&lt;p&gt;Lets use an simple example, say we want given a client comes to use with customer information. The client ask’s ‘find customer segments for us to create a targeted a marketing strategy’. Now we are given only two features ‘Age’ of customer and ‘Annual Spending’. So the first step is to visualise the two groups.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/visualise-problem.png&quot; alt=&quot;visualise-cluster&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you can see we only have 8 data-points in this case. Now we that maybe the best approach would be to cluster into maybe 4 clusters,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/human-intuition-clustering-example.png&quot; alt=&quot;human-intution-clustering&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;How would a computer do this?&lt;/p&gt;
-
-&lt;h1 id=&quot;agglomerative-hierarchical-algorithms&quot;&gt;Agglomerative Hierarchical Algorithms&lt;/h1&gt;
-
-&lt;p&gt;Generally Agglomerative Hierarchical Algorithms are cateogrised in to these cateogries,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/aggol-cats.png&quot; alt=&quot;aggol-cateogries&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;for each graph method (Single/Complete/Grouped-Average) is present different methods of measuring simialirty, which leads to disicions of merging clusters. Which method you chose can chnages they way a cluster is merged.&lt;/p&gt;
-
-&lt;h1 id=&quot;graph-methods--agglomerative-hierarchical-single-link-method&quot;&gt;Graph Methods : Agglomerative Hierarchical Single-Link Method&lt;/h1&gt;
-
-&lt;p&gt;This is the most used method to perform hierarchical agglomerative clustering, in this case 
-we measure similairty of cluster via min intra-cluster distance, that is, the minimum distance between two clusters, defined as&lt;/p&gt;
-
-\[\begin{align*}
-d(C_i, C_j) = \text{min } d(x_i, x_j)
-\end{align*}\]
-
-&lt;p&gt;where C represent cluster, \(x_i\) points in cluster \(C_i\) and \(x_j\) points in \(C_j\).&lt;/p&gt;
-
-&lt;p&gt;So,  we start with finding the closest points in to a given to each point and then make each its own cluster, in this case it would be out human intuition,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/human-intuition-clustering-example.png&quot; alt=&quot;human-intution-clustering&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Although in this case this may be the best number of cluster, in reality this may not be the case. Since all points are in a cluster we next try to find minimum distance to each neighbouring cluster. In this case the purple cluster is clostes to the botton on the green cluster is&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/best-point-three-cluster-aggol.png&quot; alt=&quot;closest-pnt-cluster&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;and then join these clusters, so,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/three-cluster-algglomerative.png&quot; alt=&quot;three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Then we calculate each pnts distance inside the blue cluster to each pnt to other clusters. That is for say a given point in the purple cluster,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/finding-distances-three-cluster-agglomerative.png&quot; alt=&quot;distance-one-point-three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So this is done for all points times this case in the purple cluster and then we find the mimum distance between a datapoint in purple to another cluster that is in this case,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/best-point-three-cluster-aggol.png&quot; alt=&quot;min-dist-point-three-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And so we combine these two clusters,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/two-clusters-aggol.png&quot; alt=&quot;two-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This continues until we finally have one cluster, that is all points are in the same cluster, which is where we initially started!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/one-cluster-aggol.png&quot; alt=&quot;one-clusters-agglomerative&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;graph-methods--agglomerative-hierarchical-complete-list-method&quot;&gt;Graph Methods : Agglomerative Hierarchical Complete-List Method&lt;/h1&gt;
-&lt;p&gt;This takes a the simialr but opposie approach to single-list method, rather then combining cluster based on the minium between two points in between two cluster (intra-distacne), it uses the fursther points to form a cluster, defined by&lt;/p&gt;
-
-\[\begin{align*}
-d(C_i, C_j) = \text{max} d(p, p^&apos;)
-\end{align*}\]
-
-&lt;p&gt;Visually this looks like&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/complete-list-cluster-distance.png&quot; alt=&quot;complete-list-cluster-distance&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;geoemtric-agglomerative-hierarchical-methods&quot;&gt;Geoemtric Agglomerative Hierarchical Methods&lt;/h1&gt;
-
-&lt;p&gt;From the geometric part of Agglomerative Hierarchical Methods, each method is extremely intuitive.
-For Agglomerative Hierarchical Clustering Centriod  Methods, we find the centriod (centre) of the cluster and then we measure simularity simialr to single-method based on \(min d(c_i, c_j)\) so we find the clostest two centriod and merge them together. This continue untill all data points are in one cluster!&lt;/p&gt;
-
-&lt;h1 id=&quot;how-to-effectivley-visualise-this-our-different-options-for-clusters&quot;&gt;How to effectivley visualise this our different options for clusters?&lt;/h1&gt;
-
-&lt;p&gt;In most cases we dealing with multidimentional features space, so visualising it impossible unless we do some dimension reductionality technique like PCA etc. So the most effective way to visualise thses different potential cluster is through tree-diagrams, althought there are other methods including banner, point representation, etc. There are two main types of tree diagrams used in clustering representation dendrograms and n-tree.&lt;/p&gt;
-
-&lt;h2 id=&quot;dendrograms&quot;&gt;Dendrograms&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/dendogram-aggol.png&quot; alt=&quot;dendogram-aggol-clustering&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;So in the for a agglomerative hierarchical algorithms we start at the bottom and compute, even thought we compute the distance between each point and all other points, we only graph the closest point in the dendrograms. In this case, point 3 was clostes to point 8 with distance of 0.07, while for point 4 closest point was point 6.&lt;/p&gt;
-
-&lt;p&gt;Importantly, for point 1 the clostes point was point 4 (not shown in graph), so bacuase of this it form 1 big cluster with point 1, 4, 6 rather then point 4 only since point 4 clostes point isn’t 1 but 6.&lt;/p&gt;
-
-&lt;h2 id=&quot;n-tree&quot;&gt;n-tree&lt;/h2&gt;
-&lt;p&gt;Below, internal nodes are clusters (A,B,C) whilst the terminal notes/leaves are the data points.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/n-tree-diagram.png&quot; alt=&quot;n-tree-diagram&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Importantly a dendrograms is a type of n-tree, which all internal notes satisify,&lt;/p&gt;
-
-\[\begin{align*}
-h(A) \leq h(C) \Longleftrightarrow A \subseteq C
-\end{align*}\]
-
-&lt;p&gt;where h: height on n-tree. And A and C a clusters. Intutivley, clearly on our 5-tree diagram h(A) less then h(C) this makes sense we reber back to the n-tree diagram clearly if were were to draw clusters then C takes all points  to , but Cluster A only contains  to  a subset of elements and C. So&lt;/p&gt;
-
-&lt;h1 id=&quot;divisive-hierarchical-clustering&quot;&gt;Divisive Hierarchical Clustering&lt;/h1&gt;
-
-&lt;p&gt;In this instance we want to do the opposite of of agglomerative clustering where we start we one large cluster and then break into the smallest cluster (ak.k a cluster containing only two points). There are two main types of Divisive Hierarchical Clustering;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;monothetic - we use one feature as a basis of cluster division&lt;/li&gt;
-  &lt;li&gt;polythetic - take all features as basis of cluster division&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Lets show an example of single-link Divisive Hierarchical Clustering, where we measure simialirty by minium distance. In this case we sperate points which are further away since they show the highest dismilarity in this method. So given,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/divisive-min-spanning-one-cluster.png&quot; alt=&quot;divisive-mini-span-one-cluster&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;the lies show the Minimum Spanning tree. Clearly, the point with the shortest distance to all other points is P2 to P5, therefore we break that ed and create two clusters as so,&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/clustering/divise-two-cluster.png&quot; alt=&quot;divise-two-cluster&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This continue until each point has it own cluster. Now importantly we can also use single-methods complete method, mean-method or any methods, but this chnages our similarity metric&lt;/p&gt;
-
-&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;And there we have it! I hope you have gained some intuition about Heiarchial Clustering !&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">Today I faced a bit of a problem on my IBM UNSW data science problem, I have the feature “project_description” which includes a range of inputs ranging from “FACADE/ROOFS” to “FY16 RESO A IP SURVEILLANCE CAMERA INSTALLATION”. I recently used a automated labelling method for another feature, but this seem too big of a task for this feature. After researching for a bit I’v found another possible solution “Clustering”! So today I want to share a little overview about clustering, all information is from “Data and Knowledge Modeling and Analysis” via University of waterloo and University of North Caroline at Chapel Hill Chpt.7 Clustering techniques.</summary></entry></feed>
+&lt;p&gt;I hope after reading this, both you and i have gained a more solid understanding of evaluating our clustering!&lt;/p&gt;</content><author><name>Shahid Hussain</name><email>shahid.hussain0120@gmail.com</email></author><category term="ML" /><summary type="html">This is a continuation of my previous blog post about “Hierarchial Clustering Algorithms”. In this blog i hope to teach you teach you a bit about how to evaluate you’re clustering algorithm.</summary></entry></feed>
