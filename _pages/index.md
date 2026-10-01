@@ -55,7 +55,7 @@ The purpose is not to present myself as knowing everything. Quite the opposite. 
 
 # Future Aspirations
 
-My long-term interests sit at the intersection of statistics, data science and insurance.
+My long-term interests sit at the intersection of statistice and data science.
 
 I enjoy problems that require both mathematical reasoning and practical judgement, particularly where data can be used to better understand risk and support decision-making.
 
